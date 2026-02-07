@@ -1,0 +1,66 @@
+---
+const navItems = [
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Portfolio", href: "/previous-work" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+];
+---
+
+<footer class="bg-gray-900 text-white py-12">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <h3 class="text-lg font-bold mb-4">SNS Contracting</h3>
+        <p class="text-gray-400">Licensed & Insured</p>
+        <p class="text-gray-400">Contractor License: WA-ABC123</p>
+        <p class="text-gray-400 mt-4">
+          <a href="tel:+12065551234" class="hover:text-blue-400 transition">
+            (206) 555-1234
+          </a>
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-bold uppercase mb-4">Navigation</h4>
+        <ul class="space-y-2">
+          {
+            navItems.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="text-gray-400 hover:text-white transition"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+          <li>
+            <a
+              href="/privacy"
+              class="text-gray-400 hover:text-white transition"
+            >
+              Privacy Policy
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-bold uppercase mb-4">Service Area</h4>
+        <p class="text-gray-400 text-sm">
+          Seattle, Ballard, Queen Anne, Capitol Hill, Green Lake, West Seattle,
+          Beacon Hill, Shoreline
+        </p>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-800 pt-8">
+      <p class="text-gray-400 text-sm">
+        &copy; 2026 SNS Contracting. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>

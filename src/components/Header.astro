@@ -1,0 +1,42 @@
+---
+const navItems = [
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Portfolio", href: "/previous-work" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+];
+---
+
+<header class="sticky top-0 bg-white shadow-sm z-50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+      <a href="/" class="text-2xl font-bold text-blue-700">SNS Contracting</a>
+
+      <nav class="hidden md:flex space-x-8">
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class="text-gray-700 hover:text-blue-700 transition"
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+
+      <div class="flex items-center space-x-4">
+        <a
+          href="tel:+12065551234"
+          class="hidden sm:inline-block px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800 transition"
+        >
+          Call Now
+        </a>
+        <button class="md:hidden p-2 rounded hover:bg-gray-100">
+          <span class="text-2xl">☰</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

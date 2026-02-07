@@ -1,11 +1,87 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import RequestEstimate from "../components/RequestEstimate.astro";
+import RequestEstimateForm from "../components/RequestEstimateForm.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Seattle General Contractor | Residential Remodeling">
+  <section class="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-20">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        Seattle's Trusted Residential Contractor
+      </h1>
+      <p class="text-xl mb-8 text-blue-100">
+        Kitchen & bathroom remodeling, decks, and more. Licensed & Insured.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contact"
+          class="px-6 py-3 bg-white text-blue-700 font-bold rounded hover:bg-gray-100 transition"
+        >
+          Request Estimate
+        </a>
+        <a
+          href="tel:+12065551234"
+          class="px-6 py-3 border-2 border-white text-white font-bold rounded hover:bg-white hover:text-blue-700 transition"
+        >
+          Call Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-12 text-center">Our Services</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <a
+          href="/services/kitchen-remodeling-seattle"
+          class="p-6 border rounded-lg hover:shadow-lg transition"
+        >
+          <h3 class="text-xl font-bold mb-2">Kitchen Remodeling</h3>
+          <p class="text-gray-600">Modern designs, expert craftsmanship</p>
+        </a>
+        <a
+          href="/services/bathroom-remodeling-seattle"
+          class="p-6 border rounded-lg hover:shadow-lg transition"
+        >
+          <h3 class="text-xl font-bold mb-2">Bathroom Remodeling</h3>
+          <p class="text-gray-600">Luxury bathrooms, functional design</p>
+        </a>
+        <a
+          href="/services/decks-exterior-seattle"
+          class="p-6 border rounded-lg hover:shadow-lg transition"
+        >
+          <h3 class="text-xl font-bold mb-2">Decks & Exterior</h3>
+          <p class="text-gray-600">Beautiful outdoor living spaces</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-100 py-16">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Why Choose Us?</h2>
+      <div class="grid md:grid-cols-3 gap-8 mt-8">
+        <div>
+          <p class="text-2xl mb-2">✓ Licensed & Insured</p>
+          <p class="text-gray-600">Full credentials and protection</p>
+        </div>
+        <div>
+          <p class="text-2xl mb-2">✓ 20+ Years Experience</p>
+          <p class="text-gray-600">Hundreds of satisfied customers</p>
+        </div>
+        <div>
+          <p class="text-2xl mb-2">✓ Local Expertise</p>
+          <p class="text-gray-600">Deep knowledge of Seattle area</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <RequestEstimateForm />
+    </div>
+  </section>
 </Layout>

@@ -1,0 +1,131 @@
+---
+interface Props {
+  showContactInfo?: boolean;
+}
+
+const { showContactInfo = false } = Astro.props;
+---
+
+<div class="grid md:grid-cols-2 gap-12">
+  {showContactInfo && (
+    <div>
+      <h2 class="text-2xl font-bold mb-6">Contact Information</h2>
+
+      <div class="space-y-6">
+        <div>
+          <h3 class="font-bold text-lg mb-2">Phone</h3>
+          <a
+            href="tel:+12065551234"
+            class="text-blue-700 hover:text-blue-900 text-lg"
+          >
+            (206) 555-1234
+          </a>
+          <p class="text-gray-600 text-sm mt-1">
+            Available Monday–Friday, 8am–6pm
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg mb-2">Email</h3>
+          <a
+            href="mailto:info@snscontracting.com"
+            class="text-blue-700 hover:text-blue-900"
+          >
+            info@snscontracting.com
+          </a>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg mb-2">Service Area</h3>
+          <p class="text-gray-700">
+            Seattle, Ballard, Queen Anne, Capitol Hill, Green Lake, West
+            Seattle, Beacon Hill, Shoreline
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-8 p-6 bg-blue-100 rounded-lg">
+        <p class="text-sm text-gray-700">
+          <strong>Licensed & Insured</strong><br />
+          WA Contractor License #ABC123<br />
+          Full general liability & workers compensation coverage
+        </p>
+      </div>
+    </div>
+  )}
+
+  <div class={showContactInfo ? "" : "max-w-2xl"}>
+    <h2 class="text-2xl font-bold mb-6">Request an Estimate</h2>
+
+    <form name="contact" method="POST" netlify class="space-y-4">
+      <div>
+        <label for="name" class="block font-semibold mb-2">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-700"
+        />
+      </div>
+
+      <div>
+        <label for="email" class="block font-semibold mb-2">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-700"
+        />
+      </div>
+
+      <div>
+        <label for="phone" class="block font-semibold mb-2">Phone</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-700"
+        />
+      </div>
+
+      <div>
+        <label for="service" class="block font-semibold mb-2"
+          >Service Interested In</label
+        >
+        <select
+          id="service"
+          name="service"
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-700"
+        >
+          <option>Kitchen Remodeling</option>
+          <option>Bathroom Remodeling</option>
+          <option>Condo Remodeling</option>
+          <option>Small Home Remodels</option>
+          <option>Decks & Exterior</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="message" class="block font-semibold mb-2"
+          >Tell us about your project</label
+        >
+        <textarea
+          id="message"
+          name="message"
+          rows={5}
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-700"
+        ></textarea>
+      </div>
+
+      <button
+        type="submit"
+        class="w-full px-6 py-3 bg-blue-700 text-white font-bold rounded hover:bg-blue-800 transition"
+      >
+        Send Request
+      </button>
+    </form>
+  </div>
+</div>
