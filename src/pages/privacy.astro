@@ -1,8 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { email, phoneDisplay, phoneHref } from "../siteConfig";
 ---
 
-<Layout title="Privacy Policy | SNS Contracting">
+<Layout title="Privacy Policy | S&S Construction">
   <section class="py-16">
     <div class="max-w-4xl mx-auto px-4">
       <h1 class="text-4xl font-bold mb-6">Privacy Policy</h1>
@@ -12,10 +13,10 @@ import Layout from "../layouts/Layout.astro";
 
         <h2 class="text-2xl font-bold mt-8 mb-4">Introduction</h2>
         <p class="mb-6">
-          SNS Contracting ("we," "us," "our," or "Company") respects the privacy
-          of our users ("user" or "you"). This Privacy Policy explains how we
-          collect, use, disclose, and safeguard your information when you visit
-          our website.
+          S&S Construction ("we," "us," "our," or "Company") respects the
+          privacy of our users ("user" or "you"). This Privacy Policy explains
+          how we collect, use, disclose, and safeguard your information when you
+          visit our website.
         </p>
 
         <h2 class="text-2xl font-bold mt-8 mb-4">Information We Collect</h2>
@@ -59,12 +60,11 @@ import Layout from "../layouts/Layout.astro";
           contact us at:
         </p>
         <p>
-          SNS Contracting<br />
-          Email: <a href="mailto:info@snscontracting.com" class="text-blue-700"
-            >info@snscontracting.com</a
+          S&S Construction<br />
+          Email: <a href={`mailto:${email}`} class="text-indigo-700">{email}</a
           ><br />
-          Phone: <a href="tel:+12065551234" class="text-blue-700"
-            >(206) 555-1234</a
+          Phone: <a href={`tel:${phoneHref}`} class="text-indigo-700"
+            >{phoneDisplay}</a
           >
         </p>
       </div>

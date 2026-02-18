@@ -1,0 +1,38 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { servicePages } from "../../data/services";
+import { buildSeo } from "../../utils/seo";
+
+export async function getStaticPaths() {
+    return servicePages.map((s) => ({ params: { id: s.id } }));
+}
+
+const { id } = Astro.params;
+const sp = servicePages.find((s) => s.id === id)!;
+
+const seo = buildSeo({
+    pageType: "service",
+    path: sp.slug,
+    title: sp.seo.title,
+    description: sp.seo.description,
+    keywords: sp.seo.keywords,
+    ogImage: sp.ogImage,
+    service: {
+        name: sp.service.name,
+        serviceType: sp.service.serviceType,
+        areaServed: sp.service.areaServed,
+        subServices: sp.subServices,
+    },
+    faqs: sp.faqs,
+});
+---
+
+<Layout
+    title={seo.openGraph.title}
+    description={seo.openGraph.description}
+    canonical={seo.canonical}
+    openGraph={seo.openGraph}
+    jsonLd={seo.jsonLd}
+>
+    <!-- render sp.hero, sp.subServices, etc -->
+</Layout>

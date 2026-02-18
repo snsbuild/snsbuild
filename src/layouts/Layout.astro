@@ -1,33 +1,92 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import { safeJsonLdString } from "../utils/seo";
 
-interface Props {
-	title?: string;
-	description?: string;
-}
+const defaults = {
+  title: "Saddle & Spur Construction",
+  description:
+    "Licensed general contractor for residential remodeling in Seattle",
+};
 
-const {
-	title = "Seattle General Contractor",
-	description = "Licensed general contractor for residential remodeling in Seattle",
-} = Astro.props;
+const { canonical, openGraph, jsonLd } = Astro.props;
+
+const title = Astro.props.title ?? defaults.title;
+const description = Astro.props.description ?? defaults.description;
+const safe = jsonLd ? safeJsonLdString(jsonLd) : null;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="description" content={description} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class="flex flex-col min-h-screen bg-white text-gray-900">
-		<Header />
-		<main class="flex-grow">
-			<slot />
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+    {canonical && <link rel="canonical" href={canonical} />}
+
+    {/* Open Graph */}
+    {
+      openGraph && (
+        <>
+          <meta
+            property="og:site_name"
+            content="Saddle and Spur Construction"
+          />
+          <meta property="og:title" content={openGraph.title} />
+          <meta property="og:description" content={openGraph.description} />
+          <meta property="og:url" content={openGraph.url} />
+          <meta property="og:type" content={openGraph.type ?? "website"} />
+          {openGraph.image && (
+            <meta property="og:image" content={openGraph.image} />
+          )}
+
+          {/* Twitter */}
+          {/* <meta name="twitter:site" content="@yourhandle" /> */}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={openGraph.title} />
+          <meta name="twitter:description" content={openGraph.description} />
+          {openGraph.image && (
+            <meta name="twitter:image" content={openGraph.image} />
+          )}
+        </>
+      )
+    }
+
+    {safe && <script type="application/ld+json" set:html={safe} />}
+    <slot name="head" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+    />
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1"
+      type="module"></script>
+    <script
+      is:inline
+      src="https://kit.fontawesome.com/99f5fb79cb.js"
+      crossorigin="anonymous"></script>
+  </head>
+
+  <body class="flex flex-col min-h-screen bg-white text-gray-900">
+    <Header />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+  </body>
 </html>

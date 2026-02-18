@@ -1,0 +1,49 @@
+---
+
+---
+
+<div class="mx-auto max-w-7xl px-6 pt-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+        <h2
+            class="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl"
+        >
+            Let's <br />
+            <span id="replace-service-list">
+                build something great
+                <span style="display:none">
+                    ,build the kitchen you've always wanted, make a backyard a paradise, make that dream bathroom a reality, add the extra room you need
+                </span>
+            </span>
+            <br />
+            together.
+        </h2>
+    </div>
+</div>
+
+<script src="/js/replaceme.min.js" defer></script>
+
+<script>
+    declare global {
+        interface Window {
+            ReplaceMe: new (element: HTMLElement | null, options: any) => void;
+        }
+    }
+
+    const options = {
+        animation: "animated flipInX", // Animation class or classes
+        speed: 3000, // Delay between each phrase in milliseconds
+        separator: ",", // Phrases separator
+        hoverStop: true, // Stop rotator on phrase hover
+        clickChange: false, // Change phrase on click
+        loopCount: "infinite", // Loop Count - 'infinite' or number
+        autoRun: true, // Run rotator automatically
+        onInit: false, // Function
+        onChange: false, // Function
+        onComplete: false, // Function
+    };
+
+    window.addEventListener("DOMContentLoaded", () => {
+        const replaceEl = document.getElementById("replace-service-list");
+        new window.ReplaceMe(replaceEl, options);
+    });
+</script>

@@ -1,0 +1,135 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { previousWorks } from "../../data/previous-work";
+import { getSeo } from "../../utils/seo";
+
+export async function getStaticPaths() {
+    return previousWorks.map((p) => ({
+        params: { id: p.id },
+    }));
+}
+
+const { id } = Astro.params;
+const page = previousWorks.find((p) => p.id === id)!;
+
+const seo = getSeo({
+    site: import.meta.env.SITE,
+    page: {
+        link: page.link,
+        title: page.title,
+        body: page.body,
+        blurb: page.blurb,
+        meta: page.meta,
+        schema: page.schema,
+    },
+});
+---
+
+<Layout {...seo}>
+    <main class="mx-auto max-w-5xl px-4 py-12">
+        <!-- Hero -->
+        <header class="mb-10">
+            <p class="text-sm uppercase tracking-wide text-gray-500">
+                {page.hero.eyebrow}
+            </p>
+            <h1 class="mt-2 text-3xl font-bold">
+                {page.hero.headline}
+            </h1>
+            <p class="mt-3 text-lg text-gray-600">
+                {page.hero.subheadline}
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-3">
+                <a
+                    href={page.hero.ctaPrimary.href}
+                    class="inline-flex items-center rounded bg-indigo-700 px-5 py-3 font-semibold text-white hover:bg-indigo-800"
+                >
+                    {page.hero.ctaPrimary.label}
+                </a>
+                <a
+                    href={page.hero.ctaSecondary.href}
+                    class="inline-flex items-center rounded border border-gray-300 px-5 py-3 font-semibold text-gray-800 hover:bg-gray-50"
+                >
+                    {page.hero.ctaSecondary.label}
+                </a>
+            </div>
+        </header>
+
+        <!-- Image -->
+        <figure class="mb-10 overflow-hidden rounded-xl border bg-gray-50">
+            <img
+                src={page.imgSrc}
+                alt={page.hero.imageAlt}
+                class="h-auto w-full object-cover"
+                loading="eager"
+            />
+        </figure>
+
+        <!-- Bullets -->
+        {
+            page.hero.bullets?.length > 0 && (
+                <section class="mb-10">
+                    <h2 class="text-xl font-bold">Project highlights</h2>
+                    <ul class="mt-4 list-disc space-y-2 pl-6 text-gray-700">
+                        {page.hero.bullets.map((b) => (
+                            <li>{b}</li>
+                        ))}
+                    </ul>
+                </section>
+            )
+        }
+
+        <!-- Body -->
+        <section class="prose max-w-none">
+            <h2>Project story</h2>
+            <p>{page.body}</p>
+        </section>
+
+        <!-- Testimonials -->
+        {
+            page.testimonials?.length > 0 && (
+                <section class="mt-12">
+                    <h2 class="text-xl font-bold">What the homeowner said</h2>
+                    <div class="mt-6 grid gap-6 md:grid-cols-2">
+                        {page.testimonials.map((t) => (
+                            <blockquote class="rounded-xl border bg-white p-6 shadow-sm">
+                                <p class="text-gray-700">“{t.quote}”</p>
+                                <footer class="mt-4 text-sm text-gray-500">
+                                    <span class="font-semibold text-gray-800">
+                                        {t.name}
+                                    </span>
+                                    {" • "}
+                                    {t.neighborhood}
+                                    {" • "}
+                                    <span class="text-gray-600">
+                                        {t.projectType}
+                                    </span>
+                                    {t.rating ? ` • ${t.rating}★` : ""}
+                                </footer>
+                            </blockquote>
+                        ))}
+                    </div>
+                </section>
+            )
+        }
+
+        <!-- Related tags / filter links (optional) -->
+        {
+            page.tags?.length > 0 && (
+                <section class="mt-12">
+                    <h2 class="text-xl font-bold">Tags</h2>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        {page.tags.map((tag) => (
+                            <a
+                                href={`/previous-work?tag=${encodeURIComponent(tag)}`}
+                                class="rounded-full border px-3 py-1 text-sm text-gray-700 hover:bg-gray-50"
+                            >
+                                {tag}
+                            </a>
+                        ))}
+                    </div>
+                </section>
+            )
+        }
+    </main>
+</Layout>

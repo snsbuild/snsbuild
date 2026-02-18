@@ -1,0 +1,47 @@
+---
+import Horse from "./Horse.astro";
+import Logo from "./Logo.astro";
+
+const { services, category, cta, ctaHref } = Astro.props;
+---
+
+<div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="sm:flex sm:items-baseline sm:justify-between">
+        <h2 class="text-2xl font-bold tracking-tight text-gray-900">
+            {category}
+        </h2>
+        <a
+            href={ctaHref}
+            class="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block"
+        >
+            {cta}
+            <span aria-hidden="true"> &rarr;</span>
+        </a>
+    </div>
+
+    <div class="mx-auto flex max-w-7xl flex-wrap justify-center gap-8 mt-10">
+        {
+            services.map((s) => (
+                <article class="relative isolate flex w-full flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pt-80 pb-8 sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] sm:pt-48 lg:pt-80">
+                    <img
+                        src={s.imgSrc}
+                        alt={s.imgAlt}
+                        class="absolute inset-0 -z-10 size-full object-cover"
+                    />
+                    <div class="absolute inset-0 -z-10 bg-linear-to-t from-gray-900 via-gray-400/40 to-transparent" />
+                    <div class="absolute inset-0 -z-10 rounded-2xl inset-ring inset-ring-gray-900/10" />
+
+                    <h3 class="mt-3 text-lg/6 font-semibold text-white">
+                        <a href={s.slug}>
+                            <span class="absolute inset-0" />
+                            {s.headline}
+                        </a>
+                    </h3>
+                    <div class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm/6 text-gray-300">
+                        <p class="text-white-600">{s.subheadline}</p>
+                    </div>
+                </article>
+            ))
+        }
+    </div>
+</div>

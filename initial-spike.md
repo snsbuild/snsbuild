@@ -1,6 +1,6 @@
 Goal
 
-Create a small, conversion-focused marketing site for a licensed Seattle General Contractor targeting small–medium residential projects. Site must be fast, mobile-first, and optimized for phone calls + estimate requests.
+Create a small, conversion-focused marketing site for a licensed Saddle & Spur Construction targeting small–medium residential projects. Site must be fast, mobile-first, and optimized for phone calls + estimate requests.
 
 Tech
  • Framework: Astro
@@ -105,7 +105,7 @@ Page-by-Page Content Outline
 
 Purpose: convert general visitors + route to service pages
 Sections:
- • Hero: “Seattle General Contractor for Kitchens, Baths, Condos & Small Remodels”
+ • Hero: “Saddle & Spur Construction for Kitchens, Baths, Condos & Small Remodels”
  • Primary CTA buttons (Call / Request Estimate)
  • Services grid (links to service pages)
  • Proof strip: license, insured, years, review snippet
@@ -209,6 +209,7 @@ Internal Linking Rules
 ⸻
 
 Deliverables
+
  1. Implement all pages in Astro per sitemap
  2. Reusable components for Header/Footer/CTA/ServiceCard/Gallery
  3. Basic SEO meta + schema

@@ -1,15 +1,32 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { phoneDisplay, phoneHref } from "../siteConfig";
+import { buildSeo } from "../utils/seo";
+
+const seo = buildSeo({
+  pageType: "marketing",
+  path: "/about",
+  title: "About Saddle and Spur Construction | Seattle Remodeling Contractor",
+  description:
+    "Learn about Saddle and Spur Construction, a licensed Seattle general contractor specializing in kitchen remodels, bathrooms, additions, and custom builds.",
+  ogImage: { src: "/images/og/about.jpg" },
+});
 ---
 
-<Layout title="About Us | SNS Contracting">
+<Layout
+  title={seo.openGraph.title}
+  description={seo.openGraph.description}
+  canonical={seo.canonical}
+  openGraph={seo.openGraph}
+  jsonLd={seo.jsonLd}
+>
   <section class="py-16">
     <div class="max-w-4xl mx-auto px-4">
-      <h1 class="text-4xl font-bold mb-6">About SNS Contracting</h1>
+      <h1 class="text-4xl font-bold mb-6">About S&S Construction</h1>
 
       <div class="prose max-w-none">
         <p class="text-lg text-gray-600 mb-6">
-          SNS Contracting has been serving the Seattle area for over 20 years,
+          S&S Construction has been serving the Seattle area for over 20 years,
           specializing in residential remodeling that transforms homes and
           improves quality of life.
         </p>
@@ -43,22 +60,24 @@ import Layout from "../layouts/Layout.astro";
           requirements while respecting your community.
         </p>
 
-        <div class="bg-blue-100 p-6 rounded-lg mt-8">
+        <div class="bg-indigo-100 p-6 rounded-lg mt-8">
           <p class="text-lg mb-2">
             <strong>License:</strong> WA Contractor License #ABC123<br />
             <strong>Insured:</strong> Full general liability and workers compensation<br
             />
             <strong>Phone:</strong>
-            <a href="tel:+12065551234" class="text-blue-700">(206) 555-1234</a>
+            <a href={`tel:${phoneHref}`} class="text-indigo-700"
+              >{phoneDisplay}</a
+            >
           </p>
         </div>
       </div>
 
-      <div class="mt-12 p-8 bg-blue-700 text-white rounded-lg text-center">
+      <div class="mt-12 p-8 bg-indigo-700 text-white rounded-lg text-center">
         <h3 class="text-2xl font-bold mb-4">Ready to work with us?</h3>
         <a
           href="/contact"
-          class="inline-block px-6 py-3 bg-white text-blue-700 font-bold rounded hover:bg-gray-100 transition"
+          class="inline-block px-6 py-3 bg-white text-indigo-700 font-bold rounded hover:bg-gray-100 transition"
         >
           Request Estimate
         </a>
