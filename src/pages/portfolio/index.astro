@@ -1,0 +1,298 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { portfolio, type PortfolioEntry } from "../../data/portfolio";
+import { buildSeo } from "../../utils/seo";
+import FormSelect from "../../components/FormSelect.astro";
+import FormSearch from "../../components/FormSearch.astro";
+import ProcessTimeline from "../../components/ProcessTimeline.astro";
+import ServiceFooter from "../../components/ServiceFooter.astro";
+import ServiceAreas from "../../components/ServiceAreas.astro";
+
+const seo = buildSeo({
+  pageType: "marketing",
+  path: "/portfolio",
+  title: "Portfolio | Saddle and Spur Construction",
+  description:
+    "Explore recent remodeling projects across Seattle and King County—bathrooms, kitchens, and more. See photos, scope, and results.",
+  ogType: "website",
+  ogImage: {
+    src: "/images/og/portfolio.jpg",
+    alt: "Saddle and Spur Construction portfolio",
+  },
+});
+
+const items = [...portfolio].sort((a, b) =>
+  (b.datePublished ?? "").localeCompare(a.datePublished ?? ""),
+);
+
+const uniq = (arr: string[]) => Array.from(new Set(arr.filter(Boolean)));
+
+const serviceOptions = uniq(items.map((p) => p.project.serviceName));
+const areaOptions = uniq(items.map((p) => p.project.location.neighborhood));
+
+const slugify = (s: string) =>
+  s
+    .toLowerCase()
+    .trim()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+
+const serviceToSlug = new Map(serviceOptions.map((s) => [s, slugify(s)]));
+const areaToSlug = new Map(areaOptions.map((s) => [s, slugify(s)]));
+
+// optional: nice label fallback
+const getCover = (p: PortfolioEntry) =>
+  p.ogImage?.src ?? p.images?.[0]?.src ?? "/images/og/portfolio.jpg";
+const getAlt = (p: PortfolioEntry) =>
+  p.ogImage?.alt ?? p.images?.[0]?.alt ?? p.title;
+---
+
+<Layout {...seo}>
+  <div class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+      <h1
+        class="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl"
+      >
+        Seattle Construction Portfolio
+      </h1>
+      <p class="mt-2 text-lg/8 text-gray-600">
+        Filter by service and neighborhood to find relevant case studies.
+      </p>
+    </div>
+
+    <!-- Filters -->
+    <section class="mx-auto mt-10 max-w-3xl">
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <FormSelect id="filter-service" label="Service">
+          <option value="">All services</option>
+          {
+            serviceOptions.map((label) => (
+              <option value={serviceToSlug.get(label)}>{label}</option>
+            ))
+          }
+        </FormSelect>
+
+        <FormSelect id="filter-area" label="Neighborhood">
+          <option value="">All areas</option>
+          {
+            areaOptions.map((label) => (
+              <option value={areaToSlug.get(label)}>{label}</option>
+            ))
+          }
+        </FormSelect>
+        <FormSearch
+          id="filter-q"
+          label="Search"
+          placeholder="Tile, curbless shower, ventilation…"
+        />
+      </div>
+
+      <div class="mt-4 flex items-center justify-between text-sm">
+        <p id="results-count" class="text-gray-600"></p>
+        <button
+          id="filters-clear"
+          type="button"
+          class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        >
+          Clear filters
+        </button>
+      </div>
+    </section>
+
+    <!-- Grid -->
+    <section class="mx-auto mt-14 max-w-2xl lg:mx-0 lg:max-w-none">
+      <div
+        id="portfolio-grid"
+        class="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-3"
+      >
+        {
+          items.map((p) => {
+            const href = p.path; // or `/portfolio/${p.id}` if you use id route
+            const img = getCover(p);
+            const alt = getAlt(p);
+
+            const serviceSlug = serviceToSlug.get(p.project.serviceName) ?? "";
+            const areaLabel = p.project.location?.neighborhood ?? "";
+            const areaSlug = areaToSlug.get(areaLabel) ?? "";
+            const searchable = [
+              p.project.name,
+              p.title,
+              p.description,
+              p.project.serviceName,
+              areaLabel,
+              p.project.location?.city,
+              ...(p.keywords ?? []),
+              ...(p.project.servicesPerformed?.map((s) => s.name) ?? []),
+              ...(p.project.servicesPerformed?.map(
+                (s) => s.description ?? "",
+              ) ?? []),
+              ...(p.project.materials ?? []),
+            ]
+              .filter(Boolean)
+              .join(" ")
+              .toLowerCase();
+
+            // testimonial snippet (optional)
+            const r = p.project.reviews?.[0];
+            const rating = r?.rating ?? 5;
+
+            return (
+              <article
+                class="portfolio-card flex flex-col"
+                data-service={serviceSlug}
+                data-area={areaSlug}
+                data-search={searchable}
+              >
+                <a href={href} class="group block">
+                  <div class="relative w-full">
+                    <img
+                      src={img}
+                      alt={alt}
+                      class="aspect-video w-full rounded-2xl bg-gray-100 object-fill sm:aspect-2/1 lg:aspect-3/2"
+                      loading="lazy"
+                    />
+                    <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+                  </div>
+
+                  <div class="mt-6 flex items-center gap-x-3 text-xs">
+                    <span class="rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 ring-1 ring-inset ring-gray-900/5">
+                      {p.project.serviceName}
+                    </span>
+
+                    {areaLabel && (
+                      <span class="text-gray-500">{areaLabel}</span>
+                    )}
+                  </div>
+
+                  <h2 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                    {p.project.name}
+                  </h2>
+
+                  <p class="mt-3 line-clamp-3 text-sm leading-6 text-gray-600">
+                    {p.description}
+                  </p>
+                </a>
+
+                <div class="mt-6">
+                  {r ? (
+                    <div>
+                      <p class="text-sm text-gray-700 line-clamp-2">
+                        <span class="mr-2 text-amber-500" aria-hidden="true">
+                          {"★".repeat(
+                            Math.max(0, Math.min(5, Math.round(rating))),
+                          )}
+                        </span>
+                        <span class="sr-only">{rating} out of 5 stars.</span>“
+                        {r.quote}”
+                      </p>
+                      <p class="mt-2 text-xs text-gray-500">— {r.authorName}</p>
+                    </div>
+                  ) : (
+                    <a
+                      href={href}
+                      class="inline-flex items-center rounded-full bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-500"
+                    >
+                      View case study
+                    </a>
+                  )}
+                </div>
+              </article>
+            );
+          })
+        }
+      </div>
+
+      <p id="no-results" class="mt-10 hidden text-center text-sm text-gray-600">
+        No projects match those filters.
+      </p>
+    </section>
+  </div>
+  <ServiceAreas />
+  <ServiceFooter />
+  <script is:inline>
+    const $ = (sel) => document.querySelector(sel);
+
+    const serviceEl = $("#filter-service");
+    const areaEl = $("#filter-area");
+    const qEl = $("#filter-q");
+    const clearBtn = $("#filters-clear");
+    const cards = Array.from(document.querySelectorAll(".portfolio-card"));
+    const countEl = $("#results-count");
+    const noResultsEl = $("#no-results");
+
+    function getParams() {
+      const url = new URL(window.location.href);
+      return {
+        service: url.searchParams.get("service") || "",
+        area: url.searchParams.get("area") || "",
+        q: url.searchParams.get("q") || "",
+      };
+    }
+
+    function setParams(next) {
+      const url = new URL(window.location.href);
+      ["service", "area", "q"].forEach((k) => {
+        if (next[k]) url.searchParams.set(k, next[k]);
+        else url.searchParams.delete(k);
+      });
+      window.history.replaceState({}, "", url);
+    }
+
+    function applyFilters(fromUI = false) {
+      const params = fromUI
+        ? {
+            service: serviceEl.value,
+            area: areaEl.value,
+            q: qEl.value.trim().toLowerCase(),
+          }
+        : (() => {
+            const p = getParams();
+            return {
+              service: p.service,
+              area: p.area,
+              q: (p.q || "").trim().toLowerCase(),
+            };
+          })();
+
+      if (!fromUI) {
+        serviceEl.value = params.service;
+        areaEl.value = params.area;
+        qEl.value = params.q || "";
+      } else {
+        setParams(params);
+      }
+
+      let shown = 0;
+      for (const card of cards) {
+        const s = card.getAttribute("data-service") || "";
+        const a = card.getAttribute("data-area") || "";
+        const hay = (card.getAttribute("data-search") || "").toLowerCase();
+
+        const okService = !params.service || params.service === s;
+        const okArea = !params.area || params.area === a;
+        const okQ = !params.q || hay.includes(params.q);
+
+        const ok = okService && okArea && okQ;
+        card.classList.toggle("hidden", !ok);
+        if (ok) shown++;
+      }
+
+      countEl.textContent = `${shown} project${shown === 1 ? "" : "s"} shown`;
+      noResultsEl.classList.toggle("hidden", shown !== 0);
+    }
+
+    serviceEl.addEventListener("change", () => applyFilters(true));
+    areaEl.addEventListener("change", () => applyFilters(true));
+    qEl.addEventListener("input", () => applyFilters(true));
+
+    clearBtn.addEventListener("click", () => {
+      serviceEl.value = "";
+      areaEl.value = "";
+      qEl.value = "";
+      applyFilters(true);
+    });
+
+    applyFilters(false);
+  </script>
+</Layout>

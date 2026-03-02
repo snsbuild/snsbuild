@@ -20,7 +20,7 @@ Primary Navigation
  • /services/condo-remodeling-seattle
  • /services/small-home-remodels-seattle
  • /services/decks-exterior-seattle
- • /previous-work Portfolio
+ • /portfolio Portfolio
  • /about About
  • /contact Request Estimate
 
@@ -148,7 +148,7 @@ Page-specific notes:
 
 ⸻
 
-1) Previous Work (/previous-work)
+1) Previous Work (/portfolio)
 
 Purpose: visual proof
 Requirements:

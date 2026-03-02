@@ -1,6 +1,4 @@
 ---
-import { previousWorks } from "../data/previous-work";
-
 type Testimonial = {
     name: string;
     neighborhood: string;
@@ -9,7 +7,7 @@ type Testimonial = {
     quote: string;
 };
 
-type PreviousWork = {
+type Portfolio = {
     id: string;
     title: string;
     link: string;
@@ -27,31 +25,22 @@ type CloudCard = {
     quote: string;
 };
 
-const works = previousWorks as PreviousWork[];
+import { markup, type PortfolioMarkup } from "../data/portfolio/index";
 
 const stars = (rating: number) => "★".repeat(Math.max(0, Math.min(5, rating)));
 
-function buildCards(works: PreviousWork[]): CloudCard[] {
-    return works
-        .filter(
-            (w) =>
-                w?.link &&
-                Array.isArray(w?.testimonials) &&
-                w.testimonials.length,
-        )
-        .flatMap((w) =>
-            (w.testimonials ?? []).map((t) => ({
-                workId: w.id,
-                workTitle: w.title,
-                workLink: w.link,
-                name: t.name,
-                neighborhood: t.neighborhood,
-                projectType: t.projectType,
-                rating: t.rating ?? 5,
-                quote: t.quote,
-            })),
-        )
-        .filter((t) => t.quote && t.name && t.workLink);
+function buildCards(markup: PortfolioMarkup[]): CloudCard[] {
+    return markup.map((m) => {
+        return {
+            workId: m.id,
+            workTitle: m.hero.kicker,
+            workLink: m.link,
+            name: m.name,
+            neighborhood: m.neighborhood,
+            projectType: m.projectType,
+            ...m.testimonial,
+        };
+    });
 }
 
 function pickFeaturedAndCloud(cards: CloudCard[]) {
@@ -78,7 +67,7 @@ function pickFeaturedAndCloud(cards: CloudCard[]) {
     return { featured, cloud };
 }
 
-const allCards = buildCards(works);
+const allCards = buildCards(markup);
 const { featured, cloud } = pickFeaturedAndCloud(allCards);
 
 const leftStack = cloud.slice(0, 3);

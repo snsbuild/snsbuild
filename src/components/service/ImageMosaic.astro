@@ -1,0 +1,86 @@
+---
+type Img = { src: string; alt?: string };
+
+const { images = [] } = Astro.props as { images: Img[] };
+
+const fullBlockCount = Math.floor(images.length / 4);
+const mosaicImages = images.slice(0, fullBlockCount * 4);
+const remainderImages = images.slice(fullBlockCount * 4);
+
+const classForIndex = (i: number) => {
+    const base =
+        "aspect-4/5 w-full max-w-sm mx-auto rounded-lg object-cover sm:max-w-none sm:mx-0";
+
+    switch (i % 4) {
+        case 0:
+            return `${base} lg:row-span-2 lg:aspect-3/4`;
+        case 1:
+            return `${base} lg:col-start-2 lg:row-start-1 lg:aspect-3/2`;
+        case 2:
+            return `${base} lg:col-start-2 lg:row-start-2 lg:aspect-3/2`;
+        default:
+            return `${base} lg:col-start-3 lg:row-span-2 lg:aspect-3/4`;
+    }
+};
+
+const remainderCount = remainderImages.length;
+
+const remainderGridCols =
+    remainderCount === 1
+        ? "lg:grid-cols-1"
+        : remainderCount === 2
+          ? "lg:grid-cols-2"
+          : "lg:grid-cols-3";
+
+const remainderSmCols =
+    remainderCount >= 2 ? "sm:grid-cols-2" : "sm:grid-cols-1";
+---
+
+<div class="mx-auto mb-14 max-w-2xl sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="grid gap-4 lg:gap-8">
+        {
+            Array.from({ length: fullBlockCount }).map((_, blockIdx) => {
+                const start = blockIdx * 4;
+                const block = mosaicImages.slice(start, start + 4);
+
+                return (
+                    <div
+                        class="grid grid-cols-1 sm:grid-cols-2 gap-4
+                 lg:grid-cols-3 lg:grid-rows-2 lg:auto-rows-fr lg:gap-8"
+                    >
+                        {block.map((img, j) => {
+                            const i = start + j;
+                            return (
+                                <img
+                                    src={img.src}
+                                    alt={img.alt ?? ""}
+                                    class={classForIndex(i)}
+                                    loading="lazy"
+                                />
+                            );
+                        })}
+                    </div>
+                );
+            })
+        }
+    </div>
+
+    {
+        remainderImages.length > 0 && (
+            <div class="mt-8 flex justify-center">
+                <div
+                    class={`grid grid-cols-1 ${remainderSmCols} ${remainderGridCols} gap-4 lg:gap-8`}
+                >
+                    {remainderImages.map((img) => (
+                        <img
+                            src={img.src}
+                            alt={img.alt ?? ""}
+                            class="aspect-4/5 w-full max-w-sm rounded-lg object-cover"
+                            loading="lazy"
+                        />
+                    ))}
+                </div>
+            </div>
+        )
+    }
+</div>

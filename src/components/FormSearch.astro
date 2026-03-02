@@ -1,0 +1,39 @@
+---
+interface Props {
+    id: string;
+    label: string;
+    placeholder?: string;
+    name?: string;
+}
+
+const { id, label, placeholder = "Search…", name = id } = Astro.props;
+---
+
+<div>
+    <label for={id} class="block text-sm/6 font-medium text-gray-900">
+        {label}
+    </label>
+
+    <div class="mt-2 grid grid-cols-1">
+        <input
+            id={id}
+            name={name}
+            type="search"
+            placeholder={placeholder}
+            class="col-start-1 row-start-1 w-full rounded-md bg-white py-1.5 pr-3 pl-9 text-base text-gray-900 outline -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-indigo-600 sm:text-sm/6"
+        />
+
+        <svg
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+            class="pointer-events-none col-start-1 row-start-1 ml-3 size-5 self-center justify-self-start text-gray-400 sm:size-4"
+        >
+            <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M9 3.5a5.5 5.5 0 1 0 3.473 9.77l3.629 3.628a.75.75 0 1 0 1.06-1.06l-3.628-3.629A5.5 5.5 0 0 0 9 3.5Zm-4 5.5a4 4 0 1 1 8 0 4 4 0 0 1-8 0Z"
+            ></path>
+        </svg>
+    </div>
+</div>

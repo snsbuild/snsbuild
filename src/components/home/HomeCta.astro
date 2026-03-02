@@ -1,0 +1,32 @@
+---
+import { phoneHref } from "../../siteConfig";
+---
+
+<section
+    id="home-cta"
+    class="bg-linear-to-r from-indigo-700 to-indigo-900 text-white py-16"
+>
+    <div class="max-w-6xl mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            Seattle's Trusted Residential Contractor
+        </h1>
+        <p class="text-xl mb-8 text-indigo-100">
+            Your No-Nonsense Partner in Exceptional Construction. Licensed &
+            Insured.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+                href="/contact"
+                class="px-6 py-3 bg-white text-indigo-700 font-bold rounded hover:bg-gray-100 transition"
+            >
+                Request Estimate
+            </a>
+            <a
+                href={`tel:${phoneHref}`}
+                class="px-6 py-3 border-2 border-white text-white font-bold rounded hover:bg-white hover:text-indigo-700 transition"
+            >
+                Call Now
+            </a>
+        </div>
+    </div>
+</section>

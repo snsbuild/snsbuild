@@ -1,13 +1,21 @@
 ---
-import Horse from "./Horse.astro";
-import Logo from "./Logo.astro";
-
-const { services, category, cta, ctaHref } = Astro.props;
+interface ServiceCard {
+    imgSrc: string;
+    imgAlt: string;
+    ctaHref: string;
+    headline: string;
+    subheadline: string;
+    id: string;
+}
+const { services, category, cta, ctaHref, className, id } = Astro.props;
 ---
 
-<div class="mx-auto max-w-7xl px-6 lg:px-8">
+<div class:list={["mx-auto max-w-7xl px-6 lg:px-8", className]}>
     <div class="sm:flex sm:items-baseline sm:justify-between">
-        <h2 class="text-2xl font-bold tracking-tight text-gray-900">
+        <h2
+            class="text-2xl font-bold tracking-tight text-gray-900 scroll-mt-32"
+            id={id}
+        >
             {category}
         </h2>
         <a
@@ -21,7 +29,7 @@ const { services, category, cta, ctaHref } = Astro.props;
 
     <div class="mx-auto flex max-w-7xl flex-wrap justify-center gap-8 mt-10">
         {
-            services.map((s) => (
+            services.map((s: ServiceCard) => (
                 <article class="relative isolate flex w-full flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pt-80 pb-8 sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] sm:pt-48 lg:pt-80">
                     <img
                         src={s.imgSrc}
@@ -32,7 +40,7 @@ const { services, category, cta, ctaHref } = Astro.props;
                     <div class="absolute inset-0 -z-10 rounded-2xl inset-ring inset-ring-gray-900/10" />
 
                     <h3 class="mt-3 text-lg/6 font-semibold text-white">
-                        <a href={s.slug}>
+                        <a href={s.ctaHref}>
                             <span class="absolute inset-0" />
                             {s.headline}
                         </a>

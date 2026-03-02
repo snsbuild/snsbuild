@@ -1,8 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import RequestEstimate from "../components/RequestEstimate.astro";
+import ServiceAreas from "../components/ServiceAreas.astro";
+import Faq from "../components/Faq.astro";
+import ProcessTimeline from "../components/ProcessTimeline.astro";
 ---
 
 <Layout title="Request Estimate | S&S Construction">
-  <RequestEstimate />
+  <RequestEstimate className="pb-6" />
+  <ProcessTimeline />
+  <ServiceAreas />
+  <Faq />
 </Layout>

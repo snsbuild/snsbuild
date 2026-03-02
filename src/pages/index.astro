@@ -1,152 +1,36 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-import Hero from "../components/Hero.astro";
-import { phoneHref } from "../siteConfig";
+import HomeHero from "../components/home/HomeHero.astro";
+import HomeCta from "../components/home/HomeCta.astro";
+import HomeFeatures from "../components/home/HomeFeatures.astro";
+
 import RequestEstimate from "../components/RequestEstimate.astro";
 import TestimonialCloud from "../components/TestimonialCloud.astro";
 import ServiceList from "../components/ServiceList.astro";
+
+import { getCoreServices } from "../data/services/index";
+import ServiceAreas from "../components/ServiceAreas.astro";
+
+const coreServices = getCoreServices();
 ---
 
 <Layout title="Saddle & Spur Construction">
-  <Hero />
+  <HomeHero />
   <RequestEstimate />
+  <HomeFeatures />
 
-  <section id="services-gallery" class="bg-gray-50 pb-10">
-    <ServiceList />
+  <section id="services-gallery" class="bg-gray-50 py-32">
+    <ServiceList
+      services={coreServices}
+      category="Featured Services"
+      cta="Find the Right Service"
+      ctaHref="/services"
+    />
   </section>
 
-  <section id="services-text">
-    <div class="bg-white py-24 sm:py-32">
-      <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl lg:mx-0">
-          <h2 class="text-base/7 font-semibold text-indigo-600">
-            Our Services
-          </h2>
-          <p
-            class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
-          >
-            Quality craftsmanship for every project.
-          </p>
-          <p class="mt-6 text-lg/8 text-gray-700">
-            From kitchen and bathroom remodels to custom decks and complete home
-            renovations, we bring expertise, attention to detail, and reliable
-            service to every project we undertake in the Seattle area.
-          </p>
-        </div>
-        <dl
-          class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 text-base/7 text-gray-600 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-16"
-        >
-          <div class="relative pl-9">
-            <dt class="inline font-semibold text-gray-900">
-              <i
-                class="fa-solid fa-kitchen-set absolute top-1 left-1 size-5 text-indigo-600"
-              ></i>
-              Kitchen Remodeling.
-            </dt>
-            <dd class="inline">
-              Modern, functional kitchens that become the heart of your home.
-              From new cabinets and countertops to layout optimization and
-              appliance installation.
-            </dd>
-          </div>
-          <div class="relative pl-9">
-            <dt class="inline font-semibold text-gray-900">
-              <i
-                class="fa-solid fa-bath absolute top-1 left-1 size-5 text-indigo-600"
-              ></i>
-              Bathroom Remodeling.
-            </dt>
-            <dd class="inline">
-              Spa-like bathrooms designed for comfort and durability. Complete
-              renovations including tiles, fixtures, lighting, and efficient use
-              of space.
-            </dd>
-          </div>
-          <div class="relative pl-9">
-            <dt class="inline font-semibold text-gray-900">
-              <i
-                class="fa-solid fa-person-digging absolute top-1 left-1 size-5 text-indigo-600"
-              ></i>
-              Decks & Exterior Work.
-            </dt>
-            <dd class="inline">
-              Beautiful outdoor spaces that extend your home's living area.
-              Custom decks, patios, siding, and exterior refinishing with
-              weather-resistant materials.
-            </dd>
-          </div>
-          <div class="relative pl-9">
-            <dt class="inline font-semibold text-gray-900">
-              <i
-                class="fa-solid fa-house-chimney-user absolute top-1 left-1 size-5 text-indigo-600"
-              ></i>
-              Home Renovations.
-            </dt>
-            <dd class="inline">
-              Complete home transformations that maximize value and enhance
-              living spaces. Large-scale projects handled with comprehensive
-              planning and expert execution.
-            </dd>
-          </div>
-          <div class="relative pl-9">
-            <dt class="inline font-semibold text-gray-900">
-              <i
-                class="fa-solid fa-compass-drafting absolute top-1 left-1 size-5 text-indigo-600"
-              ></i>
-              Expert Contractors.
-            </dt>
-            <dd class="inline">
-              Experienced professionals dedicated to quality workmanship. Our
-              team brings proven expertise, reliability, and attention to detail
-              to every project.
-            </dd>
-          </div>
-          <div class="relative pl-9">
-            <dt class="inline font-semibold text-gray-900">
-              <i
-                class="fa-solid fa-magnifying-glass-dollar absolute top-1
-            left-1 size-5 text-indigo-600"
-              ></i> Transparent Pricing.
-            </dt>
-            <dd class="inline">
-              Fair, honest pricing without hidden surprises. We provide detailed
-              estimates upfront so you know exactly what to expect.
-            </dd>
-          </div>
-        </dl>
-      </div>
-    </div>
-  </section>
+  <ServiceAreas />
 
   <TestimonialCloud />
-
-  <section
-    id="home-cta"
-    class="bg-linear-to-r from-indigo-700 to-indigo-900 text-white py-16"
-  >
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">
-        Seattle's Trusted Residential Contractor
-      </h1>
-      <p class="text-xl mb-8 text-indigo-100">
-        Your No-Nonsense Partner in Exceptional Construction. Licensed &
-        Insured.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a
-          href="/contact"
-          class="px-6 py-3 bg-white text-indigo-700 font-bold rounded hover:bg-gray-100 transition"
-        >
-          Request Estimate
-        </a>
-        <a
-          href={`tel:${phoneHref}`}
-          class="px-6 py-3 border-2 border-white text-white font-bold rounded hover:bg-white hover:text-indigo-700 transition"
-        >
-          Call Now
-        </a>
-      </div>
-    </div>
-  </section>
+  <HomeCta />
 </Layout>

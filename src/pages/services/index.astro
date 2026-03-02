@@ -1,58 +1,79 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import ServiceFooter from "../../components/ServiceFooter.astro";
-import ServiceFlipHeader from "../../components/ServiceFlipHeader.astro";
 import ServiceList from "../../components/ServiceList.astro";
-import CallToAction from "../../components/CallToAction.astro";
+import CenteredWithBgImage from "../../components/header/CenteredWithBgImage.astro";
+import ServiceCTA from "../../components/ServiceCTA.astro";
+import {
+  expansionCategory,
+  interiorCategory,
+  outdoorCategory,
+} from "../../data/services";
+import ActionGrid from "../../components/ActionGrid.astro";
+import ServiceAreas from "../../components/ServiceAreas.astro";
 
-const interiorCategory = {
-  category: "Interior Services",
-  cta: "Take a look at a kitchen in Greenwood we remodeled",
-  ctaHref: "/",
-  services: [
-    {
-      imgSrc: "/images/kitchen/ravenna-kitchen-1.jpg",
-      imgAlt: "",
-      headline: "Kitchen Remodeling",
-      subheadline:
-        "Kitchens built for daily life—better flow, smarter storage, and finishes that stay beautiful.",
-    },
-    {
-      imgSrc: "/images/kitchen/ravenna-kitchen-1.jpg",
-      imgAlt: "",
-      headline: "Kitchen Remodeling",
-      subheadline:
-        "Kitchens built for daily life—better flow, smarter storage, and finishes that stay beautiful.",
-    },
-    {
-      imgSrc: "/images/kitchen/ravenna-kitchen-1.jpg",
-      imgAlt: "",
-      headline: "Kitchen Remodeling",
-      subheadline:
-        "Kitchens built for daily life—better flow, smarter storage, and finishes that stay beautiful.",
-    },
-    {
-      imgSrc: "/images/kitchen/ravenna-kitchen-1.jpg",
-      imgAlt: "",
-      headline: "Kitchen Remodeling",
-      subheadline:
-        "Kitchens built for daily life—better flow, smarter storage, and finishes that stay beautiful.",
-    },
-  ],
-};
+const actions = [
+  {
+    title: "Indoor",
+    description: "Submit vacation or PTO requests.",
+    href: "#interior-services",
+    icon: "fa-solid fa-paint-roller",
+  },
+  {
+    title: "Exterior",
+    description: "Review your benefits coverage.",
+    href: "#expansion-services",
+    icon: "fa-solid fa-trowel-bricks",
+  },
+  {
+    title: "Outdoor Living",
+    description: "Meet with your manager.",
+    href: "#outdoor-living-services",
+    icon: "fa-solid fa-archway",
+  },
+  {
+    title: "AUD / Expansion",
+    description:
+      "Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.",
+    href: "#expansion-services",
+    icon: "fa-solid fa-house-chimney",
+  },
+];
 ---
 
 <Layout title="Bathroom Remodeling in Seattle | S&S Construction">
-  <ServiceFlipHeader />
-
+  <CenteredWithBgImage />
+  <ActionGrid items={actions} />
   <ServiceList
+    className="pt-12"
+    id="interior-services"
     services={interiorCategory.services}
     category={interiorCategory.category}
     cta={interiorCategory.cta}
     ctaHref={interiorCategory.ctaHref}
   />
 
-  <CallToAction />
+  <ServiceCTA category="interior" />
 
+  <ServiceList
+    id="expansion-services"
+    services={expansionCategory.services}
+    category={expansionCategory.category}
+    cta={expansionCategory.cta}
+    ctaHref={expansionCategory.ctaHref}
+  />
+
+  <ServiceCTA category="expansion" />
+
+  <ServiceList
+    id="outdoor-living-services"
+    services={outdoorCategory.services}
+    category={outdoorCategory.category}
+    cta={outdoorCategory.cta}
+    ctaHref={outdoorCategory.ctaHref}
+  />
+  <ServiceCTA category="outdoor" />
+
+  <ServiceAreas />
   <ServiceFooter />
 </Layout>

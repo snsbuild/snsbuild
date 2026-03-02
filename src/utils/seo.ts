@@ -1,3 +1,5 @@
+import type { ServicePerformedItem } from "../data/portfolio";
+
 const SITE = "https://sns.build";
 const BUSINESS_NAME = "Saddle and Spur Construction";
 const SERVICE_AREA = "Greater Seattle / King County";
@@ -54,22 +56,33 @@ export type ServicePageInput = BaseSeoInput & {
 export type PortfolioPageInput = BaseSeoInput & {
   pageType: "portfolio";
   project: {
-    name: string; // can be same as title
-    serviceName?: string; // e.g. "Bathroom Remodeling"
-    location?: { neighborhood?: string; city?: string; region?: string };
+    name: string;
+
+    /** The service this supports (what you want to rank) */
+    serviceName: string;          // e.g. "Bathroom Remodeling"
+    servicePath?: string;         // e.g. "/services/bathroom-remodeling-seattle"
+
+    location: {
+      neighborhood: string;
+      city: string;              // default "Seattle"
+    };
+
+    completionDate: string;      // "2025-11" or "2025-11-10"
+    duration: string;            // "3 weeks"
+
+    servicesPerformed: ServicePerformedItem[];
+    materials: string[];
+    problem: string;
+    solution: string;
+    results: string[];
+
     reviews?: Array<{ authorName: string; rating: number; quote: string }>;
   };
-};
 
-export type BlogPageInput = BaseSeoInput & {
-  pageType: "blog";
-  post: {
-    headline: string; // usually same as title
-    authorName?: string; // defaults to business
-    section?: string; // category
-  };
+  /** OPTIONAL: portfolio-specific FAQs (keep project-specific, not generic) */
   faqs?: Array<{ question: string; answer: string }>;
 };
+
 
 export type MarketingPageInput = BaseSeoInput & {
   pageType: "marketing";
@@ -77,7 +90,7 @@ export type MarketingPageInput = BaseSeoInput & {
   faqs?: Array<{ question: string; answer: string }>;
 };
 
-export type SeoInput = ServicePageInput | PortfolioPageInput | BlogPageInput | MarketingPageInput;
+export type SeoInput = ServicePageInput | PortfolioPageInput | MarketingPageInput;
 
 /** ---------- Utilities ---------- */
 
@@ -190,7 +203,50 @@ function buildServiceGraph(canonical: string, input: ServicePageInput, primaryIm
 
 function buildPortfolioGraph(canonical: string, input: PortfolioPageInput, primaryImage?: string) {
   const images = toImageUrls(input.images);
+  const hasFaq = (input.faqs?.length ?? 0) > 0;
 
+  // --- Place (Seattle + neighborhood) ---
+  const city = input.project.location?.city ?? "Seattle";
+  const region = "WA";
+  const neighborhood = input.project.location?.neighborhood;
+
+  const placeNode =
+    neighborhood || city || region
+      ? {
+        "@type": "Place",
+        "@id": `${canonical}#place`,
+        name: neighborhood ? `${neighborhood}, ${city}, ${region}` : `${city}, ${region}`,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: city,
+          addressRegion: region,
+          addressCountry: "US",
+        },
+      }
+      : undefined;
+
+  // --- Service (the money keyword target) ---
+  const serviceCanonical = input.project.servicePath ? absUrl(input.project.servicePath) : undefined;
+
+  const serviceNode = {
+    "@type": "Service",
+    "@id": `${canonical}#service`,
+    name: input.project.serviceName,
+    serviceType: input.project.serviceName,
+    areaServed: [SERVICE_AREA],
+    provider: { "@id": `${SITE}#business` },
+
+    // If you know the service landing page, connect it (nice for clustering)
+    subjectOf: serviceCanonical ? { "@id": `${serviceCanonical}#webpage` } : undefined,
+  };
+
+  // --- WebPage ---
+  const webPageNode = {
+    ...buildWebPageNode(canonical, input, primaryImage),
+    about: { "@id": `${canonical}#service` },
+  };
+
+  // --- Case study story (Article) ---
   const articleNode = {
     "@type": "Article",
     "@id": `${canonical}#article`,
@@ -201,19 +257,35 @@ function buildPortfolioGraph(canonical: string, input: PortfolioPageInput, prima
     keywords: input.keywords?.join(", "),
     author: { "@id": `${SITE}#business` },
     publisher: { "@id": `${SITE}#business` },
+
+    // publishing
     datePublished: input.datePublished,
     dateModified: input.dateModified ?? input.datePublished,
+
+    // connect story to service + place
+    about: [{ "@id": `${canonical}#service` }],
+    contentLocation: placeNode ? { "@id": `${canonical}#place` } : undefined,
   };
 
-  // Reviews (pragmatic container)
+  // --- The “work” itself as CreativeWork (better than Product for contractors) ---
+  const workNode = {
+    "@type": "CreativeWork",
+    "@id": `${canonical}#work`,
+    name: input.project.name,
+    description: input.description,
+    creator: { "@id": `${SITE}#business` },
+    provider: { "@id": `${SITE}#business` },
+    about: { "@id": `${canonical}#service` },
+    locationCreated: placeNode ? { "@id": `${canonical}#place` } : undefined,
+    image: images,
+    dateCreated: input.project.completionDate ?? input.datePublished,
+  };
+
+  // --- Reviews on the work node ---
   const reviews = input.project.reviews ?? [];
-  const reviewNode =
+  const reviewProps =
     reviews.length > 0
       ? {
-        "@type": "Product",
-        "@id": `${canonical}#work`,
-        name: `${input.project.serviceName ?? "Project"} Work`,
-        brand: { "@id": `${SITE}#business` },
         review: reviews.map((r, idx) => ({
           "@type": "Review",
           "@id": `${canonical}#review-${idx + 1}`,
@@ -224,45 +296,30 @@ function buildPortfolioGraph(canonical: string, input: PortfolioPageInput, prima
       }
       : undefined;
 
-  const breadcrumbsNode = {
-    "@type": "BreadcrumbList",
-    "@id": `${canonical}#breadcrumbs`,
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: SITE },
-      { "@type": "ListItem", position: 2, name: "Portfolio", item: `${SITE}/portfolio` },
-      { "@type": "ListItem", position: 3, name: input.title, item: canonical },
-    ],
-  };
+  const workNodeWithReviews = { ...workNode, ...reviewProps };
 
-  const webPageNode = {
-    ...buildWebPageNode(canonical, input, primaryImage),
-    mainEntity: { "@id": `${canonical}#article` },
-  };
+  // --- Optional: services performed as a small ItemList (useful & reusable in layout) ---
+  const servicesPerformedNode =
+    input.project.servicesPerformed?.length
+      ? {
+        "@type": "ItemList",
+        "@id": `${canonical}#services-performed`,
+        name: "Services performed",
+        itemListElement: input.project.servicesPerformed.map((s, idx) => ({
+          "@type": "ListItem",
+          position: idx + 1,
+          name: s.name,
+          item: {
+            "@type": "Service",
+            name: s.name,
+            description: s.description,
+            provider: { "@id": `${SITE}#business` },
+          },
+        })),
+      }
+      : undefined;
 
-  return [webPageNode, articleNode, breadcrumbsNode, reviewNode];
-}
-
-function buildBlogGraph(canonical: string, input: BlogPageInput, primaryImage?: string) {
-  const images = toImageUrls(input.images);
-  const hasFaq = (input.faqs?.length ?? 0) > 0;
-
-  const blogPostingNode = {
-    "@type": "BlogPosting",
-    "@id": `${canonical}#post`,
-    mainEntityOfPage: { "@id": `${canonical}#webpage` },
-    headline: input.post.headline ?? input.title,
-    description: input.description,
-    image: images,
-    keywords: input.keywords?.join(", "),
-    author: input.post.authorName
-      ? { "@type": "Person", name: input.post.authorName }
-      : { "@id": `${SITE}#business` },
-    publisher: { "@id": `${SITE}#business` },
-    datePublished: input.datePublished,
-    dateModified: input.dateModified ?? input.datePublished,
-    articleSection: input.post.section,
-  };
-
+  // --- FAQ (project-specific only) ---
   const faqNode = hasFaq
     ? {
       "@type": "FAQPage",
@@ -275,22 +332,34 @@ function buildBlogGraph(canonical: string, input: BlogPageInput, primaryImage?: 
     }
     : undefined;
 
+  // --- Breadcrumbs ---
   const breadcrumbsNode = {
     "@type": "BreadcrumbList",
     "@id": `${canonical}#breadcrumbs`,
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: SITE },
-      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE}/blog` },
+      { "@type": "ListItem", position: 2, name: "Portfolio", item: `${SITE}/portfolio` },
       { "@type": "ListItem", position: 3, name: input.title, item: canonical },
     ],
   };
 
-  const webPageNode = {
-    ...buildWebPageNode(canonical, input, primaryImage),
-    mainEntity: { "@id": `${canonical}#post` },
+  // Optional: connect webpage mainEntity to work (the “thing”), and article as story
+  const webPageNodeLinked = {
+    ...webPageNode,
+    mainEntity: { "@id": `${canonical}#work` },
+    subjectOf: { "@id": `${canonical}#article` },
   };
 
-  return [webPageNode, blogPostingNode, breadcrumbsNode, faqNode];
+  return [
+    webPageNodeLinked,
+    placeNode,
+    serviceNode,
+    workNodeWithReviews,
+    servicesPerformedNode,
+    articleNode,
+    breadcrumbsNode,
+    faqNode,
+  ];
 }
 
 function buildMarketingGraph(canonical: string, input: MarketingPageInput, primaryImage?: string) {
@@ -332,7 +401,7 @@ export function buildSeo(input: SeoInput): SeoResult {
     title: input.title,
     description: input.description,
     url: canonical,
-    type: input.ogType ?? (input.pageType === "portfolio" || input.pageType === "blog" ? "article" : "website"),
+    type: input.ogType,
     image: primaryOgImage,
   };
 
@@ -345,9 +414,7 @@ export function buildSeo(input: SeoInput): SeoResult {
       ? buildServiceGraph(canonical, input, primaryOgImage)
       : input.pageType === "portfolio"
         ? buildPortfolioGraph(canonical, input, primaryOgImage)
-        : input.pageType === "blog"
-          ? buildBlogGraph(canonical, input, primaryOgImage)
-          : buildMarketingGraph(canonical, input, primaryOgImage);
+        : buildMarketingGraph(canonical, input, primaryOgImage);
 
   const jsonLd = stripUndefinedDeep({
     "@context": "https://schema.org",

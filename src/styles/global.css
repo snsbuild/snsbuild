@@ -3,3 +3,7 @@
 @theme {
     --font-header: "Playfair Display SC", serif;
 }
+
+html {
+    scroll-behavior: smooth;
+}

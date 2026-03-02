@@ -23,14 +23,20 @@ export interface Testimonial {
   quote: string;
 }
 
-export interface PreviousWork {
+export interface FeaturedTestimonial extends Testimonial {
+  link: string;
+}
+
+export interface Portfolio {
   id: string;
   title: string;
   body: string;
+  serviceId: string;
   imgSrc: string;
   link: string;
   tags: string[];
   blurb: string;
+  featuredTestimonial: FeaturedTestimonial;
   meta: {
     title: string;
     description: string;
@@ -40,13 +46,12 @@ export interface PreviousWork {
   };
   hero: {
     eyebrow: string;
-    headline: string;
-    subheadline: string;
-    imageAlt: string;
-    bullets: string[];
+    header: string;
+    description: string;
     ctaPrimary: { label: string; href: string };
     ctaSecondary: { label: string; href: string };
   };
+  bullets: string[];
   testimonials: Testimonial[];
   schema: Record<string, any>;
 }

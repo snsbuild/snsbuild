@@ -1,6 +1,6 @@
 import type { APIRoute } from "astro";
-import { servicePages } from "../data/services";
-import { portfolioProjects } from "../data/portfolio-projects";
+import { servicePages } from "../data/services/show";
+import { portfolio } from "../data/portfolio";
 
 const SITE = "https://sns.build";
 
@@ -16,7 +16,7 @@ export const GET: APIRoute = () => {
     ];
 
     const serviceUrls = servicePages.map((s) => s.slug);
-    const portfolioUrls = portfolioProjects.map((p) => p.url);
+    const portfolioUrls = portfolio.map((p) => p.path);
 
     const allUrls = [...staticPages, ...serviceUrls, ...portfolioUrls];
 
