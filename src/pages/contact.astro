@@ -4,11 +4,26 @@ import RequestEstimate from "../components/RequestEstimate.astro";
 import ProcessTimeline from "../components/ProcessTimeline.astro";
 import Faq from "../components/Faq.astro";
 import ServiceAreas from "../components/ServiceAreas.astro";
+
+const faqs = [
+  {
+    question: "",
+    answer: "",
+  },
+  {
+    question: "",
+    answer: "",
+  },
+  {
+    question: "",
+    answer: "",
+  },
+];
 ---
 
 <Layout title="Request Estimate | S&S Construction">
-    <RequestEstimate className="pb-12" />
-    <ProcessTimeline />
-    <ServiceAreas />
-    <Faq />
+  <RequestEstimate className="pb-12" />
+  <ProcessTimeline />
+  <ServiceAreas />
+  <Faq faqs={faqs} />
 </Layout>

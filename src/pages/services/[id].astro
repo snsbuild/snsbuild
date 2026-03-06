@@ -1,10 +1,9 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { servicePages } from "../../data/services/show";
-import { buildSeo } from "../../utils/seo";
+import { kitchenRemodel } from "../../data/interior/kitchen-remodel";
+import { buildSeoFrom } from "../../seo";
 import ServiceFooter from "../../components/ServiceFooter.astro";
 import CallToAction from "../../components/CallToAction.astro";
-import { markup, portfolio } from "../../data/portfolio";
 import ImageMosaic from "../../components/service/ImageMosaic.astro";
 import Faq from "../../components/Faq.astro";
 import ProcessTimeline from "../../components/ProcessTimeline.astro";
@@ -14,242 +13,61 @@ import ServiceShowHero from "../../components/hero/ServiceShowHero.astro";
 import ServiceAreas from "../../components/ServiceAreas.astro";
 
 export async function getStaticPaths() {
-    return servicePages.map((s) => ({ params: { id: s.id } }));
+  return [{ params: { id: kitchenRemodel.id } }];
 }
 
 const { id } = Astro.params;
-const sp = servicePages.find((s) => s.id === id)!;
+const page = kitchenRemodel;
 
-const seo = buildSeo({
-    pageType: "service",
-    path: sp.slug,
-    title: sp.seo.title,
-    description: sp.seo.description,
-    keywords: sp.seo.keywords,
-    ogImage: sp.ogImage,
-    service: {
-        name: sp.service.name,
-        serviceType: sp.service.serviceType,
-        areaServed: sp.service.areaServed,
-        subServices: sp.subServices,
-    },
-    faqs: sp.faqs,
-});
+const {
+  show: {
+    eyebrow,
+    header,
+    subheader,
+    description,
+    galleryImages,
+    subServices,
+    faqs,
+    featuredTestimonial,
+    relatedPortfolio,
+  },
+} = page;
 
-const featuredTestimonial = markup.find((page) => (page.id = id))?.testimonial;
-
-const galleryImages = [
-    {
-        src: "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-secondary-product-shot.jpg",
-        alt: "Two each of gray, white, and black shirts laying flat.",
-    },
-    {
-        src: "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg",
-        alt: "Model wearing plain black basic tee.",
-    },
-    {
-        src: "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg",
-        alt: "Model wearing plain gray basic tee.",
-    },
-    {
-        src: "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-featured-product-shot.jpg",
-        alt: "Model wearing plain white basic tee.",
-    },
-];
-
-const faqs = [
-    {
-        question: "Do you offer free estimates?",
-        answer: "Yes—call or use the form and we'll schedule a visit.",
-    },
-    {
-        question: "Are you licensed and insured?",
-        answer: "Yes. We're fully licensed and insured.",
-    },
-    {
-        question: "Do you offer free estimates?",
-        answer: "Yes—call or use the form and we'll schedule a visit.",
-    },
-    {
-        question: "Are you licensed and insured?",
-        answer: "Yes. We're fully licensed and insured.",
-    },
-    {
-        question: "Do you offer free estimates?",
-        answer: "Yes—call or use the form and we'll schedule a visit.",
-    },
-    {
-        question: "Are you licensed and insured?",
-        answer: "Yes. We're fully licensed and insured.",
-    },
-];
-
-const services = [
-    {
-        title: "Full bathroom remodels",
-        description:
-            "Complete tear-outs and rebuilds that update layout, finishes, and functionality from top to bottom.",
-    },
-    {
-        title: "Small bathroom renovations",
-        description:
-            "Smart upgrades designed to make compact bathrooms feel more open, efficient, and comfortable.",
-    },
-    {
-        title: "Full bathroom remodels",
-        description:
-            "Complete tear-outs and rebuilds that update layout, finishes, and functionality from top to bottom.",
-    },
-    {
-        title: "Small bathroom renovations",
-        description:
-            "Smart upgrades designed to make compact bathrooms feel more open, efficient, and comfortable.",
-    },
-    {
-        title: "Full bathroom remodels",
-        description:
-            "Complete tear-outs and rebuilds that update layout, finishes, and functionality from top to bottom.",
-    },
-    {
-        title: "Small bathroom renovations",
-        description:
-            "Smart upgrades designed to make compact bathrooms feel more open, efficient, and comfortable.",
-    },
-    {
-        title: "Full bathroom remodels",
-        description:
-            "Complete tear-outs and rebuilds that update layout, finishes, and functionality from top to bottom.",
-    },
-    {
-        title: "Small bathroom renovations",
-        description:
-            "Smart upgrades designed to make compact bathrooms feel more open, efficient, and comfortable.",
-    },
-];
-
-const hero = {
-    eyebrow:
-        "For homes and condos across Seattle — from functional updates to full renovations.",
-    header: "High-quality bathroom remodel",
-    subheader:
-        "If your bathroom feels outdated, cramped, or poorly laid out, a remodel can dramatically improve comfort, function, and resale value.",
-    description:
-        " We specialize in small to mid-size bathroom remodels throughout Seattle, including condos, townhomes, and older homes that require careful planning and clean execution. We handle the entire process — design coordination, permits, construction, and final walkthrough — so you get a smooth experience and a bathroom that lasts.",
-    testimonial: featuredTestimonial,
-};
-
-const subServices = {
-    kicker: "Bathroom Remodeling Services We Offer",
-    heading: "Services we've done for other homes and condos across Seattle",
-    subheading: "— from functional updates to full renovations.",
-    primaryCta: {
-        label: "Free Estimate",
-        href: "/contact",
-        variant: "primary",
-    },
-    secondaryCta: {
-        label: "More Services",
-        href: "/services",
-        variant: "link",
-    },
-    services: services,
-};
-
-const bentoGrid = {
-    kicker: "Featured",
-    heading: "Previous Bathroom Remodel Projects",
-    cards: [
-        {
-            imageSrc: "/images/bathroom/queen-anne-bath-1.jpg",
-            eyebrow: "Ballard condo bathroom remodel",
-            title: "Outdated tub replaced with a full tile shower",
-            description:
-                "This condo bathroom felt dark and cramped... maximized space without changing the footprint.",
-            imageClass: "object-left",
-        },
-        {
-            imageSrc: "/images/bathroom/bellevue-bath-1.jpg",
-            eyebrow: "Queen Anne home bathroom remodel",
-            title: "Small bathroom, smarter layout",
-            description:
-                "An older home bathroom with limited space... keeping the original character intact.",
-            imageClass: "object-left lg:object-right",
-        },
-        {
-            imageSrc: "/images/bathroom/w-seattle-bath-1.jpg",
-            eyebrow: "Capitol Hill condo bathroom renovation",
-            title: "HOA-approved condo remodel with modern finishes",
-            description:
-                "This project required coordination with building rules... minimal disruption to the building.",
-            imageClass: "object-left",
-        },
-        {
-            imageSrc: "/images/bathroom/pinehurst-bath-1.jpg",
-            eyebrow: "Green Lake primary bathroom remodel",
-            title: "From dated and worn to clean and modern",
-            description:
-                "The original bathroom showed signs of water damage... low-maintenance finish.",
-        },
-        {
-            imageSrc: "/images/bathroom/ravenna-bath-3.jpg",
-            eyebrow: "West Seattle bathroom remodel",
-            title: "Functional upgrade for a busy household",
-            description:
-                "This bathroom needed to handle daily use... balances style with everyday practicality.",
-        },
-    ],
-};
+const seo = buildSeoFrom(page);
 ---
 
-<Layout
-    title={seo.openGraph.title}
-    description={seo.openGraph.description}
-    canonical={seo.canonical}
-    openGraph={seo.openGraph}
-    jsonLd={seo.jsonLd}
->
-    <div class="relative isolate overflow-hidden bg-white py-16">
-        <div
-            aria-hidden="true"
-            class="absolute -top-80 left-[max(6rem,33%)] -z-10 transform-gpu blur-3xl sm:left-1/2 md:top-20 lg:ml-20 xl:top-3 xl:ml-56"
-        >
-            <div
-                style="clip-path: polygon(63.1% 29.6%, 100% 17.2%, 76.7% 3.1%, 48.4% 0.1%, 44.6% 4.8%, 54.5% 25.4%, 59.8% 49.1%, 55.3% 57.9%, 44.5% 57.3%, 27.8% 48%, 35.1% 81.6%, 0% 97.8%, 39.3% 100%, 35.3% 81.5%, 97.2% 52.8%, 63.1% 29.6%)"
-                class="aspect-801/1036 w-200.25 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
-            >
-            </div>
-        </div>
+<Layout {...seo}>
+  <div class="relative isolate overflow-hidden bg-white py-16">
+    <ServiceShowHero
+      eyebrow={eyebrow}
+      header={header}
+      subheader={subheader}
+      description={description}
+      testimonial={featuredTestimonial}
+    />
 
-        <ServiceShowHero
-            eyebrow={hero.eyebrow}
-            header={hero.header}
-            subheader={hero.subheader}
-            description={hero.description}
-            testimonial={featuredTestimonial}
-        />
+    <ImageMosaic images={galleryImages} />
 
-        <ImageMosaic images={galleryImages} />
+    <SubServiceFeatures
+      eyebrow={subServices.eyebrow}
+      heading={subServices.heading}
+      byline={subServices.byline}
+      primaryCta={subServices.primaryCta}
+      secondaryCta={subServices.secondaryCta}
+      services={subServices.services}
+    />
 
-        <SubServiceFeatures
-            kicker={subServices.kicker}
-            heading={subServices.heading}
-            subheading={subServices.subheading}
-            primaryCta={subServices.primaryCta}
-            secondaryCta={subServices.secondaryCta}
-            services={services}
-        />
+    <CallToAction />
 
-        <CallToAction />
+    <BentoGrid
+      eyebrow={relatedPortfolio.eyebrow}
+      heading={relatedPortfolio.heading}
+      cards={relatedPortfolio.cards}
+    />
+  </div>
 
-        <BentoGrid
-            kicker={bentoGrid.kicker}
-            heading={bentoGrid.heading}
-            cards={bentoGrid.cards}
-        />
-    </div>
-
-    <ProcessTimeline />
-    <ServiceAreas />
-    <Faq faqs={faqs} />
-    <ServiceFooter />
+  <ProcessTimeline />
+  <ServiceAreas />
+  <Faq faqs={faqs} />
+  <ServiceFooter />
 </Layout>

@@ -1,27 +1,30 @@
 ---
-// src/pages/portfolio/[id].astro
 import Layout from "../../layouts/Layout.astro";
-import { portfolio, markup } from "../../data/portfolio";
-import { buildSeo } from "../../utils/seo";
-
 import PortfolioHero from "../../components/portfolio/PortfolioHero.astro";
 import PortfolioStory from "../../components/portfolio/PortfolioStory.astro";
 import PortfolioServicesPerformed from "../../components/portfolio/PortfolioServicesPerformed.astro";
-import PortfolioGallery from "../../components/portfolio/PortfolioGallery.astro";
 import PortfolioTestimonial from "../../components/portfolio/PortfolioTestimonial.astro";
-import PortfolioFaq from "../../components/portfolio/PortfolioFaq.astro";
 import PortfolioCta from "../../components/portfolio/PortfolioCta.astro";
 import PortfolioRelatedProjects from "../../components/portfolio/PortfolioRelatedProjects.astro";
 import CallToAction from "../../components/CallToAction.astro";
 import PortfolioOverview from "../../components/portfolio/PortfolioOverview.astro";
+import { buildSeoFrom } from "../../seo";
+import { portfolio } from "../../data";
+import Faq from "../../components/Faq.astro";
+import ImageMosaic from "../../components/service/ImageMosaic.astro";
 
 export async function getStaticPaths() {
-    return portfolio.map((p) => ({ params: { id: p.id } }));
+  return portfolio.map((p) => ({ params: { id: p.id } }));
 }
 
 const { id } = Astro.params;
 const page = portfolio.find((p) => p.id === id)!;
+const seo = buildSeoFrom(page);
+
 const {
+  name,
+  description,
+  show: {
     hero,
     overview,
     highlights,
@@ -32,37 +35,30 @@ const {
     cta,
     related,
     servicesPerformed,
-} = markup.find((m) => m.id === id)!;
-
-const seo = buildSeo(page);
+  },
+} = page;
 ---
 
 <Layout {...seo}>
-    <PortfolioHero page={page} markup={hero} />
-    <PortfolioOverview
-        highlights={highlights}
-        overview={overview}
-        className="py-32"
-    />
-    <PortfolioTestimonial testimonial={testimonial} />
+  <PortfolioHero hero={hero} name={name} description={description} />
+  <PortfolioOverview
+    highlights={highlights}
+    overview={overview}
+    className="py-32"
+  />
+  <PortfolioTestimonial testimonial={testimonial} />
 
-    <PortfolioStory story={story} />
-    <PortfolioGallery gallery={gallery} />
-    <CallToAction />
-    <PortfolioServicesPerformed
-        eyebrow="What we did"
-        title="Services performed on this job"
-        intro={servicesPerformed.intro}
-        items={servicesPerformed.items}
-    />
+  <PortfolioStory story={story} />
+  <ImageMosaic images={gallery.images} />
+  <CallToAction />
+  <PortfolioServicesPerformed
+    eyebrow="What we did"
+    title="Services performed on this job"
+    intro={servicesPerformed.intro}
+    items={servicesPerformed.items}
+  />
 
-    {(faqs?.length ?? 0) > 0 && <PortfolioFaq faqs={faqs!} />}
-
-    <PortfolioCta cta={cta} />
-
-    {
-        (related?.length ?? 0) > 0 && (
-            <PortfolioRelatedProjects related={related!} />
-        )
-    }
+  <Faq faqs={faqs!} />
+  <PortfolioCta cta={cta} />
+  <PortfolioRelatedProjects related={related!} />
 </Layout>

@@ -1,16 +1,39 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { buildSeoFrom } from "../seo";
 import { phoneDisplay, phoneHref } from "../siteConfig";
-import { buildSeo } from "../utils/seo";
+import type { MarketingPage } from "../types/entity-types";
 
-const seo = buildSeo({
-  pageType: "marketing",
+export const aboutPage: MarketingPage = {
+  kind: "marketing",
   path: "/about",
-  title: "About Saddle and Spur Construction | Seattle Remodeling Contractor",
-  description:
-    "Learn about Saddle and Spur Construction, a licensed Seattle general contractor specializing in kitchen remodels, bathrooms, additions, and custom builds.",
-  ogImage: { src: "/images/og/about.jpg" },
-});
+  seo: {
+    title: "About Saddle and Spur Construction | Seattle General Contractor",
+    description:
+      "Meet Saddle and Spur Construction — a Seattle-area general contractor focused on clear scopes, quality craftsmanship, and predictable timelines.",
+    keywords: [
+      "about saddle and spur construction",
+      "seattle general contractor",
+    ],
+    ogImage: {
+      src: "/images/og/about.jpg",
+      alt: "Saddle and Spur Construction team",
+    },
+    images: [{ src: "/images/about/team.jpg", alt: "Team on site" }],
+  },
+  faqs: [
+    {
+      question: "Where do you work?",
+      answer: "We serve Greater Seattle and King County.",
+    },
+    {
+      question: "What types of projects do you take?",
+      answer: "Kitchens, bathrooms, additions, and whole-home remodels.",
+    },
+  ],
+};
+
+const seo = buildSeoFrom(aboutPage);
 ---
 
 <Layout

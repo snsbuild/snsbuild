@@ -1,34 +1,18 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { portfolio, type PortfolioEntry } from "../../data/portfolio";
-import { buildSeo } from "../../utils/seo";
 import FormSelect from "../../components/FormSelect.astro";
 import FormSearch from "../../components/FormSearch.astro";
-import ProcessTimeline from "../../components/ProcessTimeline.astro";
 import ServiceFooter from "../../components/ServiceFooter.astro";
 import ServiceAreas from "../../components/ServiceAreas.astro";
-
-const seo = buildSeo({
-  pageType: "marketing",
-  path: "/portfolio",
-  title: "Portfolio | Saddle and Spur Construction",
-  description:
-    "Explore recent remodeling projects across Seattle and King County—bathrooms, kitchens, and more. See photos, scope, and results.",
-  ogType: "website",
-  ogImage: {
-    src: "/images/og/portfolio.jpg",
-    alt: "Saddle and Spur Construction portfolio",
-  },
-});
-
-const items = [...portfolio].sort((a, b) =>
-  (b.datePublished ?? "").localeCompare(a.datePublished ?? ""),
-);
+import { portfolio, portfolioIndex } from "../../data";
+import { buildSeoFrom } from "../../seo";
 
 const uniq = (arr: string[]) => Array.from(new Set(arr.filter(Boolean)));
 
-const serviceOptions = uniq(items.map((p) => p.project.serviceName));
-const areaOptions = uniq(items.map((p) => p.project.location.neighborhood));
+const serviceOptions = uniq(portfolio.map((p) => p.seo.project.serviceName));
+const areaOptions = uniq(
+  portfolio.map((p) => p.seo.project.location.neighborhood),
+);
 
 const slugify = (s: string) =>
   s
@@ -41,11 +25,7 @@ const slugify = (s: string) =>
 const serviceToSlug = new Map(serviceOptions.map((s) => [s, slugify(s)]));
 const areaToSlug = new Map(areaOptions.map((s) => [s, slugify(s)]));
 
-// optional: nice label fallback
-const getCover = (p: PortfolioEntry) =>
-  p.ogImage?.src ?? p.images?.[0]?.src ?? "/images/og/portfolio.jpg";
-const getAlt = (p: PortfolioEntry) =>
-  p.ogImage?.alt ?? p.images?.[0]?.alt ?? p.title;
+const seo = buildSeoFrom(portfolioIndex);
 ---
 
 <Layout {...seo}>
@@ -107,35 +87,41 @@ const getAlt = (p: PortfolioEntry) =>
         class="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-3"
       >
         {
-          items.map((p) => {
-            const href = p.path; // or `/portfolio/${p.id}` if you use id route
-            const img = getCover(p);
-            const alt = getAlt(p);
+          portfolio.map((p) => {
+            const {
+              seo: {
+                title,
+                description,
+                keywords,
+                project: {
+                  name,
+                  serviceName,
+                  servicesPerformed,
+                  location: { city, neighborhood },
+                  materials,
+                  testimonial,
+                },
+              },
+              index: { card },
+            } = p;
 
-            const serviceSlug = serviceToSlug.get(p.project.serviceName) ?? "";
-            const areaLabel = p.project.location?.neighborhood ?? "";
-            const areaSlug = areaToSlug.get(areaLabel) ?? "";
+            const serviceSlug = serviceToSlug.get(serviceName);
+            const areaSlug = areaToSlug.get(neighborhood);
             const searchable = [
-              p.project.name,
-              p.title,
-              p.description,
-              p.project.serviceName,
-              areaLabel,
-              p.project.location?.city,
-              ...(p.keywords ?? []),
-              ...(p.project.servicesPerformed?.map((s) => s.name) ?? []),
-              ...(p.project.servicesPerformed?.map(
-                (s) => s.description ?? "",
-              ) ?? []),
-              ...(p.project.materials ?? []),
+              name,
+              title,
+              description,
+              serviceName,
+              neighborhood,
+              city,
+              ...keywords,
+              ...servicesPerformed?.map((s) => s.name),
+              ...servicesPerformed?.map((s) => s.description),
+              ...materials,
             ]
               .filter(Boolean)
               .join(" ")
               .toLowerCase();
-
-            // testimonial snippet (optional)
-            const r = p.project.reviews?.[0];
-            const rating = r?.rating ?? 5;
 
             return (
               <article
@@ -144,11 +130,11 @@ const getAlt = (p: PortfolioEntry) =>
                 data-area={areaSlug}
                 data-search={searchable}
               >
-                <a href={href} class="group block">
+                <a href={card.href} class="group block">
                   <div class="relative w-full">
                     <img
-                      src={img}
-                      alt={alt}
+                      src={card.image.src}
+                      alt={card.image.alt}
                       class="aspect-video w-full rounded-2xl bg-gray-100 object-fill sm:aspect-2/1 lg:aspect-3/2"
                       loading="lazy"
                     />
@@ -157,45 +143,40 @@ const getAlt = (p: PortfolioEntry) =>
 
                   <div class="mt-6 flex items-center gap-x-3 text-xs">
                     <span class="rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 ring-1 ring-inset ring-gray-900/5">
-                      {p.project.serviceName}
+                      {serviceName}
                     </span>
-
-                    {areaLabel && (
-                      <span class="text-gray-500">{areaLabel}</span>
-                    )}
+                    <span class="text-gray-500">{neighborhood}</span>
                   </div>
 
                   <h2 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                    {p.project.name}
+                    {name}
                   </h2>
 
                   <p class="mt-3 line-clamp-3 text-sm leading-6 text-gray-600">
-                    {p.description}
+                    {description}
                   </p>
                 </a>
 
                 <div class="mt-6">
-                  {r ? (
-                    <div>
-                      <p class="text-sm text-gray-700 line-clamp-2">
-                        <span class="mr-2 text-amber-500" aria-hidden="true">
-                          {"★".repeat(
-                            Math.max(0, Math.min(5, Math.round(rating))),
-                          )}
-                        </span>
-                        <span class="sr-only">{rating} out of 5 stars.</span>“
-                        {r.quote}”
-                      </p>
-                      <p class="mt-2 text-xs text-gray-500">— {r.authorName}</p>
-                    </div>
-                  ) : (
-                    <a
-                      href={href}
-                      class="inline-flex items-center rounded-full bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-500"
-                    >
-                      View case study
-                    </a>
-                  )}
+                  <div>
+                    <p class="text-sm text-gray-700 line-clamp-2">
+                      <span class="mr-2 text-amber-500" aria-hidden="true">
+                        {"★".repeat(
+                          Math.max(
+                            0,
+                            Math.min(5, Math.round(testimonial.rating)),
+                          ),
+                        )}
+                      </span>
+                      <span class="sr-only">
+                        {testimonial.rating} out of 5 stars.
+                      </span>
+                      “{testimonial.quote}”
+                    </p>
+                    <p class="mt-2 text-xs text-gray-500">
+                      — {testimonial.author}
+                    </p>
+                  </div>
                 </div>
               </article>
             );

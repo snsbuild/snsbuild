@@ -8,11 +8,10 @@ import HomeFeatures from "../components/home/HomeFeatures.astro";
 import RequestEstimate from "../components/RequestEstimate.astro";
 import TestimonialCloud from "../components/TestimonialCloud.astro";
 import ServiceList from "../components/ServiceList.astro";
-
-import { getCoreServices } from "../data/services/index";
+import { homePageFeaturedServices } from "../data";
 import ServiceAreas from "../components/ServiceAreas.astro";
 
-const coreServices = getCoreServices();
+const homeFeatured = homePageFeaturedServices();
 ---
 
 <Layout title="Saddle & Spur Construction">
@@ -22,7 +21,7 @@ const coreServices = getCoreServices();
 
   <section id="services-gallery" class="bg-gray-50 py-32">
     <ServiceList
-      services={coreServices}
+      cards={homeFeatured}
       category="Featured Services"
       cta="Find the Right Service"
       ctaHref="/services"

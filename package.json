@@ -12,7 +12,7 @@
     "@tailwindcss/vite": "^4.1.18",
     "@tailwindplus/elements": "^1.0.22",
     "astro": "^5.17.1",
-    "es-toolkit": "^1.44.0",
+    "es-toolkit": "^1.45.0",
     "replaceme": "^0.1.1",
     "tailwindcss": "^4.1.18"
   }

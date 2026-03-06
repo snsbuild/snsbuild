@@ -1,55 +1,250 @@
 ---
-interface ServiceCard {
-    imgSrc: string;
-    imgAlt: string;
-    ctaHref: string;
-    headline: string;
-    subheadline: string;
-    id: string;
+import type { ImageRef } from "../types/content-types";
+import type { PortfolioIndexCard } from "../types/entity-types";
+
+interface Props {
+  category: string;
+  ctaHref: string;
+  cta: string;
+  className?: string;
+  primary: PortfolioIndexCard;
+  secondary: PortfolioIndexCard;
+  tertiary: PortfolioIndexCard;
+  id: string;
 }
-const { services, category, cta, ctaHref, className, id } = Astro.props;
+
+const { category, cta, ctaHref, primary, secondary, tertiary, className, id } =
+  Astro.props;
 ---
 
-<div class:list={["mx-auto max-w-7xl px-6 lg:px-8", className]}>
+<div class:list={["bg-gray-50", className]} id={id}>
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
     <div class="sm:flex sm:items-baseline sm:justify-between">
-        <h2
-            class="text-2xl font-bold tracking-tight text-gray-900 scroll-mt-32"
-            id={id}
-        >
-            {category}
-        </h2>
-        <a
-            href={ctaHref}
-            class="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block"
-        >
-            {cta}
-            <span aria-hidden="true"> &rarr;</span>
-        </a>
+      <h2 class="text-2xl font-bold tracking-tight text-gray-900">
+        {category}
+      </h2>
+
+      <a
+        href={ctaHref}
+        class="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block"
+      >
+        {cta}
+        <span aria-hidden="true"> &rarr;</span>
+      </a>
     </div>
 
-    <div class="mx-auto flex max-w-7xl flex-wrap justify-center gap-8 mt-10">
-        {
-            services.map((s: ServiceCard) => (
-                <article class="relative isolate flex w-full flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pt-80 pb-8 sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] sm:pt-48 lg:pt-80">
-                    <img
-                        src={s.imgSrc}
-                        alt={s.imgAlt}
-                        class="absolute inset-0 -z-10 size-full object-cover"
-                    />
-                    <div class="absolute inset-0 -z-10 bg-linear-to-t from-gray-900 via-gray-400/40 to-transparent" />
-                    <div class="absolute inset-0 -z-10 rounded-2xl inset-ring inset-ring-gray-900/10" />
+    <div
+      class="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:grid-rows-2 sm:gap-x-6 lg:gap-8"
+    >
+      <!-- Primary -->
+      <div
+        class="group relative overflow-hidden rounded-lg aspect-2/1 sm:row-span-2 sm:aspect-square"
+      >
+        <img
+          src={primary.image.src}
+          alt={primary.image.alt}
+          class="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-75"
+          loading="lazy"
+        />
 
-                    <h3 class="mt-3 text-lg/6 font-semibold text-white">
-                        <a href={s.ctaHref}>
-                            <span class="absolute inset-0" />
-                            {s.headline}
-                        </a>
-                    </h3>
-                    <div class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm/6 text-gray-300">
-                        <p class="text-white-600">{s.subheadline}</p>
-                    </div>
-                </article>
-            ))
-        }
+        <div
+          aria-hidden="true"
+          class="absolute inset-0 bg-linear-to-b from-transparent to-black opacity-50"
+        >
+        </div>
+
+        <div class="absolute inset-0 flex items-end p-6">
+          <div>
+            <h3 class="font-semibold text-white">
+              <a href={primary.href ?? "#"}>
+                <span class="absolute inset-0"></span>
+                {primary.title}
+              </a>
+            </h3>
+
+            <p aria-hidden="true" class="mt-1 text-sm text-white">
+              {primary.description}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Secondary -->
+      <div
+        class="group relative overflow-hidden rounded-lg aspect-2/1 sm:aspect-auto"
+      >
+        <img
+          src={secondary.image.src}
+          alt={secondary.image.alt}
+          class="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-75"
+          loading="lazy"
+        />
+
+        <div
+          aria-hidden="true"
+          class="absolute inset-0 bg-linear-to-b from-transparent to-black opacity-50"
+        >
+        </div>
+
+        <div class="absolute inset-0 flex items-end p-6">
+          <div>
+            <h3 class="font-semibold text-white">
+              <a href={secondary.href ?? "#"}>
+                <span class="absolute inset-0"></span>
+                {secondary.title}
+              </a>
+            </h3>
+
+            <p aria-hidden="true" class="mt-1 text-sm text-white">
+              {secondary.description}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tertiary -->
+      <div
+        class="group relative overflow-hidden rounded-lg aspect-2/1 sm:aspect-auto"
+      >
+        <img
+          src={tertiary.image.src}
+          alt={tertiary.image.alt}
+          class="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-75"
+          loading="lazy"
+        />
+
+        <div
+          aria-hidden="true"
+          class="absolute inset-0 bg-linear-to-b from-transparent to-black opacity-50"
+        >
+        </div>
+
+        <div class="absolute inset-0 flex items-end p-6">
+          <div>
+            <h3 class="font-semibold text-white">
+              <a href={tertiary.href ?? "#"}>
+                <span class="absolute inset-0"></span>
+                {tertiary.title}
+              </a>
+            </h3>
+            <p aria-hidden="true" class="mt-1 text-sm text-white">
+              {tertiary.description}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <div
+      class="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:grid-rows-2 sm:gap-x-6 lg:gap-8"
+    >
+      <!-- Primary -->
+      <div
+        class="group relative overflow-hidden rounded-lg aspect-2/1 sm:row-span-2 sm:aspect-square"
+      >
+        <img
+          src={primary.image.src}
+          alt={primary.image.alt}
+          class="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-75"
+          loading="lazy"
+        />
+
+        <div
+          aria-hidden="true"
+          class="absolute inset-0 bg-linear-to-b from-transparent to-black opacity-50"
+        >
+        </div>
+
+        <div class="absolute inset-0 flex items-end p-6">
+          <div>
+            <h3 class="font-semibold text-white">
+              <a href={primary.href ?? "#"}>
+                <span class="absolute inset-0"></span>
+                {primary.title}
+              </a>
+            </h3>
+
+            <p aria-hidden="true" class="mt-1 text-sm text-white">
+              {primary.description}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Secondary -->
+      <div
+        class="group relative overflow-hidden rounded-lg aspect-2/1 sm:aspect-auto"
+      >
+        <img
+          src={secondary.image.src}
+          alt={secondary.image.alt}
+          class="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-75"
+          loading="lazy"
+        />
+
+        <div
+          aria-hidden="true"
+          class="absolute inset-0 bg-linear-to-b from-transparent to-black opacity-50"
+        >
+        </div>
+
+        <div class="absolute inset-0 flex items-end p-6">
+          <div>
+            <h3 class="font-semibold text-white">
+              <a href={secondary.href ?? "#"}>
+                <span class="absolute inset-0"></span>
+                {secondary.title}
+              </a>
+            </h3>
+
+            <p aria-hidden="true" class="mt-1 text-sm text-white">
+              {secondary.description}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tertiary -->
+      <div
+        class="group relative overflow-hidden rounded-lg aspect-2/1 sm:aspect-auto"
+      >
+        <img
+          src={tertiary.image.src}
+          alt={tertiary.image.alt}
+          class="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-75"
+          loading="lazy"
+        />
+
+        <div
+          aria-hidden="true"
+          class="absolute inset-0 bg-linear-to-b from-transparent to-black opacity-50"
+        >
+        </div>
+
+        <div class="absolute inset-0 flex items-end p-6">
+          <div>
+            <h3 class="font-semibold text-white">
+              <a href={tertiary.href ?? "#"}>
+                <span class="absolute inset-0"></span>
+                {tertiary.title}
+              </a>
+            </h3>
+            <p aria-hidden="true" class="mt-1 text-sm text-white">
+              {tertiary.description}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-6 sm:hidden">
+      <a
+        href={ctaHref}
+        class="block text-sm font-semibold text-indigo-600 hover:text-indigo-500"
+      >
+        {cta}
+        <span aria-hidden="true"> &rarr;</span>
+      </a>
+    </div>
+  </div>
 </div>

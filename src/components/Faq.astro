@@ -1,119 +1,120 @@
 ---
-type FAQ = { question: string; answer: string };
-const faqs = [
-    {
-        question: "What types of projects do you specialize in?",
-        answer: "We specialize in home renovations and small to medium-sized residential construction projects throughout the Seattle area. This includes kitchen and bathroom remodels, interior upgrades, basement finishing, home repairs, exterior improvements, and custom renovation work designed to improve both function and value.",
-    },
-    {
-        question: "What areas do you serve?",
-        answer: "We serve homeowners across Seattle and surrounding communities, including Bellevue, Shoreline, Kirkland, Renton, West Seattle, Ballard, and nearby neighborhoods. If you're unsure whether you're within our service area, feel free to reach out — we're happy to help.",
-    },
-    {
-        question: "Are you licensed and insured?",
-        answer: "Yes. We are fully licensed, bonded, and insured in Washington State. We carry liability insurance and work in compliance with local building codes and permitting requirements to protect your home and your investment.",
-    },
-    {
-        question: "Do you handle permits and inspections?",
-        answer: "Yes. We manage the permitting process when required and coordinate inspections with local jurisdictions. Seattle permitting can be complex, and we help guide projects through the process as smoothly as possible.",
-    },
-    {
-        question: "How do I get started?",
-        answer: "The process begins with a consultation. We’ll discuss your goals, timeline, and budget, then evaluate the space and provide recommendations. After that, we develop a project scope and estimate so you can make informed decisions.",
-    },
-    {
-        question: "Do you offer free estimates?",
-        answer: "We typically provide an initial consultation at no cost. For larger or more detailed renovation planning that requires extensive design or site evaluation, a planning fee may apply — which is often credited toward the project if you move forward with us.",
-    },
-    {
-        question: "How long will my renovation take?",
-        answer: "Project timelines vary depending on scope, permitting requirements, material availability, and design complexity. Smaller projects may take a few days to a few weeks, while full renovations can take several months. We provide a projected schedule before construction begins.",
-    },
-    {
-        question: "Will I need to move out during construction?",
-        answer: "Not always. Many projects can be completed while homeowners remain in the home. For larger renovations involving kitchens, multiple rooms, or major structural work, temporary relocation may be more comfortable. We’ll discuss expectations upfront.",
-    },
-    {
-        question: "How much does a renovation cost?",
-        answer: "Costs vary widely depending on size, materials, and complexity. During the planning phase, we help align project scope with your budget and provide transparent pricing so there are no surprises.",
-    },
-    {
-        question: "Do you work with budgets?",
-        answer: "Yes. We believe successful projects start with honest budget conversations. We help prioritize improvements and suggest options that balance quality, durability, and cost.",
-    },
-    {
-        question: "How are payments structured?",
-        answer: "Payments are typically scheduled in phases tied to project milestones. This ensures transparency and allows you to see progress as work is completed.",
-    },
-    {
-        question: "Who will be working on my home?",
-        answer: "Our projects are completed by experienced professionals, including trusted subcontractors and skilled tradespeople. All work is coordinated and overseen by our team to maintain quality and accountability.",
-    },
-    {
-        question: "How will we communicate during the project?",
-        answer: "We provide regular updates and maintain clear communication throughout construction. You’ll know who to contact with questions, and we keep you informed about progress, scheduling, and any decisions that arise.",
-    },
-    {
-        question: "What happens if changes are needed during construction?",
-        answer: "Changes happen — and we handle them through a clear change-order process. Any adjustments to scope, pricing, or timeline are discussed and approved before additional work begins.",
-    },
-    {
-        question: "Do you offer a warranty on your work?",
-        answer: "Yes. We stand behind our craftsmanship and provide a workmanship warranty on completed projects. Specific warranty details are outlined in your project agreement.",
-    },
-    {
-        question: "How do you protect my home during construction?",
-        answer: "We take steps to minimize disruption by protecting floors, controlling dust where possible, and maintaining a clean and safe work environment throughout the project.",
-    },
-    {
-        question: "Can you help with design decisions?",
-        answer: "Yes. We assist homeowners with layout ideas, material selections, and practical design choices that work well for Seattle homes and lifestyles.",
-    },
-    {
-        question: "Can I supply my own materials?",
-        answer: "In many cases, yes. We’re happy to coordinate with homeowner-supplied materials as long as timelines and specifications are clear to avoid delays.",
-    },
-    {
-        question: "How far out are you booking projects?",
-        answer: "Scheduling varies depending on project size and season. We recommend reaching out early — especially during spring and summer — to secure a spot on the schedule.",
-    },
-    {
-        question: "How do I request a quote?",
-        answer: "You can contact us through our website form, email, or phone. Tell us a little about your project, and we’ll schedule the next steps.",
-    },
-];
+import type { FAQ } from "../data/services";
 
-const { title = "Frequently asked questions", bgClass = "bg-white" } =
-    Astro.props as {
-        faqs: FAQ[];
-        title?: string;
-        bgClass?: string;
-    };
+
+// const faqs = [
+//     {
+//         question: "What types of projects do you specialize in?",
+//         answer: "We specialize in home renovations and small to medium-sized residential construction projects throughout the Seattle area. This includes kitchen and bathroom remodels, interior upgrades, basement finishing, home repairs, exterior improvements, and custom renovation work designed to improve both function and value.",
+//     },
+//     {
+//         question: "What areas do you serve?",
+//         answer: "We serve homeowners across Seattle and surrounding communities, including Bellevue, Shoreline, Kirkland, Renton, West Seattle, Ballard, and nearby neighborhoods. If you're unsure whether you're within our service area, feel free to reach out — we're happy to help.",
+//     },
+//     {
+//         question: "Are you licensed and insured?",
+//         answer: "Yes. We are fully licensed, bonded, and insured in Washington State. We carry liability insurance and work in compliance with local building codes and permitting requirements to protect your home and your investment.",
+//     },
+//     {
+//         question: "Do you handle permits and inspections?",
+//         answer: "Yes. We manage the permitting process when required and coordinate inspections with local jurisdictions. Seattle permitting can be complex, and we help guide projects through the process as smoothly as possible.",
+//     },
+//     {
+//         question: "How do I get started?",
+//         answer: "The process begins with a consultation. We’ll discuss your goals, timeline, and budget, then evaluate the space and provide recommendations. After that, we develop a project scope and estimate so you can make informed decisions.",
+//     },
+//     {
+//         question: "Do you offer free estimates?",
+//         answer: "We typically provide an initial consultation at no cost. For larger or more detailed renovation planning that requires extensive design or site evaluation, a planning fee may apply — which is often credited toward the project if you move forward with us.",
+//     },
+//     {
+//         question: "How long will my renovation take?",
+//         answer: "Project timelines vary depending on scope, permitting requirements, material availability, and design complexity. Smaller projects may take a few days to a few weeks, while full renovations can take several months. We provide a projected schedule before construction begins.",
+//     },
+//     {
+//         question: "Will I need to move out during construction?",
+//         answer: "Not always. Many projects can be completed while homeowners remain in the home. For larger renovations involving kitchens, multiple rooms, or major structural work, temporary relocation may be more comfortable. We’ll discuss expectations upfront.",
+//     },
+//     {
+//         question: "How much does a renovation cost?",
+//         answer: "Costs vary widely depending on size, materials, and complexity. During the planning phase, we help align project scope with your budget and provide transparent pricing so there are no surprises.",
+//     },
+//     {
+//         question: "Do you work with budgets?",
+//         answer: "Yes. We believe successful projects start with honest budget conversations. We help prioritize improvements and suggest options that balance quality, durability, and cost.",
+//     },
+//     {
+//         question: "How are payments structured?",
+//         answer: "Payments are typically scheduled in phases tied to project milestones. This ensures transparency and allows you to see progress as work is completed.",
+//     },
+//     {
+//         question: "Who will be working on my home?",
+//         answer: "Our projects are completed by experienced professionals, including trusted subcontractors and skilled tradespeople. All work is coordinated and overseen by our team to maintain quality and accountability.",
+//     },
+//     {
+//         question: "How will we communicate during the project?",
+//         answer: "We provide regular updates and maintain clear communication throughout construction. You’ll know who to contact with questions, and we keep you informed about progress, scheduling, and any decisions that arise.",
+//     },
+//     {
+//         question: "What happens if changes are needed during construction?",
+//         answer: "Changes happen — and we handle them through a clear change-order process. Any adjustments to scope, pricing, or timeline are discussed and approved before additional work begins.",
+//     },
+//     {
+//         question: "Do you offer a warranty on your work?",
+//         answer: "Yes. We stand behind our craftsmanship and provide a workmanship warranty on completed projects. Specific warranty details are outlined in your project agreement.",
+//     },
+//     {
+//         question: "How do you protect my home during construction?",
+//         answer: "We take steps to minimize disruption by protecting floors, controlling dust where possible, and maintaining a clean and safe work environment throughout the project.",
+//     },
+//     {
+//         question: "Can you help with design decisions?",
+//         answer: "Yes. We assist homeowners with layout ideas, material selections, and practical design choices that work well for Seattle homes and lifestyles.",
+//     },
+//     {
+//         question: "Can I supply my own materials?",
+//         answer: "In many cases, yes. We’re happy to coordinate with homeowner-supplied materials as long as timelines and specifications are clear to avoid delays.",
+//     },
+//     {
+//         question: "How far out are you booking projects?",
+//         answer: "Scheduling varies depending on project size and season. We recommend reaching out early — especially during spring and summer — to secure a spot on the schedule.",
+//     },
+//     {
+//         question: "How do I request a quote?",
+//         answer: "You can contact us through our website form, email, or phone. Tell us a little about your project, and we’ll schedule the next steps.",
+//     },
+// ];
+
+const {
+  title = "Frequently asked questions",
+  bgClass = "bg-white",
+  faqs,
+} = Astro.props as {
+  faqs: FAQ[];
+  title?: string;
+  bgClass?: string;
+};
 ---
 
 <div class:list={[bgClass, "py-12"]}>
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <h2
-            class="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl"
-        >
-            {title}
-        </h2>
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <h2 class="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+      {title}
+    </h2>
 
-        <dl class="mt-20 divide-y divide-gray-900/10">
-            {
-                faqs.map((faq) => (
-                    <div class="py-8 first:pt-0 last:pb-0 lg:grid lg:grid-cols-12 lg:gap-8">
-                        <dt class="text-base/7 font-semibold text-gray-900 lg:col-span-5">
-                            {faq.question}
-                        </dt>
-                        <dd class="mt-4 lg:col-span-7 lg:mt-0">
-                            <p class="text-base/7 text-gray-600">
-                                {faq.answer}
-                            </p>
-                        </dd>
-                    </div>
-                ))
-            }
-        </dl>
-    </div>
+    <dl class="mt-20 divide-y divide-gray-900/10">
+      {
+        faqs.map((faq) => (
+          <div class="py-8 first:pt-0 last:pb-0 lg:grid lg:grid-cols-12 lg:gap-8">
+            <dt class="text-base/7 font-semibold text-gray-900 lg:col-span-5">
+              {faq.question}
+            </dt>
+            <dd class="mt-4 lg:col-span-7 lg:mt-0">
+              <p class="text-base/7 text-gray-600">{faq.answer}</p>
+            </dd>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
 </div>

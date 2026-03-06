@@ -4,75 +4,62 @@ import ServiceFooter from "../../components/ServiceFooter.astro";
 import ServiceList from "../../components/ServiceList.astro";
 import CenteredWithBgImage from "../../components/header/CenteredWithBgImage.astro";
 import ServiceCTA from "../../components/ServiceCTA.astro";
-import {
-  expansionCategory,
-  interiorCategory,
-  outdoorCategory,
-} from "../../data/services";
 import ActionGrid from "../../components/ActionGrid.astro";
 import ServiceAreas from "../../components/ServiceAreas.astro";
+
+import { buildSeoFrom } from "../../seo";
+import { filterByCategory, servicesIndex } from "../../data";
+import { ServiceCategory } from "../../types/entity-types";
 
 const actions = [
   {
     title: "Indoor",
-    description: "Submit vacation or PTO requests.",
+    description: "Kitchen, bath, and interior remodels.",
     href: "#interior-services",
     icon: "fa-solid fa-paint-roller",
   },
   {
     title: "Exterior",
-    description: "Review your benefits coverage.",
+    description: "Siding, windows, and exterior upgrades.",
     href: "#expansion-services",
     icon: "fa-solid fa-trowel-bricks",
   },
   {
     title: "Outdoor Living",
-    description: "Meet with your manager.",
+    description: "Decks, patios, and outdoor spaces.",
     href: "#outdoor-living-services",
     icon: "fa-solid fa-archway",
   },
   {
     title: "AUD / Expansion",
-    description:
-      "Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.",
+    description: "Accessory dwelling units and home expansions.",
     href: "#expansion-services",
     icon: "fa-solid fa-house-chimney",
   },
 ];
+
+const seo = buildSeoFrom(servicesIndex);
+
+const interiorCards = filterByCategory(ServiceCategory.Interior);
 ---
 
-<Layout title="Bathroom Remodeling in Seattle | S&S Construction">
+<Layout {...seo}>
   <CenteredWithBgImage />
-  <ActionGrid items={actions} />
+
+  <!-- <ActionGrid items={actions} /> -->
+
   <ServiceList
     className="pt-12"
     id="interior-services"
-    services={interiorCategory.services}
-    category={interiorCategory.category}
-    cta={interiorCategory.cta}
-    ctaHref={interiorCategory.ctaHref}
+    category={"Interior Services"}
+    primary={interiorCards[0]}
+    secondary={interiorCards[0]}
+    tertiary={interiorCards[0]}
+    cta={"Take a look at a kitchen we remodeled in Ballard"}
+    ctaHref={"/portfolio/kitchen-remodel-ballard-seattle"}
   />
 
   <ServiceCTA category="interior" />
-
-  <ServiceList
-    id="expansion-services"
-    services={expansionCategory.services}
-    category={expansionCategory.category}
-    cta={expansionCategory.cta}
-    ctaHref={expansionCategory.ctaHref}
-  />
-
-  <ServiceCTA category="expansion" />
-
-  <ServiceList
-    id="outdoor-living-services"
-    services={outdoorCategory.services}
-    category={outdoorCategory.category}
-    cta={outdoorCategory.cta}
-    ctaHref={outdoorCategory.ctaHref}
-  />
-  <ServiceCTA category="outdoor" />
 
   <ServiceAreas />
   <ServiceFooter />

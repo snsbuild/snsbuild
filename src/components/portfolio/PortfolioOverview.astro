@@ -1,69 +1,92 @@
 ---
-import type { PortfolioMarkup } from "../../data/portfolio";
+import type { PortfolioEntry, PortfolioShow } from "../../data/portfolio";
 
 type Props = {
-    highlights: string[];
-    className?: string;
-    overview: PortfolioMarkup["overview"];
+  highlights: string[];
+  className?: string;
+  overview: PortfolioEntry["show"]["overview"];
 };
 
 const { highlights, className, overview: o } = Astro.props;
 if (!highlights?.length) return null;
 ---
 
-<section class:list={["mx-auto max-w-5xl", className]}>
-    <div class="grid gap-12 lg:grid-cols-2">
-        <div>
-            <h2 class="text-2xl font-semibold mb-4">Overview</h2>
-            <div class="grid gap-4 sm:grid-cols-2 pt-6">
-                <div class="flex gap-3">
-                    <i class="fa-solid fa-location-dot text-indigo-600 mt-1"
-                    ></i>
-                    <div>
-                        <p class="text-sm text-gray-500">Location</p>
-                        <p class="font-semibold">{o.locationLabel}</p>
-                    </div>
-                </div>
+<section class:list={["mx-auto max-w-5xl px-6 lg:px-7", className]}>
+  {
+    /* Center the 2-col block itself instead of letting it stretch edge-to-edge */
+  }
+  <div class="mx-auto max-w-4xl">
+    <div class="grid gap-10 lg:grid-cols-2 lg:gap-14">
+      {/* Overview */}
+      <div class="sm:px-6 md:pl-0">
+        <h2 class="text-2xl font-semibold">Overview</h2>
 
-                <div class="flex gap-3">
-                    <i class="fa-solid fa-calendar text-indigo-600 mt-1"></i>
-                    <div>
-                        <p class="text-sm text-gray-500">Timeline</p>
-                        <p class="font-semibold">{o.timelineLabel}</p>
-                    </div>
-                </div>
-                <div class="flex gap-3">
-                    <i
-                        class="fa-solid fa-screwdriver-wrench text-indigo-600 mt-1"
-                    ></i>
-                    <div>
-                        <p class="text-sm text-gray-500">Scope</p>
-                        <p class="font-semibold">{o.scopeLabel}</p>
-                    </div>
-                </div>
-                <div class="flex gap-3">
-                    <i class="fa-solid fa-calendar-check text-indigo-600 mt-1"
-                    ></i>
-                    <div>
-                        <p class="text-sm text-gray-500">Completed</p>
-                        <p class="font-semibold">{o.completedLabel}</p>
-                    </div>
-                </div>
+        {/* Use a vertical stack by default; only go 2-up on larger screens */}
+        <dl class="mt-6 grid gap-4 md:grid-cols-2">
+          <div class="rounded-xl border border-gray-200 bg-white p-4">
+            <div class="flex gap-3 p-3">
+              <i class="fa-solid fa-location-dot text-indigo-600 mt-0.5"></i>
+              <div>
+                <dt class="text-sm text-gray-500">Location</dt>
+                <dd class="font-semibold text-gray-900 pt-2">
+                  {o.locationLabel}
+                </dd>
+              </div>
             </div>
-        </div>
+          </div>
 
-        <div>
-            <h2 class="text-2xl font-semibold mb-4">Highlights</h2>
-            <ul class="space-y-4 pt-6">
-                {
-                    highlights.map((h) => (
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-check text-indigo-600 mt-1" />
-                            <span class="text-gray-700">{h}</span>
-                        </li>
-                    ))
-                }
-            </ul>
-        </div>
+          <div class="rounded-xl border border-gray-200 bg-white p-4">
+            <div class="flex gap-3 p-3">
+              <i class="fa-solid fa-calendar text-indigo-600 mt-0.5"></i>
+              <div>
+                <dt class="text-sm text-gray-500">Timeline</dt>
+                <dd class="font-semibold text-gray-900 pt-2">
+                  {o.timelineLabel}
+                </dd>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-xl border border-gray-200 bg-white p-4">
+            <div class="flex gap-3 p-3">
+              <i class="fa-solid fa-screwdriver-wrench text-indigo-600 mt-0.5"
+              ></i>
+              <div>
+                <dt class="text-sm text-gray-500">Scope</dt>
+                <dd class="font-semibold text-gray-900 pt-2">{o.scopeLabel}</dd>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-xl border border-gray-200 bg-white p-4">
+            <div class="flex gap-3 p-3">
+              <i class="fa-solid fa-calendar-check text-indigo-600 mt-0.5"></i>
+              <div>
+                <dt class="text-sm text-gray-500">Completed</dt>
+                <dd class="font-semibold text-gray-900 pt-2">
+                  {o.completedLabel}
+                </dd>
+              </div>
+            </div>
+          </div>
+        </dl>
+      </div>
+
+      {/* Highlights */}
+      <div class="pl-6 md:pl-0">
+        <h2 class="text-2xl font-semibold">Highlights</h2>
+
+        <ul class="mt-6 grid gap-4 sm:grid-cols-2">
+          {
+            highlights.map((h) => (
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-indigo-600 mt-0.5" />
+                <span class="text-gray-700 leading-relaxed">{h}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
     </div>
+  </div>
 </section>
