@@ -1,0 +1,102 @@
+---
+import { phoneHref } from "../../siteConfig";
+---
+
+<!-- Customer Service -->
+<div class="bg-gray-50">
+  <div class="mx-auto max-w-7xl py-24 sm:px-2 sm:py-32 lg:px-4">
+    <div class="mx-auto max-w-2xl px-4 lg:max-w-none">
+      <div
+        class="grid grid-cols-1 items-center gap-x-16 gap-y-10 lg:grid-cols-2"
+      >
+        <div>
+          <h2 class="text-4xl font-bold tracking-tight text-gray-900">
+            We built our business on clear communication and quality work
+          </h2>
+          <p class="mt-4 text-gray-500">
+            Home remodeling works best when expectations are clear and
+            communication is consistent. We focus on being responsive,
+            transparent about scope and pricing, and respectful of your home
+            from start to finish — so there are no surprises along the way.
+          </p>
+        </div>
+        <img
+          src="/images/spiral-ceiling.jpg"
+          alt=""
+          class="aspect-3/2 w-full rounded-lg bg-gray-100 object-cover"
+        />
+      </div>
+      <div class="mt-16 grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
+        <div class="sm:flex lg:block">
+          <div class="sm:shrink-0">
+            <i class="fa-solid fa-magnifying-glass-dollar text-6xl"></i>
+          </div>
+          <div class="mt-4 sm:mt-0 sm:ml-6 lg:mt-6 lg:ml-0">
+            <h3 class="text-sm font-medium text-gray-900">
+              Clear, upfront estimates
+            </h3>
+            <p class="mt-2 text-sm text-gray-500">
+              You'll receive a detailed estimate that outlines scope, materials,
+              and next steps, so you know exactly what to expect before work
+              begins.
+            </p>
+          </div>
+        </div>
+        <div class="sm:flex lg:block">
+          <div class="sm:shrink-0">
+            <i class="fa-solid fa-award text-6xl"></i>
+          </div>
+          <div class="mt-4 sm:mt-0 sm:ml-6 lg:mt-6 lg:ml-0">
+            <h3 class="text-sm font-medium text-gray-900">
+              Licensed, insured, and code-compliant
+            </h3>
+            <p class="mt-2 text-sm text-gray-500">
+              All work is performed by a licensed and insured general contractor
+              and built to meet current codes and local requirements.
+            </p>
+          </div>
+        </div>
+        <div class="sm:flex lg:block">
+          <div class="sm:shrink-0">
+            <i class="fa-solid fa-hand-sparkles text-6xl"></i>
+          </div>
+          <div class="mt-4 sm:mt-0 sm:ml-6 lg:mt-6 lg:ml-0">
+            <h3 class="text-sm font-medium text-gray-900">
+              Clean, professional job sites
+            </h3>
+            <p class="mt-2 text-sm text-gray-500">
+              We work in occupied homes and condos and take care to keep the
+              site organized, safe, and respectful of your space.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA 2 -->
+<section class="bg-linear-to-r from-indigo-700 to-indigo-900 text-white py-20">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">
+      Seattle's Trusted Residential Contractor
+    </h1>
+    <p class="text-xl mb-8 text-indigo-100">
+      Your No-Nonsense Partner in Exceptional Construction. Licensed & Insured.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        href="/contact"
+        class="px-6 py-3 bg-white text-indigo-700 font-bold rounded hover:bg-gray-100 transition"
+      >
+        Request Estimate
+      </a>
+      <a
+        href={`tel:${phoneHref}`}
+        class="px-6 py-3 border-2 border-white text-white font-bold rounded hover:bg-white hover:text-indigo-700 transition"
+      >
+        Call Now
+      </a>
+    </div>
+  </div>
+</section>

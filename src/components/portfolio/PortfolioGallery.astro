@@ -1,81 +1,30 @@
 ---
-// src/components/portfolio/PortfolioGallery.astro
-import type { PortfolioMarkup } from "../../data/portfolio";
+type Img = { src: string; alt?: string };
 
-type Props = { gallery: PortfolioMarkup["gallery"] };
-const { gallery } = Astro.props;
+const { images = [] } = Astro.props as { images: Img[] };
 ---
 
-<section class="container section" aria-labelledby="gallery">
-    <h2 id="gallery">Gallery</h2>
-    {gallery.intro && <p class="muted">{gallery.intro}</p>}
-
-    <div class="gallery">
-        {
-            gallery.images.map((img) => (
-                <figure class="item">
-                    <img
-                        src={img.src}
-                        alt={img.alt}
-                        width={img.width ?? 1200}
-                        height={img.height ?? 800}
-                        loading="lazy"
-                    />
-                    {img.caption && <figcaption>{img.caption}</figcaption>}
-                </figure>
-            ))
-        }
-    </div>
-</section>
-
-<style>
-    .container {
-        max-width: 1120px;
-        margin: 0 auto;
-        padding: 0 clamp(16px, 3vw, 28px);
-    }
-    .section {
-        padding: 26px 0;
-        border-top: 1px solid rgba(0, 0, 0, 0.12);
-    }
-    h2 {
-        margin: 0 0 10px;
-        font-size: clamp(20px, 2.2vw, 28px);
-    }
-    .muted {
-        color: rgba(0, 0, 0, 0.65);
-    }
-    .gallery {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px;
-        margin-top: 12px;
-    }
-    @media (max-width: 920px) {
-        .gallery {
-            grid-template-columns: 1fr 1fr;
-        }
-    }
-    @media (max-width: 560px) {
-        .gallery {
-            grid-template-columns: 1fr;
-        }
-    }
-    .item {
-        border: 1px solid rgba(0, 0, 0, 0.12);
-        border-radius: 14px;
-        overflow: hidden;
-        background: #fff;
-        margin: 0;
-    }
-    img {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-    figcaption {
-        padding: 10px 12px;
-        font-size: 0.95rem;
-        color: rgba(0, 0, 0, 0.65);
-    }
-</style>
+<div
+  class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-8 lg:px-8"
+>
+  <img
+    src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-secondary-product-shot.jpg"
+    alt="Two each of gray, white, and black shirts laying flat."
+    class="row-span-2 aspect-3/4 size-full rounded-lg object-cover max-lg:hidden"
+  />
+  <img
+    src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg"
+    alt="Model wearing plain black basic tee."
+    class="col-start-2 aspect-3/2 size-full rounded-lg object-cover max-lg:hidden"
+  />
+  <img
+    src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg"
+    alt="Model wearing plain gray basic tee."
+    class="col-start-2 row-start-2 aspect-3/2 size-full rounded-lg object-cover max-lg:hidden"
+  />
+  <img
+    src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-featured-product-shot.jpg"
+    alt="Model wearing plain white basic tee."
+    class="row-span-2 aspect-4/5 size-full object-cover sm:rounded-lg lg:aspect-3/4"
+  />
+</div>

@@ -1,0 +1,120 @@
+---
+type Card = {
+  imageSrc: string;
+  imageAlt?: string;
+  eyebrow: string;
+  title: string;
+  description: string;
+  imageClass?: string;
+};
+
+const {
+  kicker = "Featured",
+  heading = "Previous Projects",
+  cards = [],
+} = Astro.props as {
+  kicker?: string;
+  heading?: string;
+  cards: Card[];
+};
+
+const shapeForIndex = (i: number) => {
+  switch (i) {
+    case 0:
+      return {
+        wrapper: "relative lg:col-span-3",
+        bg: "absolute inset-0 rounded-lg bg-white max-lg:rounded-t-4xl lg:rounded-tl-4xl",
+        card: "relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)] lg:rounded-tl-[calc(2rem+1px)]",
+        outline:
+          "pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 max-lg:rounded-t-4xl lg:rounded-tl-4xl",
+      };
+    case 1:
+      return {
+        wrapper: "relative lg:col-span-3",
+        bg: "absolute inset-0 rounded-lg bg-white lg:rounded-tr-4xl",
+        card: "relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-tr-[calc(2rem+1px)]",
+        outline:
+          "pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 lg:rounded-tr-4xl",
+      };
+    case 2:
+      return {
+        wrapper: "relative lg:col-span-2",
+        bg: "absolute inset-0 rounded-lg bg-white lg:rounded-bl-4xl",
+        card: "relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-bl-[calc(2rem+1px)]",
+        outline:
+          "pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 lg:rounded-bl-4xl",
+      };
+    case 4: // last card gets bottom rounding on mobile + bottom-right on lg
+      return {
+        wrapper: "relative lg:col-span-2",
+        bg: "absolute inset-0 rounded-lg bg-white max-lg:rounded-b-4xl lg:rounded-br-4xl",
+        card: "relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)]",
+        outline:
+          "pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 max-lg:rounded-b-4xl lg:rounded-br-4xl",
+      };
+    default: // middle small cards
+      return {
+        wrapper: "relative lg:col-span-2",
+        bg: "absolute inset-0 rounded-lg bg-white",
+        card: "relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]",
+        outline:
+          "pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5",
+      };
+  }
+};
+---
+
+<div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+  <h2 class="text-base/7 font-semibold text-indigo-600">{kicker}</h2>
+  <p
+    class="mt-2 max-w-lg text-4xl font-semibold tracking-tight text-pretty text-gray-950 sm:text-5xl"
+  >
+    {heading}
+  </p>
+
+  <div
+    class="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2"
+  >
+    {
+      cards.map((c, i) => {
+        const s = shapeForIndex(i);
+        return (
+          <div class={s.wrapper}>
+            <div class={s.bg} />
+
+            <div class={s.card}>
+              <img
+                src={c.imageSrc}
+                alt={c.imageAlt ?? ""}
+                class={`h-80 w-full object-cover ${c.imageClass ?? ""}`}
+                loading="lazy"
+              />
+              <div class="p-10 pt-4">
+                <h3 class="text-sm/4 font-semibold text-indigo-600">
+                  {c.eyebrow}
+                </h3>
+                <p class="mt-2 text-lg font-medium tracking-tight text-gray-950">
+                  {c.title}
+                </p>
+                <div class="flex items-center justify-between">
+                  <p class="mt-2 max-w-lg text-sm/6 text-gray-600">
+                    {c.description}
+                  </p>
+                  <a
+                    href="/portfolio/ballard-kitchen-refresh"
+                    class="text-sm/6 font-semibold text-indigo-600"
+                  >
+                    Learn more
+                    <i class="fa-solid fa-arrow-right mt-1 text-xs" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class={s.outline} />
+          </div>
+        );
+      })
+    }
+  </div>
+</div>

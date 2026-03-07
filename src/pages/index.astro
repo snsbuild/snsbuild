@@ -6,12 +6,14 @@ import HomeCta from "../components/home/HomeCta.astro";
 import HomeFeatures from "../components/home/HomeFeatures.astro";
 
 import RequestEstimate from "../components/RequestEstimate.astro";
-import TestimonialCloud from "../components/TestimonialCloud.astro";
-import ServiceList from "../components/ServiceList.astro";
+import HomeTestimonialCloud from "../components/home/HomeTestimonialCloud.astro";
+import ServiceList from "../components/service/ServiceList.astro";
 import { homePageFeaturedServices } from "../data";
-import ServiceAreas from "../components/ServiceAreas.astro";
+import ServiceAreas from "../components/service/ServiceAreas.astro";
+import type { PortfolioIndexCard } from "../types/entity-types";
 
 const homeFeatured = homePageFeaturedServices();
+const cards: PortfolioIndexCard[] = [...homeFeatured, ...homeFeatured, ...homeFeatured];
 ---
 
 <Layout title="Saddle & Spur Construction">
@@ -19,17 +21,15 @@ const homeFeatured = homePageFeaturedServices();
   <RequestEstimate />
   <HomeFeatures />
 
-  <section id="services-gallery" class="bg-gray-50 py-32">
-    <ServiceList
-      cards={homeFeatured}
-      category="Featured Services"
-      cta="Find the Right Service"
-      ctaHref="/services"
-    />
-  </section>
+  <ServiceList
+    cards={cards}
+    category="Featured Services"
+    cta="Find the Right Service"
+    ctaHref="/services"
+  />
 
   <ServiceAreas />
 
-  <TestimonialCloud />
+  <HomeTestimonialCloud />
   <HomeCta />
 </Layout>

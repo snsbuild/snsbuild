@@ -9,7 +9,7 @@ export type EntitySeoBase = {
   description: string;
   keywords: string[];
   ogImage: ImageRef;
-  images: ImageRef[];
+  images?: ImageRef[];
   datePublished?: string;
   dateModified?: string;
 };
@@ -26,13 +26,68 @@ export type ServiceIndexCard = {
   image: ImageRef;
 };
 
-export type ServiceShowContent = {
+export interface FeaturedTestimonial extends Testimonial {
+  image: ImageRef;
+}
+
+export type ServicePayload = {
+  name: string;
+  serviceType: string;
+  areaServed: string[];
+  subServices: Array<{ name: string; description?: string }>;
+};
+
+export type ServicePerformedItem = {
+  name: string;
+  description: string;
+  icon: string;
+};
+
+export type ProjectPayload = {
+  serviceName: string;
+  location: { neighborhood: string; city: string };
+  completionDate: string;
+  duration: string;
+  materials: string[];
+  problem: string;
+  solution: string;
+  results: string[];
+  testimonial: Testimonial;
+};
+
+export type PortfolioIndexCard = {
   eyebrow: string;
+  href: string;
+  title: string;
+  description: string;
+  image: ImageRef;
+};
+
+export type EntityBase<TType extends EntityType> = {
+  id: string;
+  type: TType;
+  path: string;
+  name: string;
+  description: string;
+  breadcrumb: string;
+  seo: EntitySeoBase;
+};
+
+export enum ServiceCategory {
+  Interior = "Interior",
+  Expansion = "Expansion",
+  Outdoor = "Outdoor Living",
+}
+
+export type ServiceEntity = EntityBase<"service"> & {
+  category: ServiceCategory;
+  breadcrumb: string;
+  homePageFeatured: boolean;
+  service: ServicePayload;
   header: string;
   subheader: string;
-  description: string;
   galleryImages: ImageRef[];
-  featuredTestimonial: Testimonial;
+  featuredTestimonial: FeaturedTestimonial;
   faqs: FAQ[];
   subServices: {
     eyebrow: string;
@@ -40,7 +95,7 @@ export type ServiceShowContent = {
     byline: string;
     primaryCta: CTA;
     secondaryCta: CTA;
-    services: Array<{ name: string; description: string; icon: string }>;
+    services: Array<{ title: string; description: string; icon: string }>;
   };
   relatedPortfolio: {
     eyebrow: string;
@@ -55,37 +110,13 @@ export type ServiceShowContent = {
   };
 };
 
-export type ServiceSeoPayload = {
-  service: {
-    name: string;
-    serviceType: string;
-    areaServed: string[];
-    subServices: Array<{ name: string; description?: string }>;
-  };
-};
-
-export type ServicePerformedItem = {
-  name: string;
-  description: string;
-  icon: string;
-};
-
-export type PortfolioIndexCard = {
-  eyebrow: string;
-  href: string;
-  title: string;
-  description: string;
-  image: ImageRef;
-};
-
-export type PortfolioShowContent = {
+export type PortfolioEntity = EntityBase<"portfolio"> & {
+  project: ProjectPayload;
   hero: {
-    image: ImageRef;
+    image?: ImageRef;
     eyebrow: string;
-    headline: string;
-    byline: string;
     primaryCta: CTA;
-    secondaryCta: CTA;
+    secondaryCta?: CTA;
   };
   overview: {
     locationLabel: string;
@@ -103,74 +134,22 @@ export type PortfolioShowContent = {
   };
   servicesPerformed: {
     intro: string;
-    items: Array<{ name: string; description: string; icon: string }>;
+    items: ServicePerformedItem[];
   };
   gallery: {
     intro: string;
     images: ImageRef[];
   };
   testimonial: Testimonial;
-  faqs: FAQ[];
+  faqs?: FAQ[];
   cta: {
     heading: string;
     body: string;
     primaryCta: CTA;
     secondaryCta: CTA;
   };
-  related: Array<{ title: string; description: string; href: string }>;
+  related?: Array<{ title: string; description: string; href: string }>;
 };
-
-export type PortfolioSeoPayload = {
-  project: {
-    name: string;
-    serviceName: string;
-    servicePath: string;
-    location: { neighborhood: string; city: string };
-    completionDate: string;
-    duration: string;
-    servicesPerformed: ServicePerformedItem[];
-    materials: string[];
-    problem: string;
-    solution: string;
-    results: string[];
-    testimonial: Testimonial;
-  };
-};
-
-export type EntityBase<TType extends EntityType, TSeoPayload, TCard, TShow> = {
-  id: string;
-  type: TType;
-  path: string;
-  name: string;
-  description: string;
-  seo: EntitySeoBase & TSeoPayload;
-  index: EntityIndexPage<TCard>;
-  show: TShow;
-  related: RelatedEntityRef[];
-};
-
-export enum ServiceCategory {
-  Interior = "Interior",
-  Expansion = "Expansion",
-  Outdoor = "Outdoor Living",
-}
-
-export type ServiceEntity = EntityBase<
-  "service",
-  ServiceSeoPayload,
-  ServiceIndexCard,
-  ServiceShowContent
-> & {
-  category: ServiceCategory;
-  homePageFeatured: boolean;
-};
-
-export type PortfolioEntity = EntityBase<
-  "portfolio",
-  PortfolioSeoPayload,
-  PortfolioIndexCard,
-  PortfolioShowContent
->;
 
 export type Entity = ServiceEntity | PortfolioEntity;
 

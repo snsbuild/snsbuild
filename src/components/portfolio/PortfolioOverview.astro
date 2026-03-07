@@ -1,10 +1,10 @@
 ---
-import type { PortfolioEntry, PortfolioShow } from "../../data/portfolio";
+import type { PortfolioEntity } from "../../types/entity-types";
 
 type Props = {
   highlights: string[];
   className?: string;
-  overview: PortfolioEntry["show"]["overview"];
+  overview: PortfolioEntity["overview"];
 };
 
 const { highlights, className, overview: o } = Astro.props;

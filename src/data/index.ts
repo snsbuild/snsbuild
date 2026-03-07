@@ -1,26 +1,51 @@
-import type { CollectionPage, ServiceCategory } from "../types/entity-types";
+import type {
+  CollectionPage,
+  PortfolioEntity,
+  PortfolioIndexCard,
+  ServiceCategory,
+  ServiceEntity,
+  ServiceIndexCard,
+} from "../types/entity-types";
 import { ballardKitchen, kitchenRemodel } from "./interior/kitchen-remodel";
 
 export const services = [kitchenRemodel];
 
 export const portfolio = [ballardKitchen];
 
-function portfolioIndexCards() {
-  return portfolio.map((p) => p.index.card);
+const portfolioIndexCards = portfolio.map((p) => toPortfolioIndexCards(p));
+
+function toPortfolioIndexCards(p: PortfolioEntity): PortfolioIndexCard {
+  return {
+    eyebrow: p.breadcrumb,
+    title: p.name,
+    href: p.path,
+    description: p.description,
+    image: p.seo.ogImage,
+  };
 }
 
-function serviceIndexCards() {
-  return services.map((p) => p.index.card);
+const serviceIndexCards = services.map((s) => toServiceIndexCard(s));
+
+function toServiceIndexCard(s: ServiceEntity): ServiceIndexCard {
+  return {
+    eyebrow: s.breadcrumb,
+    title: s.name,
+    href: s.path,
+    description: s.description,
+    image: s.seo.ogImage,
+  };
 }
 
 export const filterByCategory = (category: ServiceCategory) => {
   return services
     .filter((s) => s.category == category)
-    .map((s) => s.index.card);
+    .map((s) => toServiceIndexCard(s));
 };
 
 export const homePageFeaturedServices = () => {
-  return services.filter((s) => s.homePageFeatured).map((s) => s.index.card);
+  return services
+    .filter((s) => s.homePageFeatured)
+    .map((s) => toServiceIndexCard(s));
 };
 
 export const servicesIndex: CollectionPage<any> = {
@@ -40,7 +65,7 @@ export const servicesIndex: CollectionPage<any> = {
     byline: "End-to-end remodeling for Seattle homes.",
     primaryCta: { label: "Get a quote", href: "/contact" },
   },
-  cards: serviceIndexCards(),
+  cards: serviceIndexCards,
 };
 
 export const portfolioIndex: CollectionPage<any> = {
@@ -60,5 +85,5 @@ export const portfolioIndex: CollectionPage<any> = {
     byline: "Recent kitchens, baths, and whole-home projects.",
     primaryCta: { label: "Start your project", href: "/contact" },
   },
-  cards: portfolioIndexCards(),
+  cards: portfolioIndexCards,
 };

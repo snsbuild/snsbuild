@@ -4,14 +4,13 @@ import PortfolioHero from "../../components/portfolio/PortfolioHero.astro";
 import PortfolioStory from "../../components/portfolio/PortfolioStory.astro";
 import PortfolioServicesPerformed from "../../components/portfolio/PortfolioServicesPerformed.astro";
 import PortfolioTestimonial from "../../components/portfolio/PortfolioTestimonial.astro";
-import PortfolioCta from "../../components/portfolio/PortfolioCta.astro";
 import PortfolioRelatedProjects from "../../components/portfolio/PortfolioRelatedProjects.astro";
 import CallToAction from "../../components/CallToAction.astro";
 import PortfolioOverview from "../../components/portfolio/PortfolioOverview.astro";
 import { buildSeoFrom } from "../../seo";
 import { portfolio } from "../../data";
 import Faq from "../../components/Faq.astro";
-import ImageMosaic from "../../components/service/ImageMosaic.astro";
+import PortfolioGallery from "../../components/portfolio/PortfolioGallery.astro";
 
 export async function getStaticPaths() {
   return portfolio.map((p) => ({ params: { id: p.id } }));
@@ -24,18 +23,15 @@ const seo = buildSeoFrom(page);
 const {
   name,
   description,
-  show: {
-    hero,
-    overview,
-    highlights,
-    story,
-    gallery,
-    testimonial,
-    faqs,
-    cta,
-    related,
-    servicesPerformed,
-  },
+  hero,
+  overview,
+  highlights,
+  story,
+  gallery,
+  testimonial,
+  faqs,
+  related,
+  servicesPerformed,
 } = page;
 ---
 
@@ -49,7 +45,7 @@ const {
   <PortfolioTestimonial testimonial={testimonial} />
 
   <PortfolioStory story={story} />
-  <ImageMosaic images={gallery.images} />
+  <PortfolioGallery images={gallery.images} />
   <CallToAction />
   <PortfolioServicesPerformed
     eyebrow="What we did"
@@ -59,6 +55,5 @@ const {
   />
 
   <Faq faqs={faqs!} />
-  <PortfolioCta cta={cta} />
   <PortfolioRelatedProjects related={related!} />
 </Layout>

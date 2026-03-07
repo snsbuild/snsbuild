@@ -1,7 +1,6 @@
 ---
-import { sequence } from "astro:middleware";
-import { portfolio, services } from "../data";
-import type { PortfolioEntity, ServiceEntity } from "../types/entity-types";
+import { services } from "../../data";
+import type { ServiceEntity } from "../../types/entity-types";
 
 type CloudCard = {
   path: string;
@@ -17,9 +16,10 @@ const stars = (rating: number) => "★".repeat(Math.max(0, Math.min(5, rating)))
 function buildCards(service: ServiceEntity[]): CloudCard[] {
   return service.map((s) => {
     return {
+      category: s.category,
       name: s.seo.service.name,
       path: s.path,
-      ...s.show.content.featuredTestimonial,
+      ...s.show.featuredTestimonial,
     };
   });
 }

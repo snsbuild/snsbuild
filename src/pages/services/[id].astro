@@ -2,35 +2,32 @@
 import Layout from "../../layouts/Layout.astro";
 import { kitchenRemodel } from "../../data/interior/kitchen-remodel";
 import { buildSeoFrom } from "../../seo";
-import ServiceFooter from "../../components/ServiceFooter.astro";
+import ServiceFooter from "../../components/service/ServiceFooter.astro";
 import CallToAction from "../../components/CallToAction.astro";
-import ImageMosaic from "../../components/service/ImageMosaic.astro";
 import Faq from "../../components/Faq.astro";
 import ProcessTimeline from "../../components/ProcessTimeline.astro";
 import SubServiceFeatures from "../../components/service/SubServiceFeatures.astro";
-import BentoGrid from "../../components/BentoGrid.astro";
-import ServiceShowHero from "../../components/hero/ServiceShowHero.astro";
-import ServiceAreas from "../../components/ServiceAreas.astro";
+import ServiceAreas from "../../components/service/ServiceAreas.astro";
+import ServiceTestimonial from "../../components/service/ServiceTestimonial.astro";
+import ServiceHero from "../../components/service/ServiceHero.astro";
+import ServiceRelatedPortfolio from "../../components/service/ServiceRelatedPortfolio.astro";
 
 export async function getStaticPaths() {
   return [{ params: { id: kitchenRemodel.id } }];
 }
 
-const { id } = Astro.params;
 const page = kitchenRemodel;
 
 const {
-  show: {
-    eyebrow,
-    header,
-    subheader,
-    description,
-    galleryImages,
-    subServices,
-    faqs,
-    featuredTestimonial,
-    relatedPortfolio,
-  },
+  name,
+  description,
+  header,
+  subheader,
+  galleryImages,
+  subServices,
+  faqs,
+  featuredTestimonial,
+  relatedPortfolio,
 } = page;
 
 const seo = buildSeoFrom(page);
@@ -38,15 +35,14 @@ const seo = buildSeoFrom(page);
 
 <Layout {...seo}>
   <div class="relative isolate overflow-hidden bg-white py-16">
-    <ServiceShowHero
-      eyebrow={eyebrow}
+    <ServiceHero
+      eyebrow={name}
       header={header}
       subheader={subheader}
       description={description}
-      testimonial={featuredTestimonial}
+      galleryImages={galleryImages}
     />
-
-    <ImageMosaic images={galleryImages} />
+    <ServiceTestimonial testimonial={featuredTestimonial} />
 
     <SubServiceFeatures
       eyebrow={subServices.eyebrow}
@@ -59,7 +55,7 @@ const seo = buildSeoFrom(page);
 
     <CallToAction />
 
-    <BentoGrid
+    <ServiceRelatedPortfolio
       eyebrow={relatedPortfolio.eyebrow}
       heading={relatedPortfolio.heading}
       cards={relatedPortfolio.cards}

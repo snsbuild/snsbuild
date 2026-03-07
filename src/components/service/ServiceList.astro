@@ -1,0 +1,142 @@
+---
+import type { PortfolioIndexCard } from "../../types/entity-types";
+
+interface Props {
+  id?: string;
+  className?: string;
+  category: string;
+  cta: string;
+  ctaHref: string;
+  cards: PortfolioIndexCard[];
+}
+
+type LayoutItem = {
+  card: PortfolioIndexCard;
+  classes: string;
+};
+
+const { id, className, category, cta, ctaHref, cards = [] } = Astro.props;
+
+if (cards.length === 0) {
+  throw new Error("PortfolioCategoryGrid requires at least one card.");
+}
+
+function buildLayout(cards: PortfolioIndexCard[]): LayoutItem[] {
+  const layout: LayoutItem[] = [];
+  let i = 0;
+
+  while (i < cards.length) {
+    const remaining = cards.length - i;
+
+    if (remaining === 1) {
+      layout.push({
+        card: cards[i],
+        classes: "col-span-1 sm:col-span-2 aspect-[2/1]",
+      });
+      i += 1;
+      continue;
+    }
+
+    if (remaining === 2) {
+      layout.push({
+        card: cards[i],
+        classes: "col-span-1 aspect-[2/1] sm:h-full sm:aspect-auto",
+      });
+      layout.push({
+        card: cards[i + 1],
+        classes: "col-span-1 aspect-[2/1] sm:h-full sm:aspect-auto",
+      });
+      i += 2;
+      continue;
+    }
+
+    layout.push({
+      card: cards[i],
+      classes: "col-span-1 aspect-[2/1] sm:row-span-2 sm:h-full sm:aspect-auto",
+    });
+    layout.push({
+      card: cards[i + 1],
+      classes: "col-span-1 aspect-[2/1] sm:h-full sm:aspect-auto",
+    });
+    layout.push({
+      card: cards[i + 2],
+      classes: "col-span-1 aspect-[2/1] sm:h-full sm:aspect-auto",
+    });
+    i += 3;
+  }
+
+  return layout;
+}
+
+const layoutItems = buildLayout(cards);
+---
+
+<div class:list={["relative isolate bg-white", className]} id={id}>
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+    <div class="sm:flex sm:items-baseline sm:justify-between">
+      <h2 class="text-2xl font-bold tracking-tight text-gray-900">
+        {category}
+      </h2>
+
+      <a
+        href={ctaHref}
+        class="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block"
+      >
+        {cta}
+        <span aria-hidden="true"> &rarr;</span>
+      </a>
+    </div>
+
+    <div
+      class="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:auto-rows-[18rem] sm:gap-x-6 lg:gap-8"
+    >
+      {
+        layoutItems.map(({ card, classes }) => (
+          <div
+            class:list={[
+              "group relative h-full min-h-0 overflow-hidden rounded-lg",
+              classes,
+            ]}
+          >
+            <img
+              src={card.image.src}
+              alt={card.image.alt}
+              class="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-75"
+              loading="lazy"
+            />
+
+            <div
+              aria-hidden="true"
+              class="absolute inset-0 bg-linear-to-b from-transparent to-black opacity-50"
+            />
+
+            <div class="absolute inset-0 flex items-end p-6">
+              <div>
+                <h3 class="font-semibold text-white">
+                  <a href={card.href ?? "#"}>
+                    <span class="absolute inset-0" />
+                    {card.title}
+                  </a>
+                </h3>
+
+                <p aria-hidden="true" class="mt-1 text-sm text-white">
+                  {card.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-6 sm:hidden">
+      <a
+        href={ctaHref}
+        class="block text-sm font-semibold text-indigo-600 hover:text-indigo-500"
+      >
+        {cta}
+        <span aria-hidden="true"> &rarr;</span>
+      </a>
+    </div>
+  </div>
+</div>

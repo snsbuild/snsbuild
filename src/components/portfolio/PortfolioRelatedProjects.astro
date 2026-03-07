@@ -1,8 +1,7 @@
 ---
-// src/components/portfolio/PortfolioRelatedProjects.astro
-import type { PortfolioMarkup } from "../../data/portfolio";
+import type { PortfolioEntity } from "../../types/entity-types";
 
-type Props = { related: NonNullable<PortfolioMarkup["related"]> };
+type Props = { related: NonNullable<PortfolioEntity["related"]> };
 const { related } = Astro.props;
 ---
 

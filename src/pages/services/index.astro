@@ -1,11 +1,11 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import ServiceFooter from "../../components/ServiceFooter.astro";
-import ServiceList from "../../components/ServiceList.astro";
+import ServiceFooter from "../../components/service/ServiceFooter.astro";
+import ServiceList from "../../components/service/ServiceList.astro";
 import CenteredWithBgImage from "../../components/header/CenteredWithBgImage.astro";
-import ServiceCTA from "../../components/ServiceCTA.astro";
+import ServiceCTA from "../../components/service/ServiceCTA.astro";
 import ActionGrid from "../../components/ActionGrid.astro";
-import ServiceAreas from "../../components/ServiceAreas.astro";
+import ServiceAreas from "../../components/service/ServiceAreas.astro";
 
 import { buildSeoFrom } from "../../seo";
 import { filterByCategory, servicesIndex } from "../../data";
@@ -41,20 +41,25 @@ const actions = [
 const seo = buildSeoFrom(servicesIndex);
 
 const interiorCards = filterByCategory(ServiceCategory.Interior);
+const cards = [
+  ...interiorCards,
+  ...interiorCards,
+  ...interiorCards,
+  ...interiorCards,
+  ...interiorCards,
+  ...interiorCards,
+];
 ---
 
 <Layout {...seo}>
   <CenteredWithBgImage />
 
-  <!-- <ActionGrid items={actions} /> -->
+  <ActionGrid items={actions} />
 
   <ServiceList
-    className="pt-12"
+    cards={cards}
     id="interior-services"
     category={"Interior Services"}
-    primary={interiorCards[0]}
-    secondary={interiorCards[0]}
-    tertiary={interiorCards[0]}
     cta={"Take a look at a kitchen we remodeled in Ballard"}
     ctaHref={"/portfolio/kitchen-remodel-ballard-seattle"}
   />
