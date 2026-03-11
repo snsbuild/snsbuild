@@ -24,6 +24,9 @@ export type ServiceIndexCard = {
   href: string;
   description: string;
   image: ImageRef;
+  homePageFeatured: boolean;
+  neighborhood: string;
+  featuredPortfolioHref: string;
 };
 
 export type ServicePayload = {

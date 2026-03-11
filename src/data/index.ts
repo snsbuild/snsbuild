@@ -91,6 +91,9 @@ function toServiceIndexCard(s: ServiceEntity): ServiceIndexCard {
     href: s.path,
     description: s.description,
     image: s.seo.ogImage,
+    homePageFeatured: s.homePageFeatured,
+    neighborhood: s.featuredTestimonial.neighborhood,
+    featuredPortfolioHref: s.relatedPortfolio.path,
   };
 }
 

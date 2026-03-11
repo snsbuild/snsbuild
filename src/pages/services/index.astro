@@ -15,6 +15,11 @@ const interiorCards = filterByCategory(ServiceCategory.Interior);
 const outdoorCards = filterByCategory(ServiceCategory.Outdoor);
 const expansionCards = filterByCategory(ServiceCategory.Expansion);
 const structuralCards = filterByCategory(ServiceCategory.Structural);
+
+const interiorFeatured = interiorCards.find((c) => c.homePageFeatured);
+const outdoorFeatured = outdoorCards.find((c) => c.homePageFeatured);
+const expansionFeatured = expansionCards.find((c) => c.homePageFeatured);
+const structuralFeatured = structuralCards.find((c) => c.homePageFeatured);
 ---
 
 <Layout {...seo}>
@@ -24,18 +29,16 @@ const structuralCards = filterByCategory(ServiceCategory.Structural);
     cards={interiorCards}
     id="interior-services"
     category={"Interior Services"}
-    cta={"Take a look at a kitchen we remodeled in Ballard"}
-    ctaHref={"/portfolio/kitchen-remodel-ballard-seattle"}
+    cta={`See the kitchen we remodeled in ${interiorFeatured?.neighborhood}`}
+    ctaHref={interiorFeatured?.featuredPortfolioHref ?? "/portfolio"}
   />
-
-  <ServiceCTA category="interior" />
 
   <ServiceList
     cards={expansionCards}
     id="expansion-services"
     category={"Expansion Services"}
-    cta={"Take a look at a kitchen we remodeled in Ballard"}
-    ctaHref={"/portfolio/kitchen-remodel-ballard-seattle"}
+    cta={`See the ADU we built in ${expansionFeatured?.neighborhood}`}
+    ctaHref={expansionFeatured?.featuredPortfolioHref ?? "/portfolio"}
   />
 
   <ServiceCTA category="expansion" />
@@ -44,21 +47,17 @@ const structuralCards = filterByCategory(ServiceCategory.Structural);
     cards={outdoorCards}
     id="outdoor-living-services"
     category={"Outdoor Living Spaces"}
-    cta={"Take a look at a kitchen we remodeled in Ballard"}
-    ctaHref={"/portfolio/kitchen-remodel-ballard-seattle"}
+    cta={`See the covered deck we built in ${outdoorFeatured?.neighborhood}`}
+    ctaHref={outdoorFeatured?.featuredPortfolioHref ?? "/portfolio"}
   />
-
-  <ServiceCTA category="outdoor" />
 
   <ServiceList
     cards={structuralCards}
-    id="interior-services"
+    id="structural-services"
     category={"Structural Remodel"}
-    cta={"Take a look at a kitchen we remodeled in Ballard"}
-    ctaHref={"/portfolio/kitchen-remodel-ballard-seattle"}
+    cta={`See the seismic retrofit we completed in ${structuralFeatured?.neighborhood}`}
+    ctaHref={structuralFeatured?.featuredPortfolioHref ?? "/portfolio"}
   />
-
-  <ServiceCTA category="interior" />
 
   <ServiceFooter />
 </Layout>

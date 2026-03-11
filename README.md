@@ -1,5 +1,11 @@
 # Todo
 
+- Add icon to page
+- On service page the check out kitchen remodel is the same for each category
+- On service page the CTA links are not working right
+- On service page I need to add padding to the bottom of the hero for small screens
+- I need to fix the service areas image on small screens
+
 ## Home Page
 
 ### Testimonial Cloud

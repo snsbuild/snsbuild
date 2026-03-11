@@ -8,7 +8,7 @@ export const structuralUpgrades: ServiceEntity = {
   id: "structural-upgrades-seattle",
   type: "service",
   path: "/services/structural-upgrades-seattle",
-  homePageFeatured: false,
+  homePageFeatured: true,
   category: ServiceCategory.Structural,
   name: "Structural Upgrades",
   description:

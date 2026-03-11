@@ -9,7 +9,7 @@ export const outdoorLiving: ServiceEntity = {
   id: "outdoor-seattle",
   type: "service",
   path: "/services/outdoor-seattle",
-  homePageFeatured: false,
+  homePageFeatured: true,
   category: ServiceCategory.Outdoor,
   name: "Outdoor Living",
   description:

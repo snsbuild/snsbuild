@@ -101,13 +101,13 @@ const layoutItems = buildLayout(cards);
             <img
               src={card.image.src}
               alt={card.image.alt}
-              class="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-75"
+              class="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-100"
               loading="lazy"
             />
 
             <div
               aria-hidden="true"
-              class="absolute inset-0 bg-linear-to-b from-transparent to-black opacity-50"
+              class="absolute inset-0 bg-linear-to-b from-transparent to-black opacity-75 sm:opacity-50"
             />
 
             <div class="absolute inset-0 flex items-end p-6">
