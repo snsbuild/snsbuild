@@ -26,12 +26,7 @@ export type ServiceIndexCard = {
   image: ImageRef;
 };
 
-export interface FeaturedTestimonial extends Testimonial {
-  image: ImageRef;
-}
-
 export type ServicePayload = {
-  name: string;
   serviceType: string;
   areaServed: string[];
   subServices: Array<{ name: string; description?: string }>;
@@ -52,7 +47,6 @@ export type ProjectPayload = {
   problem: string;
   solution: string;
   results: string[];
-  testimonial: Testimonial;
 };
 
 export type PortfolioIndexCard = {
@@ -77,17 +71,17 @@ export enum ServiceCategory {
   Interior = "Interior",
   Expansion = "Expansion",
   Outdoor = "Outdoor Living",
+  Structural = "Structural",
 }
 
 export type ServiceEntity = EntityBase<"service"> & {
   category: ServiceCategory;
-  breadcrumb: string;
   homePageFeatured: boolean;
   service: ServicePayload;
   header: string;
   subheader: string;
   galleryImages: ImageRef[];
-  featuredTestimonial: FeaturedTestimonial;
+  featuredTestimonial: Testimonial;
   faqs: FAQ[];
   subServices: {
     eyebrow: string;
@@ -97,17 +91,7 @@ export type ServiceEntity = EntityBase<"service"> & {
     secondaryCta: CTA;
     services: Array<{ title: string; description: string; icon: string }>;
   };
-  relatedPortfolio: {
-    eyebrow: string;
-    heading: string;
-    cards: Array<{
-      imageSrc: string;
-      eyebrow: string;
-      title: string;
-      description: string;
-      imageClass?: string;
-    }>;
-  };
+  relatedPortfolio: PortfolioEntity;
 };
 
 export type PortfolioEntity = EntityBase<"portfolio"> & {
@@ -148,7 +132,7 @@ export type PortfolioEntity = EntityBase<"portfolio"> & {
     primaryCta: CTA;
     secondaryCta: CTA;
   };
-  related?: Array<{ title: string; description: string; href: string }>;
+  related: ServiceEntity[];
 };
 
 export type Entity = ServiceEntity | PortfolioEntity;

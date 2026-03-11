@@ -39,14 +39,56 @@ import Horse from "./Horse.astro";
       <div class="flex items-center space-x-4">
         <a
           href={`tel:${phoneHref}`}
-          class="hidden sm:inline-block px-4 py-2 bg-indigo-700 text-white rounded hover:bg-indigo-800 transition"
+          class="hidden sm:inline-block
+          rounded-md
+          bg-indigo-600
+          px-3.5
+          py-2.5
+          text-sm
+          font-semibold
+          text-white
+          shadow-xs
+          hover:bg-indigo-500
+          focus-visible:outline-2
+          focus-visible:outline-offset-2
+          focus-visible:outline-indigo-600"
         >
           Call Now
         </a>
-        <button class="md:hidden p-2 rounded hover:bg-gray-100">
+        <button id="menu-toggle" class="md:hidden p-2 rounded hover:bg-gray-100" aria-expanded="false" aria-controls="mobile-menu">
           <span class="text-2xl">☰</span>
         </button>
       </div>
     </div>
+
+    <nav id="mobile-menu" class="hidden md:hidden border-t border-gray-100 py-3">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class="block px-2 py-2.5 text-gray-700 hover:text-indigo-700 hover:bg-gray-50 rounded transition"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+      <a
+        href={`tel:${phoneHref}`}
+        class="block mt-2 px-2 py-2.5 text-indigo-600 font-semibold hover:bg-gray-50 rounded transition"
+      >
+        Call Now
+      </a>
+    </nav>
   </div>
 </header>
+
+<script>
+  const toggle = document.getElementById("menu-toggle")!;
+  const menu = document.getElementById("mobile-menu")!;
+
+  toggle.addEventListener("click", () => {
+    const open = !menu.classList.contains("hidden");
+    menu.classList.toggle("hidden", open);
+    toggle.setAttribute("aria-expanded", String(!open));
+  });
+</script>

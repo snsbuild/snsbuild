@@ -1,120 +1,117 @@
 ---
-type Card = {
-  imageSrc: string;
-  imageAlt?: string;
-  eyebrow: string;
-  title: string;
-  description: string;
-  imageClass?: string;
-};
+import type { PortfolioEntity } from "../../types/entity-types";
 
-const {
-  kicker = "Featured",
-  heading = "Previous Projects",
-  cards = [],
-} = Astro.props as {
-  kicker?: string;
-  heading?: string;
-  cards: Card[];
-};
-
-const shapeForIndex = (i: number) => {
-  switch (i) {
-    case 0:
-      return {
-        wrapper: "relative lg:col-span-3",
-        bg: "absolute inset-0 rounded-lg bg-white max-lg:rounded-t-4xl lg:rounded-tl-4xl",
-        card: "relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)] lg:rounded-tl-[calc(2rem+1px)]",
-        outline:
-          "pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 max-lg:rounded-t-4xl lg:rounded-tl-4xl",
-      };
-    case 1:
-      return {
-        wrapper: "relative lg:col-span-3",
-        bg: "absolute inset-0 rounded-lg bg-white lg:rounded-tr-4xl",
-        card: "relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-tr-[calc(2rem+1px)]",
-        outline:
-          "pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 lg:rounded-tr-4xl",
-      };
-    case 2:
-      return {
-        wrapper: "relative lg:col-span-2",
-        bg: "absolute inset-0 rounded-lg bg-white lg:rounded-bl-4xl",
-        card: "relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-bl-[calc(2rem+1px)]",
-        outline:
-          "pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 lg:rounded-bl-4xl",
-      };
-    case 4: // last card gets bottom rounding on mobile + bottom-right on lg
-      return {
-        wrapper: "relative lg:col-span-2",
-        bg: "absolute inset-0 rounded-lg bg-white max-lg:rounded-b-4xl lg:rounded-br-4xl",
-        card: "relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)]",
-        outline:
-          "pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 max-lg:rounded-b-4xl lg:rounded-br-4xl",
-      };
-    default: // middle small cards
-      return {
-        wrapper: "relative lg:col-span-2",
-        bg: "absolute inset-0 rounded-lg bg-white",
-        card: "relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]",
-        outline:
-          "pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5",
-      };
-  }
-};
+type Props = { relatedPortfolio: PortfolioEntity };
+const { relatedPortfolio } = Astro.props;
 ---
 
-<div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-  <h2 class="text-base/7 font-semibold text-indigo-600">{kicker}</h2>
-  <p
-    class="mt-2 max-w-lg text-4xl font-semibold tracking-tight text-pretty text-gray-950 sm:text-5xl"
-  >
-    {heading}
-  </p>
-
-  <div
-    class="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2"
-  >
-    {
-      cards.map((c, i) => {
-        const s = shapeForIndex(i);
-        return (
-          <div class={s.wrapper}>
-            <div class={s.bg} />
-
-            <div class={s.card}>
-              <img
-                src={c.imageSrc}
-                alt={c.imageAlt ?? ""}
-                class={`h-80 w-full object-cover ${c.imageClass ?? ""}`}
-                loading="lazy"
-              />
-              <div class="p-10 pt-4">
-                <h3 class="text-sm/4 font-semibold text-indigo-600">
-                  {c.eyebrow}
-                </h3>
-                <p class="mt-2 text-lg font-medium tracking-tight text-gray-950">
-                  {c.title}
-                </p>
-                <div class="flex items-center justify-between">
-                  <p class="mt-2 max-w-lg text-sm/6 text-gray-600">
-                    {c.description}
-                  </p>
-                  <a
-                    href="/portfolio/ballard-kitchen-refresh"
-                    class="text-sm/6 font-semibold text-indigo-600"
-                  >
-                    Learn more
-                    <i class="fa-solid fa-arrow-right mt-1 text-xs" />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class={s.outline} />
+<div class="overflow-hidden bg-white py-24 sm:py-32">
+  <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+    <div class="max-w-4xl">
+      <p class="text-base/7 font-semibold text-indigo-600">
+        Featured Previous Work
+      </p>
+      <h1
+        class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
+      >
+        {relatedPortfolio.name}
+      </h1>
+      <p class="mt-6 text-xl/8 text-balance text-gray-700">
+        {relatedPortfolio.description}
+      </p>
+    </div>
+    <section
+      class="mt-20 grid grid-cols-1 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-16"
+    >
+      <div class="lg:pr-8">
+        <h2
+          class="text-2xl font-semibold tracking-tight text-pretty text-gray-900"
+        >
+          Their Story
+        </h2>
+        <p class="mt-6 text-base/7 text-gray-600">
+          {relatedPortfolio.project?.problem}
+        </p>
+        <p class="mt-6 text-base/7 text-gray-600">
+          {relatedPortfolio.project?.solution}
+        </p>
+        <a href={relatedPortfolio.path} class="text-sm font-semibold mt-4">
+          Read full case study
+          <span aria-hidden="true"> →</span>
+        </a>
+      </div>
+      <div class="pt-16 lg:row-span-2 lg:-mr-16 xl:mr-auto">
+        <div
+          class="-mx-8 grid grid-cols-2 gap-4 sm:-mx-16 sm:grid-cols-4 lg:mx-0 lg:grid-cols-2 xl:gap-8"
+        >
+          <div
+            class="aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10"
+          >
+            <img
+              src={relatedPortfolio?.gallery?.images.at(0)?.src}
+              src={relatedPortfolio?.gallery?.images.at(0)?.alt}
+              class="block size-full object-cover"
+            />
           </div>
-        );
-      })
-    }
+          <div
+            class="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10 lg:-mt-40"
+          >
+            <img
+              src={relatedPortfolio?.gallery?.images.at(1)?.src}
+              src={relatedPortfolio?.gallery?.images.at(1)?.alt}
+              class="block size-full object-cover"
+            />
+          </div>
+          <div
+            class="aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10"
+          >
+            <img
+              src={relatedPortfolio?.gallery?.images.at(2)?.src}
+              src={relatedPortfolio?.gallery?.images.at(2)?.alt}
+              class="block size-full object-cover"
+            />
+          </div>
+          <div
+            class="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10 lg:-mt-40"
+          >
+            <img
+              src={relatedPortfolio?.gallery?.images.at(3)?.src}
+              src={relatedPortfolio?.gallery?.images.at(3)?.alt}
+              class="block size-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="max-lg:mt-16 lg:col-span-1">
+        <p class="text-base/7 font-semibold text-gray-500">Overview</p>
+        <hr class="mt-6 border-t border-gray-200" />
+        <dl class="mt-6 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
+          <div
+            class="flex flex-col gap-y-2 border-b border-dotted border-gray-200 pb-4"
+          >
+            <dt class="text-sm/6 text-gray-600">Timeline</dt>
+            <dd class="text-4xl font-semibold tracking-tight text-gray-900">
+              <span>{relatedPortfolio?.overview?.timelineLabel}</span>
+            </dd>
+          </div>
+          <div
+            class="flex flex-col gap-y-2 border-b border-dotted border-gray-200 pb-4"
+          >
+            <dt class="text-sm/6 text-gray-600">Completed</dt>
+            <dd class="text-4xl font-semibold tracking-tight text-gray-900">
+              <span>{relatedPortfolio?.overview?.completedLabel}</span>
+            </dd>
+          </div>
+          <div
+            class="flex flex-col gap-y-2 max-sm:border-b max-sm:border-dotted max-sm:border-gray-200 max-sm:pb-4"
+          >
+            <dt class="text-sm/6 text-gray-600">Location</dt>
+            <dd class="text-4xl font-semibold tracking-tight text-gray-900">
+              <span>{relatedPortfolio.project.location.neighborhood}</span>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
   </div>
 </div>

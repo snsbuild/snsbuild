@@ -1,29 +1,77 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import RequestEstimate from "../components/RequestEstimate.astro";
-import ServiceAreas from "../components/ServiceAreas.astro";
+import ServiceAreas from "../components/service/ServiceAreas.astro";
 import Faq from "../components/Faq.astro";
 import ProcessTimeline from "../components/ProcessTimeline.astro";
+import { buildSeoFrom } from "../seo";
+import type { MarketingPage } from "../types/entity-types";
 
-const faqs = [
-  {
-    question: "",
-    answer: "",
+export const estimatePage: MarketingPage = {
+  kind: "marketing",
+  path: "/estimate",
+  seo: {
+    title: "Request a Free Estimate | Saddle and Spur Construction",
+    description:
+      "Get a detailed estimate for your Seattle remodeling project. We review your goals, visit the site, and put together a clear scope with transparent pricing — no vague ballparks.",
+    keywords: [
+      "free remodel estimate seattle",
+      "seattle contractor estimate",
+      "kitchen remodel estimate seattle",
+      "bathroom remodel estimate seattle",
+    ],
+    ogImage: {
+      src: "/images/og/estimate.jpg",
+      alt: "Saddle and Spur Construction estimating a Seattle remodeling project",
+    },
+    images: [],
   },
-  {
-    question: "",
-    answer: "",
-  },
-  {
-    question: "",
-    answer: "",
-  },
-];
+  faqs: [
+    {
+      question: "Is the estimate free?",
+      answer:
+        "Yes. We visit the site, review the scope with you, and provide a detailed written estimate at no charge.",
+    },
+    {
+      question: "How long does it take to get an estimate?",
+      answer:
+        "We typically schedule a site visit within a few days of your request and follow up with a written estimate within a week. Larger or more complex scopes may take a bit longer.",
+    },
+    {
+      question: "What information should I have ready?",
+      answer:
+        "A rough sense of what you want to change and any photos or inspiration you've collected. You don't need plans or firm decisions — that's what the site visit is for.",
+    },
+    {
+      question: "Is your estimate a fixed price or a ballpark?",
+      answer:
+        "We provide detailed line-item estimates, not rough ballparks. Once the scope is agreed upon and materials are selected, we hold to that number. Change orders only happen when you ask for something outside the original scope.",
+    },
+    {
+      question: "Do you work with homeowners who are still in the planning phase?",
+      answer:
+        "Absolutely. Many clients come to us before they've made any final decisions. The estimate conversation helps clarify what's realistic for your budget and timeline.",
+    },
+    {
+      question: "What areas do you serve?",
+      answer:
+        "We serve Greater Seattle and King County — including Ballard, Capitol Hill, Fremont, Bellevue, Kirkland, Sammamish, and surrounding neighborhoods.",
+    },
+  ],
+};
+
+const seo = buildSeoFrom(estimatePage);
 ---
 
-<Layout title="Request Estimate | S&S Construction">
+<Layout
+  title={seo.openGraph.title}
+  description={seo.openGraph.description}
+  canonical={seo.canonical}
+  openGraph={seo.openGraph}
+  jsonLd={seo.jsonLd}
+>
   <RequestEstimate className="pb-6" />
   <ProcessTimeline />
   <ServiceAreas />
-  <Faq faqs={faqs} />
+  <Faq faqs={estimatePage.faqs} />
 </Layout>

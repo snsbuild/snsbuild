@@ -1,82 +1,35 @@
 ---
-import type { PortfolioEntity } from "../../types/entity-types";
+import type { ServiceEntity } from "../../types/entity-types";
 
-type Props = { related: NonNullable<PortfolioEntity["related"]> };
+type Props = { related: ServiceEntity[] };
 const { related } = Astro.props;
 ---
 
-<section class="container section" aria-labelledby="related">
-    <h2 id="related">Related bathroom remodels</h2>
-    <div class="grid">
-        {
-            related.map((r) => (
-                <article class="card pad">
-                    <h3 style="margin: 0 0 6px">{r.title}</h3>
-                    {r.description && (
-                        <p class="muted small" style="margin: 0 0 10px">
-                            {r.description}
-                        </p>
-                    )}
-                    <a class="btn ghost" href={r.href}>
-                        View project
-                    </a>
-                </article>
-            ))
-        }
-    </div>
+<section
+  class="max-w-280 mx-auto px-[clamp(16px,3vw,28px)] py-16 border-t border-black/12"
+  aria-labelledby="related"
+>
+  <h2 id="related" class="my-4 pb-4 text-[clamp(20px,2.2vw,28px)]">
+    Related Services
+  </h2>
+  <div class="grid grid-cols-1 min-[920px]:grid-cols-2 gap-5.5 mt-3">
+    {
+      related.map((r) => (
+        <article class="border border-black/12 rounded-2xl bg-white p-4.5">
+          <h3 class="mt-0 text-2xl font-semibold mb-1.5">{r.name}</h3>
+          {r.description && (
+            <p class="mt-0 mb-2.5 text-[0.95rem] text-black/65">
+              {r.description}
+            </p>
+          )}
+          <a
+            class="inline-flex items-center justify-center px-3.5 py-3  border rounded border-indigo-600 text-indigo-600 bg-white no-underline font-semibold transition-colors duration-150 hover:bg-indigo-600 hover:text-white"
+            href={r.path}
+          >
+            View service
+          </a>
+        </article>
+      ))
+    }
+  </div>
 </section>
-
-<style>
-    .container {
-        max-width: 1120px;
-        margin: 0 auto;
-        padding: 0 clamp(16px, 3vw, 28px);
-    }
-    .section {
-        padding: 26px 0;
-        border-top: 1px solid rgba(0, 0, 0, 0.12);
-    }
-    h2 {
-        margin: 0 0 10px;
-        font-size: clamp(20px, 2.2vw, 28px);
-    }
-    .grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 22px;
-        margin-top: 12px;
-    }
-    @media (max-width: 920px) {
-        .grid {
-            grid-template-columns: 1fr;
-        }
-    }
-    .card {
-        border: 1px solid rgba(0, 0, 0, 0.12);
-        border-radius: 16px;
-        background: #fff;
-    }
-    .pad {
-        padding: 18px;
-    }
-    .muted {
-        color: rgba(0, 0, 0, 0.65);
-    }
-    .small {
-        font-size: 0.95rem;
-    }
-    .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 12px 14px;
-        border-radius: 999px;
-        border: 1px solid #111;
-        text-decoration: none;
-        font-weight: 600;
-    }
-    .btn.ghost {
-        background: #fff;
-        color: #111;
-    }
-</style>

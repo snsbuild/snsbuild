@@ -17,9 +17,9 @@ function buildCards(service: ServiceEntity[]): CloudCard[] {
   return service.map((s) => {
     return {
       category: s.category,
-      name: s.seo.service.name,
+      name: s.name,
       path: s.path,
-      ...s.show.featuredTestimonial,
+      ...s.featuredTestimonial,
     };
   });
 }

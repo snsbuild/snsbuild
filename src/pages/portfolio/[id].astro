@@ -9,7 +9,6 @@ import CallToAction from "../../components/CallToAction.astro";
 import PortfolioOverview from "../../components/portfolio/PortfolioOverview.astro";
 import { buildSeoFrom } from "../../seo";
 import { portfolio } from "../../data";
-import Faq from "../../components/Faq.astro";
 import PortfolioGallery from "../../components/portfolio/PortfolioGallery.astro";
 
 export async function getStaticPaths() {
@@ -29,7 +28,6 @@ const {
   story,
   gallery,
   testimonial,
-  faqs,
   related,
   servicesPerformed,
 } = page;
@@ -46,7 +44,7 @@ const {
 
   <PortfolioStory story={story} />
   <PortfolioGallery images={gallery.images} />
-  <CallToAction />
+  <CallToAction ctaTwo="See other case studies" ctaTwoHref="/portfolio" />
   <PortfolioServicesPerformed
     eyebrow="What we did"
     title="Services performed on this job"
@@ -54,6 +52,6 @@ const {
     items={servicesPerformed.items}
   />
 
-  <Faq faqs={faqs!} />
+  <!-- <Faq faqs={related.faqs} /> -->
   <PortfolioRelatedProjects related={related!} />
 </Layout>

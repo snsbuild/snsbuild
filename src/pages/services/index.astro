@@ -4,60 +4,24 @@ import ServiceFooter from "../../components/service/ServiceFooter.astro";
 import ServiceList from "../../components/service/ServiceList.astro";
 import CenteredWithBgImage from "../../components/header/CenteredWithBgImage.astro";
 import ServiceCTA from "../../components/service/ServiceCTA.astro";
-import ActionGrid from "../../components/ActionGrid.astro";
-import ServiceAreas from "../../components/service/ServiceAreas.astro";
 
 import { buildSeoFrom } from "../../seo";
 import { filterByCategory, servicesIndex } from "../../data";
 import { ServiceCategory } from "../../types/entity-types";
 
-const actions = [
-  {
-    title: "Indoor",
-    description: "Kitchen, bath, and interior remodels.",
-    href: "#interior-services",
-    icon: "fa-solid fa-paint-roller",
-  },
-  {
-    title: "Exterior",
-    description: "Siding, windows, and exterior upgrades.",
-    href: "#expansion-services",
-    icon: "fa-solid fa-trowel-bricks",
-  },
-  {
-    title: "Outdoor Living",
-    description: "Decks, patios, and outdoor spaces.",
-    href: "#outdoor-living-services",
-    icon: "fa-solid fa-archway",
-  },
-  {
-    title: "AUD / Expansion",
-    description: "Accessory dwelling units and home expansions.",
-    href: "#expansion-services",
-    icon: "fa-solid fa-house-chimney",
-  },
-];
-
 const seo = buildSeoFrom(servicesIndex);
 
 const interiorCards = filterByCategory(ServiceCategory.Interior);
-const cards = [
-  ...interiorCards,
-  ...interiorCards,
-  ...interiorCards,
-  ...interiorCards,
-  ...interiorCards,
-  ...interiorCards,
-];
+const outdoorCards = filterByCategory(ServiceCategory.Outdoor);
+const expansionCards = filterByCategory(ServiceCategory.Expansion);
+const structuralCards = filterByCategory(ServiceCategory.Structural);
 ---
 
 <Layout {...seo}>
   <CenteredWithBgImage />
 
-  <ActionGrid items={actions} />
-
   <ServiceList
-    cards={cards}
+    cards={interiorCards}
     id="interior-services"
     category={"Interior Services"}
     cta={"Take a look at a kitchen we remodeled in Ballard"}
@@ -66,6 +30,35 @@ const cards = [
 
   <ServiceCTA category="interior" />
 
-  <ServiceAreas />
+  <ServiceList
+    cards={expansionCards}
+    id="expansion-services"
+    category={"Expansion Services"}
+    cta={"Take a look at a kitchen we remodeled in Ballard"}
+    ctaHref={"/portfolio/kitchen-remodel-ballard-seattle"}
+  />
+
+  <ServiceCTA category="expansion" />
+
+  <ServiceList
+    cards={outdoorCards}
+    id="outdoor-living-services"
+    category={"Outdoor Living Spaces"}
+    cta={"Take a look at a kitchen we remodeled in Ballard"}
+    ctaHref={"/portfolio/kitchen-remodel-ballard-seattle"}
+  />
+
+  <ServiceCTA category="outdoor" />
+
+  <ServiceList
+    cards={structuralCards}
+    id="interior-services"
+    category={"Structural Remodel"}
+    cta={"Take a look at a kitchen we remodeled in Ballard"}
+    ctaHref={"/portfolio/kitchen-remodel-ballard-seattle"}
+  />
+
+  <ServiceCTA category="interior" />
+
   <ServiceFooter />
 </Layout>

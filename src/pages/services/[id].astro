@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { kitchenRemodel } from "../../data/interior/kitchen-remodel";
+import { services } from "../../data";
 import { buildSeoFrom } from "../../seo";
 import ServiceFooter from "../../components/service/ServiceFooter.astro";
 import CallToAction from "../../components/CallToAction.astro";
@@ -13,10 +13,11 @@ import ServiceHero from "../../components/service/ServiceHero.astro";
 import ServiceRelatedPortfolio from "../../components/service/ServiceRelatedPortfolio.astro";
 
 export async function getStaticPaths() {
-  return [{ params: { id: kitchenRemodel.id } }];
+  return services.map((s) => ({ params: { id: s.id } }));
 }
 
-const page = kitchenRemodel;
+const { id } = Astro.params;
+const page = services.find((s) => s.id === id)!;
 
 const {
   name,
@@ -42,6 +43,7 @@ const seo = buildSeoFrom(page);
       description={description}
       galleryImages={galleryImages}
     />
+
     <ServiceTestimonial testimonial={featuredTestimonial} />
 
     <SubServiceFeatures
@@ -55,15 +57,11 @@ const seo = buildSeoFrom(page);
 
     <CallToAction />
 
-    <ServiceRelatedPortfolio
-      eyebrow={relatedPortfolio.eyebrow}
-      heading={relatedPortfolio.heading}
-      cards={relatedPortfolio.cards}
-    />
+    <ServiceRelatedPortfolio relatedPortfolio={relatedPortfolio} />
   </div>
 
   <ProcessTimeline />
-  <ServiceAreas />
+
   <Faq faqs={faqs} />
   <ServiceFooter />
 </Layout>

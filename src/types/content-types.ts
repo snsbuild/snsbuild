@@ -1,6 +1,7 @@
 export type FAQ = { question: string; answer: string };
 
 export type Testimonial = {
+  image?: ImageRef;
   quote: string;
   author: string;
   neighborhood: string;

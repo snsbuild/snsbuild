@@ -1,4 +1,6 @@
 ---
+import { phoneHref } from "../siteConfig";
+
 export interface FAQ {
   question: string;
   answer: string;
@@ -19,8 +21,8 @@ const {
   className,
   title = "Frequently asked questions",
   description = "Can't find the answer you're looking for?",
-  supportHref = "#",
-  supportText = "customer support",
+  supportHref = `tel:${phoneHref}`,
+  supportText = "Give us a call",
   faqs = [],
 } = Astro.props;
 ---

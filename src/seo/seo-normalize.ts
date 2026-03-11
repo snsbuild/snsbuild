@@ -35,7 +35,7 @@ export function entityToSeoPage(
     return {
       kind: "service-show",
       meta: baseMeta,
-      service: s.service,
+      service: { ...s.service, name: s.name },
       faqs: s.faqs,
     };
   }
@@ -59,18 +59,17 @@ export function entityToSeoPage(
     meta: baseMeta,
     project: {
       name: p.name,
+      servicePath: p.related?.find((r) => r.path?.startsWith("/services/"))?.path,
       ...p.project,
       servicesPerformed: p.servicesPerformed.items.map((x) => ({
         name: x.name,
         description: x.description,
       })),
-      testimonial: p.project.testimonial
-        ? {
-            quote: p.project.testimonial.quote,
-            author: p.project.testimonial.author,
-            rating: p.project.testimonial.rating,
-          }
-        : undefined,
+      testimonial: {
+        quote: p.testimonial.quote,
+        author: p.testimonial.author,
+        rating: p.testimonial.rating,
+      },
     },
     faqs: p.faqs,
   };

@@ -34,7 +34,7 @@ const stripUndefinedDeep = (obj: any): any => {
 
 /** ---------- base nodes ---------- */
 const buildLocalBusinessNode = () => ({
-  "@type": "LocalBusiness",
+  "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
   "@id": `${SITE}#business`,
   name: BUSINESS_NAME,
   url: SITE,
@@ -191,36 +191,30 @@ function buildPortfolioShowGraph(
     ...buildWebPageNode(canonical, meta.title, meta.description, primaryImage),
     about: { "@id": `${canonical}#service` },
     mainEntity: { "@id": `${canonical}#work` },
-    subjectOf: { "@id": `${canonical}#article` },
   };
 
-  const articleNode = {
-    "@type": "Article",
-    "@id": `${canonical}#article`,
-    mainEntityOfPage: { "@id": `${canonical}#webpage` },
-    headline: meta.title,
-    description: meta.description,
-    image: images,
-    keywords: meta.keywords?.join(", "),
-    author: { "@id": `${SITE}#business` },
-    publisher: { "@id": `${SITE}#business` },
-    datePublished: meta.datePublished,
-    dateModified: meta.dateModified ?? meta.datePublished,
-    about: [{ "@id": `${canonical}#service` }],
-    contentLocation: placeNode ? { "@id": `${canonical}#place` } : undefined,
-  };
+  const workDescription =
+    page.project.problem && page.project.solution
+      ? `${page.project.problem} ${page.project.solution}`
+      : meta.description;
 
   const workNode = {
     "@type": "CreativeWork",
     "@id": `${canonical}#work`,
     name: page.project.name,
-    description: meta.description,
+    description: workDescription,
+    keywords: meta.keywords?.join(", "),
+    image: images,
+    material: page.project.materials?.length
+      ? page.project.materials.join(", ")
+      : undefined,
+    dateCreated: page.project.completionDate ?? meta.datePublished,
+    datePublished: meta.datePublished,
+    dateModified: meta.dateModified ?? meta.datePublished,
     creator: { "@id": `${SITE}#business` },
     provider: { "@id": `${SITE}#business` },
     about: { "@id": `${canonical}#service` },
     locationCreated: placeNode ? { "@id": `${canonical}#place` } : undefined,
-    image: images,
-    dateCreated: page.project.completionDate ?? meta.datePublished,
     ...(page.project.testimonial
       ? {
           review: {
@@ -276,7 +270,6 @@ function buildPortfolioShowGraph(
     serviceNode,
     workNode,
     servicesPerformedNode,
-    articleNode,
     breadcrumbsNode,
     buildFaqNode(canonical, page.faqs),
   ];

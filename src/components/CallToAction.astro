@@ -1,12 +1,12 @@
 ---
 const {
-    className,
-    variant = "light", // "light" | "dark"
-    ctaSubheader,
-    ctaOne,
-    ctaTwo,
-    ctaOneHref = "#",
-    ctaTwoHref = "#",
+  className,
+  variant = "light", // "light" | "dark"
+  ctaSubheader,
+  ctaOne,
+  ctaTwo,
+  ctaOneHref = "/estimate",
+  ctaTwoHref = "/services",
 } = Astro.props;
 
 const isDark = variant === "dark";
@@ -16,50 +16,47 @@ const bgClass = isDark ? "bg-gray-900" : "bg-indigo-100";
 const headingClass = isDark ? "text-white" : "text-gray-900";
 
 const secondaryLinkClass = isDark
-    ? "text-white hover:text-gray-300"
-    : "text-gray-900 hover:text-gray-700";
+  ? "text-white hover:text-gray-300"
+  : "text-gray-900 hover:text-gray-700";
 
 const primaryButtonClass = isDark
-    ? "bg-white text-gray-900 hover:bg-gray-200"
-    : "bg-indigo-600 text-white hover:bg-indigo-500";
+  ? "bg-white text-gray-900 hover:bg-gray-200"
+  : "bg-indigo-600 text-white hover:bg-indigo-500";
 ---
 
 <div class:list={[bgClass, "my-12", className]}>
-    <div
-        class="mx-auto max-w-7xl px-6 py-24 lg:flex lg:items-center lg:justify-between lg:px-8"
+  <div
+    class="mx-auto max-w-7xl px-6 py-24 lg:flex lg:items-center lg:justify-between lg:px-8"
+  >
+    <h2
+      class:list={[
+        "max-w-2xl text-4xl font-semibold tracking-tight sm:text-5xl",
+        headingClass,
+      ]}
     >
-        <h2
-            class:list={[
-                "max-w-2xl text-4xl font-semibold tracking-tight sm:text-5xl",
-                headingClass,
-            ]}
-        >
-            Ready to saddle up?
-            <br />
-            {ctaSubheader ?? "Get a free estimate and consultation today."}
-        </h2>
+      Ready to saddle up?
+      <br />
+      {ctaSubheader ?? "Get a free estimate and consultation today."}
+    </h2>
 
-        <div class="mt-10 flex items-center gap-x-6 lg:mt-0 lg:shrink-0">
-            <a
-                href={ctaOneHref}
-                class:list={[
-                    "rounded-md px-5 py-3 text-sm font-semibold shadow-sm transition",
-                    primaryButtonClass,
-                ]}
-            >
-                {ctaOne ?? "Get a Free Estimate"}
-            </a>
+    <div class="mt-10 flex items-center gap-x-6 lg:mt-0 lg:shrink-0">
+      <a
+        href={ctaOneHref}
+        class:list={[
+          "rounded-md px-5 py-3 text-sm font-semibold shadow-sm transition",
+          primaryButtonClass,
+        ]}
+      >
+        {ctaOne ?? "Get a Free Estimate"}
+      </a>
 
-            <a
-                href={ctaTwoHref}
-                class:list={[
-                    "text-sm font-semibold transition",
-                    secondaryLinkClass,
-                ]}
-            >
-                {ctaTwo ?? "See our offered services"}
-                <span aria-hidden="true"> →</span>
-            </a>
-        </div>
+      <a
+        href={ctaTwoHref}
+        class:list={["text-sm font-semibold transition", secondaryLinkClass]}
+      >
+        {ctaTwo ?? "See our offered services"}
+        <span aria-hidden="true"> →</span>
+      </a>
     </div>
+  </div>
 </div>

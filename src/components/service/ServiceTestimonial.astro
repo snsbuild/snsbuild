@@ -1,5 +1,6 @@
 ---
 import type { Testimonial } from "../../types/content-types";
+import Horse from "../Horse.astro";
 
 interface Props {
   testimonial: Testimonial;
@@ -10,7 +11,11 @@ const {
 } = Astro.props;
 ---
 
-<section class="bg-white px-6 py-24 sm:py-32 lg:px-8">
+<section class="relative isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
+  <Horse
+    class="absolute inset-0 m-auto h-125 w-125 text-indigo-100 opacity-40 -z-10"
+    aria-hidden="true"
+  />
   <figure class="mx-auto max-w-2xl">
     <p class="sr-only">5 out of 5 stars</p>
     <div class="flex gap-x-1 text-indigo-600">

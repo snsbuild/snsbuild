@@ -1,14 +1,5 @@
 ---
-type ServiceItem = {
-  title: string;
-  description: string;
-};
-
-type Cta = {
-  label: string;
-  href: string;
-};
-
+type ServiceItem = { title: string; description: string; icon: string };
 const {
   eyebrow = "Services",
   heading = "What we offer",
@@ -73,10 +64,10 @@ const {
         class="col-span-3 grid grid-cols-1 gap-x-8 gap-y-8 text-base/7 text-gray-600 sm:grid-cols-2 lg:gap-y-16"
       >
         {
-          services.map((s) => (
+          services.map((s: ServiceItem) => (
             <div class="relative pl-9">
               <dt class="font-semibold text-gray-900">
-                <i class="fa-solid fa-house-circle-check text-indigo-600" />
+                <i class:list={["text-indigo-600", s.icon]} />
                 {s.title}
               </dt>
               <dd class="mt-2">{s.description}</dd>

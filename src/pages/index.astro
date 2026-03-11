@@ -10,10 +10,8 @@ import HomeTestimonialCloud from "../components/home/HomeTestimonialCloud.astro"
 import ServiceList from "../components/service/ServiceList.astro";
 import { homePageFeaturedServices } from "../data";
 import ServiceAreas from "../components/service/ServiceAreas.astro";
-import type { PortfolioIndexCard } from "../types/entity-types";
 
 const homeFeatured = homePageFeaturedServices();
-const cards: PortfolioIndexCard[] = [...homeFeatured, ...homeFeatured, ...homeFeatured];
 ---
 
 <Layout title="Saddle & Spur Construction">
@@ -22,7 +20,7 @@ const cards: PortfolioIndexCard[] = [...homeFeatured, ...homeFeatured, ...homeFe
   <HomeFeatures />
 
   <ServiceList
-    cards={cards}
+    cards={homeFeatured}
     category="Featured Services"
     cta="Find the Right Service"
     ctaHref="/services"

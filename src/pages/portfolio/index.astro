@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import FormSelect from "../../components/FormSelect.astro";
 import FormSearch from "../../components/FormSearch.astro";
 import ServiceFooter from "../../components/service/ServiceFooter.astro";
-import ServiceAreas from "../../components/service/ServiceAreas.astro";
+
 import { portfolio, portfolioIndex } from "../../data";
 import { buildSeoFrom } from "../../seo";
 
@@ -132,8 +132,8 @@ const seo = buildSeoFrom(portfolioIndex);
                 serviceName,
                 location: { city, neighborhood },
                 materials,
-                testimonial,
               },
+              testimonial,
               servicesPerformed,
             } = p;
 
@@ -166,7 +166,7 @@ const seo = buildSeoFrom(portfolioIndex);
                     <img
                       src={ogImage.src}
                       alt={ogImage.alt}
-                      class="aspect-video w-full rounded-2xl bg-gray-100 object-fill sm:aspect-2/1 lg:aspect-3/2"
+                      class="aspect-video w-full rounded-2xl bg-gray-100 object-cover sm:aspect-2/1 lg:aspect-3/2"
                       loading="lazy"
                     />
                     <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
@@ -220,7 +220,7 @@ const seo = buildSeoFrom(portfolioIndex);
       </p>
     </section>
   </div>
-  <ServiceAreas />
+
   <ServiceFooter />
   <script is:inline>
     const $ = (sel) => document.querySelector(sel);

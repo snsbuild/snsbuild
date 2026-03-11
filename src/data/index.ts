@@ -7,10 +7,68 @@ import type {
   ServiceIndexCard,
 } from "../types/entity-types";
 import { ballardKitchen, kitchenRemodel } from "./interior/kitchen-remodel";
+import {
+  bathroomRemodel,
+  capitolHillBathroom,
+} from "./interior/bathroom-remodel";
+import {
+  wholeHomeRemodel,
+  fremontWholeHome,
+} from "./interior/whole-home-remodel";
+import { flooringInstallation, queenAnneFlooring } from "./interior/flooring";
+import {
+  windowsDoors,
+  wallingfordWindowsDoors,
+} from "./interior/windows-doors";
+import { aduConstruction, phinneyRidgeAdu } from "./expansion/adu-construction";
+import { homeAdditions, ravennaAddition } from "./expansion/home-additions";
+import {
+  garageConversions,
+  columbiaGarageOffice,
+} from "./expansion/garage-conversions";
+import {
+  unusedSpaceConversions,
+  greenwoodBasement,
+} from "./expansion/unused-space-conversions";
+import { outdoorLiving, eastlakeDeck } from "./outdoor/outdoor-living";
+import {
+  roofingStructural,
+  madisonParkRoof,
+} from "./structural/roofing-structural";
+import {
+  structuralUpgrades,
+  capitolHillSeismic,
+} from "./structural/structural-upgrades";
 
-export const services = [kitchenRemodel];
+export const services: ServiceEntity[] = [
+  kitchenRemodel,
+  bathroomRemodel,
+  wholeHomeRemodel,
+  flooringInstallation,
+  windowsDoors,
+  aduConstruction,
+  homeAdditions,
+  garageConversions,
+  unusedSpaceConversions,
+  outdoorLiving,
+  roofingStructural,
+  structuralUpgrades,
+];
 
-export const portfolio = [ballardKitchen];
+export const portfolio: PortfolioEntity[] = [
+  ballardKitchen,
+  capitolHillBathroom,
+  fremontWholeHome,
+  queenAnneFlooring,
+  wallingfordWindowsDoors,
+  phinneyRidgeAdu,
+  ravennaAddition,
+  columbiaGarageOffice,
+  greenwoodBasement,
+  eastlakeDeck,
+  madisonParkRoof,
+  capitolHillSeismic,
+];
 
 const portfolioIndexCards = portfolio.map((p) => toPortfolioIndexCards(p));
 
@@ -57,7 +115,7 @@ export const servicesIndex: CollectionPage<any> = {
     title: "Remodeling Services in Seattle | Saddle and Spur Construction",
     description:
       "Explore our remodeling services in Seattle and King County. Kitchens, bathrooms, additions, and more.",
-    ogImage: { src: "/images/og/services.jpg", alt: "Services" },
+    ogImage: { src: "/images/services/kitchen/ogImage.jpg", alt: "Services" },
     keywords: ["general contractor seattle", "remodeling services seattle"],
   },
   content: {
@@ -82,7 +140,7 @@ export const portfolioIndex: CollectionPage<any> = {
   },
   content: {
     headline: "Portfolio",
-    byline: "Recent kitchens, baths, and whole-home projects.",
+    byline: "Recent kitchens, baths, whole-home projects, ADUs, and more.",
     primaryCta: { label: "Start your project", href: "/contact" },
   },
   cards: portfolioIndexCards,
