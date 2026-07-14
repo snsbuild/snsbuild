@@ -1,0 +1,141 @@
+---
+import type { ShopProduct } from "../../data/shop";
+
+interface Props {
+  products: ShopProduct[];
+}
+
+const { products } = Astro.props;
+---
+
+<section class="bg-white">
+  <div class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8">
+      {
+        products.map((product) => (
+          <div
+            data-product-card
+            class="group flex flex-col overflow-hidden rounded-lg border border-gray-200 shadow-sm transition hover:shadow-md"
+          >
+            <div class="relative aspect-[4/3] w-full bg-linear-to-br from-gray-100 to-gray-200">
+              <span class="absolute inset-0 flex items-center justify-center text-gray-300">
+                <i class="fa-solid fa-image text-5xl" aria-hidden="true" />
+              </span>
+              <img
+                src={product.image.src}
+                alt={product.image.alt}
+                loading="lazy"
+                onerror="this.style.display='none'"
+                class="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              {product.badge && (
+                <span class="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-indigo-700 shadow-sm">
+                  {product.badge}
+                </span>
+              )}
+            </div>
+
+            <div class="flex flex-1 flex-col p-6">
+              <div class="flex items-baseline justify-between gap-3">
+                <h3 class="text-lg font-semibold text-gray-900">{product.name}</h3>
+                <span class="shrink-0 text-lg font-semibold text-gray-900">
+                  {product.priceDisplay}
+                </span>
+              </div>
+
+              <p class="mt-2 flex-1 text-sm text-gray-600">{product.description}</p>
+
+              {product.installation && (
+                <fieldset class="mt-5">
+                  <legend class="sr-only">Choose an option for {product.name}</legend>
+                  <div class="space-y-2">
+                    <label class="flex cursor-pointer items-center justify-between gap-3 rounded-md border border-gray-200 px-3 py-2 text-sm has-[:checked]:border-indigo-600 has-[:checked]:ring-1 has-[:checked]:ring-indigo-600">
+                      <span class="flex items-center gap-2 font-medium text-gray-900">
+                        <input
+                          type="radio"
+                          name={`opt-${product.id}`}
+                          value="base"
+                          checked
+                          data-variant
+                          data-price={product.priceDisplay}
+                          data-link={product.paymentLink}
+                          class="h-4 w-4 accent-indigo-600"
+                        />
+                        Delivery only
+                      </span>
+                      <span class="text-gray-900">{product.priceDisplay}</span>
+                    </label>
+                    <label class="flex cursor-pointer items-center justify-between gap-3 rounded-md border border-gray-200 px-3 py-2 text-sm has-[:checked]:border-indigo-600 has-[:checked]:ring-1 has-[:checked]:ring-indigo-600">
+                      <span class="flex items-center gap-2 font-medium text-gray-900">
+                        <input
+                          type="radio"
+                          name={`opt-${product.id}`}
+                          value="install"
+                          data-variant
+                          data-price={product.installation.priceDisplay}
+                          data-link={product.installation.paymentLink}
+                          class="h-4 w-4 accent-indigo-600"
+                        />
+                        With installation
+                      </span>
+                      <span class="text-gray-900">{product.installation.priceDisplay}</span>
+                    </label>
+                  </div>
+                </fieldset>
+              )}
+
+              <a
+                data-buy
+                href={product.paymentLink || undefined}
+                data-disabled={product.paymentLink ? undefined : ""}
+                aria-disabled={product.paymentLink ? undefined : "true"}
+                class="mt-5 inline-flex items-center justify-center rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs transition hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 data-[disabled]:pointer-events-none data-[disabled]:cursor-not-allowed data-[disabled]:bg-gray-100 data-[disabled]:text-gray-400 data-[disabled]:shadow-none"
+              >
+                {product.paymentLink ? `Buy now — ${product.priceDisplay}` : "Coming soon"}
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <p class="mx-auto mt-12 max-w-2xl text-center text-sm text-gray-500">
+      Local delivery across Greater Seattle or free pickup. Secure checkout is handled by
+      Stripe. Questions about a product, delivery, or installation?
+      <a href="/contact" class="font-semibold text-indigo-600 hover:text-indigo-500">Get in touch</a>.
+    </p>
+  </div>
+</section>
+
+<script>
+  // Progressive enhancement: on installable cards, swap the Buy button's link,
+  // price, and enabled state as the customer toggles "Delivery only" vs
+  // "With installation". Cards without a toggle are left exactly as rendered.
+  document.querySelectorAll("[data-product-card]").forEach((card) => {
+    const buy = card.querySelector<HTMLAnchorElement>("[data-buy]");
+    const radios = card.querySelectorAll<HTMLInputElement>("[data-variant]");
+    if (!buy || radios.length === 0) return;
+
+    const apply = (radio: HTMLInputElement) => {
+      const link = radio.dataset.link ?? "";
+      const price = radio.dataset.price ?? "";
+      if (link) {
+        buy.href = link;
+        buy.removeAttribute("data-disabled");
+        buy.removeAttribute("aria-disabled");
+        buy.textContent = `Buy now — ${price}`;
+      } else {
+        buy.removeAttribute("href");
+        buy.setAttribute("data-disabled", "");
+        buy.setAttribute("aria-disabled", "true");
+        buy.textContent = "Coming soon";
+      }
+    };
+
+    radios.forEach((radio) => {
+      radio.addEventListener("change", () => {
+        if (radio.checked) apply(radio);
+      });
+    });
+  });
+</script>

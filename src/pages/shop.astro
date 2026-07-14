@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ShopHero from "../components/shop/ShopHero.astro";
+import ProductGrid from "../components/shop/ProductGrid.astro";
+import { buildSeoFrom } from "../seo";
+import { shopPage, shopProducts } from "../data/shop";
+
+const seo = buildSeoFrom(shopPage);
+---
+
+<Layout {...seo} title={shopPage.seo.title} description={shopPage.seo.description}>
+  {/* Test-mode store: reachable by direct URL but kept out of search results.
+      Remove this when going live with production products + Payment Links. */}
+  <meta slot="head" name="robots" content="noindex" />
+  <ShopHero />
+  <ProductGrid products={shopProducts} />
+</Layout>
