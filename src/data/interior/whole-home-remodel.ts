@@ -48,7 +48,7 @@ export const wholeHomeRemodel: ServiceEntity = {
     },
     images: [
       {
-        src: "/images/services/whole-home/after.jpg",
+        src: "/images/portfolio/whole-home/testimonial.jpg",
         alt: "Whole home after remodel",
       },
     ],
@@ -68,7 +68,7 @@ export const wholeHomeRemodel: ServiceEntity = {
   ],
   featuredTestimonial: {
     image: {
-      src: "/images/services/whole-home/after.jpg",
+      src: "/images/portfolio/whole-home/testimonial.jpg",
       alt: "Whole home after",
     },
     neighborhood: "Fremont",

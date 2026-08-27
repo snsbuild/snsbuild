@@ -114,7 +114,7 @@ export const shopPage: MarketingPage = {
       "landscape lighting seattle",
     ],
     ogImage: {
-      src: "/images/shop/golden-gardens-bed.jpg",
+      src: "/images/og/shop.jpg",
       alt: "Shop outdoor goods",
     },
     images: [],

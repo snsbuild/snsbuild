@@ -75,7 +75,7 @@ export const unusedSpaceConversions: ServiceEntity = {
   ],
   featuredTestimonial: {
     image: {
-      src: "/images/services/space-conversion/after.jpg",
+      src: "/images/portfolio/space-conversion/testimonial.jpg",
       alt: "Finished basement",
     },
     neighborhood: "Greenwood",
