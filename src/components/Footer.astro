@@ -7,13 +7,22 @@ const navItems = [
   { label: "Contact", href: "/contact" },
 ];
 
+const popularServices = [
+  { label: "Deck building", href: "/services/deck-building-seattle" },
+  { label: "Sheds & backyard offices", href: "/services/shed-building-seattle" },
+  { label: "Outdoor living", href: "/services/outdoor-seattle" },
+  { label: "Kitchen remodeling", href: "/services/kitchen-remodeling-seattle" },
+  { label: "Bathroom remodeling", href: "/services/bathroom-remodeling-seattle" },
+  { label: "ADU construction", href: "/services/adu-construction-seattle" },
+];
+
 import { phoneDisplay, phoneHref, license } from "../siteConfig";
 import Horse from "./Horse.astro";
 ---
 
 <footer class="bg-gray-900 text-white py-12">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid md:grid-cols-3 gap-8 mb-8">
+    <div class="grid gap-8 mb-8 sm:grid-cols-2 lg:grid-cols-4">
       <div>
         <h3 class="text-lg font-bold mb-4">S&S Construction</h3>
         <p class="text-gray-400">Licensed & Insured</p>
@@ -48,6 +57,24 @@ import Horse from "./Horse.astro";
               Privacy Policy
             </a>
           </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-bold uppercase mb-4">Popular Services</h4>
+        <ul class="space-y-2">
+          {
+            popularServices.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="text-gray-400 hover:text-white transition"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
 

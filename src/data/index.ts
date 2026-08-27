@@ -31,6 +31,8 @@ import {
   greenwoodBasement,
 } from "./expansion/unused-space-conversions";
 import { outdoorLiving, eastlakeDeck } from "./outdoor/outdoor-living";
+import { deckBuilding } from "./outdoor/decks";
+import { shedBuilding, magnoliaShedStudio } from "./outdoor/sheds";
 import {
   roofingStructural,
   madisonParkRoof,
@@ -51,6 +53,8 @@ export const services: ServiceEntity[] = [
   garageConversions,
   unusedSpaceConversions,
   outdoorLiving,
+  deckBuilding,
+  shedBuilding,
   roofingStructural,
   structuralUpgrades,
 ];
@@ -66,6 +70,7 @@ export const portfolio: PortfolioEntity[] = [
   columbiaGarageOffice,
   greenwoodBasement,
   eastlakeDeck,
+  magnoliaShedStudio,
   madisonParkRoof,
   capitolHillSeismic,
 ];

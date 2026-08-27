@@ -11,6 +11,8 @@ import ServiceAreas from "../../components/service/ServiceAreas.astro";
 import ServiceTestimonial from "../../components/service/ServiceTestimonial.astro";
 import ServiceHero from "../../components/service/ServiceHero.astro";
 import ServiceRelatedPortfolio from "../../components/service/ServiceRelatedPortfolio.astro";
+import ServiceRelatedServices from "../../components/service/ServiceRelatedServices.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 
 export async function getStaticPaths() {
   return services.map((s) => ({ params: { id: s.id } }));
@@ -32,10 +34,26 @@ const {
 } = page;
 
 const seo = buildSeoFrom(page);
+
+// Siblings in the same category — keeps every service page linked to its
+// neighbours without hand-maintaining a list on each entity.
+const relatedServices = services.filter(
+  (s) => s.category === page.category && s.id !== page.id,
+);
 ---
 
 <Layout {...seo}>
   <div class="relative isolate overflow-hidden bg-white py-16">
+    <div class="mx-auto max-w-7xl px-6 pb-10 lg:px-8">
+      <Breadcrumbs
+        crumbs={[
+          { label: "Home", href: "/" },
+          { label: "Services", href: "/services" },
+          { label: name },
+        ]}
+      />
+    </div>
+
     <ServiceHero
       eyebrow={name}
       header={header}
@@ -63,5 +81,11 @@ const seo = buildSeoFrom(page);
   <ProcessTimeline />
 
   <Faq faqs={faqs} />
+
+  <ServiceRelatedServices
+    services={relatedServices}
+    category={page.category}
+  />
+
   <ServiceFooter />
 </Layout>

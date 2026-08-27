@@ -9,6 +9,7 @@ import CallToAction from "../../components/CallToAction.astro";
 import PortfolioOverview from "../../components/portfolio/PortfolioOverview.astro";
 import { buildSeoFrom } from "../../seo";
 import { portfolio } from "../../data";
+import { portfolioCollections } from "../../data/portfolio-collections";
 import PortfolioGallery from "../../components/portfolio/PortfolioGallery.astro";
 
 export async function getStaticPaths() {
@@ -18,6 +19,12 @@ export async function getStaticPaths() {
 const { id } = Astro.params;
 const page = portfolio.find((p) => p.id === id)!;
 const seo = buildSeoFrom(page);
+
+// If this project belongs to a curated collection, send "see more" traffic
+// there rather than to the unfiltered portfolio index.
+const collection = portfolioCollections.find((c) =>
+  c.projects.some((p) => p.id === page.id),
+);
 
 const {
   name,
@@ -44,7 +51,10 @@ const {
 
   <PortfolioStory story={story} />
   <PortfolioGallery images={gallery.images} />
-  <CallToAction ctaTwo="See other case studies" ctaTwoHref="/portfolio" />
+  <CallToAction
+    ctaTwo={collection ? `See more ${collection.name.toLowerCase()}` : "See other case studies"}
+    ctaTwoHref={collection?.path ?? "/portfolio"}
+  />
   <PortfolioServicesPerformed
     eyebrow="What we did"
     title="Services performed on this job"

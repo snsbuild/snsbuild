@@ -1,6 +1,8 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import LandingNav from "../components/landing/LandingNav.astro";
+import LandingFooter from "../components/landing/LandingFooter.astro";
 import "../styles/global.css";
 import { safeJsonLdString } from "../seo";
 
@@ -10,11 +12,18 @@ const defaults = {
     "Licensed general contractor for residential remodeling in Seattle",
 };
 
-const { canonical, openGraph, jsonLd } = Astro.props;
+const { canonical, openGraph, jsonLd, robots, chrome = "full" } = Astro.props;
 
-const title = Astro.props.title ?? defaults.title;
-const description = Astro.props.description ?? defaults.description;
+// Pages spread the whole seo result (`<Layout {...seo} />`), which carries the
+// real title and description on openGraph — fall back to it before the generic
+// site defaults, or every page ships the same <title>.
+const title = Astro.props.title ?? openGraph?.title ?? defaults.title;
+const description =
+  Astro.props.description ?? openGraph?.description ?? defaults.description;
 const safe = jsonLd ? safeJsonLdString(jsonLd) : null;
+
+// Landing pages drop the full nav so paid traffic has one obvious next step.
+const isMinimal = chrome === "minimal";
 ---
 
 <!doctype html>
@@ -39,6 +48,7 @@ const safe = jsonLd ? safeJsonLdString(jsonLd) : null;
     </script>
 
     <meta name="description" content={description} />
+    {robots && <meta name="robots" content={robots} />}
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
     <meta name="generator" content={Astro.generator} />
@@ -99,10 +109,10 @@ const safe = jsonLd ? safeJsonLdString(jsonLd) : null;
   </head>
 
   <body class="flex flex-col min-h-screen bg-white text-gray-900">
-    <Header />
+    {isMinimal ? <LandingNav /> : <Header />}
     <main class="grow">
       <slot />
     </main>
-    <Footer />
+    {isMinimal ? <LandingFooter /> : <Footer />}
   </body>
 </html>

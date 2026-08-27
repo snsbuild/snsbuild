@@ -3,6 +3,7 @@ import type {
   ServiceEntity,
   PortfolioEntity,
   CollectionPage,
+  LandingPage,
   MarketingPage,
 } from "../types/entity-types";
 
@@ -10,9 +11,22 @@ import type {
   ServiceShowSeoPage,
   PortfolioShowSeoPage,
   CollectionSeoPage,
+  LandingSeoPage,
   MarketingSeoPage,
   SeoPage,
 } from "../types/seo-types";
+import type { FAQ } from "../types/content-types";
+
+export type SeoOptions = {
+  /** Absolute paths of the items a collection page lists. */
+  itemPaths?: string[];
+  /** Overrides the default breadcrumb trail on a collection page. */
+  breadcrumbs?: Array<{ name: string; item: string }>;
+  /** Adds FAQPage markup to a collection page. */
+  faqs?: FAQ[];
+  /** Overrides the collection name used in schema. */
+  collectionName?: string;
+};
 
 export function entityToSeoPage(
   entity: Entity,
@@ -77,9 +91,12 @@ export function entityToSeoPage(
 
 export function collectionToSeoPage(
   collection: CollectionPage<any>,
-  itemPaths?: string[],
+  options: SeoOptions = {},
 ): CollectionSeoPage {
-  const name = collection.type === "services" ? "Services" : "Portfolio";
+  const name =
+    options.collectionName ??
+    (collection.type === "services" ? "Services" : "Portfolio");
+
   return {
     kind: "collection",
     meta: {
@@ -93,8 +110,32 @@ export function collectionToSeoPage(
     },
     collection: {
       name,
-      itemUrls: itemPaths,
+      itemUrls: options.itemPaths,
+      breadcrumbs: options.breadcrumbs,
     },
+    faqs: options.faqs,
+  };
+}
+
+export function landingToSeoPage(landing: LandingPage): LandingSeoPage {
+  return {
+    kind: "landing",
+    meta: {
+      path: landing.path,
+      title: landing.seo.title,
+      description: landing.seo.description,
+      keywords: landing.seo.keywords,
+      ogType: "website",
+      ogImage: landing.seo.ogImage,
+      images: landing.seo.images,
+    },
+    service: {
+      name: landing.service.name,
+      serviceType: landing.service.serviceType,
+      areaServed: landing.service.areaServed,
+      servicePath: landing.service.servicePath,
+    },
+    faqs: landing.faqs,
   };
 }
 
@@ -115,10 +156,14 @@ export function marketingToSeoPage(marketing: MarketingPage): MarketingSeoPage {
 }
 
 export function toSeoPage(
-  input: Entity | CollectionPage<any> | MarketingPage,
+  input: Entity | CollectionPage<any> | LandingPage | MarketingPage,
+  options: SeoOptions = {},
 ): SeoPage {
   if ((input as any).kind === "collection")
-    return collectionToSeoPage(input as CollectionPage<any>);
+    return collectionToSeoPage(input as CollectionPage<any>, options);
+
+  if ((input as any).kind === "landing")
+    return landingToSeoPage(input as LandingPage);
 
   if ((input as any).type === "service" || (input as any).type === "portfolio")
     return entityToSeoPage(input as Entity);
