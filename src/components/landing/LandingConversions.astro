@@ -1,0 +1,38 @@
+---
+/**
+ * Fires Google Ads conversions for lead-form submits and phone taps.
+ * Both are no-ops until the matching label is filled in in siteConfig.ts,
+ * so this is safe to ship before the conversion actions exist in Ads.
+ */
+import { googleAdsId, adsConversionLabels } from "../../siteConfig";
+
+const leadSendTo = adsConversionLabels.leadForm
+  ? `${googleAdsId}/${adsConversionLabels.leadForm}`
+  : "";
+const phoneSendTo = adsConversionLabels.phoneCall
+  ? `${googleAdsId}/${adsConversionLabels.phoneCall}`
+  : "";
+---
+
+<script is:inline define:vars={{ leadSendTo, phoneSendTo }}>
+  (function () {
+    function fire(sendTo) {
+      if (!sendTo || typeof window.gtag !== "function") return;
+      window.gtag("event", "conversion", { send_to: sendTo });
+    }
+
+    document.querySelectorAll("[data-lead-form]").forEach(function (form) {
+      form.addEventListener("submit", function () {
+        fire(leadSendTo);
+      });
+    });
+
+    document
+      .querySelectorAll('[data-conversion="phone"]')
+      .forEach(function (link) {
+        link.addEventListener("click", function () {
+          fire(phoneSendTo);
+        });
+      });
+  })();
+</script>

@@ -1,0 +1,27 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PortfolioCollection from "../../components/portfolio/PortfolioCollection.astro";
+import Faq from "../../components/Faq.astro";
+import ServiceAreas from "../../components/service/ServiceAreas.astro";
+import { buildSeoFrom } from "../../seo";
+import { shedPortfolio } from "../../data/portfolio-collections";
+
+const page = shedPortfolio;
+
+const seo = buildSeoFrom(page, {
+  itemPaths: page.projects.map((p) => p.path),
+  collectionName: page.name,
+  faqs: page.faqs,
+  breadcrumbs: [
+    { name: "Home", item: "https://sns.build" },
+    { name: "Portfolio", item: "https://sns.build/portfolio" },
+    { name: page.name, item: `https://sns.build${page.path}` },
+  ],
+});
+---
+
+<Layout {...seo}>
+  <PortfolioCollection collection={page} />
+  <Faq faqs={page.faqs} />
+  <ServiceAreas />
+</Layout>

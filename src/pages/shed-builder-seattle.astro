@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LandingHero from "../components/landing/LandingHero.astro";
+import LandingValueProps from "../components/landing/LandingValueProps.astro";
+import LandingGallery from "../components/landing/LandingGallery.astro";
+import LandingCrossLinks from "../components/landing/LandingCrossLinks.astro";
+import LandingClosing from "../components/landing/LandingClosing.astro";
+import LandingConversions from "../components/landing/LandingConversions.astro";
+import ServiceTestimonial from "../components/service/ServiceTestimonial.astro";
+import ProcessTimeline from "../components/ProcessTimeline.astro";
+import ServiceAreas from "../components/service/ServiceAreas.astro";
+import Faq from "../components/Faq.astro";
+import { buildSeoFrom } from "../seo";
+import { shedBuilderLanding } from "../data/landing";
+
+const page = shedBuilderLanding;
+const seo = buildSeoFrom(page);
+---
+
+<Layout {...seo} robots={page.robots} chrome="minimal">
+  <LandingHero
+    hero={page.hero}
+    trustBadges={page.trustBadges}
+    stats={page.stats}
+  />
+
+  <LandingValueProps
+    heading="What you get when you hire us"
+    items={page.valueProps}
+  />
+
+  <ServiceTestimonial testimonial={page.testimonial} />
+
+  <LandingGallery gallery={page.gallery} />
+
+  <ProcessTimeline />
+
+  <Faq faqs={page.faqs} />
+
+  <ServiceAreas />
+
+  <LandingCrossLinks crossLinks={page.crossLinks} />
+
+  <LandingClosing closing={page.closing} />
+
+  <LandingConversions />
+</Layout>

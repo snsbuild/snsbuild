@@ -50,9 +50,25 @@ export type CollectionSeoPage = {
   kind: "collection";
   meta: SeoMeta;
   collection: {
-    name: "Services" | "Portfolio";
+    name: string;
     itemUrls?: string[];
+    /** Overrides the default Home > Services|Portfolio trail. */
+    breadcrumbs?: Array<{ name: string; item: string }>;
   };
+  faqs?: FAQ[];
+};
+
+export type LandingSeoPage = {
+  kind: "landing";
+  meta: SeoMeta;
+  service: {
+    name: string;
+    serviceType?: string;
+    areaServed?: string[];
+    /** Canonical service page this landing page is the paid entry point for. */
+    servicePath?: string;
+  };
+  faqs?: FAQ[];
 };
 
 export type MarketingSeoPage = {
@@ -65,4 +81,5 @@ export type SeoPage =
   | ServiceShowSeoPage
   | PortfolioShowSeoPage
   | CollectionSeoPage
+  | LandingSeoPage
   | MarketingSeoPage;

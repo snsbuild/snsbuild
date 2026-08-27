@@ -289,16 +289,21 @@ function buildCollectionGraph(
     primaryImage,
   );
 
-  const breadcrumbsNode =
+  const defaultTrail =
     page.collection.name === "Services"
-      ? buildBreadcrumbsNode(canonical, [
+      ? [
           { name: "Home", item: SITE },
           { name: "Services", item: canonical },
-        ])
-      : buildBreadcrumbsNode(canonical, [
+        ]
+      : [
           { name: "Home", item: SITE },
           { name: "Portfolio", item: canonical },
-        ]);
+        ];
+
+  const breadcrumbsNode = buildBreadcrumbsNode(
+    canonical,
+    page.collection.breadcrumbs ?? defaultTrail,
+  );
 
   const itemListNode = page.collection.itemUrls?.length
     ? {
@@ -313,7 +318,60 @@ function buildCollectionGraph(
       }
     : undefined;
 
-  return [webPageNode, breadcrumbsNode, itemListNode];
+  return [
+    webPageNode,
+    breadcrumbsNode,
+    itemListNode,
+    buildFaqNode(canonical, page.faqs),
+  ];
+}
+
+function buildLandingGraph(
+  page: Extract<SeoPage, { kind: "landing" }>,
+  canonical: string,
+  primaryImage?: string,
+) {
+  const meta = page.meta;
+
+  const serviceCanonical = page.service.servicePath
+    ? absUrl(page.service.servicePath)
+    : undefined;
+
+  const serviceNode = {
+    "@type": "Service",
+    "@id": `${canonical}#service`,
+    name: page.service.name,
+    serviceType: page.service.serviceType ?? page.service.name,
+    description: meta.description,
+    areaServed: page.service.areaServed ?? [SERVICE_AREA],
+    provider: { "@id": `${SITE}#business` },
+    image: toImageUrls(meta.images),
+    // Point the entity at the evergreen service page so the landing page and
+    // the service page are understood as the same offering, not two of them.
+    sameAs: serviceCanonical,
+    subjectOf: serviceCanonical
+      ? { "@id": `${serviceCanonical}#webpage` }
+      : undefined,
+  };
+
+  const webPageNode = {
+    ...buildWebPageNode(canonical, meta.title, meta.description, primaryImage),
+    about: { "@id": `${canonical}#service` },
+    significantLink: serviceCanonical,
+  };
+
+  const breadcrumbsNode = buildBreadcrumbsNode(canonical, [
+    { name: "Home", item: SITE },
+    { name: "Services", item: `${SITE}/services` },
+    { name: page.service.name, item: canonical },
+  ]);
+
+  return [
+    webPageNode,
+    serviceNode,
+    breadcrumbsNode,
+    buildFaqNode(canonical, page.faqs),
+  ];
 }
 
 function buildMarketingGraph(
@@ -357,7 +415,9 @@ export function buildSeo(page: SeoPage): SeoResult {
         ? buildPortfolioShowGraph(page, canonical, primaryOgImage)
         : page.kind === "collection"
           ? buildCollectionGraph(page, canonical, primaryOgImage)
-          : buildMarketingGraph(page, canonical, primaryOgImage);
+          : page.kind === "landing"
+            ? buildLandingGraph(page, canonical, primaryOgImage)
+            : buildMarketingGraph(page, canonical, primaryOgImage);
 
   const jsonLd = stripUndefinedDeep({
     "@context": "https://schema.org",

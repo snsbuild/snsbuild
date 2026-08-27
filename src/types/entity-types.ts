@@ -173,3 +173,82 @@ export type MarketingPage = {
   };
   faqs: FAQ[];
 };
+
+/**
+ * A curated sub-collection of the portfolio — e.g. every deck project.
+ * Shares the CollectionPage shape so it flows through the same SEO builder,
+ * with the extra content a standalone category page needs.
+ */
+export type PortfolioCollectionPage = CollectionPage<PortfolioIndexCard> & {
+  slug: string;
+  name: string;
+  eyebrow: string;
+  breadcrumb: string;
+  intro: string[];
+  stats: Array<{ label: string; value: string }>;
+  projects: PortfolioEntity[];
+  gallery: { heading: string; byline: string; images: ImageRef[] };
+  relatedServices: ServiceEntity[];
+  faqs: FAQ[];
+  closing: { heading: string; body: string; primaryCta: CTA; secondaryCta: CTA };
+};
+
+/**
+ * A paid-traffic landing page. Conversion-first layout, minimal site chrome,
+ * still fully marked up so it can earn organic traffic on its own.
+ */
+export type LandingPage = {
+  kind: "landing";
+  path: string;
+  slug: string;
+  /** Set to "noindex, follow" to keep the page ads-only. */
+  robots?: string;
+  seo: {
+    title: string;
+    description: string;
+    keywords: string[];
+    ogImage: ImageRef;
+    images: ImageRef[];
+  };
+  service: {
+    name: string;
+    serviceType: string;
+    areaServed: string[];
+    servicePath: string;
+  };
+  hero: {
+    eyebrow: string;
+    headline: string;
+    subhead: string;
+    bullets: string[];
+    image: ImageRef;
+    formHeading: string;
+    formByline: string;
+    formName: string;
+    projectTypes: string[];
+    submitLabel: string;
+  };
+  trustBadges: string[];
+  stats: Array<{ label: string; value: string }>;
+  valueProps: Array<{ title: string; description: string; icon: string }>;
+  gallery: {
+    eyebrow: string;
+    heading: string;
+    byline: string;
+    images: ImageRef[];
+    cta: CTA;
+  };
+  testimonial: Testimonial;
+  faqs: FAQ[];
+  crossLinks: {
+    heading: string;
+    byline: string;
+    links: Array<{ label: string; href: string; description: string }>;
+  };
+  closing: {
+    heading: string;
+    body: string;
+    primaryCta: CTA;
+    secondaryCta: CTA;
+  };
+};
