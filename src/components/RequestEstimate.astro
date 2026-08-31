@@ -129,7 +129,20 @@ const { className } = Astro.props;
         </div>
       </div>
     </div>
-    <form name="contact" method="POST" data-netlify="true" class="px-6 pt-20">
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      data-lead-form
+      class="px-6 pt-20"
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <p class="hidden">
+        <label>
+          Don't fill this out if you're human: <input name="bot-field" />
+        </label>
+      </p>
       <div class="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
         <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <!-- First Name -->
@@ -144,6 +157,7 @@ const { className } = Astro.props;
                 id="first-name"
                 type="text"
                 name="first-name"
+                required
                 autocomplete="given-name"
                 class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
               />
@@ -178,6 +192,7 @@ const { className } = Astro.props;
                 id="phone-number"
                 type="tel"
                 name="phone-number"
+                required
                 autocomplete="tel"
                 class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
               />
@@ -194,6 +209,7 @@ const { className } = Astro.props;
                 id="email"
                 type="email"
                 name="email"
+                required
                 autocomplete="email"
                 class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
               />

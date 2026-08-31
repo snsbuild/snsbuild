@@ -3,8 +3,11 @@
  * Fires Google Ads conversions for lead-form submits and phone taps.
  * Both are no-ops until the matching label is filled in in siteConfig.ts,
  * so this is safe to ship before the conversion actions exist in Ads.
+ *
+ * Rendered once from Layout.astro at the end of <body>, so it binds to markup
+ * anywhere on the page — including the footer, which parses after the slot.
  */
-import { googleAdsId, adsConversionLabels } from "../../siteConfig";
+import { googleAdsId, adsConversionLabels } from "../siteConfig";
 
 const leadSendTo = adsConversionLabels.leadForm
   ? `${googleAdsId}/${adsConversionLabels.leadForm}`

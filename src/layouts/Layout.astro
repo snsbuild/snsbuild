@@ -3,6 +3,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import LandingNav from "../components/landing/LandingNav.astro";
 import LandingFooter from "../components/landing/LandingFooter.astro";
+import Conversions from "../components/Conversions.astro";
 import "../styles/global.css";
 import { safeJsonLdString } from "../seo";
 
@@ -114,5 +115,6 @@ const isMinimal = chrome === "minimal";
       <slot />
     </main>
     {isMinimal ? <LandingFooter /> : <Footer />}
+    <Conversions />
   </body>
 </html>

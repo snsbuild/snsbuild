@@ -5,7 +5,6 @@ import LandingValueProps from "../components/landing/LandingValueProps.astro";
 import LandingGallery from "../components/landing/LandingGallery.astro";
 import LandingCrossLinks from "../components/landing/LandingCrossLinks.astro";
 import LandingClosing from "../components/landing/LandingClosing.astro";
-import LandingConversions from "../components/landing/LandingConversions.astro";
 import ServiceTestimonial from "../components/service/ServiceTestimonial.astro";
 import ProcessTimeline from "../components/ProcessTimeline.astro";
 import ServiceAreas from "../components/service/ServiceAreas.astro";
@@ -42,6 +41,4 @@ const seo = buildSeoFrom(page);
   <LandingCrossLinks crossLinks={page.crossLinks} />
 
   <LandingClosing closing={page.closing} />
-
-  <LandingConversions />
 </Layout>
