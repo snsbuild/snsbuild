@@ -1,38 +1,12 @@
 ---
 import { email, license, phoneDisplay, phoneHref } from "../siteConfig";
 
-const projectTypes = [
-  "Bathroom Remodel",
-  "Kitchen Remodel",
-  "Condo Remodel",
-  "Full Home Remodel",
-  "Deck Construction / Replacement",
-  "Shed / Backyard Office / Workshop",
-  "Outdoor Living Space (Pergola, Patio Cover, etc.)",
-  "Small Home Renovation",
-  "Insurance Repair",
-  "Not Sure - Need Guidance",
-];
-
-const referralTypes = [
-  "Google Search",
-  "Google Maps",
-  "Google Local Service Ad (Google Guaranteed)",
-  "Referral from a Friend or Neighbor",
-  "Realtor or Property Manager",
-  "Saw a Yard Sign",
-  "Saw Our Truck",
-  "Facebook or Instagram",
-  "Repeat Client",
-  "Other",
-];
-
 const { className } = Astro.props;
 ---
 
 <div class:list={["relative", "isolate", className]}>
   <div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
-    <div class="relative px-6 sm:pt-32 lg:static lg:px-8">
+    <div class="relative px-6 pt-12 lg:static lg:px-8 lg:pt-32">
       <div class="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
         <div
           class="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden bg-white ring-gray-900/10 lg:w-1/2"
@@ -76,14 +50,14 @@ const { className } = Astro.props;
           </div>
         </div>
         <h2
-          class="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
+          class="hidden text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:block"
         >
           Get a Free Estimate
         </h2>
-        <p class="mt-6 text-lg/8 text-gray-600">
-          Thinking about remodeling? Let's talk it through. Share a few details
-          about your project, timeline, and budget range, and we'll reach out to
-          schedule a consultation and walk you through next steps.
+        <p class="text-lg/8 text-gray-600 lg:mt-6">
+          Thinking about remodeling? Let's talk it through. Leave your name and
+          how to reach you, and we'll call to hear about your project, schedule
+          a consultation, and walk you through next steps.
         </p>
         <p class="mt-6 text-lg/8 text-gray-600">
           We work with homeowners across Seattle and aim to make the process
@@ -135,7 +109,7 @@ const { className } = Astro.props;
       data-netlify="true"
       netlify-honeypot="bot-field"
       data-lead-form
-      class="px-6 pt-20"
+      class="order-first px-6 pt-10 lg:order-none lg:pt-20"
     >
       <input type="hidden" name="form-name" value="contact" />
       <p class="hidden">
@@ -144,6 +118,11 @@ const { className } = Astro.props;
         </label>
       </p>
       <div class="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
+        <h2
+          class="mb-6 text-3xl font-semibold tracking-tight text-pretty text-gray-900 lg:hidden"
+        >
+          Get a Free Estimate
+        </h2>
         <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <!-- First Name -->
           <div>
@@ -215,156 +194,13 @@ const { className } = Astro.props;
               />
             </div>
           </div>
-          <!-- Project Type -->
-          <div class="sm:col-span-2">
-            <label
-              for="project-type"
-              class="block text-sm/6 font-medium text-gray-900"
-            >
-              Project Type
-            </label>
-            <div class="mt-2 grid grid-cols-1">
-              <select
-                id="project-type"
-                name="project-type"
-                class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-indigo-600 sm:text-sm/6"
-              >
-                {
-                  projectTypes.map((type) => (
-                    <option
-                      value={type}
-                      class="block truncate px-3 py-2 text-gray-900 select-none aria-selected:bg-indigo-600 aria-selected:text-white"
-                    >
-                      {type}
-                    </option>
-                  ))
-                }
-              </select>
-              <svg
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                data-slot="icon"
-                aria-hidden="true"
-                class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4"
-              >
-                <path
-                  d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
-                  clip-rule="evenodd"
-                  fill-rule="evenodd"></path>
-              </svg>
-            </div>
-          </div>
-          <!-- Street Address -->
-          <div class="col-span-full">
-            <label
-              for="street-address"
-              class="block text-sm/6 font-medium text-gray-900"
-              >Street address</label
-            >
-            <div class="mt-2">
-              <input
-                id="street-address"
-                type="text"
-                name="street-address"
-                autocomplete="street-address"
-                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-              />
-            </div>
-          </div>
-          <!-- City -->
-          <div class="sm:col-span-2 sm:col-start-1">
-            <label for="city" class="block text-sm/6 font-medium text-gray-900"
-              >City</label
-            >
-            <div class="mt-2">
-              <input
-                id="city"
-                type="text"
-                name="city"
-                autocomplete="address-level2"
-                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-              />
-            </div>
-          </div>
-          <!-- ZIP / Postal Code -->
-          <div class="sm:col-span-2">
-            <label
-              for="postal-code"
-              class="block text-sm/6 font-medium text-gray-900"
-              >ZIP / Postal code</label
-            >
-            <div class="mt-2">
-              <input
-                id="postal-code"
-                type="text"
-                name="postal-code"
-                autocomplete="postal-code"
-                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-              />
-            </div>
-          </div>
-          <!-- Referral -->
-          <div class="sm:col-span-2">
-            <label
-              for="referral-type"
-              class="block text-sm/6 font-medium text-gray-900"
-            >
-              How Did You Hear About Us?
-            </label>
-            <div class="mt-2 grid grid-cols-1">
-              <select
-                id="referral-type"
-                name="referral-type"
-                class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-indigo-600 sm:text-sm/6"
-              >
-                {
-                  referralTypes.map((type) => (
-                    <option
-                      value={type}
-                      class="block truncate px-3 py-2 text-gray-900 select-none aria-selected:bg-indigo-600 aria-selected:text-white"
-                    >
-                      {type}
-                    </option>
-                  ))
-                }
-              </select>
-              <svg
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                data-slot="icon"
-                aria-hidden="true"
-                class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4"
-              >
-                <path
-                  d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
-                  clip-rule="evenodd"
-                  fill-rule="evenodd"></path>
-              </svg>
-            </div>
-          </div>
-          <!-- Details -->
-          <div class="sm:col-span-2">
-            <label
-              for="message"
-              class="block text-sm/6 font-semibold text-gray-900"
-              >Tell Us A Little Bit About Your Project</label
-            >
-            <div class="mt-2.5">
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-              ></textarea>
-            </div>
-          </div>
         </div>
         <!-- Submit -->
         <div class="mt-8 flex justify-end">
           <button
             type="submit"
-            class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            >Submit</button
+            class="w-full rounded-md sm:w-auto bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >Get My Free Estimate</button
           >
         </div>
       </div>
