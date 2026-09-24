@@ -55,19 +55,9 @@ export const shedBuilderLanding: LandingPage = {
     },
     formHeading: "Get your free shed estimate",
     formByline:
-      "Tell us what's going inside and roughly where it goes. We'll get back to you to schedule a site visit — usually within one business day.",
+      "Leave your name and how to reach you. We'll call to hear about the project and schedule a site visit — usually within one business day.",
     formName: "shed-lead",
     submitLabel: "Request my free estimate",
-    projectTypes: [
-      "Storage shed",
-      "Garden or potting shed",
-      "Backyard office or studio",
-      "Workshop or bike storage",
-      "Shed foundation or pad only",
-      "Repair or re-roof an existing shed",
-      "Replace a failing prefab shed",
-      "Not sure yet — need guidance",
-    ],
   },
 
   trustBadges: [

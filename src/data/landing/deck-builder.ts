@@ -56,19 +56,9 @@ export const deckBuilderLanding: LandingPage = {
     },
     formHeading: "Get your free deck estimate",
     formByline:
-      "Tell us a bit about the project and we'll get back to you to schedule a site visit — usually within one business day.",
+      "Leave your name and how to reach you. We'll call to hear about the project and schedule a site visit — usually within one business day.",
     formName: "deck-lead",
     submitLabel: "Request my free estimate",
-    projectTypes: [
-      "New deck — ground level",
-      "New deck — raised or multi-level",
-      "Deck replacement or rebuild",
-      "Deck resurfacing (keep the frame)",
-      "Covered deck or deck roof",
-      "Deck + outdoor kitchen or fire feature",
-      "Railing replacement only",
-      "Not sure yet — need guidance",
-    ],
   },
 
   trustBadges: [

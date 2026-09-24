@@ -225,7 +225,6 @@ export type LandingPage = {
     formHeading: string;
     formByline: string;
     formName: string;
-    projectTypes: string[];
     submitLabel: string;
   };
   trustBadges: string[];
