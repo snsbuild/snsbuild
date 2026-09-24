@@ -34,10 +34,9 @@ const { hero, trustBadges, stats } = Astro.props;
   <div class="mx-auto max-w-7xl px-6 py-12 sm:py-16 lg:px-8">
     <div class="grid grid-cols-1 gap-x-12 gap-y-12 lg:grid-cols-2">
       {/*
-        On mobile `contents` lets the two halves of the pitch order themselves
-        around the form, so paid traffic hits the form right after the headline
-        instead of scrolling past every bullet first. On lg it collapses back
-        into a single left-hand column.
+        On mobile the form comes first so paid traffic lands on it with no
+        scrolling, and `contents` lets the pitch fall in beneath it. On lg the
+        pitch collapses back into a single left-hand column beside the form.
       */}
       <div class="contents lg:block lg:pt-6">
         <div class="order-1">
@@ -89,7 +88,7 @@ const { hero, trustBadges, stats } = Astro.props;
       </div>
 
       <!-- Lead form -->
-      <div id="lead-form" class="order-2 scroll-mt-24">
+      <div id="lead-form" class="order-first scroll-mt-24 lg:order-none">
         <div
           class="rounded-2xl bg-white p-6 shadow-xl outline-1 -outline-offset-1 outline-black/10 sm:p-8"
         >
