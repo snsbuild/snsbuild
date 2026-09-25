@@ -309,7 +309,7 @@ export const fremontWholeHome: PortfolioEntity = {
 };
 
 wholeHomeRemodel.relatedPortfolio = fremontWholeHome;
-kitchenRemodel.featuredTestimonial = fremontWholeHome.testimonial;
+wholeHomeRemodel.featuredTestimonial = fremontWholeHome.testimonial;
 
 fremontWholeHome.seo.images = fremontWholeHome.gallery.images;
 wholeHomeRemodel.seo.images = wholeHomeRemodel.galleryImages;
