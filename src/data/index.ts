@@ -16,6 +16,7 @@ import {
   fremontWholeHome,
 } from "./interior/whole-home-remodel";
 import { flooringInstallation, queenAnneFlooring } from "./interior/flooring";
+import { customBuiltIns } from "./interior/custom-built-ins";
 import {
   windowsDoors,
   wallingfordWindowsDoors,
@@ -48,6 +49,7 @@ export const services: ServiceEntity[] = [
   wholeHomeRemodel,
   flooringInstallation,
   windowsDoors,
+  customBuiltIns,
   aduConstruction,
   homeAdditions,
   garageConversions,
