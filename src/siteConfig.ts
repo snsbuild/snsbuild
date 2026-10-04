@@ -8,10 +8,10 @@ export const license = "SADDLSC757BW"
  * the LocalBusiness schema. Keep in sync with the Google Business Profile.
  */
 export const hours = {
-  display: "Monday–Friday, 9am–5pm",
+  display: "Monday–Friday, 6am–6pm",
   days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-  opens: "09:00",
-  closes: "17:00",
+  opens: "06:00",
+  closes: "18:00",
 };
 
 export const googleAdsId = "AW-18410415934";
