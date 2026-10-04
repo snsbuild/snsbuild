@@ -1,4 +1,5 @@
 ---
+import Img from "../Img.astro";
 import type { PortfolioCollectionPage } from "../../types/entity-types";
 import Breadcrumbs from "../Breadcrumbs.astro";
 import { phoneDisplay, phoneHref } from "../../siteConfig";
@@ -32,7 +33,7 @@ const {
       className="mb-10"
       crumbs={[
         { label: "Home", href: "/" },
-        { label: "Portfolio", href: "/portfolio" },
+        { label: "Portfolio", href: "/portfolio/" },
         { label: name },
       ]}
     />
@@ -64,7 +65,9 @@ const {
       </div>
 
       <div>
-        <img
+        <Img
+          sizes="(min-width: 1024px) 608px, 100vw"
+          fetchpriority="high"
           src={seo.ogImage.src}
           alt={seo.ogImage.alt}
           class="aspect-3/2 w-full rounded-2xl bg-gray-100 object-cover shadow-xl outline-1 -outline-offset-1 outline-black/10"
@@ -131,7 +134,8 @@ const {
               href={project.path}
               class:list={["group block", isSolo && "lg:w-1/2 lg:shrink-0"]}
             >
-              <img
+              <Img
+                sizes="(min-width: 1024px) 608px, 100vw"
                 src={project.seo.ogImage.src}
                 alt={project.seo.ogImage.alt}
                 loading="lazy"
@@ -201,7 +205,8 @@ const {
     <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {
         gallery.images.map((image) => (
-          <img
+          <Img
+            sizes="(min-width: 640px) 400px, 100vw"
             src={image.src}
             alt={image.alt}
             loading="lazy"

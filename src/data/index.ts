@@ -119,7 +119,7 @@ export const homePageFeaturedServices = () => {
 export const servicesIndex: CollectionPage<any> = {
   kind: "collection",
   type: "services",
-  path: "/services",
+  path: "/services/",
   seo: {
     images: [],
     title: "Remodeling Services in Seattle | Saddle and Spur Construction",
@@ -131,7 +131,7 @@ export const servicesIndex: CollectionPage<any> = {
   content: {
     headline: "Services",
     byline: "End-to-end remodeling for Seattle homes.",
-    primaryCta: { label: "Get a quote", href: "/contact" },
+    primaryCta: { label: "Get a quote", href: "/contact/" },
   },
   cards: serviceIndexCards,
 };
@@ -139,7 +139,7 @@ export const servicesIndex: CollectionPage<any> = {
 export const portfolioIndex: CollectionPage<any> = {
   kind: "collection",
   type: "portfolio",
-  path: "/portfolio",
+  path: "/portfolio/",
   seo: {
     images: [],
     title: "Seattle Remodeling Portfolio | Saddle and Spur Construction",
@@ -151,7 +151,7 @@ export const portfolioIndex: CollectionPage<any> = {
   content: {
     headline: "Portfolio",
     byline: "Recent kitchens, baths, whole-home projects, ADUs, and more.",
-    primaryCta: { label: "Start your project", href: "/contact" },
+    primaryCta: { label: "Start your project", href: "/contact/" },
   },
   cards: portfolioIndexCards,
 };

@@ -5,15 +5,14 @@ import { wallingfordWindowsDoors } from "../interior/windows-doors";
 export const windowsDoorsLanding: LandingPage = {
   kind: "landing",
   slug: "window-replacement-seattle",
-  path: "/window-replacement-seattle",
+  path: "/window-replacement-seattle/",
 
   // Set to "noindex, follow" to keep this page exclusive to paid traffic.
   robots: "index, follow",
 
   seo: {
-    title:
-      "Free Window Replacement Estimate in Seattle | Window & Door Quotes | Saddle and Spur",
-    description: `Licensed Seattle window and door installer. Energy-efficient replacement windows and entry, patio, and French doors, flashed and sealed properly. Free on-site estimate. Call ${phoneDisplay}.`,
+    title: "Free Window Replacement Quote in Seattle | Saddle and Spur",
+    description: `Licensed Seattle window and door installer. Energy-efficient windows plus entry, patio, and French doors. Free on-site estimate. Call ${phoneDisplay}.`,
     // Deliberately estimate/quote intent — the service page owns the
     // "window replacement seattle" head term.
     keywords: [
@@ -35,7 +34,7 @@ export const windowsDoorsLanding: LandingPage = {
     name: "Windows & Doors",
     serviceType: "Window & Door Replacement",
     areaServed: ["Greater Seattle / King County"],
-    servicePath: "/services/windows-doors-seattle",
+    servicePath: "/services/windows-doors-seattle/",
   },
 
   hero: {
@@ -146,7 +145,7 @@ export const windowsDoorsLanding: LandingPage = {
     ],
     cta: {
       label: "See the Wallingford window project",
-      href: "/portfolio/wallingford-windows-doors",
+      href: "/portfolio/wallingford-windows-doors/",
     },
   },
 
@@ -192,24 +191,24 @@ export const windowsDoorsLanding: LandingPage = {
     links: [
       {
         label: "Window & door services",
-        href: "/services/windows-doors-seattle",
+        href: "/services/windows-doors-seattle/",
         description:
           "Window replacement, exterior and interior doors, trim, and casing.",
       },
       {
         label: "Wallingford window & door refresh",
-        href: "/portfolio/wallingford-windows-doors",
+        href: "/portfolio/wallingford-windows-doors/",
         description:
           "Fourteen original single-pane windows and the entry door replaced in three days.",
       },
       {
         label: "Roofing & structural",
-        href: "/services/roofing-structural-seattle",
+        href: "/services/roofing-structural-seattle/",
         description: "Keep the rest of the envelope tight through the rainy season.",
       },
       {
         label: "Whole-home remodeling",
-        href: "/services/whole-home-remodeling-seattle",
+        href: "/services/whole-home-remodeling-seattle/",
         description:
           "Windows alongside a kitchen, baths, and flooring on one schedule.",
       },
@@ -222,7 +221,7 @@ export const windowsDoorsLanding: LandingPage = {
     primaryCta: { label: "Request a free estimate", href: "#lead-form" },
     secondaryCta: {
       label: "Or read about our window & door services",
-      href: "/services/windows-doors-seattle",
+      href: "/services/windows-doors-seattle/",
     },
   },
 };

@@ -15,3 +15,10 @@ export const adsConversionLabels = {
   phoneCall: "",
 };
 
+
+/**
+ * Public profiles for the business (Google Business Profile, Yelp, Houzz, BBB…).
+ * These become `sameAs` on the LocalBusiness schema, which helps Google tie the
+ * site to those listings. Add full URLs as profiles go live.
+ */
+export const businessProfiles: string[] = [];

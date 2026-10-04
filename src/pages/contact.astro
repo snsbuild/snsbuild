@@ -4,26 +4,56 @@ import RequestEstimate from "../components/RequestEstimate.astro";
 import ProcessTimeline from "../components/ProcessTimeline.astro";
 import Faq from "../components/Faq.astro";
 import ServiceAreas from "../components/service/ServiceAreas.astro";
+import { buildSeoFrom } from "../seo";
+import { email, license, phoneDisplay } from "../siteConfig";
+import type { MarketingPage } from "../types/entity-types";
 
-const faqs = [
-  {
-    question: "",
-    answer: "",
+// /estimate owns "free estimate" intent; this page targets people looking for
+// the business itself (brand + "contact" searches), so it shouldn't compete.
+export const contactPage: MarketingPage = {
+  kind: "marketing",
+  path: "/contact/",
+  seo: {
+    title: "Contact Saddle and Spur Construction | Seattle Contractor",
+    description: `Call ${phoneDisplay}, email ${email}, or send us a message. Saddle and Spur Construction is a licensed Seattle general contractor.`,
+    keywords: [
+      "contact saddle and spur construction",
+      "seattle general contractor phone number",
+    ],
+    ogImage: {
+      src: "/images/og/estimate.jpg",
+      alt: "Saddle and Spur Construction on a Seattle remodeling project",
+    },
+    images: [],
   },
-  {
-    question: "",
-    answer: "",
-  },
-  {
-    question: "",
-    answer: "",
-  },
-];
+  faqs: [
+    {
+      question: "What's the best way to reach you?",
+      answer: `Call ${phoneDisplay} (Monday–Friday, 8am–6pm), email ${email}, or fill out the form on this page and we'll call you back.`,
+    },
+    {
+      question: "Are you licensed and insured?",
+      answer: `Yes. We're a licensed Washington general contractor (license ${license}) with full general liability and workers' compensation coverage.`,
+    },
+    {
+      question: "What areas do you serve?",
+      answer:
+        "We serve Greater Seattle and King County — including Ballard, Capitol Hill, Fremont, Bellevue, Kirkland, Sammamish, and surrounding neighborhoods.",
+    },
+    {
+      question: "Do you charge for estimates?",
+      answer:
+        "No. We visit the site, review the scope with you, and provide a detailed written estimate at no charge.",
+    },
+  ],
+};
+
+const seo = buildSeoFrom(contactPage);
 ---
 
-<Layout title="Request Estimate | S&S Construction">
-  <RequestEstimate className="pb-12" />
+<Layout {...seo}>
+  <RequestEstimate className="pb-12" heading="Contact Us" headingLevel="h1" />
   <ProcessTimeline />
   <ServiceAreas />
-  <Faq faqs={faqs} />
+  <Faq faqs={contactPage.faqs} />
 </Layout>

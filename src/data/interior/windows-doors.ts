@@ -8,7 +8,7 @@ import {
 export const windowsDoors: ServiceEntity = {
   id: "windows-doors-seattle",
   type: "service",
-  path: "/services/windows-doors-seattle",
+  path: "/services/windows-doors-seattle/",
   homePageFeatured: false,
   category: ServiceCategory.Interior,
   name: "Windows & Doors",
@@ -112,8 +112,8 @@ export const windowsDoors: ServiceEntity = {
     eyebrow: "What we do",
     heading: "Window & door services",
     byline: "Better efficiency, better curb appeal.",
-    primaryCta: { label: "Get a quote", href: "/contact" },
-    secondaryCta: { label: "See portfolio", href: "/portfolio" },
+    primaryCta: { label: "Get a quote", href: "/contact/" },
+    secondaryCta: { label: "See portfolio", href: "/portfolio/" },
     services: [
       {
         title: "Window replacement",
@@ -147,7 +147,7 @@ export const windowsDoors: ServiceEntity = {
 export const wallingfordWindowsDoors: PortfolioEntity = {
   id: "wallingford-windows-doors",
   type: "portfolio",
-  path: "/portfolio/wallingford-windows-doors",
+  path: "/portfolio/wallingford-windows-doors/",
   name: "Wallingford Window & Door Refresh",
   description:
     "Full window replacement and new entry door on a 1940s Wallingford home — improved efficiency, updated look, and a weather-tight installation.",
@@ -198,10 +198,10 @@ export const wallingfordWindowsDoors: PortfolioEntity = {
       alt: "Wallingford windows after replacement",
     },
     eyebrow: "Interior • Windows & Doors",
-    primaryCta: { label: "Start your project", href: "/contact" },
+    primaryCta: { label: "Start your project", href: "/contact/" },
     secondaryCta: {
       label: "Windows & Doors",
-      href: "/services/windows-doors-seattle",
+      href: "/services/windows-doors-seattle/",
     },
   },
 
@@ -287,8 +287,8 @@ export const wallingfordWindowsDoors: PortfolioEntity = {
   cta: {
     heading: "Ready for new windows or doors?",
     body: "Tell us what you're replacing and we'll put together a clear scope and cost.",
-    primaryCta: { label: "Request an estimate", href: "/contact" },
-    secondaryCta: { label: "View services", href: "/services" },
+    primaryCta: { label: "Request an estimate", href: "/contact/" },
+    secondaryCta: { label: "View services", href: "/services/" },
   },
 
   related: [windowsDoors],

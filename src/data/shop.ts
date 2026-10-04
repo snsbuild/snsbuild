@@ -103,7 +103,7 @@ export const shopProducts: ShopProduct[] = [
 
 export const shopPage: MarketingPage = {
   kind: "marketing",
-  path: "/shop",
+  path: "/shop/",
   seo: {
     title: "Shop | Saddle and Spur Construction",
     description:

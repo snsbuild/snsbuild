@@ -8,7 +8,7 @@ import {
 export const aduConstruction: ServiceEntity = {
   id: "adu-construction-seattle",
   type: "service",
-  path: "/services/adu-construction-seattle",
+  path: "/services/adu-construction-seattle/",
   homePageFeatured: true,
   category: ServiceCategory.Expansion,
   name: "ADU Construction",
@@ -95,8 +95,8 @@ export const aduConstruction: ServiceEntity = {
     eyebrow: "What we do",
     heading: "ADU construction services",
     byline: "From permit to keys.",
-    primaryCta: { label: "Get a quote", href: "/contact" },
-    secondaryCta: { label: "See portfolio", href: "/portfolio" },
+    primaryCta: { label: "Get a quote", href: "/contact/" },
+    secondaryCta: { label: "See portfolio", href: "/portfolio/" },
     services: [
       {
         title: "Detached ADUs",
@@ -130,7 +130,7 @@ export const aduConstruction: ServiceEntity = {
 export const phinneyRidgeAdu: PortfolioEntity = {
   id: "phinney-ridge-adu",
   type: "portfolio",
-  path: "/portfolio/phinney-ridge-adu",
+  path: "/portfolio/phinney-ridge-adu/",
   name: "Phinney Ridge Backyard ADU",
   description:
     "A 400 sq ft detached ADU in Phinney Ridge — full kitchen, full bath, sleeping loft, and a covered deck, permitted and built by one team.",
@@ -183,10 +183,10 @@ export const phinneyRidgeAdu: PortfolioEntity = {
       alt: "ADU construction in Seattle",
     },
     eyebrow: "Expansion • ADU Construction",
-    primaryCta: { label: "Start your project", href: "/contact" },
+    primaryCta: { label: "Start your project", href: "/contact/" },
     secondaryCta: {
       label: "ADU construction",
-      href: "/services/adu-construction-seattle",
+      href: "/services/adu-construction-seattle/",
     },
   },
 
@@ -281,8 +281,8 @@ export const phinneyRidgeAdu: PortfolioEntity = {
   cta: {
     heading: "Ready to build your ADU?",
     body: "Tell us about your lot and goals — we'll walk you through what's possible and what it costs.",
-    primaryCta: { label: "Request an estimate", href: "/contact" },
-    secondaryCta: { label: "View services", href: "/services" },
+    primaryCta: { label: "Request an estimate", href: "/contact/" },
+    secondaryCta: { label: "View services", href: "/services/" },
   },
 
   related: [aduConstruction],

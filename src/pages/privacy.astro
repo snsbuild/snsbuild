@@ -3,7 +3,11 @@ import Layout from "../layouts/Layout.astro";
 import { email, phoneDisplay, phoneHref } from "../siteConfig";
 ---
 
-<Layout title="Privacy Policy | S&S Construction">
+<Layout
+  title="Privacy Policy | Saddle and Spur Construction"
+  description="How Saddle and Spur Construction collects, uses, and protects the information you share through sns.build."
+  canonical="https://sns.build/privacy/"
+>
   <section class="py-16">
     <div class="max-w-4xl mx-auto px-4">
       <h1 class="text-4xl font-bold mb-6">Privacy Policy</h1>
@@ -13,7 +17,7 @@ import { email, phoneDisplay, phoneHref } from "../siteConfig";
 
         <h2 class="text-2xl font-bold mt-8 mb-4">Introduction</h2>
         <p class="mb-6">
-          S&S Construction ("we," "us," "our," or "Company") respects the
+          Saddle and Spur Construction ("we," "us," "our," or "Company") respects the
           privacy of our users ("user" or "you"). This Privacy Policy explains
           how we collect, use, disclose, and safeguard your information when you
           visit our website.
@@ -87,7 +91,7 @@ import { email, phoneDisplay, phoneHref } from "../siteConfig";
           contact us at:
         </p>
         <p>
-          S&S Construction<br />
+          Saddle and Spur Construction<br />
           Email: <a href={`mailto:${email}`} class="text-indigo-700">{email}</a
           ><br />
           Phone: <a href={`tel:${phoneHref}`} class="text-indigo-700"

@@ -5,15 +5,14 @@ import { queenAnneFlooring } from "../interior/flooring";
 export const flooringLanding: LandingPage = {
   kind: "landing",
   slug: "flooring-installer-seattle",
-  path: "/flooring-installer-seattle",
+  path: "/flooring-installer-seattle/",
 
   // Set to "noindex, follow" to keep this page exclusive to paid traffic.
   robots: "index, follow",
 
   seo: {
-    title:
-      "Free Flooring Estimate in Seattle | Flooring Installation Quotes | Saddle and Spur",
-    description: `Licensed Seattle flooring installer. Hardwood, LVP, and tile — demo, subfloor prep, install, and site-finishing by one crew. Free on-site estimate, line-item pricing. Call ${phoneDisplay}.`,
+    title: "Free Flooring Estimate in Seattle | Saddle and Spur",
+    description: `Licensed Seattle flooring installer. Hardwood, LVP, and tile, with subfloor prep by one crew. Free on-site estimate, line-item pricing. Call ${phoneDisplay}.`,
     // Deliberately estimate/quote intent — the service page owns the
     // "flooring installation seattle" head term.
     keywords: [
@@ -35,7 +34,7 @@ export const flooringLanding: LandingPage = {
     name: "Flooring Installation",
     serviceType: "Flooring Installation",
     areaServed: ["Greater Seattle / King County"],
-    servicePath: "/services/flooring-installation-seattle",
+    servicePath: "/services/flooring-installation-seattle/",
   },
 
   hero: {
@@ -146,7 +145,7 @@ export const flooringLanding: LandingPage = {
     ],
     cta: {
       label: "See the Queen Anne flooring project",
-      href: "/portfolio/queen-anne-hardwood-floors",
+      href: "/portfolio/queen-anne-hardwood-floors/",
     },
   },
 
@@ -192,24 +191,24 @@ export const flooringLanding: LandingPage = {
     links: [
       {
         label: "Flooring installation services",
-        href: "/services/flooring-installation-seattle",
+        href: "/services/flooring-installation-seattle/",
         description:
           "Hardwood, LVP, tile, and subfloor prep — how we scope each one.",
       },
       {
         label: "Queen Anne hardwood floors",
-        href: "/portfolio/queen-anne-hardwood-floors",
+        href: "/portfolio/queen-anne-hardwood-floors/",
         description:
           "Carpet out, white oak in, and the whole house site-finished in five days.",
       },
       {
         label: "Kitchen remodeling",
-        href: "/services/kitchen-remodeling-seattle",
+        href: "/services/kitchen-remodeling-seattle/",
         description: "Pair new floors with a kitchen remodel on one schedule.",
       },
       {
         label: "Whole-home remodeling",
-        href: "/services/whole-home-remodeling-seattle",
+        href: "/services/whole-home-remodeling-seattle/",
         description:
           "Flooring, kitchen, and baths coordinated as one project.",
       },
@@ -222,7 +221,7 @@ export const flooringLanding: LandingPage = {
     primaryCta: { label: "Request a free estimate", href: "#lead-form" },
     secondaryCta: {
       label: "Or read about our flooring services",
-      href: "/services/flooring-installation-seattle",
+      href: "/services/flooring-installation-seattle/",
     },
   },
 };

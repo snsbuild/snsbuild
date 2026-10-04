@@ -6,8 +6,18 @@ import type {
   SeoResult,
 } from "../types/content-types";
 import type { SeoPage } from "../types/seo-types";
+import {
+  phoneHref,
+  email,
+  license,
+  businessProfiles,
+} from "../siteConfig";
+import { serviceAreas } from "../data/service-areas";
 
 const SITE = "https://sns.build";
+// Pages are served with a trailing slash (Netlify 301s the bare form), so every
+// URL we hand to search engines must carry one or it points at a redirect.
+const HOME = `${SITE}/`;
 const BUSINESS_NAME = "Saddle and Spur Construction";
 const SERVICE_AREA = "Greater Seattle / King County";
 const DEFAULT_REGION = "WA";
@@ -33,19 +43,52 @@ const stripUndefinedDeep = (obj: any): any => {
 };
 
 /** ---------- base nodes ---------- */
+// Service-area business: no street address, so areaServed carries the
+// location signal. Keep this in sync with the footer/GBP name, phone and email.
 const buildLocalBusinessNode = () => ({
   "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
   "@id": `${SITE}#business`,
   name: BUSINESS_NAME,
-  url: SITE,
-  areaServed: SERVICE_AREA,
+  url: HOME,
+  telephone: phoneHref,
+  email,
+  logo: `${SITE}/logo.svg`,
+  image: `${SITE}/images/og/about.jpg`,
+  priceRange: "$$$",
+  // Matches the phone hours shown on the estimate form.
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "08:00",
+    closes: "18:00",
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Seattle",
+    addressRegion: DEFAULT_REGION,
+    addressCountry: "US",
+  },
+  areaServed: serviceAreas.map((name) => ({
+    "@type": "Place",
+    name: `${name}, ${DEFAULT_REGION}`,
+  })),
+  hasCredential: {
+    "@type": "EducationalOccupationalCredential",
+    credentialCategory: "Washington State General Contractor License",
+    identifier: license,
+    recognizedBy: {
+      "@type": "GovernmentOrganization",
+      name: "Washington State Department of Labor & Industries",
+    },
+  },
+  sameAs: businessProfiles.length ? businessProfiles : undefined,
 });
 
 const buildWebSiteNode = () => ({
   "@type": "WebSite",
   "@id": `${SITE}#website`,
   name: BUSINESS_NAME,
-  url: SITE,
+  url: HOME,
 });
 
 const buildWebPageNode = (
@@ -130,8 +173,8 @@ function buildServiceShowGraph(
   };
 
   const breadcrumbsNode = buildBreadcrumbsNode(canonical, [
-    { name: "Home", item: SITE },
-    { name: "Services", item: `${SITE}/services` },
+    { name: "Home", item: HOME },
+    { name: "Services", item: `${SITE}/services/` },
     { name: page.service.name, item: canonical },
   ]);
 
@@ -259,8 +302,8 @@ function buildPortfolioShowGraph(
     : undefined;
 
   const breadcrumbsNode = buildBreadcrumbsNode(canonical, [
-    { name: "Home", item: SITE },
-    { name: "Portfolio", item: `${SITE}/portfolio` },
+    { name: "Home", item: HOME },
+    { name: "Portfolio", item: `${SITE}/portfolio/` },
     { name: meta.title, item: canonical },
   ]);
 
@@ -292,11 +335,11 @@ function buildCollectionGraph(
   const defaultTrail =
     page.collection.name === "Services"
       ? [
-          { name: "Home", item: SITE },
+          { name: "Home", item: HOME },
           { name: "Services", item: canonical },
         ]
       : [
-          { name: "Home", item: SITE },
+          { name: "Home", item: HOME },
           { name: "Portfolio", item: canonical },
         ];
 
@@ -361,8 +404,8 @@ function buildLandingGraph(
   };
 
   const breadcrumbsNode = buildBreadcrumbsNode(canonical, [
-    { name: "Home", item: SITE },
-    { name: "Services", item: `${SITE}/services` },
+    { name: "Home", item: HOME },
+    { name: "Services", item: `${SITE}/services/` },
     { name: page.service.name, item: canonical },
   ]);
 
@@ -386,8 +429,16 @@ function buildMarketingGraph(
     meta.description,
     primaryImage,
   );
+  // The homepage is the business's own page: point it at the LocalBusiness
+  // node and skip the one-item "Home" breadcrumb trail.
+  if (canonical === HOME) {
+    return [
+      { ...webPageNode, about: { "@id": `${SITE}#business` } },
+      buildFaqNode(canonical, page.faqs),
+    ];
+  }
   const breadcrumbsNode = buildBreadcrumbsNode(canonical, [
-    { name: "Home", item: SITE },
+    { name: "Home", item: HOME },
     { name: meta.title, item: canonical },
   ]);
   return [webPageNode, breadcrumbsNode, buildFaqNode(canonical, page.faqs)];

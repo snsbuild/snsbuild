@@ -9,11 +9,11 @@ import type { MarketingPage } from "../types/entity-types";
 
 export const estimatePage: MarketingPage = {
   kind: "marketing",
-  path: "/estimate",
+  path: "/estimate/",
   seo: {
     title: "Request a Free Estimate | Saddle and Spur Construction",
     description:
-      "Get a detailed estimate for your Seattle remodeling project. We review your goals, visit the site, and put together a clear scope with transparent pricing — no vague ballparks.",
+      "Free, detailed estimates for Seattle remodeling projects. We visit the site, review your goals, and send a clear line-item scope — no vague ballparks.",
     keywords: [
       "free remodel estimate seattle",
       "seattle contractor estimate",
@@ -63,14 +63,12 @@ export const estimatePage: MarketingPage = {
 const seo = buildSeoFrom(estimatePage);
 ---
 
-<Layout
-  title={seo.openGraph.title}
-  description={seo.openGraph.description}
-  canonical={seo.canonical}
-  openGraph={seo.openGraph}
-  jsonLd={seo.jsonLd}
->
-  <RequestEstimate className="pb-6" />
+<Layout {...seo}>
+  <RequestEstimate
+    className="pb-6"
+    heading="Get a Free Remodeling Estimate"
+    headingLevel="h1"
+  />
   <ProcessTimeline />
   <ServiceAreas />
   <Faq faqs={estimatePage.faqs} />

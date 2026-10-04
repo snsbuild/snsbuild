@@ -5,14 +5,14 @@ import { magnoliaShedStudio } from "../outdoor/sheds";
 export const shedBuilderLanding: LandingPage = {
   kind: "landing",
   slug: "shed-builder-seattle",
-  path: "/shed-builder-seattle",
+  path: "/shed-builder-seattle/",
 
   // Set to "noindex, follow" to keep this page exclusive to paid traffic.
   robots: "index, follow",
 
   seo: {
-    title: "Free Shed Estimate in Seattle | Custom Shed Quotes | Saddle and Spur",
-    description: `Licensed Seattle shed builder. Custom storage sheds, garden sheds, workshops, and insulated backyard offices on real foundations. Free estimate, setbacks checked. Call ${phoneDisplay}.`,
+    title: "Free Custom Shed Estimate in Seattle | Saddle and Spur",
+    description: `Licensed Seattle shed builder. Storage sheds, workshops, and insulated backyard offices on real foundations. Free estimate. Call ${phoneDisplay}.`,
     // Deliberately estimate/quote intent — the service page owns the
     // "shed builder seattle" head term.
     keywords: [
@@ -34,7 +34,7 @@ export const shedBuilderLanding: LandingPage = {
     name: "Shed Building",
     serviceType: "Shed Construction",
     areaServed: ["Greater Seattle / King County"],
-    servicePath: "/services/shed-building-seattle",
+    servicePath: "/services/shed-building-seattle/",
   },
 
   hero: {
@@ -141,7 +141,7 @@ export const shedBuilderLanding: LandingPage = {
     ],
     cta: {
       label: "See the full shed portfolio",
-      href: "/portfolio/sheds-seattle",
+      href: "/portfolio/sheds-seattle/",
     },
   },
 
@@ -187,24 +187,24 @@ export const shedBuilderLanding: LandingPage = {
     links: [
       {
         label: "Shed building services",
-        href: "/services/shed-building-seattle",
+        href: "/services/shed-building-seattle/",
         description:
           "Storage, garden, workshop, and office builds — plus foundations and repairs.",
       },
       {
         label: "Shed portfolio",
-        href: "/portfolio/sheds-seattle",
+        href: "/portfolio/sheds-seattle/",
         description: "Finished sheds and backyard structures with details.",
       },
       {
         label: "Magnolia shed studio",
-        href: "/portfolio/magnolia-shed-studio",
+        href: "/portfolio/magnolia-shed-studio/",
         description:
           "A 190 sq ft insulated backyard office built under the permit threshold.",
       },
       {
         label: "ADU construction",
-        href: "/services/adu-construction-seattle",
+        href: "/services/adu-construction-seattle/",
         description:
           "If you need a kitchen, bathroom, or rental, a DADU is the right path.",
       },
@@ -217,7 +217,7 @@ export const shedBuilderLanding: LandingPage = {
     primaryCta: { label: "Request a free estimate", href: "#lead-form" },
     secondaryCta: {
       label: "Or read about our shed building services",
-      href: "/services/shed-building-seattle",
+      href: "/services/shed-building-seattle/",
     },
   },
 };

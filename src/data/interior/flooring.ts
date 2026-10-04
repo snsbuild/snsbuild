@@ -7,7 +7,7 @@ import {
 export const flooringInstallation: ServiceEntity = {
   id: "flooring-installation-seattle",
   type: "service",
-  path: "/services/flooring-installation-seattle",
+  path: "/services/flooring-installation-seattle/",
   homePageFeatured: false,
   category: ServiceCategory.Interior,
   name: "Flooring Installation",
@@ -112,8 +112,8 @@ export const flooringInstallation: ServiceEntity = {
     eyebrow: "What we do",
     heading: "Flooring installation services",
     byline: "The right material, installed right.",
-    primaryCta: { label: "Get a quote", href: "/contact" },
-    secondaryCta: { label: "See portfolio", href: "/portfolio" },
+    primaryCta: { label: "Get a quote", href: "/contact/" },
+    secondaryCta: { label: "See portfolio", href: "/portfolio/" },
     services: [
       {
         title: "Hardwood & engineered wood",
@@ -147,7 +147,7 @@ export const flooringInstallation: ServiceEntity = {
 export const queenAnneFlooring: PortfolioEntity = {
   id: "queen-anne-hardwood-floors",
   type: "portfolio",
-  path: "/portfolio/queen-anne-hardwood-floors",
+  path: "/portfolio/queen-anne-hardwood-floors/",
   name: "Queen Anne Hardwood Floors",
   description:
     "Full main and upper level flooring replacement in a Queen Anne craftsman — old carpet removed, white oak hardwood installed and site-finished.",
@@ -193,10 +193,10 @@ export const queenAnneFlooring: PortfolioEntity = {
       alt: "Queen Anne hardwood floors after",
     },
     eyebrow: "Interior • Flooring",
-    primaryCta: { label: "Start your project", href: "/contact" },
+    primaryCta: { label: "Start your project", href: "/contact/" },
     secondaryCta: {
       label: "Flooring installation",
-      href: "/services/flooring-installation-seattle",
+      href: "/services/flooring-installation-seattle/",
     },
   },
 
@@ -298,8 +298,8 @@ export const queenAnneFlooring: PortfolioEntity = {
   cta: {
     heading: "Ready for new floors?",
     body: "Tell us what you're working with and we'll put together a clear scope and timeline.",
-    primaryCta: { label: "Request an estimate", href: "/contact" },
-    secondaryCta: { label: "View services", href: "/services" },
+    primaryCta: { label: "Request an estimate", href: "/contact/" },
+    secondaryCta: { label: "View services", href: "/services/" },
   },
 
   related: [flooringInstallation],

@@ -10,11 +10,35 @@ import HomeTestimonialCloud from "../components/home/HomeTestimonialCloud.astro"
 import ServiceList from "../components/service/ServiceList.astro";
 import { homePageFeaturedServices } from "../data";
 import ServiceAreas from "../components/service/ServiceAreas.astro";
+import { buildSeoFrom } from "../seo";
+import type { MarketingPage } from "../types/entity-types";
 
+const homePage: MarketingPage = {
+  kind: "marketing",
+  path: "/",
+  seo: {
+    title: "Seattle General Contractor & Home Remodeling | Saddle and Spur",
+    description:
+      "Licensed Seattle general contractor for kitchen and bath remodels, ADUs, additions, and decks. Clear scopes, real timelines, free estimates.",
+    keywords: [
+      "seattle general contractor",
+      "seattle remodeling contractor",
+      "home remodeling seattle",
+    ],
+    ogImage: {
+      src: "/images/og/home.jpg",
+      alt: "Open-plan white kitchen with a quartz island remodeled in Seattle",
+    },
+    images: [{ src: "/images/home/gallery-3.jpg", alt: "Remodeled kitchen" }],
+  },
+  faqs: [],
+};
+
+const seo = buildSeoFrom(homePage);
 const homeFeatured = homePageFeaturedServices();
 ---
 
-<Layout title="Saddle & Spur Construction">
+<Layout {...seo}>
   <HomeHero />
   <RequestEstimate />
   <HomeFeatures />
@@ -23,7 +47,7 @@ const homeFeatured = homePageFeaturedServices();
     cards={homeFeatured}
     category="Featured Services"
     cta="Find the Right Service"
-    ctaHref="/services"
+    ctaHref="/services/"
   />
 
   <ServiceAreas />

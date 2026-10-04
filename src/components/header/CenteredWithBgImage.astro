@@ -1,3 +1,7 @@
+---
+import Img from "../Img.astro";
+---
+
 <div
   class="relative isolate overflow-hidden bg-white
        px-6
@@ -5,7 +9,9 @@
        md:h-[calc(100vh-5rem)] md:px-8
        md:flex md:items-center"
 >
-  <img
+  <Img
+    widths={[640, 1024, 1440]}
+    quality={50}
     src="/images/spiral-ceiling.jpg"
     alt=""
     class="absolute inset-0 -z-10 size-full object-cover opacity-10"
@@ -44,7 +50,7 @@
       </span>
     </h1>
     <p class="mt-8 text-lg font-medium text-pretty text-gray-700 sm:text-xl/8">
-      Saddle & Spur Construction is a Seattle-based general contractor serving
+      Saddle and Spur Construction is a Seattle-based general contractor serving
       homeowners across King County with kitchen remodeling, bathroom
       renovations, ADU construction, home additions, and structural upgrades.
     </p>
@@ -78,3 +84,38 @@
     new window.ReplaceMe(replaceEl, options);
   });
 </script>
+
+<style is:global>
+  /* The one animation ReplaceMe uses, lifted from animate.css 3.5.2 so the
+     whole library doesn't load on every page. Global because ReplaceMe adds
+     these classes at runtime. */
+  .animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+  .flipInX {
+    backface-visibility: visible !important;
+    animation-name: flipInX;
+  }
+  @keyframes flipInX {
+    from {
+      transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+      animation-timing-function: ease-in;
+      opacity: 0;
+    }
+    40% {
+      transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+      animation-timing-function: ease-in;
+    }
+    60% {
+      transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+      opacity: 1;
+    }
+    80% {
+      transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    }
+    to {
+      transform: perspective(400px);
+    }
+  }
+</style>

@@ -7,7 +7,7 @@ import {
 export const structuralUpgrades: ServiceEntity = {
   id: "structural-upgrades-seattle",
   type: "service",
-  path: "/services/structural-upgrades-seattle",
+  path: "/services/structural-upgrades-seattle/",
   homePageFeatured: true,
   category: ServiceCategory.Structural,
   name: "Structural Upgrades",
@@ -118,8 +118,8 @@ export const structuralUpgrades: ServiceEntity = {
     eyebrow: "What we do",
     heading: "Structural upgrade services",
     byline: "Protect what's underneath.",
-    primaryCta: { label: "Get a quote", href: "/contact" },
-    secondaryCta: { label: "See portfolio", href: "/portfolio" },
+    primaryCta: { label: "Get a quote", href: "/contact/" },
+    secondaryCta: { label: "See portfolio", href: "/portfolio/" },
     services: [
       {
         title: "Seismic retrofits",
@@ -153,7 +153,7 @@ export const structuralUpgrades: ServiceEntity = {
 export const capitolHillSeismic: PortfolioEntity = {
   id: "capitol-hill-seismic-retrofit",
   type: "portfolio",
-  path: "/portfolio/capitol-hill-seismic-retrofit",
+  path: "/portfolio/capitol-hill-seismic-retrofit/",
   name: "Capitol Hill Seismic Retrofit",
   description:
     "A full seismic retrofit on a 1920s Capitol Hill home — cripple wall plywood bracing, anchor bolting, and a previously undetected foundation crack repaired.",
@@ -205,10 +205,10 @@ export const capitolHillSeismic: PortfolioEntity = {
       alt: "Capitol Hill seismic retrofit completed",
     },
     eyebrow: "Structural • Seismic Retrofit",
-    primaryCta: { label: "Start your project", href: "/contact" },
+    primaryCta: { label: "Start your project", href: "/contact/" },
     secondaryCta: {
       label: "Structural upgrades",
-      href: "/services/structural-upgrades-seattle",
+      href: "/services/structural-upgrades-seattle/",
     },
   },
 
@@ -315,8 +315,8 @@ export const capitolHillSeismic: PortfolioEntity = {
   cta: {
     heading: "Concerned about your home's structural health?",
     body: "We give honest assessments — no scare tactics, just facts and options.",
-    primaryCta: { label: "Request an estimate", href: "/contact" },
-    secondaryCta: { label: "View services", href: "/services" },
+    primaryCta: { label: "Request an estimate", href: "/contact/" },
+    secondaryCta: { label: "View services", href: "/services/" },
   },
 
   related: [structuralUpgrades],

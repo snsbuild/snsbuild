@@ -1,4 +1,5 @@
 ---
+import Img from "../Img.astro";
 import type { ServiceEntity } from "../../types/entity-types";
 
 interface Props {
@@ -26,7 +27,7 @@ const { services, category, className } = Astro.props;
           </div>
 
           <a
-            href="/services"
+            href="/services/"
             class="mt-4 hidden shrink-0 text-sm font-semibold whitespace-nowrap text-indigo-600 hover:text-indigo-500 sm:mt-0 sm:block"
           >
             All services<span aria-hidden="true"> &rarr;</span>
@@ -36,7 +37,8 @@ const { services, category, className } = Astro.props;
         <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <article class="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm outline-1 -outline-offset-1 outline-black/5 transition hover:shadow-md">
-              <img
+              <Img
+                sizes="(min-width: 1024px) 608px, 100vw"
                 src={service.seo.ogImage.src}
                 alt={service.seo.ogImage.alt}
                 loading="lazy"
@@ -62,7 +64,7 @@ const { services, category, className } = Astro.props;
 
         <div class="mt-8 sm:hidden">
           <a
-            href="/services"
+            href="/services/"
             class="text-sm font-semibold text-indigo-600 hover:text-indigo-500"
           >
             All services<span aria-hidden="true"> &rarr;</span>

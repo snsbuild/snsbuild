@@ -1,4 +1,5 @@
 ---
+import Img from "../Img.astro";
 import type { PortfolioEntity } from "../../types/entity-types";
 
 type Props = { relatedPortfolio: PortfolioEntity };
@@ -11,11 +12,11 @@ const { relatedPortfolio } = Astro.props;
       <p class="text-base/7 font-semibold text-indigo-600">
         Featured Previous Work
       </p>
-      <h1
+      <h2
         class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
       >
         {relatedPortfolio.name}
-      </h1>
+      </h2>
       <p class="mt-6 text-xl/8 text-balance text-gray-700">
         {relatedPortfolio.description}
       </p>
@@ -47,7 +48,8 @@ const { relatedPortfolio } = Astro.props;
           <div
             class="aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10"
           >
-            <img
+            <Img
+              sizes="256px"
               src={relatedPortfolio?.gallery?.images.at(0)?.src}
               alt={relatedPortfolio?.gallery?.images.at(0)?.alt ?? ""}
               loading="lazy"
@@ -58,7 +60,8 @@ const { relatedPortfolio } = Astro.props;
           <div
             class="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10 lg:-mt-40"
           >
-            <img
+            <Img
+              sizes="256px"
               src={relatedPortfolio?.gallery?.images.at(1)?.src}
               alt={relatedPortfolio?.gallery?.images.at(1)?.alt ?? ""}
               loading="lazy"
@@ -69,7 +72,8 @@ const { relatedPortfolio } = Astro.props;
           <div
             class="aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10"
           >
-            <img
+            <Img
+              sizes="256px"
               src={relatedPortfolio?.gallery?.images.at(2)?.src}
               alt={relatedPortfolio?.gallery?.images.at(2)?.alt ?? ""}
               loading="lazy"
@@ -80,7 +84,8 @@ const { relatedPortfolio } = Astro.props;
           <div
             class="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10 lg:-mt-40"
           >
-            <img
+            <Img
+              sizes="256px"
               src={relatedPortfolio?.gallery?.images.at(3)?.src}
               alt={relatedPortfolio?.gallery?.images.at(3)?.alt ?? ""}
               loading="lazy"

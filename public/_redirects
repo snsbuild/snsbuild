@@ -1,0 +1,4 @@
+# Netlify redirects (https://docs.netlify.com/routing/redirects/).
+# Renamed pages keep their old URLs alive with a permanent redirect.
+/services/space-conversion-conversions-seattle   /services/attic-basement-conversions-seattle/   301
+/services/space-conversion-conversions-seattle/  /services/attic-basement-conversions-seattle/   301

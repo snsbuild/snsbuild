@@ -19,7 +19,7 @@ export const deckPortfolio: PortfolioCollectionPage = {
   kind: "collection",
   type: "portfolio",
   slug: "decks-seattle",
-  path: "/portfolio/decks-seattle",
+  path: "/portfolio/decks-seattle/",
   name: "Deck Portfolio",
   eyebrow: "Portfolio",
   breadcrumb: "Portfolio • Decks",
@@ -46,7 +46,7 @@ export const deckPortfolio: PortfolioCollectionPage = {
     headline: "Decks we've built around Seattle",
     byline:
       "Composite and cedar, single-level and stacked, open and covered — real projects with the details that made them work.",
-    primaryCta: { label: "Get a deck estimate", href: "/deck-builder-seattle" },
+    primaryCta: { label: "Get a deck estimate", href: "/deck-builder-seattle/" },
   },
 
   intro: [
@@ -118,10 +118,10 @@ export const deckPortfolio: PortfolioCollectionPage = {
   closing: {
     heading: "Ready to talk about your deck?",
     body: "Send us the shape of your yard and what you want to do out there. We'll walk the site, confirm the permit path, and put together a line-item estimate.",
-    primaryCta: { label: "Request an estimate", href: "/estimate" },
+    primaryCta: { label: "Request an estimate", href: "/estimate/" },
     secondaryCta: {
       label: "Deck building services",
-      href: "/services/deck-building-seattle",
+      href: "/services/deck-building-seattle/",
     },
   },
 
@@ -132,15 +132,15 @@ export const shedPortfolio: PortfolioCollectionPage = {
   kind: "collection",
   type: "portfolio",
   slug: "sheds-seattle",
-  path: "/portfolio/sheds-seattle",
+  path: "/portfolio/sheds-seattle/",
   name: "Shed Portfolio",
   eyebrow: "Portfolio",
   breadcrumb: "Portfolio • Sheds",
 
   seo: {
-    title: "Seattle Shed Portfolio | Custom Sheds & Backyard Offices | Saddle and Spur",
+    title: "Seattle Shed & Backyard Office Portfolio | Saddle and Spur",
     description:
-      "Recent shed and backyard structure projects in Seattle and King County — storage sheds, garden buildings, workshops, and insulated backyard offices built on real foundations.",
+      "Recent shed projects in Seattle and King County — storage sheds, garden buildings, workshops, and insulated backyard offices built on real foundations.",
     keywords: [
       "seattle shed portfolio",
       "custom shed photos seattle",
@@ -159,7 +159,7 @@ export const shedPortfolio: PortfolioCollectionPage = {
     headline: "Sheds and backyard structures we've built",
     byline:
       "Storage, garden buildings, workshops, and insulated offices — sited to the setbacks and built on foundations that hold.",
-    primaryCta: { label: "Get a shed estimate", href: "/shed-builder-seattle" },
+    primaryCta: { label: "Get a shed estimate", href: "/shed-builder-seattle/" },
   },
 
   intro: [
@@ -219,10 +219,10 @@ export const shedPortfolio: PortfolioCollectionPage = {
   closing: {
     heading: "Thinking about a shed or backyard office?",
     body: "Tell us what's going inside and roughly where you'd put it. We'll check your setbacks, recommend a foundation, and price it out.",
-    primaryCta: { label: "Request an estimate", href: "/estimate" },
+    primaryCta: { label: "Request an estimate", href: "/estimate/" },
     secondaryCta: {
       label: "Shed building services",
-      href: "/services/shed-building-seattle",
+      href: "/services/shed-building-seattle/",
     },
   },
 

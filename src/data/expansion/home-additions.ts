@@ -8,7 +8,7 @@ import {
 export const homeAdditions: ServiceEntity = {
   id: "home-additions-seattle",
   type: "service",
-  path: "/services/home-additions-seattle",
+  path: "/services/home-additions-seattle/",
   homePageFeatured: false,
   category: ServiceCategory.Expansion,
   name: "Home Additions",
@@ -108,8 +108,8 @@ export const homeAdditions: ServiceEntity = {
     eyebrow: "What we do",
     heading: "Home addition services",
     byline: "More space. Same home.",
-    primaryCta: { label: "Get a quote", href: "/contact" },
-    secondaryCta: { label: "See portfolio", href: "/portfolio" },
+    primaryCta: { label: "Get a quote", href: "/contact/" },
+    secondaryCta: { label: "See portfolio", href: "/portfolio/" },
     services: [
       {
         title: "Room additions",
@@ -143,7 +143,7 @@ export const homeAdditions: ServiceEntity = {
 export const ravennaAddition: PortfolioEntity = {
   id: "ravenna-primary-suite-addition",
   type: "portfolio",
-  path: "/portfolio/ravenna-primary-suite-addition",
+  path: "/portfolio/ravenna-primary-suite-addition/",
   name: "Ravenna Primary Suite Addition",
   description:
     "A 600 sq ft primary suite addition on a Ravenna Craftsman — vaulted ceiling, walk-in closet, and private bath, tied seamlessly into the existing roofline.",
@@ -192,10 +192,10 @@ export const ravennaAddition: PortfolioEntity = {
       alt: "Ravenna primary suite addition",
     },
     eyebrow: "Expansion • Home Addition",
-    primaryCta: { label: "Start your project", href: "/contact" },
+    primaryCta: { label: "Start your project", href: "/contact/" },
     secondaryCta: {
       label: "Home additions",
-      href: "/services/home-additions-seattle",
+      href: "/services/home-additions-seattle/",
     },
   },
 
@@ -300,8 +300,8 @@ export const ravennaAddition: PortfolioEntity = {
   cta: {
     heading: "Ready to add more space?",
     body: "Tell us what you're missing and we'll map out a realistic scope and timeline.",
-    primaryCta: { label: "Request an estimate", href: "/contact" },
-    secondaryCta: { label: "View services", href: "/services" },
+    primaryCta: { label: "Request an estimate", href: "/contact/" },
+    secondaryCta: { label: "View services", href: "/services/" },
   },
 
   related: [homeAdditions],

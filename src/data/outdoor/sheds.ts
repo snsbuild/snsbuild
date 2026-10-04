@@ -9,7 +9,7 @@ import { outdoorLiving } from "./outdoor-living";
 export const shedBuilding: ServiceEntity = {
   id: "shed-building-seattle",
   type: "service",
-  path: "/services/shed-building-seattle",
+  path: "/services/shed-building-seattle/",
   homePageFeatured: false,
   category: ServiceCategory.Outdoor,
   name: "Sheds & Backyard Structures",
@@ -55,9 +55,9 @@ export const shedBuilding: ServiceEntity = {
   },
 
   seo: {
-    title: "Shed Builders in Seattle | Custom Sheds & Backyard Offices | Saddle and Spur",
+    title: "Shed Builders in Seattle | Custom Sheds | Saddle and Spur",
     description:
-      "Licensed Seattle shed builders. Custom storage sheds, garden sheds, workshops, and insulated backyard offices — built on proper foundations and sited to meet Seattle setback rules.",
+      "Licensed Seattle shed builders. Storage sheds, workshops, and insulated backyard offices on proper foundations, sited to meet Seattle setback rules.",
     keywords: [
       "shed builders seattle",
       "custom sheds seattle",
@@ -148,8 +148,8 @@ export const shedBuilding: ServiceEntity = {
     eyebrow: "Shed services",
     heading: "What we build",
     byline: "Storage, garden, workshop, and office.",
-    primaryCta: { label: "Get a shed estimate", href: "/shed-builder-seattle" },
-    secondaryCta: { label: "See our shed portfolio", href: "/portfolio/sheds-seattle" },
+    primaryCta: { label: "Get a shed estimate", href: "/shed-builder-seattle/" },
+    secondaryCta: { label: "See our shed portfolio", href: "/portfolio/sheds-seattle/" },
     services: [
       {
         title: "Custom storage sheds",
@@ -196,7 +196,7 @@ export const shedBuilding: ServiceEntity = {
 export const magnoliaShedStudio: PortfolioEntity = {
   id: "magnolia-shed-studio",
   type: "portfolio",
-  path: "/portfolio/magnolia-shed-studio",
+  path: "/portfolio/magnolia-shed-studio/",
   name: "Magnolia Backyard Shed Studio",
   description:
     "A 190-square-foot insulated backyard studio in Magnolia with cedar siding, a full-height window wall, and permitted power — a working office that stays under Seattle's shed exemption.",
@@ -205,7 +205,7 @@ export const magnoliaShedStudio: PortfolioEntity = {
   seo: {
     title: "Magnolia Backyard Shed Studio | Saddle and Spur Construction",
     description:
-      "A 190 sq ft insulated backyard shed studio in Magnolia, Seattle — cedar siding, pier foundation, mini-split heat, and permitted power, built under the 200 sq ft exemption.",
+      "A 190 sq ft insulated shed studio in Magnolia, Seattle — cedar siding, pier foundation, mini-split heat, and permitted power, under the 200 sq ft exemption.",
     keywords: [
       "magnolia backyard office",
       "seattle shed studio",
@@ -251,10 +251,10 @@ export const magnoliaShedStudio: PortfolioEntity = {
       alt: "Magnolia backyard shed studio with cedar siding and large windows",
     },
     eyebrow: "Sheds • Backyard Studio",
-    primaryCta: { label: "Start your project", href: "/estimate" },
+    primaryCta: { label: "Start your project", href: "/estimate/" },
     secondaryCta: {
       label: "Shed building",
-      href: "/services/shed-building-seattle",
+      href: "/services/shed-building-seattle/",
     },
   },
 
@@ -365,8 +365,8 @@ export const magnoliaShedStudio: PortfolioEntity = {
   cta: {
     heading: "Want a backyard shed or office?",
     body: "Tell us what you need to store — or escape to — and we'll design something that fits your lot and your setbacks.",
-    primaryCta: { label: "Request an estimate", href: "/estimate" },
-    secondaryCta: { label: "Shed building services", href: "/services/shed-building-seattle" },
+    primaryCta: { label: "Request an estimate", href: "/estimate/" },
+    secondaryCta: { label: "Shed building services", href: "/services/shed-building-seattle/" },
   },
 
   related: [shedBuilding, outdoorLiving],

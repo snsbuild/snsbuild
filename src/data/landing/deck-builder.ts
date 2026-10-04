@@ -5,14 +5,14 @@ import { eastlakeDeck } from "../outdoor/outdoor-living";
 export const deckBuilderLanding: LandingPage = {
   kind: "landing",
   slug: "deck-builder-seattle",
-  path: "/deck-builder-seattle",
+  path: "/deck-builder-seattle/",
 
   // Set to "noindex, follow" to keep this page exclusive to paid traffic.
   robots: "index, follow",
 
   seo: {
-    title: "Free Deck Estimate in Seattle | Deck Builder Quotes | Saddle and Spur",
-    description: `Licensed Seattle deck builder. Composite, cedar, multi-level, and covered decks. Free on-site estimate, permits handled, line-item pricing. Call ${phoneDisplay}.`,
+    title: "Free Deck Building Estimate in Seattle | Saddle and Spur",
+    description: `Licensed Seattle deck builder. Composite, cedar, multi-level, and covered decks. Free on-site estimate, permits handled. Call ${phoneDisplay}.`,
     // Deliberately estimate/quote intent — the service page owns the
     // "deck builder seattle" head term.
     keywords: [
@@ -34,7 +34,7 @@ export const deckBuilderLanding: LandingPage = {
     name: "Deck Building",
     serviceType: "Deck Building",
     areaServed: ["Greater Seattle / King County"],
-    servicePath: "/services/deck-building-seattle",
+    servicePath: "/services/deck-building-seattle/",
   },
 
   hero: {
@@ -146,7 +146,7 @@ export const deckBuilderLanding: LandingPage = {
     ],
     cta: {
       label: "See the full deck portfolio",
-      href: "/portfolio/decks-seattle",
+      href: "/portfolio/decks-seattle/",
     },
   },
 
@@ -192,24 +192,24 @@ export const deckBuilderLanding: LandingPage = {
     links: [
       {
         label: "Deck building services",
-        href: "/services/deck-building-seattle",
+        href: "/services/deck-building-seattle/",
         description:
           "Materials, railings, covered decks, repairs, and how we scope each one.",
       },
       {
         label: "Deck portfolio",
-        href: "/portfolio/decks-seattle",
+        href: "/portfolio/decks-seattle/",
         description: "Finished projects with photos, timelines, and details.",
       },
       {
         label: "Eastlake covered deck",
-        href: "/portfolio/eastlake-covered-deck",
+        href: "/portfolio/eastlake-covered-deck/",
         description:
           "A two-level composite deck with a covered room and cable railing.",
       },
       {
         label: "Outdoor living",
-        href: "/services/outdoor-seattle",
+        href: "/services/outdoor-seattle/",
         description:
           "Patios, pergolas, outdoor kitchens, and covered outdoor rooms.",
       },
@@ -222,7 +222,7 @@ export const deckBuilderLanding: LandingPage = {
     primaryCta: { label: "Request a free estimate", href: "#lead-form" },
     secondaryCta: {
       label: "Or read about our deck building services",
-      href: "/services/deck-building-seattle",
+      href: "/services/deck-building-seattle/",
     },
   },
 };

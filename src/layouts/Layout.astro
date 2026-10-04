@@ -8,7 +8,7 @@ import "../styles/global.css";
 import { safeJsonLdString } from "../seo";
 
 const defaults = {
-  title: "Saddle & Spur Construction",
+  title: "Saddle and Spur Construction",
   description:
     "Licensed general contractor for residential remodeling in Seattle",
 };
@@ -31,7 +31,7 @@ const isMinimal = chrome === "minimal";
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     {/* Google Ads (gtag.js) */}
     <script
@@ -90,14 +90,13 @@ const isMinimal = chrome === "minimal";
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    {/* Playfair is only used for the bold "Saddle & Spur Construction"
+        wordmark, so request just that weight and just those glyphs (`text=`)
+        — a few KB instead of six full font files. Using `font-header` for any
+        other text means widening this. */}
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700&text=Saddle%20%26%20Spur%20Construction&display=swap"
       rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
     />
     <script
       is:inline
@@ -105,6 +104,7 @@ const isMinimal = chrome === "minimal";
       type="module"></script>
     <script
       is:inline
+      defer
       src="https://kit.fontawesome.com/99f5fb79cb.js"
       crossorigin="anonymous"></script>
   </head>

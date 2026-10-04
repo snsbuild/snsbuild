@@ -1,0 +1,85 @@
+---
+/**
+ * Drop-in <img> for photos in public/.
+ *
+ * - Reads the file's real dimensions at build time and sets width/height, so
+ *   the browser reserves space before the image loads (no layout shift).
+ *   CSS aspect-* classes still win over the attribute ratio, so crops are
+ *   unchanged.
+ * - In production, serves resized copies through Netlify's Image CDN, which
+ *   negotiates AVIF/WebP from the Accept header. The source files and their
+ *   public URLs (used for og:image and schema) stay exactly as they are.
+ * - In dev (no CDN), it falls back to the original file.
+ *
+ * Pass `sizes` whenever the image renders narrower than the viewport, or the
+ * browser will pick a larger file than it needs.
+ */
+import type { HTMLAttributes } from "astro/types";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
+import sharp from "sharp";
+
+type Props = Omit<HTMLAttributes<"img">, "src" | "srcset"> & {
+  src: string;
+  alt: string;
+  /** Candidate widths for srcset; ones wider than the file are dropped. */
+  widths?: number[];
+  /** CDN quality (1–100). Raise it for graphics with text, like maps. */
+  quality?: number;
+};
+
+const {
+  src,
+  alt,
+  sizes = "100vw",
+  widths = [480, 800, 1200, 1600],
+  quality,
+  ...attrs
+} = Astro.props;
+
+const isLocalRaster = src.startsWith("/") && /\.(jpe?g|png|webp|avif)$/i.test(src);
+const size = isLocalRaster ? await intrinsicSize(src) : undefined;
+
+const cdn = (w: number) =>
+  `/.netlify/images?url=${encodeURIComponent(src)}&w=${w}` +
+  (quality ? `&q=${quality}` : "");
+
+const useCdn = Boolean(size) && !import.meta.env.DEV;
+const candidates = size ? widths.filter((w) => w < size.width) : [];
+if (size) candidates.push(size.width);
+
+const finalSrc = useCdn ? cdn(size!.width) : src;
+const srcset = useCdn
+  ? candidates.map((w) => `${cdn(w)} ${w}w`).join(", ")
+  : undefined;
+
+// --- build-time dimension lookup, cached across pages ---
+async function intrinsicSize(path: string) {
+  const cache: Map<string, { width: number; height: number } | undefined> =
+    ((globalThis as any).__imgSizeCache ??= new Map());
+  if (cache.has(path)) return cache.get(path);
+  let result: { width: number; height: number } | undefined;
+  try {
+    // Builds run from the project root; import.meta.url points into the bundle.
+    const file = join(process.cwd(), "public", path);
+    const meta = await sharp(await readFile(file)).metadata();
+    if (meta.width && meta.height)
+      result = { width: meta.width, height: meta.height };
+  } catch {
+    // Missing or unreadable file: render a plain <img> rather than fail the build.
+  }
+  cache.set(path, result);
+  return result;
+}
+---
+
+<img
+  src={finalSrc}
+  srcset={srcset}
+  sizes={srcset ? sizes : undefined}
+  width={size?.width}
+  height={size?.height}
+  alt={alt}
+  decoding="async"
+  {...attrs}
+/>

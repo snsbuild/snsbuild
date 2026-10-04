@@ -5,15 +5,14 @@ import { ballardKitchen } from "../interior/kitchen-remodel";
 export const kitchenRemodelLanding: LandingPage = {
   kind: "landing",
   slug: "kitchen-remodel-seattle",
-  path: "/kitchen-remodel-seattle",
+  path: "/kitchen-remodel-seattle/",
 
   // Set to "noindex, follow" to keep this page exclusive to paid traffic.
   robots: "index, follow",
 
   seo: {
-    title:
-      "Free Kitchen Remodel Estimate in Seattle | Kitchen Remodel Quotes | Saddle and Spur",
-    description: `Licensed Seattle kitchen remodeler. Layout, cabinets, counters, tile, lighting, and flooring under one team. Free on-site estimate, permits handled, line-item pricing. Call ${phoneDisplay}.`,
+    title: "Free Kitchen Remodel Estimate in Seattle | Saddle and Spur",
+    description: `Licensed Seattle kitchen remodeler. Layout, cabinets, counters, tile, and lighting under one team. Free on-site estimate, permits handled. Call ${phoneDisplay}.`,
     // Deliberately estimate/quote intent — the service page owns the
     // "kitchen remodeling seattle" head term.
     keywords: [
@@ -35,7 +34,7 @@ export const kitchenRemodelLanding: LandingPage = {
     name: "Kitchen Remodeling",
     serviceType: "Kitchen Remodel",
     areaServed: ["Greater Seattle / King County"],
-    servicePath: "/services/kitchen-remodeling-seattle",
+    servicePath: "/services/kitchen-remodeling-seattle/",
   },
 
   hero: {
@@ -146,7 +145,7 @@ export const kitchenRemodelLanding: LandingPage = {
     ],
     cta: {
       label: "See the Ballard kitchen project",
-      href: "/portfolio/ballard-kitchen-refresh",
+      href: "/portfolio/ballard-kitchen-refresh/",
     },
   },
 
@@ -192,25 +191,25 @@ export const kitchenRemodelLanding: LandingPage = {
     links: [
       {
         label: "Kitchen remodeling services",
-        href: "/services/kitchen-remodeling-seattle",
+        href: "/services/kitchen-remodeling-seattle/",
         description:
           "Layout, cabinetry, surfaces, lighting, plumbing, and flooring — how we scope each one.",
       },
       {
         label: "Ballard kitchen refresh",
-        href: "/portfolio/ballard-kitchen-refresh",
+        href: "/portfolio/ballard-kitchen-refresh/",
         description:
           "A new layout, white shaker cabinetry, a large island, and a custom butler's pantry.",
       },
       {
         label: "Whole-home remodeling",
-        href: "/services/whole-home-remodeling-seattle",
+        href: "/services/whole-home-remodeling-seattle/",
         description:
           "Kitchen, baths, and flooring together under one schedule.",
       },
       {
         label: "Flooring installation",
-        href: "/services/flooring-installation-seattle",
+        href: "/services/flooring-installation-seattle/",
         description:
           "Carry new hardwood, LVP, or tile through the rest of the main floor.",
       },
@@ -223,7 +222,7 @@ export const kitchenRemodelLanding: LandingPage = {
     primaryCta: { label: "Request a free estimate", href: "#lead-form" },
     secondaryCta: {
       label: "Or read about our kitchen remodeling services",
-      href: "/services/kitchen-remodeling-seattle",
+      href: "/services/kitchen-remodeling-seattle/",
     },
   },
 };

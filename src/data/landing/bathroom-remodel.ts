@@ -5,15 +5,14 @@ import { capitolHillBathroom } from "../interior/bathroom-remodel";
 export const bathroomRemodelLanding: LandingPage = {
   kind: "landing",
   slug: "bathroom-remodel-seattle",
-  path: "/bathroom-remodel-seattle",
+  path: "/bathroom-remodel-seattle/",
 
   // Set to "noindex, follow" to keep this page exclusive to paid traffic.
   robots: "index, follow",
 
   seo: {
-    title:
-      "Free Bathroom Remodel Estimate in Seattle | Bathroom Remodel Quotes | Saddle and Spur",
-    description: `Licensed Seattle bathroom remodeler. Walk-in showers, tub-to-shower conversions, tile, vanities, and heated floors. Free on-site estimate, permits handled, line-item pricing. Call ${phoneDisplay}.`,
+    title: "Free Bathroom Remodel Estimate in Seattle | Saddle and Spur",
+    description: `Licensed Seattle bathroom remodeler: walk-in showers, tile, vanities, heated floors. Free on-site estimate, permits handled. Call ${phoneDisplay}.`,
     // Deliberately estimate/quote intent — the service page owns the
     // "bathroom remodeling seattle" head term.
     keywords: [
@@ -35,7 +34,7 @@ export const bathroomRemodelLanding: LandingPage = {
     name: "Bathroom Remodeling",
     serviceType: "Bathroom Remodel",
     areaServed: ["Greater Seattle / King County"],
-    servicePath: "/services/bathroom-remodeling-seattle",
+    servicePath: "/services/bathroom-remodeling-seattle/",
   },
 
   hero: {
@@ -146,7 +145,7 @@ export const bathroomRemodelLanding: LandingPage = {
     ],
     cta: {
       label: "See the Capitol Hill bathroom project",
-      href: "/portfolio/capitol-hill-bathroom-remodel",
+      href: "/portfolio/capitol-hill-bathroom-remodel/",
     },
   },
 
@@ -192,25 +191,25 @@ export const bathroomRemodelLanding: LandingPage = {
     links: [
       {
         label: "Bathroom remodeling services",
-        href: "/services/bathroom-remodeling-seattle",
+        href: "/services/bathroom-remodeling-seattle/",
         description:
           "Showers, tile, vanities, lighting, heated floors, and layout changes.",
       },
       {
         label: "Capitol Hill bathroom remodel",
-        href: "/portfolio/capitol-hill-bathroom-remodel",
+        href: "/portfolio/capitol-hill-bathroom-remodel/",
         description:
           "An unused tub replaced with a curbless shower, heated floors, and a double vanity.",
       },
       {
         label: "Kitchen remodeling",
-        href: "/services/kitchen-remodeling-seattle",
+        href: "/services/kitchen-remodeling-seattle/",
         description:
           "Layout, cabinetry, counters, and finishes under one team.",
       },
       {
         label: "Whole-home remodeling",
-        href: "/services/whole-home-remodeling-seattle",
+        href: "/services/whole-home-remodeling-seattle/",
         description:
           "Multiple baths, a kitchen, and flooring on one schedule.",
       },
@@ -223,7 +222,7 @@ export const bathroomRemodelLanding: LandingPage = {
     primaryCta: { label: "Request a free estimate", href: "#lead-form" },
     secondaryCta: {
       label: "Or read about our bathroom remodeling services",
-      href: "/services/bathroom-remodeling-seattle",
+      href: "/services/bathroom-remodeling-seattle/",
     },
   },
 };

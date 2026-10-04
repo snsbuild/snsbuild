@@ -7,7 +7,7 @@ import { eastlakeDeck } from "./outdoor-living";
 export const deckBuilding: ServiceEntity = {
   id: "deck-building-seattle",
   type: "service",
-  path: "/services/deck-building-seattle",
+  path: "/services/deck-building-seattle/",
   homePageFeatured: false,
   category: ServiceCategory.Outdoor,
   name: "Deck Building",
@@ -53,9 +53,9 @@ export const deckBuilding: ServiceEntity = {
   },
 
   seo: {
-    title: "Deck Builders in Seattle | Custom Deck Construction | Saddle and Spur",
+    title: "Deck Builders in Seattle | Custom Decks | Saddle and Spur",
     description:
-      "Licensed Seattle deck builders. Composite, cedar, multi-level, and covered decks designed for Pacific Northwest weather — permits, engineered footings, and clear estimates included.",
+      "Licensed Seattle deck builders. Composite, cedar, multi-level, and covered decks built for Northwest weather — permits, footings, and clear estimates included.",
     keywords: [
       "deck builders seattle",
       "deck building seattle",
@@ -147,8 +147,8 @@ export const deckBuilding: ServiceEntity = {
     eyebrow: "Deck services",
     heading: "What we build",
     byline: "Composite, cedar, covered, and rebuilt.",
-    primaryCta: { label: "Get a deck estimate", href: "/deck-builder-seattle" },
-    secondaryCta: { label: "See our deck portfolio", href: "/portfolio/decks-seattle" },
+    primaryCta: { label: "Get a deck estimate", href: "/deck-builder-seattle/" },
+    secondaryCta: { label: "See our deck portfolio", href: "/portfolio/decks-seattle/" },
     services: [
       {
         title: "Composite decks",

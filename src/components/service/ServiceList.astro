@@ -1,4 +1,5 @@
 ---
+import Img from "../Img.astro";
 import type { PortfolioIndexCard } from "../../types/entity-types";
 
 interface Props {
@@ -98,7 +99,8 @@ const layoutItems = buildLayout(cards);
               classes,
             ]}
           >
-            <img
+            <Img
+              sizes="(min-width: 1024px) 592px, 100vw"
               src={card.image.src}
               alt={card.image.alt}
               class="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-100"

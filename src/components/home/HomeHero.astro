@@ -1,4 +1,5 @@
 ---
+import Img from "../Img.astro";
 import { phoneHref } from "../../siteConfig";
 
 const imgOne = {
@@ -81,7 +82,7 @@ const imgFive = {
           </p>
           <div class="mt-10 flex items-center gap-x-6">
             <a
-              href="/contact"
+              href="/contact/"
               class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Request Estimate
@@ -101,7 +102,8 @@ const imgFive = {
             class="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-0 xl:pt-80"
           >
             <div class="relative">
-              <img
+              <Img
+                sizes="176px"
                 src={imgOne.src}
                 alt={imgOne.alt}
                 class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
@@ -116,7 +118,8 @@ const imgFive = {
             class="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36"
           >
             <div class="relative">
-              <img
+              <Img
+                sizes="176px"
                 src={imgTwo.src}
                 alt={imgTwo.alt}
                 class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
@@ -127,7 +130,8 @@ const imgFive = {
               </div>
             </div>
             <div class="relative">
-              <img
+              <Img
+                sizes="176px"
                 src={imgThree.src}
                 alt={imgThree.alt}
                 class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
@@ -140,7 +144,8 @@ const imgFive = {
           </div>
           <div class="w-44 flex-none space-y-8 pt-32 sm:pt-0">
             <div class="relative">
-              <img
+              <Img
+                sizes="176px"
                 src={imgFour.src}
                 alt={imgFour.alt}
                 class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
@@ -151,7 +156,8 @@ const imgFive = {
               </div>
             </div>
             <div class="relative">
-              <img
+              <Img
+                sizes="176px"
                 src={imgFive.src}
                 alt={imgFive.alt}
                 class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"

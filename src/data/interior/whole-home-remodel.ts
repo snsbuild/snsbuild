@@ -10,7 +10,7 @@ import { flooringInstallation } from "./flooring";
 export const wholeHomeRemodel: ServiceEntity = {
   id: "whole-home-remodeling-seattle",
   type: "service",
-  path: "/services/whole-home-remodeling-seattle",
+  path: "/services/whole-home-remodeling-seattle/",
   homePageFeatured: false,
   category: ServiceCategory.Interior,
   name: "Whole Home Remodeling",
@@ -108,8 +108,8 @@ export const wholeHomeRemodel: ServiceEntity = {
     eyebrow: "What we do",
     heading: "Whole home remodeling services",
     byline: "One team. Every room.",
-    primaryCta: { label: "Get a quote", href: "/contact" },
-    secondaryCta: { label: "See portfolio", href: "/portfolio" },
+    primaryCta: { label: "Get a quote", href: "/contact/" },
+    secondaryCta: { label: "See portfolio", href: "/portfolio/" },
     services: [
       {
         title: "Kitchen & dining",
@@ -143,7 +143,7 @@ export const wholeHomeRemodel: ServiceEntity = {
 export const fremontWholeHome: PortfolioEntity = {
   id: "fremont-whole-home-remodel",
   type: "portfolio",
-  path: "/portfolio/fremont-whole-home-remodel",
+  path: "/portfolio/fremont-whole-home-remodel/",
   name: "Fremont Whole Home Remodel",
   description:
     "A 1960s Fremont home transformed: open layout, new kitchen, two updated bathrooms, and new flooring throughout.",
@@ -194,10 +194,10 @@ export const fremontWholeHome: PortfolioEntity = {
       alt: "Fremont whole home after remodel",
     },
     eyebrow: "Interior • Whole Home Remodel",
-    primaryCta: { label: "Start your project", href: "/contact" },
+    primaryCta: { label: "Start your project", href: "/contact/" },
     secondaryCta: {
       label: "Whole home remodeling",
-      href: "/services/whole-home-remodeling-seattle",
+      href: "/services/whole-home-remodeling-seattle/",
     },
   },
 
@@ -296,8 +296,8 @@ export const fremontWholeHome: PortfolioEntity = {
   cta: {
     heading: "Ready to transform your home?",
     body: "Tell us about your goals and we'll put together a clear scope and timeline.",
-    primaryCta: { label: "Request an estimate", href: "/contact" },
-    secondaryCta: { label: "View services", href: "/services" },
+    primaryCta: { label: "Request an estimate", href: "/contact/" },
+    secondaryCta: { label: "View services", href: "/services/" },
   },
 
   related: [

@@ -7,15 +7,14 @@ import { ballardKitchen } from "../interior/kitchen-remodel";
 export const customBuiltInsLanding: LandingPage = {
   kind: "landing",
   slug: "custom-built-ins-seattle",
-  path: "/custom-built-ins-seattle",
+  path: "/custom-built-ins-seattle/",
 
   // Set to "noindex, follow" to keep this page exclusive to paid traffic.
   robots: "index, follow",
 
   seo: {
-    title:
-      "Free Built-In Cabinet Estimate in Seattle | Custom Built-In Quotes | Saddle and Spur",
-    description: `Custom built-in cabinets, bookshelves, window seats, and mudroom benches in Seattle. Measured to your space, installed by one crew. Free on-site estimate with line-item pricing. Call ${phoneDisplay}.`,
+    title: "Free Custom Built-In Estimate in Seattle | Saddle and Spur",
+    description: `Custom built-in cabinets, bookshelves, window seats, and mudroom benches in Seattle. Free on-site estimate, line-item pricing. Call ${phoneDisplay}.`,
     // Deliberately estimate/quote intent — the service page owns the
     // "custom built-ins seattle" head term.
     keywords: [
@@ -37,7 +36,7 @@ export const customBuiltInsLanding: LandingPage = {
     name: "Custom Built-Ins & Carpentry",
     serviceType: "Custom Built-Ins & Finish Carpentry",
     areaServed: ["Greater Seattle / King County"],
-    servicePath: "/services/custom-built-ins-seattle",
+    servicePath: "/services/custom-built-ins-seattle/",
   },
 
   hero: {
@@ -149,7 +148,7 @@ export const customBuiltInsLanding: LandingPage = {
     ],
     cta: {
       label: "See the Ballard butler's pantry project",
-      href: "/portfolio/ballard-kitchen-refresh",
+      href: "/portfolio/ballard-kitchen-refresh/",
     },
   },
 
@@ -190,25 +189,25 @@ export const customBuiltInsLanding: LandingPage = {
     links: [
       {
         label: "Custom built-ins & carpentry",
-        href: "/services/custom-built-ins-seattle",
+        href: "/services/custom-built-ins-seattle/",
         description:
           "Bookshelves, window seats, mudroom benches, pantries, and trim — how we scope each one.",
       },
       {
         label: "Ballard kitchen & butler's pantry",
-        href: "/portfolio/ballard-kitchen-refresh",
+        href: "/portfolio/ballard-kitchen-refresh/",
         description:
           "Custom pantry cabinetry with glass-front uppers and open shelving.",
       },
       {
         label: "Basement & space conversions",
-        href: "/services/space-conversion-conversions-seattle",
+        href: "/services/attic-basement-conversions-seattle/",
         description:
           "Turn an unfinished basement or attic into a room with built-in storage.",
       },
       {
         label: "Whole-home remodeling",
-        href: "/services/whole-home-remodeling-seattle",
+        href: "/services/whole-home-remodeling-seattle/",
         description: "Plan built-ins alongside a larger remodel.",
       },
     ],
@@ -220,7 +219,7 @@ export const customBuiltInsLanding: LandingPage = {
     primaryCta: { label: "Request a free estimate", href: "#lead-form" },
     secondaryCta: {
       label: "Or read about our built-in services",
-      href: "/services/custom-built-ins-seattle",
+      href: "/services/custom-built-ins-seattle/",
     },
   },
 };

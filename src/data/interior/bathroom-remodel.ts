@@ -8,7 +8,7 @@ import {
 export const bathroomRemodel: ServiceEntity = {
   id: "bathroom-remodeling-seattle",
   type: "service",
-  path: "/services/bathroom-remodeling-seattle",
+  path: "/services/bathroom-remodeling-seattle/",
   homePageFeatured: true,
   category: ServiceCategory.Interior,
   name: "Bathroom Remodeling",
@@ -121,8 +121,8 @@ export const bathroomRemodel: ServiceEntity = {
     eyebrow: "What we do",
     heading: "Bathroom remodeling services",
     byline: "Scope it right, then build it right.",
-    primaryCta: { label: "Get a quote", href: "/contact" },
-    secondaryCta: { label: "See portfolio", href: "/portfolio" },
+    primaryCta: { label: "Get a quote", href: "/contact/" },
+    secondaryCta: { label: "See portfolio", href: "/portfolio/" },
     services: [
       {
         title: "Shower & tub installs",
@@ -168,7 +168,7 @@ export const bathroomRemodel: ServiceEntity = {
 export const capitolHillBathroom: PortfolioEntity = {
   id: "capitol-hill-bathroom-remodel",
   type: "portfolio",
-  path: "/portfolio/capitol-hill-bathroom-remodel",
+  path: "/portfolio/capitol-hill-bathroom-remodel/",
   name: "Capitol Hill Bathroom Remodel",
   description:
     "A full primary bathroom remodel in Capitol Hill: curbless shower, heated floors, and a custom double vanity. The unused tub was removed to reclaim floor space and the lighting was redesigned from scratch.",
@@ -221,10 +221,10 @@ export const capitolHillBathroom: PortfolioEntity = {
       alt: "Remodeled Capitol Hill primary bathroom with large-format tile, frameless glass shower, and custom double vanity",
     },
     eyebrow: "Interior • Bathroom Remodel",
-    primaryCta: { label: "Start your project", href: "/contact" },
+    primaryCta: { label: "Start your project", href: "/contact/" },
     secondaryCta: {
       label: "Bathroom remodeling",
-      href: "/services/bathroom-remodeling-seattle",
+      href: "/services/bathroom-remodeling-seattle/",
     },
   },
 
@@ -339,8 +339,8 @@ export const capitolHillBathroom: PortfolioEntity = {
   cta: {
     heading: "Ready to plan your bathroom remodel?",
     body: "Tell us about your space and we'll propose a clear scope and timeline.",
-    primaryCta: { label: "Request an estimate", href: "/contact" },
-    secondaryCta: { label: "View services", href: "/services" },
+    primaryCta: { label: "Request an estimate", href: "/contact/" },
+    secondaryCta: { label: "View services", href: "/services/" },
   },
 
   related: [bathroomRemodel],

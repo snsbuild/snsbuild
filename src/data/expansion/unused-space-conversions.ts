@@ -5,9 +5,9 @@ import {
 } from "../../types/entity-types";
 
 export const unusedSpaceConversions: ServiceEntity = {
-  id: "space-conversion-conversions-seattle",
+  id: "attic-basement-conversions-seattle",
   type: "service",
-  path: "/services/space-conversion-conversions-seattle",
+  path: "/services/attic-basement-conversions-seattle/",
   homePageFeatured: false,
   category: ServiceCategory.Expansion,
   name: "Unused Space Conversions",
@@ -115,8 +115,8 @@ export const unusedSpaceConversions: ServiceEntity = {
     eyebrow: "What we do",
     heading: "Unused space conversion services",
     byline: "More home from what you already own.",
-    primaryCta: { label: "Get a quote", href: "/contact" },
-    secondaryCta: { label: "See portfolio", href: "/portfolio" },
+    primaryCta: { label: "Get a quote", href: "/contact/" },
+    secondaryCta: { label: "See portfolio", href: "/portfolio/" },
     services: [
       {
         title: "Basement finishing",
@@ -150,7 +150,7 @@ export const unusedSpaceConversions: ServiceEntity = {
 export const greenwoodBasement: PortfolioEntity = {
   id: "greenwood-basement-finish",
   type: "portfolio",
-  path: "/portfolio/greenwood-basement-finish",
+  path: "/portfolio/greenwood-basement-finish/",
   name: "Greenwood Basement Finish",
   description:
     "A Greenwood basement converted from unfinished storage to a family room, bedroom, and full bathroom — permitted, waterproofed, and finished throughout.",
@@ -202,10 +202,10 @@ export const greenwoodBasement: PortfolioEntity = {
       alt: "Greenwood finished basement",
     },
     eyebrow: "Expansion • Space Conversion",
-    primaryCta: { label: "Start your project", href: "/contact" },
+    primaryCta: { label: "Start your project", href: "/contact/" },
     secondaryCta: {
       label: "Unused space conversions",
-      href: "/services/space-conversion-conversions-seattle",
+      href: "/services/attic-basement-conversions-seattle/",
     },
   },
 
@@ -310,8 +310,8 @@ export const greenwoodBasement: PortfolioEntity = {
   cta: {
     heading: "Have unused space in your home?",
     body: "Tell us what's down there and what you'd like it to become.",
-    primaryCta: { label: "Request an estimate", href: "/contact" },
-    secondaryCta: { label: "View services", href: "/services" },
+    primaryCta: { label: "Request an estimate", href: "/contact/" },
+    secondaryCta: { label: "View services", href: "/services/" },
   },
 
   related: [unusedSpaceConversions],

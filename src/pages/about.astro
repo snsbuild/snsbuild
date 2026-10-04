@@ -1,4 +1,5 @@
 ---
+import Img from "../components/Img.astro";
 import CallToAction from "../components/CallToAction.astro";
 import Faq from "../components/Faq.astro";
 import ProcessTimeline from "../components/ProcessTimeline.astro";
@@ -10,7 +11,7 @@ import type { MarketingPage } from "../types/entity-types";
 
 export const aboutPage: MarketingPage = {
   kind: "marketing",
-  path: "/about",
+  path: "/about/",
   seo: {
     title: "About Saddle and Spur Construction | Seattle General Contractor",
     description:
@@ -94,7 +95,8 @@ const seo = buildSeoFrom(aboutPage);
               schedule.
             </p>
           </div>
-          <img
+          <Img
+            sizes="(min-width: 1024px) 512px, 100vw"
             src="/images/about/gallery-1.jpg"
             alt="Remodeled home interior"
             class="mt-10 aspect-6/5 w-full max-w-lg rounded-2xl object-cover outline-1 -outline-offset-1 outline-black/5 sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36"
@@ -142,7 +144,8 @@ const seo = buildSeoFrom(aboutPage);
             <div
               class="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end"
             >
-              <img
+              <Img
+                sizes="(min-width: 640px) 592px, 480px"
                 src="/images/about/gallery-7.jpg"
                 alt="Kitchen remodel in progress"
                 class="aspect-7/5 w-148 max-w-none rounded-2xl bg-gray-50 object-cover max-sm:w-120"
@@ -154,7 +157,8 @@ const seo = buildSeoFrom(aboutPage);
               <div
                 class="order-first flex w-64 flex-none justify-end self-end max-sm:w-40 lg:w-auto"
               >
-                <img
+                <Img
+                  sizes="384px"
                   src="/images/about/gallery-2.jpg"
                   alt="Contractor reviewing plans"
                   class="aspect-4/3 w-[24rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
@@ -163,7 +167,9 @@ const seo = buildSeoFrom(aboutPage);
               <div
                 class="flex w-96 flex-auto justify-end lg:w-auto lg:flex-none"
               >
-                <img
+                <Img
+                  sizes="(min-width: 640px) 592px, 480px"
+                  loading="lazy"
                   src="/images/about/gallery-4.jpg"
                   alt="Finished bathroom remodel"
                   class="aspect-7/5 w-148 max-w-none flex-none rounded-2xl bg-gray-50 object-cover max-sm:w-120"
@@ -172,7 +178,9 @@ const seo = buildSeoFrom(aboutPage);
               <div
                 class="hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none"
               >
-                <img
+                <Img
+                  sizes="384px"
+                  loading="lazy"
                   src="/images/about/gallery-5.jpg"
                   alt="Outdoor deck construction"
                   class="aspect-4/3 w-[24rem] max-w-none rounded-2xl bg-gray-50 object-cover"

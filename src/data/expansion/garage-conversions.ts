@@ -8,7 +8,7 @@ import {
 export const garageConversions: ServiceEntity = {
   id: "garage-conversions-seattle",
   type: "service",
-  path: "/services/garage-conversions-seattle",
+  path: "/services/garage-conversions-seattle/",
   homePageFeatured: false,
   category: ServiceCategory.Expansion,
   name: "Garage Conversions",
@@ -106,8 +106,8 @@ export const garageConversions: ServiceEntity = {
     eyebrow: "What we do",
     heading: "Garage conversion services",
     byline: "More useful space from what you already have.",
-    primaryCta: { label: "Get a quote", href: "/contact" },
-    secondaryCta: { label: "See portfolio", href: "/portfolio" },
+    primaryCta: { label: "Get a quote", href: "/contact/" },
+    secondaryCta: { label: "See portfolio", href: "/portfolio/" },
     services: [
       {
         title: "Garage-to-ADU",
@@ -141,7 +141,7 @@ export const garageConversions: ServiceEntity = {
 export const columbiaGarageOffice: PortfolioEntity = {
   id: "columbia-city-garage-office",
   type: "portfolio",
-  path: "/portfolio/columbia-city-garage-office",
+  path: "/portfolio/columbia-city-garage-office/",
   name: "Columbia City Garage Office",
   description:
     "A Columbia City single-car garage converted into a home office — insulated, heated, wired for fiber, and finished to match the main house.",
@@ -193,10 +193,10 @@ export const columbiaGarageOffice: PortfolioEntity = {
       alt: "Exterior",
     },
     eyebrow: "Expansion • Garage Conversion",
-    primaryCta: { label: "Start your project", href: "/contact" },
+    primaryCta: { label: "Start your project", href: "/contact/" },
     secondaryCta: {
       label: "Garage conversions",
-      href: "/services/garage-conversions-seattle",
+      href: "/services/garage-conversions-seattle/",
     },
   },
 
@@ -303,8 +303,8 @@ export const columbiaGarageOffice: PortfolioEntity = {
   cta: {
     heading: "Have a garage you're not really using?",
     body: "Tell us what you'd like it to become and we'll scope it out.",
-    primaryCta: { label: "Request an estimate", href: "/contact" },
-    secondaryCta: { label: "View services", href: "/services" },
+    primaryCta: { label: "Request an estimate", href: "/contact/" },
+    secondaryCta: { label: "View services", href: "/services/" },
   },
 
   related: [garageConversions],

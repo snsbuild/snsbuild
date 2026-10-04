@@ -8,7 +8,7 @@ import {
 export const roofingStructural: ServiceEntity = {
   id: "roofing-structural-seattle",
   type: "service",
-  path: "/services/roofing-structural-seattle",
+  path: "/services/roofing-structural-seattle/",
   homePageFeatured: false,
   category: ServiceCategory.Structural,
   name: "Roofing & Structural",
@@ -109,8 +109,8 @@ export const roofingStructural: ServiceEntity = {
     eyebrow: "What we do",
     heading: "Roofing & structural services",
     byline: "Start from the top.",
-    primaryCta: { label: "Get a quote", href: "/contact" },
-    secondaryCta: { label: "See portfolio", href: "/portfolio" },
+    primaryCta: { label: "Get a quote", href: "/contact/" },
+    secondaryCta: { label: "See portfolio", href: "/portfolio/" },
     services: [
       {
         title: "Roof replacement",
@@ -144,7 +144,7 @@ export const roofingStructural: ServiceEntity = {
 export const madisonParkRoof: PortfolioEntity = {
   id: "madison-park-roof-repair",
   type: "portfolio",
-  path: "/portfolio/madison-park-roof-repair",
+  path: "/portfolio/madison-park-roof-repair/",
   name: "Madison Park Roof & Rot Repair",
   description:
     "A Madison Park home with a 30-year-old roof — full tear-off, structural rot remediation discovered at tear-off, and new architectural shingles throughout.",
@@ -196,10 +196,10 @@ export const madisonParkRoof: PortfolioEntity = {
       alt: "Madison Park roof replacement",
     },
     eyebrow: "Structural • Roofing",
-    primaryCta: { label: "Start your project", href: "/contact" },
+    primaryCta: { label: "Start your project", href: "/contact/" },
     secondaryCta: {
       label: "Roofing & structural",
-      href: "/services/roofing-structural-seattle",
+      href: "/services/roofing-structural-seattle/",
     },
   },
 
@@ -308,8 +308,8 @@ export const madisonParkRoof: PortfolioEntity = {
   cta: {
     heading: "Roof concerns or need an inspection?",
     body: "We give honest assessments and clear scopes — no scare tactics.",
-    primaryCta: { label: "Request an estimate", href: "/contact" },
-    secondaryCta: { label: "View services", href: "/services" },
+    primaryCta: { label: "Request an estimate", href: "/contact/" },
+    secondaryCta: { label: "View services", href: "/services/" },
   },
 
   related: [roofingStructural],

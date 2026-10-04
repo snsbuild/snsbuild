@@ -1,7 +1,17 @@
 ---
 import { email, license, phoneDisplay, phoneHref } from "../siteConfig";
 
-const { className } = Astro.props;
+const {
+  className,
+  heading = "Get a Free Estimate",
+  headingLevel = "h2",
+} = Astro.props;
+
+// The heading is rendered twice (desktop column / above the mobile form). When
+// this block is the page's H1, only the mobile copy — the one Google's
+// mobile-first indexer sees — gets the tag, so the page still has exactly one.
+const MobileHeading = headingLevel;
+const DesktopHeading = headingLevel === "h1" ? "p" : headingLevel;
 ---
 
 <div class:list={["relative", "isolate", className]}>
@@ -49,11 +59,11 @@ const { className } = Astro.props;
             </div>
           </div>
         </div>
-        <h2
+        <DesktopHeading
           class="hidden text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:block"
         >
-          Get a Free Estimate
-        </h2>
+          {heading}
+        </DesktopHeading>
         <p class="text-lg/8 text-gray-600 lg:mt-6">
           Thinking about remodeling? Let's talk it through. Leave your name and
           how to reach you, and we'll call to hear about your project, schedule
@@ -118,11 +128,11 @@ const { className } = Astro.props;
         </label>
       </p>
       <div class="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
-        <h2
+        <MobileHeading
           class="mb-6 text-3xl font-semibold tracking-tight text-pretty text-gray-900 lg:hidden"
         >
-          Get a Free Estimate
-        </h2>
+          {heading}
+        </MobileHeading>
         <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <!-- First Name -->
           <div>

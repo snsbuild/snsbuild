@@ -8,7 +8,7 @@ import {
 export const kitchenRemodel: ServiceEntity = {
   id: "kitchen-remodeling-seattle",
   type: "service",
-  path: "/services/kitchen-remodeling-seattle",
+  path: "/services/kitchen-remodeling-seattle/",
   homePageFeatured: true,
   category: ServiceCategory.Interior,
   name: "Kitchen Remodeling",
@@ -127,8 +127,8 @@ export const kitchenRemodel: ServiceEntity = {
     eyebrow: "What we do",
     heading: "Kitchen remodeling services",
     byline: "Scope it right, then build it right.",
-    primaryCta: { label: "Get a quote", href: "/contact" },
-    secondaryCta: { label: "See portfolio", href: "/portfolio" },
+    primaryCta: { label: "Get a quote", href: "/contact/" },
+    secondaryCta: { label: "See portfolio", href: "/portfolio/" },
     services: [
       {
         title: "Layout & planning",
@@ -174,7 +174,7 @@ export const kitchenRemodel: ServiceEntity = {
 export const ballardKitchen: PortfolioEntity = {
   id: "ballard-kitchen-refresh",
   type: "portfolio",
-  path: "/portfolio/ballard-kitchen-refresh",
+  path: "/portfolio/ballard-kitchen-refresh/",
   name: "Ballard Kitchen Refresh",
   description:
     "A full kitchen overhaul in Ballard — new layout, white shaker cabinetry with brass hardware, white quartz countertops, a large island, and a custom butler's pantry. The result is an open, light-filled space that connects directly to the living area.",
@@ -182,7 +182,7 @@ export const ballardKitchen: PortfolioEntity = {
   seo: {
     title: "Ballard Kitchen Remodel | Saddle and Spur Construction",
     description:
-      "Full kitchen remodel in Ballard, Seattle — new layout, white shaker cabinets, white quartz island, herringbone tile backsplash, and custom butler's pantry. Completed in 6 weeks.",
+      "Ballard, Seattle kitchen remodel — new layout, white shaker cabinets, quartz island, herringbone backsplash, and a custom butler's pantry. Done in 6 weeks.",
     keywords: [
       "ballard kitchen remodel",
       "seattle kitchen contractor",
@@ -229,10 +229,10 @@ export const ballardKitchen: PortfolioEntity = {
       alt: "Remodeled open-plan Ballard kitchen with large white quartz island, gold bar stools, and vaulted ceiling",
     },
     eyebrow: "Services • Interior • Kitchen Remodel",
-    primaryCta: { label: "Start your project", href: "/contact" },
+    primaryCta: { label: "Start your project", href: "/contact/" },
     secondaryCta: {
       label: "Kitchen remodeling",
-      href: "/services/kitchen-remodeling-seattle",
+      href: "/services/kitchen-remodeling-seattle/",
     },
   },
 
@@ -375,8 +375,8 @@ export const ballardKitchen: PortfolioEntity = {
   cta: {
     heading: "Ready to plan your remodel?",
     body: "Tell us about your goals and we'll propose a clear scope and timeline.",
-    primaryCta: { label: "Request an estimate", href: "/contact" },
-    secondaryCta: { label: "View services", href: "/services" },
+    primaryCta: { label: "Request an estimate", href: "/contact/" },
+    secondaryCta: { label: "View services", href: "/services/" },
   },
 
   related: [kitchenRemodel],

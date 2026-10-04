@@ -1,60 +1,6 @@
 ---
-const serviceAreas = [
-  // Seattle
-  "Seattle",
-  "Ballard",
-  "Fremont",
-  "Greenwood",
-  "Phinney Ridge",
-  "Wallingford",
-  "Queen Anne",
-  "Magnolia",
-  "Capitol Hill",
-  "Madison Park",
-  "West Seattle",
-  "Beacon Hill",
-  "Columbia City",
-  "Rainier Valley",
-  "Northgate",
-
-  // North Seattle & North King County
-  "Shoreline",
-  "Lake Forest Park",
-  "Kenmore",
-  "Bothell",
-  "Mountlake Terrace",
-
-  // Eastside
-  "Bellevue",
-  "Kirkland",
-  "Redmond",
-  "Sammamish",
-  "Issaquah",
-  "Mercer Island",
-  "Newcastle",
-
-  // South King County
-  "Renton",
-  "Kent",
-  "Tukwila",
-  "Burien",
-  "SeaTac",
-  "Des Moines",
-  "Federal Way",
-  "Covington",
-  "Maple Valley",
-  "Auburn",
-
-  // Snohomish County
-  "Lynnwood",
-  "Edmonds",
-  "Mukilteo",
-  "Mill Creek",
-  "Everett",
-  "Marysville",
-  "Lake Stevens",
-  "Monroe",
-];
+import Img from "../Img.astro";
+import { serviceAreas } from "../../data/service-areas";
 ---
 
 <div class:list={["overflow-hidden bg-white py-24 sm:py-32"]}>
@@ -91,10 +37,10 @@ const serviceAreas = [
         </div>
       </div>
       <div class="flex items-start justify-end lg:order-first">
-        <img
-          width="1118"
-          height="1019"
+        <Img
+          sizes="(min-width: 1024px) 592px, 100vw"
           src="/service-area.jpg"
+          quality={85}
           alt="Map of the Greater Seattle service area, covering King and Snohomish County from Everett to Federal Way"
           loading="lazy"
           decoding="async"

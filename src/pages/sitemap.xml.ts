@@ -10,13 +10,12 @@ type Entry = { url: string; priority: string; changefreq: string };
 export const GET: APIRoute = () => {
   const staticPages: Entry[] = [
     { url: "/", priority: "1.0", changefreq: "weekly" },
-    { url: "/services", priority: "0.9", changefreq: "monthly" },
-    { url: "/portfolio", priority: "0.9", changefreq: "monthly" },
-    { url: "/estimate", priority: "0.9", changefreq: "monthly" },
-    { url: "/about", priority: "0.6", changefreq: "monthly" },
-    { url: "/contact", priority: "0.7", changefreq: "monthly" },
-    { url: "/shop", priority: "0.5", changefreq: "monthly" },
-    { url: "/privacy", priority: "0.2", changefreq: "yearly" },
+    { url: "/services/", priority: "0.9", changefreq: "monthly" },
+    { url: "/portfolio/", priority: "0.9", changefreq: "monthly" },
+    { url: "/estimate/", priority: "0.9", changefreq: "monthly" },
+    { url: "/about/", priority: "0.6", changefreq: "monthly" },
+    { url: "/contact/", priority: "0.7", changefreq: "monthly" },
+    { url: "/privacy/", priority: "0.2", changefreq: "yearly" },
   ];
 
   const serviceUrls: Entry[] = services.map((s) => ({

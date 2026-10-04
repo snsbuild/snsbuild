@@ -30,7 +30,7 @@ const structuralFeatured = structuralCards.find((c) => c.homePageFeatured);
     id="interior-services"
     category={"Interior Services"}
     cta={`See the kitchen we remodeled in ${interiorFeatured?.neighborhood}`}
-    ctaHref={interiorFeatured?.featuredPortfolioHref ?? "/portfolio"}
+    ctaHref={interiorFeatured?.featuredPortfolioHref ?? "/portfolio/"}
   />
 
   <ServiceList
@@ -38,7 +38,7 @@ const structuralFeatured = structuralCards.find((c) => c.homePageFeatured);
     id="expansion-services"
     category={"Expansion Services"}
     cta={`See the ADU we built in ${expansionFeatured?.neighborhood}`}
-    ctaHref={expansionFeatured?.featuredPortfolioHref ?? "/portfolio"}
+    ctaHref={expansionFeatured?.featuredPortfolioHref ?? "/portfolio/"}
   />
 
   <ServiceCTA category="expansion" />
@@ -48,7 +48,7 @@ const structuralFeatured = structuralCards.find((c) => c.homePageFeatured);
     id="outdoor-living-services"
     category={"Outdoor Living Spaces"}
     cta={`See the covered deck we built in ${outdoorFeatured?.neighborhood}`}
-    ctaHref={outdoorFeatured?.featuredPortfolioHref ?? "/portfolio"}
+    ctaHref={outdoorFeatured?.featuredPortfolioHref ?? "/portfolio/"}
   />
 
   <ServiceList
@@ -56,7 +56,7 @@ const structuralFeatured = structuralCards.find((c) => c.homePageFeatured);
     id="structural-services"
     category={"Structural Remodel"}
     cta={`See the seismic retrofit we completed in ${structuralFeatured?.neighborhood}`}
-    ctaHref={structuralFeatured?.featuredPortfolioHref ?? "/portfolio"}
+    ctaHref={structuralFeatured?.featuredPortfolioHref ?? "/portfolio/"}
   />
 
   <ServiceFooter />

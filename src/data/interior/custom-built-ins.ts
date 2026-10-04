@@ -10,7 +10,7 @@ import { ballardKitchen } from "./kitchen-remodel";
 export const customBuiltIns: ServiceEntity = {
   id: "custom-built-ins-seattle",
   type: "service",
-  path: "/services/custom-built-ins-seattle",
+  path: "/services/custom-built-ins-seattle/",
   homePageFeatured: false,
   category: ServiceCategory.Interior,
   name: "Custom Built-Ins & Carpentry",
@@ -47,9 +47,9 @@ export const customBuiltIns: ServiceEntity = {
 
   seo: {
     title:
-      "Custom Built-Ins & Cabinetry Seattle | Saddle and Spur Construction",
+      "Custom Built-Ins & Cabinetry Seattle | Saddle and Spur",
     description:
-      "Custom built-in cabinets, bookshelves, window seats, mudroom benches, pantries, and finish carpentry in Seattle. Measured to your space and installed by one accountable crew.",
+      "Custom built-in cabinets, bookshelves, window seats, mudroom benches, and finish carpentry in Seattle. Measured to your space, installed by one crew.",
     keywords: [
       "custom built-ins seattle",
       "built in cabinets seattle",
@@ -119,8 +119,8 @@ export const customBuiltIns: ServiceEntity = {
     eyebrow: "What we do",
     heading: "Custom built-in & carpentry services",
     byline: "Storage and character that fit the house you have.",
-    primaryCta: { label: "Get a quote", href: "/contact" },
-    secondaryCta: { label: "See portfolio", href: "/portfolio" },
+    primaryCta: { label: "Get a quote", href: "/contact/" },
+    secondaryCta: { label: "See portfolio", href: "/portfolio/" },
     services: [
       {
         title: "Built-in cabinetry & bookshelves",
@@ -162,7 +162,7 @@ customBuiltIns.seo.images = customBuiltIns.galleryImages;
 export const seattleBuiltIns: PortfolioEntity = {
   id: "seattle-craftsman-built-ins",
   type: "portfolio",
-  path: "/portfolio/seattle-craftsman-built-ins",
+  path: "/portfolio/seattle-craftsman-built-ins/",
   name: "Craftsman Built-Ins & Mudroom",
   description:
     "Fireplace bookshelves, a window seat with drawers, and a mudroom bench with lockers for a Seattle Craftsman — scribed to century-old walls and trimmed to match the original casing.",
@@ -215,10 +215,10 @@ export const seattleBuiltIns: PortfolioEntity = {
       alt: "Custom built-in with glass-front upper cabinets and open shelving",
     },
     eyebrow: "Services • Interior • Custom Built-Ins",
-    primaryCta: { label: "Start your project", href: "/contact" },
+    primaryCta: { label: "Start your project", href: "/contact/" },
     secondaryCta: {
       label: "Custom built-ins",
-      href: "/services/custom-built-ins-seattle",
+      href: "/services/custom-built-ins-seattle/",
     },
   },
 
@@ -331,8 +331,8 @@ export const seattleBuiltIns: PortfolioEntity = {
   cta: {
     heading: "Have a wall that needs a built-in?",
     body: "Tell us about the space and we'll come measure it.",
-    primaryCta: { label: "Request an estimate", href: "/contact" },
-    secondaryCta: { label: "View services", href: "/services" },
+    primaryCta: { label: "Request an estimate", href: "/contact/" },
+    secondaryCta: { label: "View services", href: "/services/" },
   },
 
   related: [customBuiltIns],

@@ -1,4 +1,5 @@
 ---
+import Img from "../Img.astro";
 import { phoneHref } from "../../siteConfig";
 ---
 
@@ -20,7 +21,8 @@ import { phoneHref } from "../../siteConfig";
             from start to finish — so there are no surprises along the way.
           </p>
         </div>
-        <img
+        <Img
+          sizes="(min-width: 1024px) 576px, 100vw"
           src="/images/spiral-ceiling.jpg"
           alt="Detail of a spiral ceiling built by Saddle and Spur Construction"
           loading="lazy"
@@ -80,15 +82,15 @@ import { phoneHref } from "../../siteConfig";
 <!-- CTA 2 -->
 <section class="bg-linear-to-r from-indigo-700 to-indigo-900 text-white py-20">
   <div class="max-w-6xl mx-auto px-4 text-center">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">
       Seattle's Trusted Residential Contractor
-    </h1>
+    </h2>
     <p class="text-xl mb-8 text-indigo-100">
       Your No-Nonsense Partner in Exceptional Construction. Licensed & Insured.
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
       <a
-        href="/contact"
+        href="/contact/"
         class="px-6 py-3 bg-white text-indigo-700 font-bold rounded hover:bg-gray-100 transition"
       >
         Request Estimate

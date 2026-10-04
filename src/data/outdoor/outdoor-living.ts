@@ -8,7 +8,7 @@ import {
 export const outdoorLiving: ServiceEntity = {
   id: "outdoor-seattle",
   type: "service",
-  path: "/services/outdoor-seattle",
+  path: "/services/outdoor-seattle/",
   homePageFeatured: true,
   category: ServiceCategory.Outdoor,
   name: "Outdoor Living",
@@ -110,8 +110,8 @@ export const outdoorLiving: ServiceEntity = {
     eyebrow: "What we do",
     heading: "Outdoor living services",
     byline: "Built for the Pacific Northwest.",
-    primaryCta: { label: "Get a quote", href: "/contact" },
-    secondaryCta: { label: "See portfolio", href: "/portfolio" },
+    primaryCta: { label: "Get a quote", href: "/contact/" },
+    secondaryCta: { label: "See portfolio", href: "/portfolio/" },
     services: [
       {
         title: "Composite decks",
@@ -145,7 +145,7 @@ export const outdoorLiving: ServiceEntity = {
 export const eastlakeDeck: PortfolioEntity = {
   id: "eastlake-covered-deck",
   type: "portfolio",
-  path: "/portfolio/eastlake-covered-deck",
+  path: "/portfolio/eastlake-covered-deck/",
   name: "Eastlake Covered Deck",
   description:
     "A two-level composite deck in Eastlake with a covered outdoor room, gas fire pit, and views of Lake Union — designed for year-round Seattle living.",
@@ -198,10 +198,10 @@ export const eastlakeDeck: PortfolioEntity = {
       alt: "Eastlake covered deck",
     },
     eyebrow: "Outdoor Living • Deck",
-    primaryCta: { label: "Start your project", href: "/contact" },
+    primaryCta: { label: "Start your project", href: "/contact/" },
     secondaryCta: {
       label: "Outdoor living",
-      href: "/services/outdoor-seattle",
+      href: "/services/outdoor-seattle/",
     },
   },
 
@@ -307,8 +307,8 @@ export const eastlakeDeck: PortfolioEntity = {
   cta: {
     heading: "Ready for an outdoor living space?",
     body: "Tell us about your yard and we'll design something that works for Seattle weather.",
-    primaryCta: { label: "Request an estimate", href: "/contact" },
-    secondaryCta: { label: "View services", href: "/services" },
+    primaryCta: { label: "Request an estimate", href: "/contact/" },
+    secondaryCta: { label: "View services", href: "/services/" },
   },
 
   related: [outdoorLiving],
