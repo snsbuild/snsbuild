@@ -53,7 +53,7 @@ export const deckBuilding: ServiceEntity = {
   },
 
   seo: {
-    title: "Deck Builders in Seattle | Custom Decks | Saddle and Spur",
+    title: "Deck Builders in Seattle | Custom Decks | Saddle & Spur",
     description:
       "Licensed Seattle deck builders. Composite, cedar, multi-level, and covered decks built for Northwest weather — permits, footings, and clear estimates included.",
     keywords: [
@@ -69,7 +69,7 @@ export const deckBuilding: ServiceEntity = {
     ],
     ogImage: {
       src: "/images/services/decks/ogImage.jpg",
-      alt: "Composite deck with black metal railing built by Saddle and Spur Construction in Seattle",
+      alt: "Composite deck with black metal railing built by Saddle & Spur Construction in Seattle",
     },
     images: [],
     datePublished: "2026-08-26",

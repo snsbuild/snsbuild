@@ -34,7 +34,7 @@ export const wholeHomeRemodel: ServiceEntity = {
   },
 
   seo: {
-    title: "Whole Home Remodeling Seattle | Saddle and Spur Construction",
+    title: "Whole Home Remodeling Seattle | Saddle & Spur Construction",
     description:
       "Comprehensive whole-home remodels in Seattle. One team, one contract, one clear plan from demo through final punch list.",
     keywords: [
@@ -150,7 +150,7 @@ export const fremontWholeHome: PortfolioEntity = {
   breadcrumb: "Portfolio • Interior • Whole Home Remodel",
 
   seo: {
-    title: "Fremont Whole Home Remodel | Saddle and Spur Construction",
+    title: "Fremont Whole Home Remodel | Saddle & Spur Construction",
     description:
       "A 1960s Fremont home transformed: open layout, new kitchen, two updated bathrooms, and new flooring throughout.",
     keywords: [

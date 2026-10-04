@@ -47,7 +47,7 @@ export const customBuiltIns: ServiceEntity = {
 
   seo: {
     title:
-      "Custom Built-Ins & Cabinetry Seattle | Saddle and Spur",
+      "Custom Built-Ins & Cabinetry Seattle | Saddle & Spur",
     description:
       "Custom built-in cabinets, bookshelves, window seats, mudroom benches, and finish carpentry in Seattle. Measured to your space, installed by one crew.",
     keywords: [
@@ -168,7 +168,7 @@ export const seattleBuiltIns: PortfolioEntity = {
     "Fireplace bookshelves, a window seat with drawers, and a mudroom bench with lockers for a Seattle Craftsman — scribed to century-old walls and trimmed to match the original casing.",
   breadcrumb: "Portfolio • Interior • Custom Built-Ins",
   seo: {
-    title: "Craftsman Built-Ins in Seattle | Saddle and Spur Construction",
+    title: "Craftsman Built-Ins in Seattle | Saddle & Spur Construction",
     description:
       "Custom fireplace bookshelves, a storage window seat, and a mudroom bench with lockers in a Seattle Craftsman, matched to the home's original trim.",
     keywords: [

@@ -39,7 +39,7 @@ export const outdoorLiving: ServiceEntity = {
   },
 
   seo: {
-    title: "Outdoor Living Seattle | Saddle and Spur Construction",
+    title: "Outdoor Living Seattle | Saddle & Spur Construction",
     description:
       "Decks, patios, covered outdoor rooms, and pergolas in Seattle. Designed for Seattle weather and built to last.",
     keywords: [
@@ -152,7 +152,7 @@ export const eastlakeDeck: PortfolioEntity = {
   breadcrumb: "Portfolio • Outdoor Living • Deck",
 
   seo: {
-    title: "Eastlake Covered Deck | Saddle and Spur Construction",
+    title: "Eastlake Covered Deck | Saddle & Spur Construction",
     description:
       "A two-level composite deck in Eastlake with a covered outdoor room, gas fire pit, and Lake Union views — designed for year-round Seattle living.",
     keywords: [

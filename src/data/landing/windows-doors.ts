@@ -11,7 +11,7 @@ export const windowsDoorsLanding: LandingPage = {
   robots: "index, follow",
 
   seo: {
-    title: "Free Window Replacement Quote in Seattle | Saddle and Spur",
+    title: "Free Window Replacement Quote in Seattle | Saddle & Spur",
     description: `Licensed Seattle window and door installer. Energy-efficient windows plus entry, patio, and French doors. Free on-site estimate. Call ${phoneDisplay}.`,
     // Deliberately estimate/quote intent — the service page owns the
     // "window replacement seattle" head term.

@@ -122,7 +122,7 @@ export const servicesIndex: CollectionPage<any> = {
   path: "/services/",
   seo: {
     images: [],
-    title: "Remodeling Services in Seattle | Saddle and Spur Construction",
+    title: "Remodeling Services in Seattle | Saddle & Spur Construction",
     description:
       "Explore our remodeling services in Seattle and King County. Kitchens, bathrooms, additions, and more.",
     ogImage: { src: "/images/services/kitchen/ogImage.jpg", alt: "Services" },
@@ -142,7 +142,7 @@ export const portfolioIndex: CollectionPage<any> = {
   path: "/portfolio/",
   seo: {
     images: [],
-    title: "Seattle Remodeling Portfolio | Saddle and Spur Construction",
+    title: "Seattle Remodeling Portfolio | Saddle & Spur Construction",
     description:
       "See our recent remodeling projects across Seattle and King County.",
     ogImage: { src: "/images/og/portfolio.jpg", alt: "Portfolio" },

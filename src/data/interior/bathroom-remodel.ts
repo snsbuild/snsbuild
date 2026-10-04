@@ -54,7 +54,7 @@ export const bathroomRemodel: ServiceEntity = {
   },
 
   seo: {
-    title: "Bathroom Remodeling in Seattle | Saddle and Spur Construction",
+    title: "Bathroom Remodeling in Seattle | Saddle & Spur Construction",
     description:
       "Design-forward bathroom remodels built for Seattle homes. Curbless showers, custom tile, and high-quality fixtures.",
     keywords: [
@@ -175,7 +175,7 @@ export const capitolHillBathroom: PortfolioEntity = {
   breadcrumb: "Portfolio • Interior • Bathroom Remodel",
 
   seo: {
-    title: "Capitol Hill Bathroom Remodel | Saddle and Spur Construction",
+    title: "Capitol Hill Bathroom Remodel | Saddle & Spur Construction",
     description:
       "A full primary bathroom remodel in Capitol Hill: curbless shower, heated floors, and a custom double vanity.",
     keywords: [

@@ -11,7 +11,7 @@ export const deckBuilderLanding: LandingPage = {
   robots: "index, follow",
 
   seo: {
-    title: "Free Deck Building Estimate in Seattle | Saddle and Spur",
+    title: "Free Deck Building Estimate in Seattle | Saddle & Spur",
     description: `Licensed Seattle deck builder. Composite, cedar, multi-level, and covered decks. Free on-site estimate, permits handled. Call ${phoneDisplay}.`,
     // Deliberately estimate/quote intent — the service page owns the
     // "deck builder seattle" head term.

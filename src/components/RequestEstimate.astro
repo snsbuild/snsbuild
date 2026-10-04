@@ -1,5 +1,5 @@
 ---
-import { email, license, phoneDisplay, phoneHref } from "../siteConfig";
+import { email, hours, license, phoneDisplay, phoneHref } from "../siteConfig";
 
 const {
   className,
@@ -84,7 +84,7 @@ const DesktopHeading = headingLevel === "h1" ? "p" : headingLevel;
                 {phoneDisplay}
               </a>
               <p class="text-gray-600 text-sm mt-1">
-                Available Monday-Friday, 8am-6pm
+                Available {hours.display}
               </p>
             </div>
 

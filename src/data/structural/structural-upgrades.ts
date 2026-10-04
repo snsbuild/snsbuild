@@ -38,7 +38,7 @@ export const structuralUpgrades: ServiceEntity = {
   },
 
   seo: {
-    title: "Structural Upgrades Seattle | Saddle and Spur Construction",
+    title: "Structural Upgrades Seattle | Saddle & Spur Construction",
     description:
       "Foundation repairs, seismic retrofits, and structural improvements for Seattle homes. Engineered, permitted, and built to protect your home.",
     keywords: [
@@ -160,7 +160,7 @@ export const capitolHillSeismic: PortfolioEntity = {
   breadcrumb: "Portfolio • Structural • Seismic Retrofit",
 
   seo: {
-    title: "Capitol Hill Seismic Retrofit | Saddle and Spur Construction",
+    title: "Capitol Hill Seismic Retrofit | Saddle & Spur Construction",
     description:
       "Full seismic retrofit on a 1920s Capitol Hill home — cripple wall bracing, anchor bolting, and foundation crack repair. Permitted and engineered.",
     keywords: [

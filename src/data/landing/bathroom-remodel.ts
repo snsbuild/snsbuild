@@ -11,7 +11,7 @@ export const bathroomRemodelLanding: LandingPage = {
   robots: "index, follow",
 
   seo: {
-    title: "Free Bathroom Remodel Estimate in Seattle | Saddle and Spur",
+    title: "Free Bathroom Remodel Estimate in Seattle | Saddle & Spur",
     description: `Licensed Seattle bathroom remodeler: walk-in showers, tile, vanities, heated floors. Free on-site estimate, permits handled. Call ${phoneDisplay}.`,
     // Deliberately estimate/quote intent — the service page owns the
     // "bathroom remodeling seattle" head term.

@@ -105,9 +105,9 @@ export const shopPage: MarketingPage = {
   kind: "marketing",
   path: "/shop/",
   seo: {
-    title: "Shop | Saddle and Spur Construction",
+    title: "Shop | Saddle & Spur Construction",
     description:
-      "Shop cedar garden beds, outdoor furniture, and landscape lighting from Saddle and Spur Construction. Local delivery and installation across Greater Seattle.",
+      "Shop cedar garden beds, outdoor furniture, and landscape lighting from Saddle & Spur Construction. Local delivery and installation across Greater Seattle.",
     keywords: [
       "raised garden beds seattle",
       "outdoor furniture seattle",

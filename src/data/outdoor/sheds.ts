@@ -55,7 +55,7 @@ export const shedBuilding: ServiceEntity = {
   },
 
   seo: {
-    title: "Shed Builders in Seattle | Custom Sheds | Saddle and Spur",
+    title: "Shed Builders in Seattle | Custom Sheds | Saddle & Spur",
     description:
       "Licensed Seattle shed builders. Storage sheds, workshops, and insulated backyard offices on proper foundations, sited to meet Seattle setback rules.",
     keywords: [
@@ -203,7 +203,7 @@ export const magnoliaShedStudio: PortfolioEntity = {
   breadcrumb: "Portfolio • Sheds • Backyard Studio",
 
   seo: {
-    title: "Magnolia Backyard Shed Studio | Saddle and Spur Construction",
+    title: "Magnolia Backyard Shed Studio | Saddle & Spur Construction",
     description:
       "A 190 sq ft insulated shed studio in Magnolia, Seattle — cedar siding, pier foundation, mini-split heat, and permitted power, under the 200 sq ft exemption.",
     keywords: [

@@ -53,7 +53,7 @@ export const kitchenRemodel: ServiceEntity = {
   },
 
   seo: {
-    title: "Kitchen Remodeling in Seattle | Saddle and Spur Construction",
+    title: "Kitchen Remodeling in Seattle | Saddle & Spur Construction",
     description:
       "Design-forward kitchen remodels built for Seattle homes. Transparent timelines, clear pricing, and high-quality finishes.",
     keywords: [
@@ -180,7 +180,7 @@ export const ballardKitchen: PortfolioEntity = {
     "A full kitchen overhaul in Ballard — new layout, white shaker cabinetry with brass hardware, white quartz countertops, a large island, and a custom butler's pantry. The result is an open, light-filled space that connects directly to the living area.",
   breadcrumb: "Portfolio • Interior • Kitchen Remodel",
   seo: {
-    title: "Ballard Kitchen Remodel | Saddle and Spur Construction",
+    title: "Ballard Kitchen Remodel | Saddle & Spur Construction",
     description:
       "Ballard, Seattle kitchen remodel — new layout, white shaker cabinets, quartz island, herringbone backsplash, and a custom butler's pantry. Done in 6 weeks.",
     keywords: [

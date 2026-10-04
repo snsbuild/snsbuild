@@ -9,6 +9,7 @@ import type { SeoPage } from "../types/seo-types";
 import {
   phoneHref,
   email,
+  hours,
   license,
   businessProfiles,
 } from "../siteConfig";
@@ -18,7 +19,7 @@ const SITE = "https://sns.build";
 // Pages are served with a trailing slash (Netlify 301s the bare form), so every
 // URL we hand to search engines must carry one or it points at a redirect.
 const HOME = `${SITE}/`;
-const BUSINESS_NAME = "Saddle and Spur Construction";
+const BUSINESS_NAME = "Saddle & Spur Construction";
 const SERVICE_AREA = "Greater Seattle / King County";
 const DEFAULT_REGION = "WA";
 
@@ -55,12 +56,11 @@ const buildLocalBusinessNode = () => ({
   logo: `${SITE}/logo.svg`,
   image: `${SITE}/images/og/about.jpg`,
   priceRange: "$$$",
-  // Matches the phone hours shown on the estimate form.
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    opens: "08:00",
-    closes: "18:00",
+    dayOfWeek: hours.days,
+    opens: hours.opens,
+    closes: hours.closes,
   },
   address: {
     "@type": "PostalAddress",

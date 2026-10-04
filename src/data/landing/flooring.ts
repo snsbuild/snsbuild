@@ -11,7 +11,7 @@ export const flooringLanding: LandingPage = {
   robots: "index, follow",
 
   seo: {
-    title: "Free Flooring Estimate in Seattle | Saddle and Spur",
+    title: "Free Flooring Estimate in Seattle | Saddle & Spur",
     description: `Licensed Seattle flooring installer. Hardwood, LVP, and tile, with subfloor prep by one crew. Free on-site estimate, line-item pricing. Call ${phoneDisplay}.`,
     // Deliberately estimate/quote intent — the service page owns the
     // "flooring installation seattle" head term.

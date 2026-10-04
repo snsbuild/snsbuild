@@ -13,7 +13,7 @@ export const customBuiltInsLanding: LandingPage = {
   robots: "index, follow",
 
   seo: {
-    title: "Free Custom Built-In Estimate in Seattle | Saddle and Spur",
+    title: "Free Custom Built-In Estimate in Seattle | Saddle & Spur",
     description: `Custom built-in cabinets, bookshelves, window seats, and mudroom benches in Seattle. Free on-site estimate, line-item pricing. Call ${phoneDisplay}.`,
     // Deliberately estimate/quote intent — the service page owns the
     // "custom built-ins seattle" head term.

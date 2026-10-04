@@ -37,7 +37,7 @@ export const garageConversions: ServiceEntity = {
   },
 
   seo: {
-    title: "Garage Conversions Seattle | Saddle and Spur Construction",
+    title: "Garage Conversions Seattle | Saddle & Spur Construction",
     description:
       "Garage conversions in Seattle — turn underused garage space into a home office, ADU, studio, or gym. Permitted and built to match your home.",
     keywords: [
@@ -148,7 +148,7 @@ export const columbiaGarageOffice: PortfolioEntity = {
   breadcrumb: "Portfolio • Expansion • Garage Conversion",
 
   seo: {
-    title: "Columbia City Garage Office | Saddle and Spur Construction",
+    title: "Columbia City Garage Office | Saddle & Spur Construction",
     description:
       "A Columbia City single-car garage converted into a home office — insulated, heated, wired for fiber, and finished to match the main house.",
     keywords: [

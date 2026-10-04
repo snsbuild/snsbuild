@@ -36,7 +36,7 @@ export const unusedSpaceConversions: ServiceEntity = {
   },
 
   seo: {
-    title: "Unused Space Conversions Seattle | Saddle and Spur Construction",
+    title: "Unused Space Conversions Seattle | Saddle & Spur Construction",
     description:
       "Attic, basement, and underutilized room conversions in Seattle. Turn unused square footage into livable space — permitted and finished right.",
     keywords: [
@@ -157,7 +157,7 @@ export const greenwoodBasement: PortfolioEntity = {
   breadcrumb: "Portfolio • Expansion • Space Conversion",
 
   seo: {
-    title: "Greenwood Basement Finish | Saddle and Spur Construction",
+    title: "Greenwood Basement Finish | Saddle & Spur Construction",
     description:
       "A Greenwood basement converted from unfinished storage to a family room, bedroom, and full bathroom — permitted, waterproofed, and finished throughout.",
     keywords: [

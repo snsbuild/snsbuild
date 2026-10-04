@@ -38,7 +38,7 @@ export const aduConstruction: ServiceEntity = {
   },
 
   seo: {
-    title: "ADU Construction Seattle | Saddle and Spur Construction",
+    title: "ADU Construction Seattle | Saddle & Spur Construction",
     description:
       "ADU construction in Seattle from permit to punch list. Detached, attached, and DADU options — one team managing the full build.",
     keywords: [
@@ -137,7 +137,7 @@ export const phinneyRidgeAdu: PortfolioEntity = {
   breadcrumb: "Portfolio • Expansion • ADU",
 
   seo: {
-    title: "Phinney Ridge Backyard ADU | Saddle and Spur Construction",
+    title: "Phinney Ridge Backyard ADU | Saddle & Spur Construction",
     description:
       "A 400 sq ft detached ADU in Phinney Ridge — full kitchen, full bath, sleeping loft, and covered deck, permitted and built by one team.",
     keywords: [

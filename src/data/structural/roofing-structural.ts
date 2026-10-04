@@ -39,7 +39,7 @@ export const roofingStructural: ServiceEntity = {
   },
 
   seo: {
-    title: "Roofing & Structural Seattle | Saddle and Spur Construction",
+    title: "Roofing & Structural Seattle | Saddle & Spur Construction",
     description:
       "Roofing and structural work in Seattle — roof replacement, structural repairs, and seismic upgrades. Engineered and permitted.",
     keywords: [
@@ -151,7 +151,7 @@ export const madisonParkRoof: PortfolioEntity = {
   breadcrumb: "Portfolio • Structural • Roofing",
 
   seo: {
-    title: "Madison Park Roof & Rot Repair | Saddle and Spur Construction",
+    title: "Madison Park Roof & Rot Repair | Saddle & Spur Construction",
     description:
       "Full roof replacement on a Madison Park home with structural rot remediation discovered at tear-off. No surprises — documented and approved before proceeding.",
     keywords: [

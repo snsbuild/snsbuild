@@ -5,7 +5,7 @@ import ProcessTimeline from "../components/ProcessTimeline.astro";
 import Faq from "../components/Faq.astro";
 import ServiceAreas from "../components/service/ServiceAreas.astro";
 import { buildSeoFrom } from "../seo";
-import { email, license, phoneDisplay } from "../siteConfig";
+import { email, hours, license, phoneDisplay } from "../siteConfig";
 import type { MarketingPage } from "../types/entity-types";
 
 // /estimate owns "free estimate" intent; this page targets people looking for
@@ -14,22 +14,22 @@ export const contactPage: MarketingPage = {
   kind: "marketing",
   path: "/contact/",
   seo: {
-    title: "Contact Saddle and Spur Construction | Seattle Contractor",
-    description: `Call ${phoneDisplay}, email ${email}, or send us a message. Saddle and Spur Construction is a licensed Seattle general contractor.`,
+    title: "Contact Saddle & Spur Construction | Seattle Contractor",
+    description: `Call ${phoneDisplay}, email ${email}, or send us a message. Saddle & Spur Construction is a licensed Seattle general contractor.`,
     keywords: [
       "contact saddle and spur construction",
       "seattle general contractor phone number",
     ],
     ogImage: {
       src: "/images/og/estimate.jpg",
-      alt: "Saddle and Spur Construction on a Seattle remodeling project",
+      alt: "Saddle & Spur Construction on a Seattle remodeling project",
     },
     images: [],
   },
   faqs: [
     {
       question: "What's the best way to reach you?",
-      answer: `Call ${phoneDisplay} (Monday–Friday, 8am–6pm), email ${email}, or fill out the form on this page and we'll call you back.`,
+      answer: `Call ${phoneDisplay} (${hours.display}), email ${email}, or fill out the form on this page and we'll call you back.`,
     },
     {
       question: "Are you licensed and insured?",

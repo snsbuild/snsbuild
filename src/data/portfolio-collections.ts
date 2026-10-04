@@ -25,7 +25,7 @@ export const deckPortfolio: PortfolioCollectionPage = {
   breadcrumb: "Portfolio • Decks",
 
   seo: {
-    title: "Seattle Deck Portfolio | Recent Deck Projects | Saddle and Spur",
+    title: "Seattle Deck Portfolio | Recent Deck Projects | Saddle & Spur",
     description:
       "Browse recent deck projects across Seattle and King County — composite and cedar decks, multi-level builds, covered decks, and cable railing installations.",
     keywords: [
@@ -138,7 +138,7 @@ export const shedPortfolio: PortfolioCollectionPage = {
   breadcrumb: "Portfolio • Sheds",
 
   seo: {
-    title: "Seattle Shed & Backyard Office Portfolio | Saddle and Spur",
+    title: "Seattle Shed & Backyard Office Portfolio | Saddle & Spur",
     description:
       "Recent shed projects in Seattle and King County — storage sheds, garden buildings, workshops, and insulated backyard offices built on real foundations.",
     keywords: [

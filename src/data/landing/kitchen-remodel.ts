@@ -11,7 +11,7 @@ export const kitchenRemodelLanding: LandingPage = {
   robots: "index, follow",
 
   seo: {
-    title: "Free Kitchen Remodel Estimate in Seattle | Saddle and Spur",
+    title: "Free Kitchen Remodel Estimate in Seattle | Saddle & Spur",
     description: `Licensed Seattle kitchen remodeler. Layout, cabinets, counters, tile, and lighting under one team. Free on-site estimate, permits handled. Call ${phoneDisplay}.`,
     // Deliberately estimate/quote intent — the service page owns the
     // "kitchen remodeling seattle" head term.

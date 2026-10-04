@@ -38,7 +38,7 @@ export const homeAdditions: ServiceEntity = {
   },
 
   seo: {
-    title: "Home Additions Seattle | Saddle and Spur Construction",
+    title: "Home Additions Seattle | Saddle & Spur Construction",
     description:
       "Home additions in Seattle — room additions, second-story expansions, and bump-outs engineered, permitted, and built to match your home.",
     keywords: [
@@ -150,7 +150,7 @@ export const ravennaAddition: PortfolioEntity = {
   breadcrumb: "Portfolio • Expansion • Home Addition",
 
   seo: {
-    title: "Ravenna Primary Suite Addition | Saddle and Spur Construction",
+    title: "Ravenna Primary Suite Addition | Saddle & Spur Construction",
     description:
       "A 600 sq ft primary suite addition on a Ravenna Craftsman — vaulted ceiling, walk-in closet, and private bath, tied seamlessly into the existing roofline.",
     keywords: [

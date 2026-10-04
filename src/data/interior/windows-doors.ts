@@ -37,7 +37,7 @@ export const windowsDoors: ServiceEntity = {
   },
 
   seo: {
-    title: "Windows & Doors Seattle | Saddle and Spur Construction",
+    title: "Windows & Doors Seattle | Saddle & Spur Construction",
     description:
       "Window and door replacement in Seattle. Energy-efficient installs, proper flashing, and clean trim work — done right the first time.",
     keywords: [
@@ -154,7 +154,7 @@ export const wallingfordWindowsDoors: PortfolioEntity = {
   breadcrumb: "Portfolio • Interior • Windows & Doors",
 
   seo: {
-    title: "Wallingford Window & Door Refresh | Saddle and Spur Construction",
+    title: "Wallingford Window & Door Refresh | Saddle & Spur Construction",
     description:
       "Full window replacement and new entry door on a 1940s Wallingford home — improved efficiency, updated look, and a weather-tight installation.",
     keywords: [

@@ -37,7 +37,7 @@ export const flooringInstallation: ServiceEntity = {
   },
 
   seo: {
-    title: "Flooring Installation Seattle | Saddle and Spur Construction",
+    title: "Flooring Installation Seattle | Saddle & Spur Construction",
     description:
       "Professional flooring installation in Seattle. Hardwood, LVP, tile, and more — sourced, installed, and finished by one accountable crew.",
     keywords: [
@@ -154,7 +154,7 @@ export const queenAnneFlooring: PortfolioEntity = {
   breadcrumb: "Portfolio • Interior • Flooring",
 
   seo: {
-    title: "Queen Anne Hardwood Floors | Saddle and Spur Construction",
+    title: "Queen Anne Hardwood Floors | Saddle & Spur Construction",
     description:
       "Full main and upper level flooring replacement in a Queen Anne craftsman — old carpet removed, white oak hardwood installed and site-finished.",
     keywords: [

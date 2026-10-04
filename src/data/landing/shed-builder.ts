@@ -11,7 +11,7 @@ export const shedBuilderLanding: LandingPage = {
   robots: "index, follow",
 
   seo: {
-    title: "Free Custom Shed Estimate in Seattle | Saddle and Spur",
+    title: "Free Custom Shed Estimate in Seattle | Saddle & Spur",
     description: `Licensed Seattle shed builder. Storage sheds, workshops, and insulated backyard offices on real foundations. Free estimate. Call ${phoneDisplay}.`,
     // Deliberately estimate/quote intent — the service page owns the
     // "shed builder seattle" head term.
