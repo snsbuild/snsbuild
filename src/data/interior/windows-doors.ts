@@ -19,21 +19,6 @@ export const windowsDoors: ServiceEntity = {
   service: {
     serviceType: "Window & Door Replacement",
     areaServed: ["Greater Seattle / King County"],
-    subServices: [
-      {
-        name: "Window replacement",
-        description: "Energy-efficient windows with proper flashing and trim.",
-      },
-      {
-        name: "Exterior door replacement",
-        description:
-          "Entry, patio, and French doors installed plumb and sealed.",
-      },
-      {
-        name: "Interior door replacement",
-        description: "Pre-hung interior doors, hardware, and trim.",
-      },
-    ],
   },
 
   seo: {
@@ -60,23 +45,23 @@ export const windowsDoors: ServiceEntity = {
   galleryImages: [
     {
       src: "/images/services/doors-windows/gallery-1.jpg",
-      alt: "New entry door",
+      alt: "Rustic knotty-pine sliding barn door on black track beside a staircase with dark treads",
     },
     {
       src: "/images/services/doors-windows/gallery-2.jpg",
-      alt: "Casement windows",
+      alt: "Carpenter in tool belt checking a newly set window in an unfinished plywood-sheathed room",
     },
     {
       src: "/images/services/doors-windows/gallery-3.jpg",
-      alt: "French patio doors",
+      alt: "New white double-hung windows set in an open stud wall with insulation batts",
     },
     {
       src: "/images/services/doors-windows/gallery-4.jpg",
-      alt: "Interior door trim",
+      alt: "Wood-framed window tilted open above a kitchen counter with wood-grain cabinets",
     },
     {
       src: "/images/services/doors-windows/gallery-5.jpg",
-      alt: "Interior door trim",
+      alt: "White folding glass patio doors in a red brick wall opening onto a wood deck",
     },
   ],
   featuredTestimonial: {} as Testimonial,
@@ -164,7 +149,7 @@ export const wallingfordWindowsDoors: PortfolioEntity = {
     ],
     ogImage: {
       src: "/images/portfolio/doors-windows/ogImage.jpg",
-      alt: "After",
+      alt: "Craftsman stained-wood front door with divided-light sidelights and transom on a gray-sided porch",
     },
     images: [],
     datePublished: "2025-09-15",
@@ -195,10 +180,10 @@ export const wallingfordWindowsDoors: PortfolioEntity = {
   hero: {
     image: {
       src: "/images/portfolio/doors-windows/ogImage.jpg",
-      alt: "Wallingford windows after replacement",
+      alt: "Craftsman stained-wood front door with divided-light sidelights and transom on a gray-sided porch",
     },
     eyebrow: "Interior • Windows & Doors",
-    primaryCta: { label: "Start your project", href: "/contact/" },
+    primaryCta: { label: "Start your project", href: "/estimate/" },
     secondaryCta: {
       label: "Windows & Doors",
       href: "/services/windows-doors-seattle/",
@@ -265,17 +250,17 @@ export const wallingfordWindowsDoors: PortfolioEntity = {
   gallery: {
     intro: "",
     images: [
-      { src: "/images/portfolio/doors-windows/gallery-1.jpg", alt: "After" },
-      { src: "/images/portfolio/doors-windows/gallery-2.jpg", alt: "After" },
-      { src: "/images/portfolio/doors-windows/ogImage.jpg", alt: "After" },
-      { src: "/images/portfolio/doors-windows/gallery-3.jpg", alt: "After" },
+      { src: "/images/portfolio/doors-windows/gallery-1.jpg", alt: "Stained-wood entry door with textured-glass sidelights on a gray clapboard house with brick planters" },
+      { src: "/images/portfolio/doors-windows/gallery-2.jpg", alt: "Close-up of leaded decorative glass panel in a wood-grain entry door with matching sidelight" },
+      { src: "/images/portfolio/doors-windows/ogImage.jpg", alt: "Craftsman stained-wood front door with divided-light sidelights and transom on a gray-sided porch" },
+      { src: "/images/portfolio/doors-windows/gallery-3.jpg", alt: "White bay window with cushioned window seat overlooking a leafy backyard" },
     ],
   },
 
   testimonial: {
     image: {
       src: "/images/portfolio/doors-windows/gallery-2.jpg",
-      alt: "After",
+      alt: "Close-up of leaded decorative glass panel in a wood-grain entry door with matching sidelight",
     },
     neighborhood: "Wallingford",
     quote:
@@ -287,7 +272,7 @@ export const wallingfordWindowsDoors: PortfolioEntity = {
   cta: {
     heading: "Ready for new windows or doors?",
     body: "Tell us what you're replacing and we'll put together a clear scope and cost.",
-    primaryCta: { label: "Request an estimate", href: "/contact/" },
+    primaryCta: { label: "Request an estimate", href: "/estimate/" },
     secondaryCta: { label: "View services", href: "/services/" },
   },
 

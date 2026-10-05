@@ -32,7 +32,6 @@ export type ServiceIndexCard = {
 export type ServicePayload = {
   serviceType: string;
   areaServed: string[];
-  subServices: Array<{ name: string; description?: string }>;
 };
 
 export type ServicePerformedItem = {
@@ -163,6 +162,8 @@ export type CollectionPage<TCard> = {
 
 export type MarketingPage = {
   kind: "marketing";
+  /** Short name used in the breadcrumb trail, e.g. "About". */
+  name?: string;
   path: string;
   seo: {
     title: string;

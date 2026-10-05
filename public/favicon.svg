@@ -1,10 +1,9 @@
 <svg
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 2110.08 2032.32"
-    fill="currentColor"
+    viewBox="377.53 308.65 1363.01 1363.01"
+    fill="#4f39f6"
     fill-rule="evenodd"
     clip-rule="evenodd"
-    {...Astro.props}
 >
     <g id="horse">
         <!-- Horse -->

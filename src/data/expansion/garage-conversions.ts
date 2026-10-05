@@ -19,21 +19,6 @@ export const garageConversions: ServiceEntity = {
   service: {
     serviceType: "Garage Conversion",
     areaServed: ["Greater Seattle / King County"],
-    subServices: [
-      {
-        name: "Garage-to-ADU conversion",
-        description:
-          "Convert a garage into a permitted accessory dwelling unit.",
-      },
-      {
-        name: "Garage-to-living-space",
-        description: "Home office, studio, gym, or bonus room conversions.",
-      },
-      {
-        name: "Above-garage additions",
-        description: "Add living space above an existing garage structure.",
-      },
-    ],
   },
 
   seo: {
@@ -48,7 +33,7 @@ export const garageConversions: ServiceEntity = {
     ],
     ogImage: {
       src: "/images/services/garage-conversion/ogImage.jpg",
-      alt: "Exterior",
+      alt: "Open living area with cream sofa, abstract wall art, woven chairs, and white shaker kitchen",
     },
     images: [],
     datePublished: "2026-01-10",
@@ -59,19 +44,19 @@ export const garageConversions: ServiceEntity = {
   galleryImages: [
     {
       src: "/images/services/garage-conversion/gallery-1.jpg",
-      alt: "Converted garage exterior",
+      alt: "Kitchen with navy blue shaker cabinets, stainless appliances, vaulted ceiling, and black iron chandelier",
     },
     {
       src: "/images/services/garage-conversion/gallery-2.jpg",
-      alt: "Home office interior",
+      alt: "Bright living area with cream sofa, woven lounge chairs, black ceiling fan, and wall-mounted mini-split",
     },
     {
       src: "/images/services/garage-conversion/gallery-3.jpg",
-      alt: "Garage ADU kitchen",
+      alt: "Bathroom with walnut floating vanity, brass faucet, and black grid-framed glass shower with marble-look walls",
     },
     {
       src: "/images/services/garage-conversion/gallery-4.jpg",
-      alt: "Studio space",
+      alt: "White shaker kitchen with stainless appliances and navy dining table with cane-back chairs",
     },
   ],
   featuredTestimonial: {} as Testimonial,
@@ -106,7 +91,7 @@ export const garageConversions: ServiceEntity = {
     eyebrow: "What we do",
     heading: "Garage conversion services",
     byline: "More useful space from what you already have.",
-    primaryCta: { label: "Get a quote", href: "/contact/" },
+    primaryCta: { label: "Get a quote", href: "/estimate/" },
     secondaryCta: { label: "See portfolio", href: "/portfolio/" },
     services: [
       {
@@ -158,7 +143,7 @@ export const columbiaGarageOffice: PortfolioEntity = {
     ],
     ogImage: {
       src: "/images/portfolio/garage-conversion/ogImage.jpg",
-      alt: "Exterior",
+      alt: "Open living area with cream sofa, abstract wall art, woven chairs, and white shaker kitchen",
     },
     images: [],
     datePublished: "2025-06-01",
@@ -190,10 +175,10 @@ export const columbiaGarageOffice: PortfolioEntity = {
   hero: {
     image: {
       src: "/images/portfolio/garage-conversion/ogImage.jpg",
-      alt: "Exterior",
+      alt: "Open living area with cream sofa, abstract wall art, woven chairs, and white shaker kitchen",
     },
     eyebrow: "Expansion • Garage Conversion",
-    primaryCta: { label: "Start your project", href: "/contact/" },
+    primaryCta: { label: "Start your project", href: "/estimate/" },
     secondaryCta: {
       label: "Garage conversions",
       href: "/services/garage-conversions-seattle/",
@@ -271,19 +256,19 @@ export const columbiaGarageOffice: PortfolioEntity = {
     images: [
       {
         src: "/images/portfolio/garage-conversion/gallery-1.jpg",
-        alt: "Office after",
+        alt: "Close-up of white shaker cabinets with brass pulls, stainless range, and geometric tile backsplash",
       },
       {
         src: "/images/portfolio/garage-conversion/gallery-2.jpg",
-        alt: "Desk wall",
+        alt: "Bedroom with white upholstered headboard, mirrored closet doors, and stacked washer and dryer through doorway",
       },
       {
         src: "/images/portfolio/garage-conversion/gallery-3.jpg",
-        alt: "New windows",
+        alt: "Bedroom with gray channel-tufted headboard, rust pillows, mirrored sliding closet doors, and large side window",
       },
       {
         src: "/images/portfolio/garage-conversion/gallery-4.jpg",
-        alt: "Exterior",
+        alt: "White shaker kitchen with stainless appliances and navy dining table with cane-back chairs",
       },
     ],
   },
@@ -291,7 +276,7 @@ export const columbiaGarageOffice: PortfolioEntity = {
   testimonial: {
     image: {
       src: "/images/portfolio/garage-conversion/testimonial.jpg",
-      alt: "Exterior",
+      alt: "White shaker kitchen with stainless appliances, navy bar-height table, and sliding glass patio door",
     },
     neighborhood: "Columbia City",
     quote:
@@ -303,7 +288,7 @@ export const columbiaGarageOffice: PortfolioEntity = {
   cta: {
     heading: "Have a garage you're not really using?",
     body: "Tell us what you'd like it to become and we'll scope it out.",
-    primaryCta: { label: "Request an estimate", href: "/contact/" },
+    primaryCta: { label: "Request an estimate", href: "/estimate/" },
     secondaryCta: { label: "View services", href: "/services/" },
   },
 

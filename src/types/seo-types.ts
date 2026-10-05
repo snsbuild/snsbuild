@@ -71,6 +71,8 @@ export type LandingSeoPage = {
 
 export type MarketingSeoPage = {
   kind: "marketing";
+  /** Short breadcrumb label ("About"); the builder falls back to the title. */
+  name?: string;
   meta: SeoMeta;
   faqs?: FAQ[];
 };

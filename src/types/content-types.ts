@@ -28,6 +28,9 @@ export type OpenGraph = {
   url: string;
   type: "website" | "article";
   image: string;
+  /** Pixel size of `image`, when known (share images are 1200x630). */
+  imageWidth?: number;
+  imageHeight?: number;
 };
 
 export type SeoResult = {

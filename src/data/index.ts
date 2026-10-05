@@ -125,13 +125,13 @@ export const servicesIndex: CollectionPage<any> = {
     title: "Remodeling Services in Seattle | Saddle & Spur Construction",
     description:
       "Explore our remodeling services in Seattle and King County. Kitchens, bathrooms, additions, and more.",
-    ogImage: { src: "/images/services/kitchen/ogImage.jpg", alt: "Services" },
+    ogImage: { src: "/images/services/kitchen/ogImage.jpg", alt: "White kitchen with long white-topped island, leather bar stools, brass cone pendants, and black range hood" },
     keywords: ["general contractor seattle", "remodeling services seattle"],
   },
   content: {
     headline: "Services",
     byline: "End-to-end remodeling for Seattle homes.",
-    primaryCta: { label: "Get a quote", href: "/contact/" },
+    primaryCta: { label: "Get a quote", href: "/estimate/" },
   },
   cards: serviceIndexCards,
 };
@@ -145,13 +145,13 @@ export const portfolioIndex: CollectionPage<any> = {
     title: "Seattle Remodeling Portfolio | Saddle & Spur Construction",
     description:
       "See our recent remodeling projects across Seattle and King County.",
-    ogImage: { src: "/images/og/portfolio.jpg", alt: "Portfolio" },
+    ogImage: { src: "/images/og/portfolio.jpg", alt: "Aerial view of multi-level cedar deck with black railings, picnic tables, and built-in planter" },
     keywords: ["seattle remodeling portfolio", "contractor portfolio seattle"],
   },
   content: {
     headline: "Portfolio",
     byline: "Recent kitchens, baths, whole-home projects, ADUs, and more.",
-    primaryCta: { label: "Start your project", href: "/contact/" },
+    primaryCta: { label: "Start your project", href: "/estimate/" },
   },
   cards: portfolioIndexCards,
 };

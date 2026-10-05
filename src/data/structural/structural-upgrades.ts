@@ -18,23 +18,6 @@ export const structuralUpgrades: ServiceEntity = {
   service: {
     serviceType: "Structural Upgrade",
     areaServed: ["Greater Seattle / King County"],
-    subServices: [
-      {
-        name: "Seismic retrofits",
-        description:
-          "Cripple wall bracing and anchor bolting for earthquake resilience.",
-      },
-      {
-        name: "Foundation repair",
-        description:
-          "Crack repair, underpinning, and waterproofing for failing foundations.",
-      },
-      {
-        name: "Beam & post replacement",
-        description:
-          "Structural timber replacements and load path corrections.",
-      },
-    ],
   },
 
   seo: {
@@ -60,25 +43,25 @@ export const structuralUpgrades: ServiceEntity = {
   galleryImages: [
     {
       src: "/images/services/structural/gallery-1.jpg",
-      alt: "Cripple wall bracing",
+      alt: "Top-down view of anchor bolt template on a concrete footing with tape measure and laser lines",
     },
     {
       src: "/images/services/structural/gallery-2.jpg",
-      alt: "Foundation repair",
+      alt: "Worker with headlamp adjusting a steel jack post under a wood beam in a crawl space",
     },
     {
       src: "/images/services/structural/gallery-3.jpg",
-      alt: "Anchor bolting",
+      alt: "Crew in hard hats installing foundation piers in an excavated trench beside a house",
     },
     {
       src: "/images/services/structural/gallery-4.jpg",
-      alt: "Beam replacement",
+      alt: "Two workers laying roofing felt in the valley of a newly framed roof with exposed rafters",
     },
   ],
   featuredTestimonial: {
     image: {
       src: "/images/portfolio/structural/gallery-2.jpg",
-      alt: "Anchor bolting",
+      alt: "Row of galvanized steel brackets tying wood framing to a concrete foundation wall",
     },
     neighborhood: "Capitol Hill",
     quote:
@@ -118,7 +101,7 @@ export const structuralUpgrades: ServiceEntity = {
     eyebrow: "What we do",
     heading: "Structural upgrade services",
     byline: "Protect what's underneath.",
-    primaryCta: { label: "Get a quote", href: "/contact/" },
+    primaryCta: { label: "Get a quote", href: "/estimate/" },
     secondaryCta: { label: "See portfolio", href: "/portfolio/" },
     services: [
       {
@@ -205,7 +188,7 @@ export const capitolHillSeismic: PortfolioEntity = {
       alt: "Capitol Hill seismic retrofit completed",
     },
     eyebrow: "Structural • Seismic Retrofit",
-    primaryCta: { label: "Start your project", href: "/contact/" },
+    primaryCta: { label: "Start your project", href: "/estimate/" },
     secondaryCta: {
       label: "Structural upgrades",
       href: "/services/structural-upgrades-seattle/",
@@ -283,19 +266,19 @@ export const capitolHillSeismic: PortfolioEntity = {
     images: [
       {
         src: "/images/portfolio/structural/gallery-1.jpg",
-        alt: "Cripple wall bracing",
+        alt: "Plywood panels with round vent holes nailed to short framed walls above a concrete foundation",
       },
       {
         src: "/images/portfolio/structural/gallery-2.jpg",
-        alt: "Anchor bolting",
+        alt: "Row of galvanized steel brackets tying wood framing to a concrete foundation wall",
       },
       {
         src: "/images/portfolio/structural/gallery-3.jpg",
-        alt: "Foundation repair",
+        alt: "Galvanized foundation plates bolted between a wood sill and concrete wall beneath floor joists",
       },
       {
         src: "/images/portfolio/structural/gallery-4.jpg",
-        alt: "Crawlspace after",
+        alt: "Plywood bracing panel on a short framed wall with steel plates bolted to concrete foundation",
       },
     ],
   },
@@ -303,7 +286,7 @@ export const capitolHillSeismic: PortfolioEntity = {
   testimonial: {
     image: {
       src: "/images/portfolio/structural/gallery-3.jpg",
-      alt: "Anchor bolting",
+      alt: "Galvanized foundation plates bolted between a wood sill and concrete wall beneath floor joists",
     },
     neighborhood: "Capitol Hill",
     quote:
@@ -315,7 +298,7 @@ export const capitolHillSeismic: PortfolioEntity = {
   cta: {
     heading: "Concerned about your home's structural health?",
     body: "We give honest assessments — no scare tactics, just facts and options.",
-    primaryCta: { label: "Request an estimate", href: "/contact/" },
+    primaryCta: { label: "Request an estimate", href: "/estimate/" },
     secondaryCta: { label: "View services", href: "/services/" },
   },
 

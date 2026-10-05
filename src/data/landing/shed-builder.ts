@@ -12,7 +12,7 @@ export const shedBuilderLanding: LandingPage = {
 
   seo: {
     title: "Free Custom Shed Estimate in Seattle | Saddle & Spur",
-    description: `Licensed Seattle shed builder. Storage sheds, workshops, and insulated backyard offices on real foundations. Free estimate. Call ${phoneDisplay}.`,
+    description: `Free on-site shed estimate in Seattle. We check your setbacks first, then price a storage shed, workshop, or insulated backyard office. Call ${phoneDisplay}.`,
     // Deliberately estimate/quote intent — the service page owns the
     // "shed builder seattle" head term.
     keywords: [
@@ -38,7 +38,7 @@ export const shedBuilderLanding: LandingPage = {
   },
 
   hero: {
-    eyebrow: "Seattle & King County shed builder",
+    eyebrow: "Free shed estimate in Seattle",
     headline: "A shed that's still standing straight in twenty years",
     subhead:
       "Site-built storage sheds, garden buildings, workshops, and insulated backyard offices across Greater Seattle — on real foundations, with real roof details, sized and sited to your setbacks.",
@@ -164,9 +164,9 @@ export const shedBuilderLanding: LandingPage = {
         "Yes. We run a permitted circuit from the main panel, add outlets and lighting, install a mini-split or wall heater, and pull data or set up a mesh point. That's what makes the difference between a summer room and a room you use all year.",
     },
     {
-      question: "How long does it take to build?",
+      question: "What affects the cost of a custom shed?",
       answer:
-        "A straightforward storage or garden shed is typically 1–2 weeks on site once the pad is ready. An insulated, wired, and finished backyard office generally runs 3–5 weeks. If a construction or electrical permit is involved we schedule around the review time rather than around it surprising you.",
+        "Size, foundation, and how finished the inside is. A gravel pad costs less than concrete piers or a slab, and a sloped site adds work. An insulated, wired, and heated backyard office costs considerably more than a storage shed with the same footprint, and it needs a permit. The line-item estimate breaks those out so you can see what each choice adds.",
     },
     {
       question: "Why not just buy a prefab kit?",

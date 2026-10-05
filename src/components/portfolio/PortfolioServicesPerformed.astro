@@ -1,4 +1,5 @@
 ---
+import Icon from "../Icon.astro";
 import type { ServicePerformedItem } from "../../types/entity-types";
 
 type Props = {
@@ -47,10 +48,7 @@ const gridCols = columns === 1 ? "sm:grid-cols-1" : "sm:grid-cols-2";
           items.map((it) => (
             <div class="relative pl-11">
               <dt class="font-semibold text-gray-900">
-                <i
-                  class={`${it.icon} absolute left-0 top-1 text-indigo-600`}
-                  aria-hidden="true"
-                />
+                <Icon name={it.icon} class="absolute left-0 top-1 text-indigo-600" />
                 {it.name}
               </dt>
 

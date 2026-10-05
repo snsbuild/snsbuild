@@ -12,7 +12,7 @@ export const bathroomRemodelLanding: LandingPage = {
 
   seo: {
     title: "Free Bathroom Remodel Estimate in Seattle | Saddle & Spur",
-    description: `Licensed Seattle bathroom remodeler: walk-in showers, tile, vanities, heated floors. Free on-site estimate, permits handled. Call ${phoneDisplay}.`,
+    description: `Free bathroom remodel estimate in Seattle: on-site visit and line-item pricing for showers, tile, vanities, and heated floors. Call ${phoneDisplay}.`,
     // Deliberately estimate/quote intent — the service page owns the
     // "bathroom remodeling seattle" head term.
     keywords: [
@@ -38,7 +38,7 @@ export const bathroomRemodelLanding: LandingPage = {
   },
 
   hero: {
-    eyebrow: "Seattle & King County bathroom remodeler",
+    eyebrow: "Free bathroom remodel estimate in Seattle",
     headline: "Heated floors and a better shower — before the cold sets in",
     subhead:
       "Walk-in showers, tub-to-shower conversions, custom tile, vanities, and heated floors across Greater Seattle. We do the waterproofing ourselves, handle the permits, and price every line so you know what you're paying for.",
@@ -158,14 +158,9 @@ export const bathroomRemodelLanding: LandingPage = {
         "Yes. We come out, measure, check the plumbing rough-in and the condition of the floor and walls, talk through layout and finishes, and send you a written line-item estimate at no charge and with no obligation.",
     },
     {
-      question: "How long does a bathroom remodel take?",
+      question: "What affects the cost of a bathroom remodel in Seattle?",
       answer:
-        "Most bathroom remodels take 3–6 weeks depending on scope and tile lead times. We help you make selections before demo so the clock doesn't start until materials are ready.",
-    },
-    {
-      question: "Can you convert my tub into a walk-in shower?",
-      answer:
-        "Yes — it's one of our most common requests. We check whether the existing drain and supply lines can be reused and show you what's possible, including a curbless entry, before any demolition begins.",
+        "Mostly how far back the room has to go. A cosmetic update that keeps the tile and plumbing costs far less than a remodel taken back to the studs. Moving the drain or supply lines, a curbless shower, heated floors, and the tile you choose each add to the price. The line-item estimate shows them separately so you can decide where to spend.",
     },
     {
       question: "Full remodel or cosmetic update — which do I need?",

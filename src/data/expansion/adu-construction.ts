@@ -19,22 +19,6 @@ export const aduConstruction: ServiceEntity = {
   service: {
     serviceType: "ADU Construction",
     areaServed: ["Greater Seattle / King County"],
-    subServices: [
-      {
-        name: "Detached ADUs",
-        description: "Standalone backyard cottages and carriage houses.",
-      },
-      {
-        name: "Attached ADUs",
-        description:
-          "Ground-floor or above-garage units connected to the primary home.",
-      },
-      {
-        name: "DADUs",
-        description:
-          "Detached accessory dwelling units built to Seattle DADU code.",
-      },
-    ],
   },
 
   seo: {
@@ -58,10 +42,10 @@ export const aduConstruction: ServiceEntity = {
   header: "ADU construction, permit to punch list",
   subheader: "One team. One contract. Your new backyard home.",
   galleryImages: [
-    { src: "/images/services/adu/gallery-1.jpg", alt: "Detached ADU exterior" },
-    { src: "/images/services/adu/gallery-2.jpg", alt: "ADU interior kitchen" },
-    { src: "/images/services/adu/gallery-3.jpg", alt: "ADU bathroom" },
-    { src: "/images/services/adu/gallery-4.jpg", alt: "Backyard cottage" },
+    { src: "/images/services/adu/gallery-1.jpg", alt: "Compact studio with light oak kitchenette, stainless refrigerator, built-in bench, and tall black-framed window" },
+    { src: "/images/services/adu/gallery-2.jpg", alt: "Kitchenette with matte black cabinets, stainless wall oven, cushioned window bench, and round marble table" },
+    { src: "/images/services/adu/gallery-3.jpg", alt: "Bright white bedroom with gray bedding, black wall sconces, and tall black-framed window" },
+    { src: "/images/services/adu/gallery-4.jpg", alt: "Galley kitchen with dark flat-panel cabinets, white counters, and stainless refrigerator beside a sunlit hallway" },
   ],
   featuredTestimonial: {} as Testimonial,
   faqs: [
@@ -95,7 +79,7 @@ export const aduConstruction: ServiceEntity = {
     eyebrow: "What we do",
     heading: "ADU construction services",
     byline: "From permit to keys.",
-    primaryCta: { label: "Get a quote", href: "/contact/" },
+    primaryCta: { label: "Get a quote", href: "/estimate/" },
     secondaryCta: { label: "See portfolio", href: "/portfolio/" },
     services: [
       {
@@ -148,7 +132,7 @@ export const phinneyRidgeAdu: PortfolioEntity = {
     ],
     ogImage: {
       src: "/images/portfolio/adu/ogImage.jpg",
-      alt: "Phinney Ridge ADU",
+      alt: "Small modern cottage at dusk with gray panel siding, cedar accents, and wood entry steps",
     },
     images: [],
     datePublished: "2025-08-01",
@@ -180,10 +164,10 @@ export const phinneyRidgeAdu: PortfolioEntity = {
   hero: {
     image: {
       src: "/images/portfolio/adu/ogImage.jpg",
-      alt: "ADU construction in Seattle",
+      alt: "Small modern cottage at dusk with gray panel siding, cedar accents, and wood entry steps",
     },
     eyebrow: "Expansion • ADU Construction",
-    primaryCta: { label: "Start your project", href: "/contact/" },
+    primaryCta: { label: "Start your project", href: "/estimate/" },
     secondaryCta: {
       label: "ADU construction",
       href: "/services/adu-construction-seattle/",
@@ -262,16 +246,16 @@ export const phinneyRidgeAdu: PortfolioEntity = {
   gallery: {
     intro: "",
     images: [
-      { src: "/images/portfolio/adu/gallery-1.jpg", alt: "ADU exterior" },
-      { src: "/images/portfolio/adu/gallery-2.jpg", alt: "Kitchen" },
-      { src: "/images/portfolio/adu/gallery-3.jpg", alt: "Bathroom" },
-      { src: "/images/portfolio/adu/gallery-4.jpg", alt: "Sleeping loft" },
+      { src: "/images/portfolio/adu/gallery-1.jpg", alt: "Compact studio with light oak kitchenette, stainless refrigerator, built-in bench, and tall black-framed window" },
+      { src: "/images/portfolio/adu/gallery-2.jpg", alt: "Kitchenette with matte black cabinets, stainless wall oven, cushioned window bench, and round marble table" },
+      { src: "/images/portfolio/adu/gallery-3.jpg", alt: "Bright white bedroom with gray bedding, black wall sconces, and tall black-framed window" },
+      { src: "/images/portfolio/adu/gallery-4.jpg", alt: "Galley kitchen with dark flat-panel cabinets, white counters, and stainless refrigerator beside a sunlit hallway" },
     ],
   },
 
   testimonial: {
     neighborhood: "Phinney Ridge",
-    image: { src: "/images/portfolio/adu/gallery-2.jpg", alt: "Sleeping loft" },
+    image: { src: "/images/portfolio/adu/gallery-2.jpg", alt: "Kitchenette with matte black cabinets, stainless wall oven, cushioned window bench, and round marble table" },
     quote:
       "I'd heard ADU permitting in Seattle was a nightmare and honestly almost didn't move forward. Marco walked me through the land use, building, and inspection process at the start and managed every step himself — I never had to follow up on anything. The build came in on schedule, passed final inspection the first attempt, and it rented out the first week we listed it.",
     author: "Jordan P.",
@@ -281,7 +265,7 @@ export const phinneyRidgeAdu: PortfolioEntity = {
   cta: {
     heading: "Ready to build your ADU?",
     body: "Tell us about your lot and goals — we'll walk you through what's possible and what it costs.",
-    primaryCta: { label: "Request an estimate", href: "/contact/" },
+    primaryCta: { label: "Request an estimate", href: "/estimate/" },
     secondaryCta: { label: "View services", href: "/services/" },
   },
 

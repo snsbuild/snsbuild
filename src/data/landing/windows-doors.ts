@@ -12,7 +12,7 @@ export const windowsDoorsLanding: LandingPage = {
 
   seo: {
     title: "Free Window Replacement Quote in Seattle | Saddle & Spur",
-    description: `Licensed Seattle window and door installer. Energy-efficient windows plus entry, patio, and French doors. Free on-site estimate. Call ${phoneDisplay}.`,
+    description: `Free window replacement quote in Seattle. On-site estimate for energy-efficient windows and entry, patio, and French doors. Call ${phoneDisplay}.`,
     // Deliberately estimate/quote intent — the service page owns the
     // "window replacement seattle" head term.
     keywords: [
@@ -38,7 +38,7 @@ export const windowsDoorsLanding: LandingPage = {
   },
 
   hero: {
-    eyebrow: "Seattle & King County window & door installer",
+    eyebrow: "Free window replacement quote in Seattle",
     headline: "Stop heating the outdoors — replace drafty windows before winter",
     subhead:
       "Energy-efficient replacement windows and entry, patio, and French doors across Greater Seattle — flashed, sealed, and trimmed properly, with every rough opening checked for rot before the new unit goes in.",
@@ -51,7 +51,7 @@ export const windowsDoorsLanding: LandingPage = {
     ],
     image: {
       src: "/images/services/doors-windows/gallery-2.jpg",
-      alt: "Casement windows",
+      alt: "Carpenter in tool belt checking a newly set window in an unfinished plywood-sheathed room",
     },
     formHeading: "Get your free window & door estimate",
     formByline:
@@ -120,27 +120,27 @@ export const windowsDoorsLanding: LandingPage = {
     images: [
       {
         src: "/images/portfolio/doors-windows/gallery-1.jpg",
-        alt: "Replacement windows on a 1940s Wallingford home",
+        alt: "Stained-wood entry door with textured-glass sidelights on a gray clapboard house with brick planters",
       },
       {
         src: "/images/services/doors-windows/gallery-1.jpg",
-        alt: "New entry door",
+        alt: "Rustic knotty-pine sliding barn door on black track beside a staircase with dark treads",
       },
       {
         src: "/images/services/doors-windows/gallery-3.jpg",
-        alt: "French patio doors",
+        alt: "New white double-hung windows set in an open stud wall with insulation batts",
       },
       {
         src: "/images/portfolio/doors-windows/gallery-2.jpg",
-        alt: "New windows and entry door on a Wallingford home",
+        alt: "Close-up of leaded decorative glass panel in a wood-grain entry door with matching sidelight",
       },
       {
         src: "/images/services/doors-windows/gallery-4.jpg",
-        alt: "Interior door trim",
+        alt: "Wood-framed window tilted open above a kitchen counter with wood-grain cabinets",
       },
       {
         src: "/images/portfolio/doors-windows/gallery-3.jpg",
-        alt: "Finished window trim on a Wallingford window replacement",
+        alt: "White bay window with cushioned window seat overlooking a leafy backyard",
       },
     ],
     cta: {
@@ -168,9 +168,9 @@ export const windowsDoorsLanding: LandingPage = {
         "Fogging between panes (a failed seal), noticeable drafts, rot in the frame, or windows that are hard to open or lock usually mean replacement is more cost-effective than repair. If a repair is the better answer, we'll tell you.",
     },
     {
-      question: "What's the difference between retrofit and full-frame?",
+      question: "What affects the cost of window replacement?",
       answer:
-        "Retrofit inserts a new window into the existing frame — faster and less invasive. Full-frame removes everything down to the rough opening so we can inspect and repair framing, add proper flashing, and fix water damage underneath.",
+        "The number and size of the openings, the frame material and glass you choose, and whether each one is a retrofit insert or a full-frame replacement. Full-frame costs more because the opening is taken back to the framing, which is also where rot or failed flashing gets found and fixed. Upper floors and custom shapes add labor. The line-item estimate prices each opening so you can see where the money goes.",
     },
     {
       question: "Do I need a permit?",

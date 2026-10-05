@@ -1,4 +1,5 @@
 ---
+import Icon from "../Icon.astro";
 type ServiceItem = { title: string; description: string; icon: string };
 const {
   eyebrow = "Services",
@@ -18,15 +19,15 @@ const {
     >
       <!-- Left column -->
       <div class="col-span-2">
-        <h2 class="text-base/7 font-semibold text-indigo-600">
+        <p class="text-base/7 font-semibold text-indigo-600">
           {eyebrow}
-        </h2>
+        </p>
 
-        <p
+        <h2
           class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
         >
           {heading}
-        </p>
+        </h2>
 
         {
           subheading && (
@@ -67,7 +68,7 @@ const {
           services.map((s: ServiceItem) => (
             <div class="relative pl-9">
               <dt class="font-semibold text-gray-900">
-                <i class:list={["text-indigo-600", s.icon]} />
+                <Icon name={s.icon} class="text-indigo-600" />
                 {s.title}
               </dt>
               <dd class="mt-2">{s.description}</dd>

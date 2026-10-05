@@ -20,38 +20,6 @@ export const shedBuilding: ServiceEntity = {
   service: {
     serviceType: "Shed Construction",
     areaServed: ["Greater Seattle / King County"],
-    subServices: [
-      {
-        name: "Custom storage sheds",
-        description:
-          "Site-built storage sheds sized to the yard and the setbacks, not to a kit.",
-      },
-      {
-        name: "Garden sheds and potting sheds",
-        description:
-          "Windowed garden buildings with bench space, ventilation, and daylight.",
-      },
-      {
-        name: "Backyard offices and studios",
-        description:
-          "Insulated, wired, finished detached rooms for working, making, or practicing.",
-      },
-      {
-        name: "Workshops and bike storage",
-        description:
-          "Secure, powered outbuildings with wide doors and a real work surface.",
-      },
-      {
-        name: "Shed foundations and pads",
-        description:
-          "Gravel pads, concrete piers, and slabs sized for the structure and the soil.",
-      },
-      {
-        name: "Shed repair, re-roof, and re-side",
-        description:
-          "Rot repair, new roofing, siding, and doors for existing outbuildings worth saving.",
-      },
-    ],
   },
 
   seo: {
@@ -125,7 +93,7 @@ export const shedBuilding: ServiceEntity = {
     {
       question: "How long does a custom shed take to build?",
       answer:
-        "A straightforward storage or garden shed is typically 1–2 weeks on site once the pad is ready. An insulated, wired, and finished backyard office generally runs 3–5 weeks. If the design needs a permit or an electrical permit, add review time before the start date — we schedule around it rather than around it surprising you.",
+        "A straightforward storage or garden shed is typically 1–2 weeks on site once the pad is ready. An insulated, wired, and finished backyard office generally runs 3–5 weeks. If the design needs a permit or an electrical permit, add review time before the start date — we build that into the schedule up front so it doesn't surprise you.",
     },
     {
       question: "Why not just buy a prefab shed kit?",

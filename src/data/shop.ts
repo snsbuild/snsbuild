@@ -103,6 +103,7 @@ export const shopProducts: ShopProduct[] = [
 
 export const shopPage: MarketingPage = {
   kind: "marketing",
+  name: "Shop",
   path: "/shop/",
   seo: {
     title: "Shop | Saddle & Spur Construction",
@@ -115,7 +116,7 @@ export const shopPage: MarketingPage = {
     ],
     ogImage: {
       src: "/images/og/shop.jpg",
-      alt: "Shop outdoor goods",
+      alt: "Rectangular cedar raised garden bed with bolted corner posts on a white background",
     },
     images: [],
   },

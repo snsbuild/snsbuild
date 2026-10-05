@@ -18,21 +18,6 @@ export const unusedSpaceConversions: ServiceEntity = {
   service: {
     serviceType: "Basement & Attic Conversion",
     areaServed: ["Greater Seattle / King County"],
-    subServices: [
-      {
-        name: "Attic conversions",
-        description: "Dormers, finishing, and access for attic living space.",
-      },
-      {
-        name: "Basement finishing",
-        description:
-          "Unfinished basements converted to bonus rooms, offices, or suites.",
-      },
-      {
-        name: "Crawl space encapsulation",
-        description: "Moisture control and conditioning for underfloor space.",
-      },
-    ],
   },
 
   seo: {
@@ -46,8 +31,8 @@ export const unusedSpaceConversions: ServiceEntity = {
       "bonus room seattle",
     ],
     ogImage: {
-      src: "/images/services/space-conversion/ogImage.jpg",
-      alt: "Basement and attic conversion in Seattle",
+      src: "/images/services/space-conversion/gallery-1.jpg",
+      alt: "Empty vaulted room with hardwood floor, exposed wood ties, and kitchenette with dark lower cabinets",
     },
     images: [],
     datePublished: "2026-01-10",
@@ -58,25 +43,25 @@ export const unusedSpaceConversions: ServiceEntity = {
   galleryImages: [
     {
       src: "/images/services/space-conversion/gallery-1.jpg",
-      alt: "Finished basement",
+      alt: "Empty vaulted room with hardwood floor, exposed wood ties, and kitchenette with dark lower cabinets",
     },
     {
       src: "/images/services/space-conversion/gallery-2.jpg",
-      alt: "Attic conversion",
+      alt: "Kitchen with navy blue shaker cabinets, stainless appliances, vaulted ceiling, and black iron chandelier",
     },
     {
       src: "/images/services/space-conversion/gallery-3.jpg",
-      alt: "Basement bedroom",
+      alt: "Open studio with white sofa, white cabinets, green tile backsplash, wood ceiling beam, and oak door",
     },
     {
       src: "/images/services/space-conversion/gallery-4.jpg",
-      alt: "Basement living area",
+      alt: "Bright living area with cream sofa, woven lounge chairs, black ceiling fan, and wall-mounted mini-split",
     },
   ],
   featuredTestimonial: {
     image: {
       src: "/images/portfolio/space-conversion/testimonial.jpg",
-      alt: "Finished basement",
+      alt: "Bright bedroom with gray upholstered bed, wide window, round gold mirror, and fiddle-leaf fig",
     },
     neighborhood: "Greenwood",
     quote:
@@ -115,7 +100,7 @@ export const unusedSpaceConversions: ServiceEntity = {
     eyebrow: "What we do",
     heading: "Basement and attic conversion services",
     byline: "More home from what you already own.",
-    primaryCta: { label: "Get a quote", href: "/contact/" },
+    primaryCta: { label: "Get a quote", href: "/estimate/" },
     secondaryCta: { label: "See portfolio", href: "/portfolio/" },
     services: [
       {
@@ -167,7 +152,7 @@ export const greenwoodBasement: PortfolioEntity = {
     ],
     ogImage: {
       src: "/images/portfolio/space-conversion/ogImage.jpg",
-      alt: "Greenwood finished basement",
+      alt: "Bright living area with cream sofa, woven lounge chairs, black ceiling fan, and wall-mounted mini-split",
     },
     images: [],
     datePublished: "2025-05-01",
@@ -199,10 +184,10 @@ export const greenwoodBasement: PortfolioEntity = {
   hero: {
     image: {
       src: "/images/portfolio/space-conversion/ogImage.jpg",
-      alt: "Greenwood finished basement",
+      alt: "Bright living area with cream sofa, woven lounge chairs, black ceiling fan, and wall-mounted mini-split",
     },
     eyebrow: "Expansion • Space Conversion",
-    primaryCta: { label: "Start your project", href: "/contact/" },
+    primaryCta: { label: "Start your project", href: "/estimate/" },
     secondaryCta: {
       label: "Basement & attic conversions",
       href: "/services/attic-basement-conversions-seattle/",
@@ -278,19 +263,19 @@ export const greenwoodBasement: PortfolioEntity = {
     images: [
       {
         src: "/images/portfolio/space-conversion/gallery-1.jpg",
-        alt: "Family room",
+        alt: "Bathtub alcove with marble-look wall tile, recessed niche, and brushed-gold rain shower fixtures",
       },
       {
         src: "/images/portfolio/space-conversion/gallery-2.jpg",
-        alt: "Family room",
+        alt: "Teal bathroom vanity with brass faucet, round gold-framed mirror, and three-globe brass light",
       },
       {
         src: "/images/portfolio/space-conversion/gallery-3.jpg",
-        alt: "Family room",
+        alt: "Hallway view of bathroom with green vanity and round mirror, beside a front-load washer and dryer",
       },
       {
         src: "/images/portfolio/space-conversion/gallery-4.jpg",
-        alt: "Family room",
+        alt: "Bedroom with neutral bedding, mirrored sliding closet doors, wall-mounted mini-split, and wide window",
       },
     ],
   },
@@ -298,7 +283,7 @@ export const greenwoodBasement: PortfolioEntity = {
   testimonial: {
     image: {
       src: "/images/portfolio/space-conversion/testimonial.jpg",
-      alt: "Family room",
+      alt: "Bright bedroom with gray upholstered bed, wide window, round gold mirror, and fiddle-leaf fig",
     },
     neighborhood: "Greenwood",
     quote:
@@ -310,7 +295,7 @@ export const greenwoodBasement: PortfolioEntity = {
   cta: {
     heading: "Have unused space in your home?",
     body: "Tell us what's down there and what you'd like it to become.",
-    primaryCta: { label: "Request an estimate", href: "/contact/" },
+    primaryCta: { label: "Request an estimate", href: "/estimate/" },
     secondaryCta: { label: "View services", href: "/services/" },
   },
 

@@ -1,4 +1,5 @@
 ---
+import Icon from "../Icon.astro";
 import { phoneDisplay, phoneHref } from "../../siteConfig";
 import Horse from "../Horse.astro";
 ---
@@ -27,7 +28,7 @@ import Horse from "../Horse.astro";
           data-conversion="phone"
           class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold whitespace-nowrap text-white shadow-xs transition hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
-          <i class="fa-solid fa-phone mr-1.5" aria-hidden="true"></i>
+          <Icon name="phone" class="mr-1.5" />
           <span class="hidden sm:inline">{phoneDisplay}</span>
           <span class="sm:hidden">Call</span>
         </a>

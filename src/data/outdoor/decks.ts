@@ -18,38 +18,6 @@ export const deckBuilding: ServiceEntity = {
   service: {
     serviceType: "Deck Building",
     areaServed: ["Greater Seattle / King County"],
-    subServices: [
-      {
-        name: "Composite deck construction",
-        description:
-          "Trex, TimberTech, and similar capped composite decking installed over a properly engineered frame.",
-      },
-      {
-        name: "Cedar and hardwood decks",
-        description:
-          "Western red cedar and tropical hardwood decking for a natural look.",
-      },
-      {
-        name: "Multi-level and elevated decks",
-        description:
-          "Stepped and raised decks for sloped Seattle lots, with stairs and code-compliant guardrails.",
-      },
-      {
-        name: "Deck replacement and repair",
-        description:
-          "Tear-out and rebuild of failing decks, plus reframing, joist repair, and resurfacing.",
-      },
-      {
-        name: "Railings",
-        description:
-          "Steel cable, metal picket, glass panel, and wood railing systems.",
-      },
-      {
-        name: "Covered decks",
-        description:
-          "Roofed decks and deck-mounted pergolas for year-round use in the rain.",
-      },
-    ],
   },
 
   seo: {

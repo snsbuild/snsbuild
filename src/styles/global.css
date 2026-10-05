@@ -4,6 +4,34 @@
     --font-header: "Playfair Display SC", serif;
 }
 
+/* Playfair Display SC 700 is only used for the "Saddle & Spur Construction"
+   wordmark, so the file is a 2.6 KB subset holding just those glyphs
+   (unicode-range below). Using `font-header` for any other text means
+   replacing the file with a wider subset. Licensed under the SIL OFL. */
+@font-face {
+    font-family: "Playfair Display SC";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/fonts/playfair-display-sc-700-wordmark.woff2") format("woff2");
+    unicode-range:
+        U+20, U+26, U+43, U+53, U+61, U+63-65, U+69, U+6c, U+6e-70, U+72-75;
+}
+
+/* Inline SVG icons (components/Icon.astro) behave like the icon font they
+   replaced: 1em tall, proportional width, coloured by `color`. In the
+   components layer so utilities such as `absolute` or `text-6xl` still win. */
+@layer components {
+    .icon {
+        display: inline-block;
+        height: 1em;
+        width: auto;
+        flex-shrink: 0;
+        overflow: visible;
+        vertical-align: -0.125em;
+    }
+}
+
 html {
     scroll-behavior: smooth;
 }

@@ -11,6 +11,8 @@ export const serviceAreas = [
   "Queen Anne",
   "Magnolia",
   "Capitol Hill",
+  "Eastlake",
+  "Ravenna",
   "Madison Park",
   "West Seattle",
   "Beacon Hill",

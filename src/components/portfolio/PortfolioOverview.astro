@@ -1,4 +1,5 @@
 ---
+import Icon from "../Icon.astro";
 import type { PortfolioEntity } from "../../types/entity-types";
 
 type Props = {
@@ -25,7 +26,7 @@ if (!highlights?.length) return null;
         <dl class="mt-6 grid gap-4 md:grid-cols-2">
           <div class="rounded-xl border border-gray-200 bg-white p-4">
             <div class="flex gap-3 p-3">
-              <i class="fa-solid fa-location-dot text-indigo-600 mt-0.5"></i>
+              <Icon name="location-dot" class="text-indigo-600 mt-0.5" />
               <div>
                 <dt class="text-sm text-gray-500">Location</dt>
                 <dd class="font-semibold text-gray-900 pt-2">
@@ -37,7 +38,7 @@ if (!highlights?.length) return null;
 
           <div class="rounded-xl border border-gray-200 bg-white p-4">
             <div class="flex gap-3 p-3">
-              <i class="fa-solid fa-calendar text-indigo-600 mt-0.5"></i>
+              <Icon name="calendar" class="text-indigo-600 mt-0.5" />
               <div>
                 <dt class="text-sm text-gray-500">Timeline</dt>
                 <dd class="font-semibold text-gray-900 pt-2">
@@ -49,8 +50,7 @@ if (!highlights?.length) return null;
 
           <div class="rounded-xl border border-gray-200 bg-white p-4">
             <div class="flex gap-3 p-3">
-              <i class="fa-solid fa-screwdriver-wrench text-indigo-600 mt-0.5"
-              ></i>
+              <Icon name="screwdriver-wrench" class="text-indigo-600 mt-0.5" />
               <div>
                 <dt class="text-sm text-gray-500">Scope</dt>
                 <dd class="font-semibold text-gray-900 pt-2">{o.scopeLabel}</dd>
@@ -60,7 +60,7 @@ if (!highlights?.length) return null;
 
           <div class="rounded-xl border border-gray-200 bg-white p-4">
             <div class="flex gap-3 p-3">
-              <i class="fa-solid fa-calendar-check text-indigo-600 mt-0.5"></i>
+              <Icon name="calendar-check" class="text-indigo-600 mt-0.5" />
               <div>
                 <dt class="text-sm text-gray-500">Completed</dt>
                 <dd class="font-semibold text-gray-900 pt-2">
@@ -80,7 +80,7 @@ if (!highlights?.length) return null;
           {
             highlights.map((h) => (
               <li class="flex items-start gap-3">
-                <i class="fa-solid fa-circle-check text-indigo-600 mt-0.5" />
+                <Icon name="circle-check" class="text-indigo-600 mt-0.5" />
                 <span class="text-gray-700 leading-relaxed">{h}</span>
               </li>
             ))

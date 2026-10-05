@@ -1,0 +1,53 @@
+---
+// Inline SVG icon, resolved at build time from Font Awesome Free (solid).
+// Replaces the Font Awesome kit, which cost ~155 KB of script, CSS and webfont
+// per page for the ~75 icons the site uses. Nothing is shipped to the browser
+// but the <svg> itself.
+//
+// `name` accepts the class strings already used in src/data ("fa-solid
+// fa-circle-check") or a bare name ("circle-check"). An unknown icon fails
+// the build rather than rendering nothing.
+//
+// Sizing and colour work like the icon font did: the SVG is 1em tall and uses
+// currentColor, so `text-xs`, `text-6xl`, `text-indigo-600` all apply.
+import * as solid from "@fortawesome/free-solid-svg-icons";
+import type { IconDefinition } from "@fortawesome/free-solid-svg-icons";
+
+interface Props {
+  name: string;
+  class?: string;
+}
+
+const { name, class: className } = Astro.props;
+
+const STYLE_TOKENS = new Set(["fa", "fas", "fa-solid"]);
+const token = name.split(/\s+/).find((t) => t && !STYLE_TOKENS.has(t)) ?? "";
+const exportName =
+  "fa" +
+  token
+    .replace(/^fa-/, "")
+    .split("-")
+    .filter(Boolean)
+    .map((part) => part[0].toUpperCase() + part.slice(1))
+    .join("");
+
+const definition = (solid as unknown as Record<string, IconDefinition>)[
+  exportName
+];
+if (!definition?.icon) {
+  throw new Error(
+    `Icon: "${name}" is not a Font Awesome Free solid icon (looked for ${exportName}).`,
+  );
+}
+
+const [width, height, , , pathData] = definition.icon;
+const d = Array.isArray(pathData) ? pathData.join(" ") : pathData;
+---
+
+<svg
+  class:list={["icon", className]}
+  viewBox={`0 0 ${width} ${height}`}
+  fill="currentColor"
+  aria-hidden="true"
+  focusable="false"><path d={d}></path></svg
+>

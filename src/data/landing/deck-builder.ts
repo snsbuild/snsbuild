@@ -12,7 +12,7 @@ export const deckBuilderLanding: LandingPage = {
 
   seo: {
     title: "Free Deck Building Estimate in Seattle | Saddle & Spur",
-    description: `Licensed Seattle deck builder. Composite, cedar, multi-level, and covered decks. Free on-site estimate, permits handled. Call ${phoneDisplay}.`,
+    description: `Free deck estimate in Seattle: on-site visit and line-item pricing for composite, cedar, multi-level, or covered decks. Permits handled. Call ${phoneDisplay}.`,
     // Deliberately estimate/quote intent — the service page owns the
     // "deck builder seattle" head term.
     keywords: [
@@ -38,7 +38,7 @@ export const deckBuilderLanding: LandingPage = {
   },
 
   hero: {
-    eyebrow: "Seattle & King County deck builder",
+    eyebrow: "Free deck estimate in Seattle",
     headline:
       "A deck built for Seattle rain — with a real estimate, not a ballpark",
     subhead:
@@ -164,9 +164,9 @@ export const deckBuilderLanding: LandingPage = {
         "We typically schedule a site visit within a few days of your request and get the written estimate back within about a week. Start dates depend on the current schedule and whether the deck needs a permit — we'll give you a real date rather than a hopeful one.",
     },
     {
-      question: "Do I need a permit for my deck?",
+      question: "What affects the cost of a deck in Seattle?",
       answer:
-        "Usually. Seattle requires one when a deck is more than 18 inches above the ground, is a roof deck, or is in an environmentally critical area. Low decks at or under 18 inches generally don't need one. We confirm the current rule with SDCI for your specific address and handle the permit if one is needed.",
+        "Size is only the start. Height off the ground drives the footings, stairs, and railing; composite costs more up front than cedar; and a roof, built-in seating, or lighting each add their own line. Decks more than 18 inches above the ground also need a permit, which we handle. The line-item estimate shows each of those separately so you can adjust the design before committing.",
     },
     {
       question: "Composite or cedar for a Seattle deck?",

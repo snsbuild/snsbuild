@@ -1,4 +1,5 @@
 ---
+import Icon from "../Icon.astro";
 import Img from "../Img.astro";
 import type { LandingPage } from "../../types/entity-types";
 import { phoneDisplay, phoneHref, license } from "../../siteConfig";
@@ -43,11 +44,18 @@ const { hero, trustBadges, stats } = Astro.props;
       */}
       <div class="contents lg:block lg:pt-6">
         <div class="order-1">
-          <p class="text-base/7 font-semibold text-indigo-600">{hero.eyebrow}</p>
-          <h1
-            class="mt-2 text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl"
-          >
-            {hero.headline}
+          {/* The eyebrow lives inside the H1, as on service pages, so the
+              page's one H1 carries the estimate intent ("Free deck estimate
+              in Seattle") and not just the tagline. */}
+          <h1>
+            <span class="block text-base/7 font-semibold text-indigo-600">
+              {hero.eyebrow}
+            </span>
+            <span
+              class="mt-2 block text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl"
+            >
+              {hero.headline}
+            </span>
           </h1>
           <p class="mt-6 text-lg/8 text-gray-700">{hero.subhead}</p>
 
@@ -58,7 +66,7 @@ const { hero, trustBadges, stats } = Astro.props;
             {
               hero.bullets.map((bullet) => (
                 <li class="flex items-start gap-3 text-base/7 text-gray-800">
-                  <i class="fa-solid fa-circle-check mt-1.5 text-indigo-600" />
+                  <Icon name="circle-check" class="mt-1.5 text-indigo-600" />
                   <span>{bullet}</span>
                 </li>
               ))
@@ -71,7 +79,7 @@ const { hero, trustBadges, stats } = Astro.props;
               data-conversion="phone"
               class="rounded-md bg-indigo-600 px-5 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              <i class="fa-solid fa-phone mr-2" aria-hidden="true"></i>
+              <Icon name="phone" class="mr-2" />
               Call {phoneDisplay}
             </a>
           </div>
@@ -80,7 +88,7 @@ const { hero, trustBadges, stats } = Astro.props;
             {
               trustBadges.map((badge) => (
                 <span class="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1.5 text-sm font-medium text-gray-700 ring-1 ring-inset ring-gray-900/10">
-                  <i class="fa-solid fa-shield-halved text-indigo-600" />
+                  <Icon name="shield-halved" class="text-indigo-600" />
                   {badge}
                 </span>
               ))

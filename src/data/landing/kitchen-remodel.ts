@@ -12,7 +12,7 @@ export const kitchenRemodelLanding: LandingPage = {
 
   seo: {
     title: "Free Kitchen Remodel Estimate in Seattle | Saddle & Spur",
-    description: `Licensed Seattle kitchen remodeler. Layout, cabinets, counters, tile, and lighting under one team. Free on-site estimate, permits handled. Call ${phoneDisplay}.`,
+    description: `Free kitchen remodel estimate in Seattle. On-site visit and line-item pricing for layout, cabinets, counters, tile, and lighting. Call ${phoneDisplay}.`,
     // Deliberately estimate/quote intent — the service page owns the
     // "kitchen remodeling seattle" head term.
     keywords: [
@@ -25,7 +25,7 @@ export const kitchenRemodelLanding: LandingPage = {
     ],
     ogImage: {
       src: "/images/services/kitchen/ogImage.jpg",
-      alt: "Remodeled open-plan kitchen with large island and white cabinetry in Seattle",
+      alt: "White kitchen with long white-topped island, leather bar stools, brass cone pendants, and black range hood",
     },
     images: [],
   },
@@ -38,7 +38,7 @@ export const kitchenRemodelLanding: LandingPage = {
   },
 
   hero: {
-    eyebrow: "Seattle & King County kitchen remodeler",
+    eyebrow: "Free kitchen remodel estimate in Seattle",
     headline: "A kitchen remodel that runs right through the rainy season",
     subhead:
       "Interior work doesn't wait on the weather. We handle layout, cabinetry, counters, tile, lighting, plumbing, and flooring as one team, with a written line-item estimate before anything comes out of the wall.",
@@ -173,9 +173,9 @@ export const kitchenRemodelLanding: LandingPage = {
         "It's one of the better times. Interior work isn't weather-dependent, and planning through the fall means selections, permits, and cabinet orders can be in motion while the rain does its thing outside. Reach out early so design and lead times aren't the thing holding up your start date.",
     },
     {
-      question: "Do kitchen remodels require permits?",
+      question: "How can I keep a kitchen remodel on budget?",
       answer:
-        "If you're moving walls, adding circuits, or relocating plumbing, yes. A like-for-like cabinet and counter swap often doesn't. We confirm what your project needs, pull the permits, and manage inspections as part of our scope.",
+        "The biggest lever is the layout. Keeping the sink, range, and walls where they are avoids new plumbing, gas, and electrical runs, and often a permit. Cabinet grade and appliances come next. Because selections are made before demo, the line-item estimate reflects real choices, and you can trade one line against another before any work starts.",
     },
     {
       question: "What areas do you serve?",

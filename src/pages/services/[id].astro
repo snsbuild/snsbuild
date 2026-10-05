@@ -67,7 +67,7 @@ const relatedServices = services.filter(
     <SubServiceFeatures
       eyebrow={subServices.eyebrow}
       heading={subServices.heading}
-      byline={subServices.byline}
+      subheading={subServices.byline}
       primaryCta={subServices.primaryCta}
       secondaryCta={subServices.secondaryCta}
       services={subServices.services}
@@ -81,6 +81,8 @@ const relatedServices = services.filter(
   <ProcessTimeline />
 
   <Faq faqs={faqs} />
+
+  <ServiceAreas />
 
   <ServiceRelatedServices
     services={relatedServices}

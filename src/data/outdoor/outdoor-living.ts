@@ -13,35 +13,18 @@ export const outdoorLiving: ServiceEntity = {
   category: ServiceCategory.Outdoor,
   name: "Patios, Pergolas & Outdoor Living",
   description:
-    "Decks, patios, covered outdoor rooms, and pergolas built for Seattle weather — designed to extend your home's living space outside.",
+    "Covered patios, pergolas, outdoor rooms, and outdoor kitchens built for Seattle weather — designed to extend your home's living space outside.",
   breadcrumb: "Outdoor Living • Seattle",
 
   service: {
     serviceType: "Outdoor Living Construction",
     areaServed: ["Greater Seattle / King County"],
-    subServices: [
-      {
-        name: "Decks & patios",
-        description:
-          "Composite, hardwood, and concrete surfaces for outdoor living.",
-      },
-      {
-        name: "Covered outdoor rooms",
-        description:
-          "Pergolas, covered patios, and outdoor rooms for year-round use.",
-      },
-      {
-        name: "Outdoor kitchens",
-        description:
-          "Built-in grills, counters, and sink areas for outdoor entertaining.",
-      },
-    ],
   },
 
   seo: {
     title: "Patios, Pergolas & Outdoor Living in Seattle | Saddle & Spur",
     description:
-      "Decks, patios, covered outdoor rooms, and pergolas in Seattle. Designed for Seattle weather and built to last.",
+      "Covered patios, pergolas, outdoor rooms, and outdoor kitchens in Seattle. Designed for Seattle weather and built to last.",
     keywords: [
       "patio contractor seattle",
       "outdoor living seattle",
@@ -65,11 +48,11 @@ export const outdoorLiving: ServiceEntity = {
     },
     {
       src: "/images/services/outdoor/gallery-2.jpg",
-      alt: "Concrete patio",
+      alt: "Cedar timber pergola on stone pillars over a paver patio with outdoor stone fireplace",
     },
     {
       src: "/images/services/outdoor/gallery-3.jpg",
-      alt: "Composite deck",
+      alt: "Low cedar platform deck with corner pergola, wicker chairs, and wood privacy fence",
     },
     {
       src: "/images/services/outdoor/ogImage.jpg",
@@ -79,24 +62,24 @@ export const outdoorLiving: ServiceEntity = {
   featuredTestimonial: {} as Testimonial,
   faqs: [
     {
-      question: "Do decks require permits in Seattle?",
+      question: "Should I build a deck or a patio?",
       answer:
-        "In Seattle, decks more than 18 inches above the ground require a permit, as do roof decks. We handle permitting as part of our scope.",
+        "It mostly comes down to the ground. A deck suits a sloped yard or a door that sits above grade. A concrete patio suits level ground and is one of the most durable, cost-effective outdoor surfaces. Plenty of projects use both, with a covered structure tying them together. We look at the grade and how you want to use the space before recommending either.",
     },
     {
-      question: "What decking materials do you recommend for Seattle?",
+      question: "What patio surface holds up best in Seattle?",
       answer:
-        "Composite decking is our go-to for Seattle's wet climate — it holds up better than wood over time. We can also do hardwood and concrete depending on your preference.",
+        "Concrete, properly sloped so water runs off instead of pooling. We pour stamped, brushed, and plain finishes; brushed gives the most grip when it's wet. Pairing the patio with a covered section keeps it usable through the rainy months.",
     },
     {
       question: "Can you build a covered outdoor room?",
       answer:
-        "Yes — covered patios, pergolas, and four-season outdoor rooms are a speciality. Roofed structures may require permits.",
+        "Yes — covered patios, pergolas, and four-season outdoor rooms are a specialty. Roofed structures may require permits.",
     },
     {
-      question: "How long does a deck project take?",
+      question: "How long does an outdoor living project take?",
       answer:
-        "A straightforward single-level deck typically takes 2–3 weeks. Multi-level decks, covered structures, or projects with outdoor kitchens run 4–6 weeks. Permit timelines vary and we build those into the schedule.",
+        "A concrete patio or a simple pergola is the quickest. Covered outdoor rooms and projects with an outdoor kitchen typically run 4–6 weeks. Permit timelines vary and we build those into the schedule.",
     },
     {
       question:
@@ -109,7 +92,7 @@ export const outdoorLiving: ServiceEntity = {
     eyebrow: "What we do",
     heading: "Outdoor living services",
     byline: "Built for the Pacific Northwest.",
-    primaryCta: { label: "Get a quote", href: "/contact/" },
+    primaryCta: { label: "Get a quote", href: "/estimate/" },
     secondaryCta: { label: "See portfolio", href: "/portfolio/" },
     services: [
       {
@@ -162,7 +145,7 @@ export const eastlakeDeck: PortfolioEntity = {
     ],
     ogImage: {
       src: "/images/portfolio/outdoor/ogImage.jpg",
-      alt: "Eastlake covered deck",
+      alt: "Built-in stainless grill in a stacked-stone island on a paver patio with bistro table",
     },
     images: [],
     datePublished: "2025-08-15",
@@ -194,10 +177,10 @@ export const eastlakeDeck: PortfolioEntity = {
   hero: {
     image: {
       src: "/images/portfolio/outdoor/gallery-1.jpg",
-      alt: "Eastlake covered deck",
+      alt: "Picnic table and benches at the corner of a gray composite deck with black railing",
     },
     eyebrow: "Outdoor Living • Deck",
-    primaryCta: { label: "Start your project", href: "/contact/" },
+    primaryCta: { label: "Start your project", href: "/estimate/" },
     secondaryCta: {
       label: "Outdoor living",
       href: "/services/outdoor-seattle/",
@@ -274,19 +257,19 @@ export const eastlakeDeck: PortfolioEntity = {
     images: [
       {
         src: "/images/portfolio/outdoor/gallery-1.jpg",
-        alt: "Deck overview",
+        alt: "Picnic table and benches at the corner of a gray composite deck with black railing",
       },
       {
         src: "/images/portfolio/outdoor/gallery-2.jpg",
-        alt: "Upper covered level",
+        alt: "Gray composite deck with picnic table, cushioned loveseat seating, and black metal railing among evergreens",
       },
       {
         src: "/images/portfolio/outdoor/ogImage.jpg",
-        alt: "Gas fire pit",
+        alt: "Built-in stainless grill in a stacked-stone island on a paver patio with bistro table",
       },
       {
         src: "/images/portfolio/outdoor/gallery-3.jpg",
-        alt: "Cable railing detail",
+        alt: "Wicker lounge chairs and sofa with blue pillows on a gray composite deck with black railing",
       },
     ],
   },
@@ -294,7 +277,7 @@ export const eastlakeDeck: PortfolioEntity = {
   testimonial: {
     image: {
       src: "/images/portfolio/outdoor/gallery-3.jpg",
-      alt: "Cable railing detail",
+      alt: "Wicker lounge chairs and sofa with blue pillows on a gray composite deck with black railing",
     },
     neighborhood: "Eastlake",
     quote:
@@ -306,7 +289,7 @@ export const eastlakeDeck: PortfolioEntity = {
   cta: {
     heading: "Ready for an outdoor living space?",
     body: "Tell us about your yard and we'll design something that works for Seattle weather.",
-    primaryCta: { label: "Request an estimate", href: "/contact/" },
+    primaryCta: { label: "Request an estimate", href: "/estimate/" },
     secondaryCta: { label: "View services", href: "/services/" },
   },
 

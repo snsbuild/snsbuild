@@ -18,22 +18,6 @@ export const flooringInstallation: ServiceEntity = {
   service: {
     serviceType: "Flooring Installation",
     areaServed: ["Greater Seattle / King County"],
-    subServices: [
-      {
-        name: "Hardwood & engineered wood",
-        description:
-          "Site-finished and pre-finished hardwood for lasting beauty.",
-      },
-      {
-        name: "LVP & laminate",
-        description: "Waterproof, durable options for kitchens and basements.",
-      },
-      {
-        name: "Tile",
-        description:
-          "Porcelain and ceramic tile for bathrooms, kitchens, and entryways.",
-      },
-    ],
   },
 
   seo: {
@@ -47,8 +31,8 @@ export const flooringInstallation: ServiceEntity = {
       "tile flooring seattle",
     ],
     ogImage: {
-      src: "/images/services/flooring/ogImage.jpg",
-      alt: "Flooring installation in Seattle",
+      src: "/images/services/flooring/gallery-4.jpg",
+      alt: "Empty white room with honey-toned wide-plank oak floor and garden-view windows",
     },
     images: [],
     datePublished: "2026-01-10",
@@ -59,22 +43,22 @@ export const flooringInstallation: ServiceEntity = {
   galleryImages: [
     {
       src: "/images/services/flooring/gallery-1.jpg",
-      alt: "White oak hardwood",
+      alt: "Worker in gloves kneeling to lay oak floor planks in a room under renovation",
     },
     {
       src: "/images/services/flooring/gallery-2.jpg",
-      alt: "LVP kitchen floor",
+      alt: "Open great room with gray-brown plank flooring, white kitchen island, and stacked-stone fireplace",
     },
-    { src: "/images/services/flooring/gallery-3.jpg", alt: "Tile entryway" },
+    { src: "/images/services/flooring/gallery-3.jpg", alt: "Long living room with dark reddish wide-plank wood floor, white walls, and potted ferns" },
     {
       src: "/images/services/flooring/gallery-4.jpg",
-      alt: "Staircase refinish",
+      alt: "Empty white room with honey-toned wide-plank oak floor and garden-view windows",
     },
   ],
   featuredTestimonial: {
     image: {
       src: "/images/portfolio/flooring/testimonial.jpg",
-      alt: "New floors",
+      alt: "Empty room with light oak-look floor, arched doorway, panelled wall, and picture window",
     },
     neighborhood: "Queen Anne",
     quote:
@@ -164,7 +148,7 @@ export const queenAnneFlooring: PortfolioEntity = {
     ],
     ogImage: {
       src: "/images/portfolio/flooring/ogImage.jpg",
-      alt: "Queen Anne hardwood floors",
+      alt: "Oak-look floor running past a white arched entry alcove toward two interior doors",
     },
     images: [],
     datePublished: "2025-10-01",
@@ -190,10 +174,10 @@ export const queenAnneFlooring: PortfolioEntity = {
   hero: {
     image: {
       src: "/images/portfolio/flooring/ogImage.jpg",
-      alt: "Queen Anne hardwood floors after",
+      alt: "Oak-look floor running past a white arched entry alcove toward two interior doors",
     },
     eyebrow: "Interior • Flooring",
-    primaryCta: { label: "Start your project", href: "/contact/" },
+    primaryCta: { label: "Start your project", href: "/estimate/" },
     secondaryCta: {
       label: "Flooring installation",
       href: "/services/flooring-installation-seattle/",
@@ -262,23 +246,23 @@ export const queenAnneFlooring: PortfolioEntity = {
     images: [
       {
         src: "/images/portfolio/flooring/gallery-1.jpg",
-        alt: "Queen Anne hardwood floors",
+        alt: "Small kitchenette with white cabinets and dark countertop on oak-look floor leading to a hallway",
       },
       {
         src: "/images/portfolio/flooring/gallery-2.jpg",
-        alt: "Queen Anne hardwood floors",
+        alt: "Long empty room with glossy oak-look floor, pale gray walls, and a single window",
       },
       {
         src: "/images/portfolio/flooring/gallery-3.jpg",
-        alt: "Queen Anne hardwood floors",
+        alt: "Small empty room with oak-look floor and gold-framed mirrored sliding closet doors",
       },
       {
         src: "/images/portfolio/flooring/gallery-4.jpg",
-        alt: "Queen Anne hardwood floors",
+        alt: "Sunlit empty room with oak-look floor, gray panelled walls, and open doorway to a hall",
       },
       {
         src: "/images/portfolio/flooring/gallery-5.jpg",
-        alt: "Queen Anne hardwood floors",
+        alt: "Small powder room with wall-hung sink, toilet, ornate mirror, and warm oak plank floor",
       },
     ],
   },
@@ -286,7 +270,7 @@ export const queenAnneFlooring: PortfolioEntity = {
   testimonial: {
     image: {
       src: "/images/portfolio/flooring/testimonial.jpg",
-      alt: "Queen Anne hardwood floors",
+      alt: "Empty room with light oak-look floor, arched doorway, panelled wall, and picture window",
     },
     neighborhood: "Queen Anne",
     quote:
@@ -298,7 +282,7 @@ export const queenAnneFlooring: PortfolioEntity = {
   cta: {
     heading: "Ready for new floors?",
     body: "Tell us what you're working with and we'll put together a clear scope and timeline.",
-    primaryCta: { label: "Request an estimate", href: "/contact/" },
+    primaryCta: { label: "Request an estimate", href: "/estimate/" },
     secondaryCta: { label: "View services", href: "/services/" },
   },
 

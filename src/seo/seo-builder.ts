@@ -29,6 +29,17 @@ const absUrl = (pathOrUrl: string) =>
 const toImageUrls = (images?: ImageRef[]) =>
   images?.length ? images.map((i) => absUrl(i.src)) : undefined;
 
+// Social cards want a 1200x630 JPEG. The source photos are portrait, square,
+// oversized or (in a few cases) not JPEG at all, so og:image / twitter:image
+// go through Netlify's Image CDN, which crops to cover and re-encodes. Schema
+// images keep pointing at the original files.
+export const SHARE_IMAGE = { width: 1200, height: 630 };
+const shareImageUrl = (path: string) =>
+  path.startsWith("http")
+    ? path
+    : `${SITE}/.netlify/images?url=${encodeURIComponent(path)}` +
+      `&w=${SHARE_IMAGE.width}&h=${SHARE_IMAGE.height}&fit=cover&fm=jpg&q=80`;
+
 const stripUndefinedDeep = (obj: any): any => {
   if (Array.isArray(obj))
     return obj.map(stripUndefinedDeep).filter((v) => v !== undefined);
@@ -286,7 +297,7 @@ function buildPortfolioShowGraph(
   const breadcrumbsNode = buildBreadcrumbsNode(canonical, [
     { name: "Home", item: HOME },
     { name: "Portfolio", item: `${SITE}/portfolio/` },
-    { name: meta.title, item: canonical },
+    { name: page.project.name, item: canonical },
   ]);
 
   return [
@@ -421,7 +432,7 @@ function buildMarketingGraph(
   }
   const breadcrumbsNode = buildBreadcrumbsNode(canonical, [
     { name: "Home", item: HOME },
-    { name: meta.title, item: canonical },
+    { name: page.name ?? meta.title, item: canonical },
   ]);
   return [webPageNode, breadcrumbsNode, buildFaqNode(canonical, page.faqs)];
 }
@@ -436,7 +447,9 @@ export function buildSeo(page: SeoPage): SeoResult {
     description: page.meta.description,
     url: canonical,
     type: page.meta.ogType,
-    image: primaryOgImage,
+    image: shareImageUrl(page.meta.ogImage.src),
+    imageWidth: SHARE_IMAGE.width,
+    imageHeight: SHARE_IMAGE.height,
   };
 
   const baseGraph: any[] = [buildWebSiteNode(), buildLocalBusinessNode()];

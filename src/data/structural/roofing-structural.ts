@@ -13,44 +13,27 @@ export const roofingStructural: ServiceEntity = {
   category: ServiceCategory.Structural,
   name: "Roof Replacement & Repair",
   description:
-    "Roof replacement, structural repairs, and seismic upgrades for Seattle homes — engineered, permitted, and built to last.",
+    "Roof replacement, roof repairs, and the structural rot repair found underneath for Seattle homes — properly flashed, permitted, and built to last.",
   breadcrumb: "Structural • Seattle",
 
   service: {
     serviceType: "Roofing & Structural Repair",
     areaServed: ["Greater Seattle / King County"],
-    subServices: [
-      {
-        name: "Roof replacement",
-        description:
-          "Full tear-off and replacement with architectural shingles or metal roofing.",
-      },
-      {
-        name: "Structural repairs",
-        description:
-          "Beam and post replacement, sagging floor correction, rot repair.",
-      },
-      {
-        name: "Seismic upgrades",
-        description:
-          "Cripple wall bracing and anchor bolting for earthquake preparedness.",
-      },
-    ],
   },
 
   seo: {
     title: "Roof Replacement & Repair in Seattle | Saddle & Spur",
     description:
-      "Roofing and structural work in Seattle — roof replacement, structural repairs, and seismic upgrades. Engineered and permitted.",
+      "Roof replacement and repair in Seattle — full tear-offs, shingle and metal roofs, skylight flashing, and structural rot repair. Permitted and done right.",
     keywords: [
       "roof replacement seattle",
       "structural repair seattle",
-      "seismic upgrade seattle",
+      "roof repair seattle",
       "roofing contractor seattle",
     ],
     ogImage: {
-      src: "/images/services/whole-home/ogImage.jpg",
-      alt: "Roofing and structural work in Seattle",
+      src: "/images/services/roofing/ogImage.jpg",
+      alt: "Framer in a tool belt setting wood roof trusses on a new house under a blue sky",
     },
     images: [],
     datePublished: "2026-01-10",
@@ -61,19 +44,19 @@ export const roofingStructural: ServiceEntity = {
   galleryImages: [
     {
       src: "/images/services/roofing/gallery-1.jpg",
-      alt: "New roof installation",
+      alt: "Dark gray standing-seam metal roof with gabled dormer, wood-clad dormer wall, and chimney",
     },
     {
       src: "/images/services/roofing/gallery-3.jpg",
-      alt: "Structural beam repair",
+      alt: "Three roofers rolling out black underlayment over plywood sheathing on a new roof",
     },
     {
       src: "/images/services/roofing/gallery-2.jpg",
-      alt: "Metal roofing",
+      alt: "Aerial view of gray architectural shingle roof on a white-sided house surrounded by trees",
     },
     {
       src: "/images/services/roofing/gallery-4.jpg",
-      alt: "Seismic cripple wall",
+      alt: "Two workers laying roofing felt in the valley of a newly framed roof with exposed rafters",
     },
   ],
   featuredTestimonial: {} as Testimonial,
@@ -109,7 +92,7 @@ export const roofingStructural: ServiceEntity = {
     eyebrow: "What we do",
     heading: "Roofing & structural services",
     byline: "Start from the top.",
-    primaryCta: { label: "Get a quote", href: "/contact/" },
+    primaryCta: { label: "Get a quote", href: "/estimate/" },
     secondaryCta: { label: "See portfolio", href: "/portfolio/" },
     services: [
       {
@@ -125,10 +108,10 @@ export const roofingStructural: ServiceEntity = {
         icon: "fa-solid fa-trowel-bricks",
       },
       {
-        title: "Seismic upgrades",
+        title: "Metal roofing",
         description:
-          "Cripple wall plywood bracing and anchor bolting to bring older Seattle homes up to modern earthquake standards. We work from engineer-stamped drawings and manage the permit and City of Seattle inspection process from start to finish.",
-        icon: "fa-solid fa-shield-halved",
+          "Standing seam and metal panel roofing for homeowners who want a longer service life than shingles. Metal sheds rain and moss quickly, which suits Seattle's wet months, and we detail the flashing, underlayment, and ventilation with the same care as any other roof.",
+        icon: "fa-solid fa-layer-group",
       },
       {
         title: "Skylights & roof penetrations",
@@ -161,7 +144,7 @@ export const madisonParkRoof: PortfolioEntity = {
     ],
     ogImage: {
       src: "/images/portfolio/roofing/ogImage.jpg",
-      alt: "Madison Park roof replacement",
+      alt: "Aerial view of roofer in orange shirt laying dark shingles over silver underlayment",
     },
     images: [],
     datePublished: "2025-09-01",
@@ -193,10 +176,10 @@ export const madisonParkRoof: PortfolioEntity = {
   hero: {
     image: {
       src: "/images/portfolio/roofing/ogImage.jpg",
-      alt: "Madison Park roof replacement",
+      alt: "Aerial view of roofer in orange shirt laying dark shingles over silver underlayment",
     },
     eyebrow: "Structural • Roofing",
-    primaryCta: { label: "Start your project", href: "/contact/" },
+    primaryCta: { label: "Start your project", href: "/estimate/" },
     secondaryCta: {
       label: "Roofing & structural",
       href: "/services/roofing-structural-seattle/",
@@ -276,19 +259,19 @@ export const madisonParkRoof: PortfolioEntity = {
     images: [
       {
         src: "/images/portfolio/roofing/gallery-1.jpg",
-        alt: "Madison Park roof replacement",
+        alt: "Overhead view of a conveyor ladder reaching from a truck to roofers on a dark roof",
       },
       {
         src: "/images/portfolio/roofing/gallery-2.jpg",
-        alt: "Madison Park roof replacement",
+        alt: "Top-down view of a roof mid-replacement showing bare plywood, underlayment, and crew at work",
       },
       {
         src: "/images/portfolio/roofing/ogImage.jpg",
-        alt: "Madison Park roof replacement",
+        alt: "Aerial view of roofer in orange shirt laying dark shingles over silver underlayment",
       },
       {
         src: "/images/portfolio/roofing/gallery-3.jpg",
-        alt: "Madison Park roof replacement",
+        alt: "Roofing crew in high-visibility shirts working across a hip roof with dark felt and silver underlayment",
       },
     ],
   },
@@ -296,7 +279,7 @@ export const madisonParkRoof: PortfolioEntity = {
   testimonial: {
     image: {
       src: "/images/portfolio/roofing/gallery-2.jpg",
-      alt: "Madison Park roof replacement",
+      alt: "Top-down view of a roof mid-replacement showing bare plywood, underlayment, and crew at work",
     },
     neighborhood: "Madison Park",
     quote:
@@ -308,7 +291,7 @@ export const madisonParkRoof: PortfolioEntity = {
   cta: {
     heading: "Roof concerns or need an inspection?",
     body: "We give honest assessments and clear scopes — no scare tactics.",
-    primaryCta: { label: "Request an estimate", href: "/contact/" },
+    primaryCta: { label: "Request an estimate", href: "/estimate/" },
     secondaryCta: { label: "View services", href: "/services/" },
   },
 

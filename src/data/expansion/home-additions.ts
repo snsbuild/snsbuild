@@ -19,22 +19,6 @@ export const homeAdditions: ServiceEntity = {
   service: {
     serviceType: "Home Addition",
     areaServed: ["Greater Seattle / King County"],
-    subServices: [
-      {
-        name: "Room additions",
-        description:
-          "Single-room expansions: family rooms, primary suites, sunrooms.",
-      },
-      {
-        name: "Second-story additions",
-        description:
-          "Full or partial second-story expansions on single-story homes.",
-      },
-      {
-        name: "Bump-outs",
-        description: "Smaller square-footage expansions to existing rooms.",
-      },
-    ],
   },
 
   seo: {
@@ -49,7 +33,7 @@ export const homeAdditions: ServiceEntity = {
     ],
     ogImage: {
       src: "/images/services/addition/ogImage.jpg",
-      alt: "Completed home addition",
+      alt: "Cedar-framed screened porch and raised deck with stairs on a tan-sided house",
     },
     images: [],
     datePublished: "2026-01-10",
@@ -61,19 +45,19 @@ export const homeAdditions: ServiceEntity = {
   galleryImages: [
     {
       src: "/images/services/addition/gallery-1.jpg",
-      alt: "Room addition exterior",
+      alt: "Single-story addition under construction with OSB sheathing and open roof framing on a white house",
     },
     {
       src: "/images/services/addition/gallery-2.jpg",
-      alt: "Addition interior",
+      alt: "White screened porch with red lattice skirting and wood entry steps on a white-sided house",
     },
     {
       src: "/images/services/addition/gallery-3.jpg",
-      alt: "Second story addition",
+      alt: "Sunroom with gray-green walls, oak-trimmed windows and French doors, exposed beam, and houseplants",
     },
     {
       src: "/images/services/addition/gallery-4.jpg",
-      alt: "Addition from backyard",
+      alt: "Gable end of a cedar-framed screened porch attached to a house",
     },
   ],
   featuredTestimonial: {} as Testimonial,
@@ -108,7 +92,7 @@ export const homeAdditions: ServiceEntity = {
     eyebrow: "What we do",
     heading: "Home addition services",
     byline: "More space. Same home.",
-    primaryCta: { label: "Get a quote", href: "/contact/" },
+    primaryCta: { label: "Get a quote", href: "/estimate/" },
     secondaryCta: { label: "See portfolio", href: "/portfolio/" },
     services: [
       {
@@ -158,7 +142,7 @@ export const ravennaAddition: PortfolioEntity = {
       "seattle primary suite addition",
       "room addition seattle",
     ],
-    ogImage: { src: "/images/portfolio/addition/ogImage.jpg", alt: "After" },
+    ogImage: { src: "/images/portfolio/addition/ogImage.jpg", alt: "Gable end of a cedar-framed screened porch attached to a house" },
     images: [],
     datePublished: "2025-07-01",
   },
@@ -189,10 +173,10 @@ export const ravennaAddition: PortfolioEntity = {
   hero: {
     image: {
       src: "/images/portfolio/addition/gallery-2.jpg",
-      alt: "Ravenna primary suite addition",
+      alt: "Porch roof framing in progress over a raised deck, with scaffolding and a yellow ladder",
     },
     eyebrow: "Expansion • Home Addition",
-    primaryCta: { label: "Start your project", href: "/contact/" },
+    primaryCta: { label: "Start your project", href: "/estimate/" },
     secondaryCta: {
       label: "Home additions",
       href: "/services/home-additions-seattle/",
@@ -271,26 +255,26 @@ export const ravennaAddition: PortfolioEntity = {
     images: [
       {
         src: "/images/portfolio/addition/gallery-1.jpg",
-        alt: "Exterior after",
+        alt: "Cedar-framed screened porch and raised deck with stairs on a tan-sided house",
       },
       {
         src: "/images/portfolio/addition/gallery-2.jpg",
-        alt: "Primary bedroom",
+        alt: "Porch roof framing in progress over a raised deck, with scaffolding and a yellow ladder",
       },
       {
         src: "/images/portfolio/addition/gallery-3.jpg",
-        alt: "Ensuite bath",
+        alt: "Screened porch interior with vaulted tongue-and-groove wood ceiling, ceiling fan, and triangular gable screens",
       },
       {
         src: "/images/portfolio/addition/ogImage.jpg",
-        alt: "Walk-in closet",
+        alt: "Gable end of a cedar-framed screened porch attached to a house",
       },
     ],
   },
 
   testimonial: {
     neighborhood: "Ravenna",
-    image: { src: "/images/portfolio/addition/gallery-3.jpg", alt: "After" },
+    image: { src: "/images/portfolio/addition/gallery-3.jpg", alt: "Screened porch interior with vaulted tongue-and-groove wood ceiling, ceiling fan, and triangular gable screens" },
     quote:
       "We wanted a primary suite but our house is a 1920s Craftsman and we were worried an addition would just look stuck on. Luke brought in all the right details — matching siding profile, the trim style, the roofline tie-in — and the crew executed it perfectly. You genuinely can't tell the addition was added later, which is exactly what we wanted.",
     author: "Alex B.",
@@ -300,7 +284,7 @@ export const ravennaAddition: PortfolioEntity = {
   cta: {
     heading: "Ready to add more space?",
     body: "Tell us what you're missing and we'll map out a realistic scope and timeline.",
-    primaryCta: { label: "Request an estimate", href: "/contact/" },
+    primaryCta: { label: "Request an estimate", href: "/estimate/" },
     secondaryCta: { label: "View services", href: "/services/" },
   },
 

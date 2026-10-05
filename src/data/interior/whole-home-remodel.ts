@@ -21,16 +21,6 @@ export const wholeHomeRemodel: ServiceEntity = {
   service: {
     serviceType: "Whole Home Remodel",
     areaServed: ["Greater Seattle / King County"],
-    subServices: [
-      {
-        name: "Kitchen & bathrooms",
-        description: "Core wet-area remodels as part of a whole-home scope.",
-      },
-      {
-        name: "Open-concept conversions",
-        description: "Wall removal, structural work, and layout improvements.",
-      },
-    ],
   },
 
   seo: {
@@ -49,7 +39,7 @@ export const wholeHomeRemodel: ServiceEntity = {
     images: [
       {
         src: "/images/portfolio/whole-home/testimonial.jpg",
-        alt: "Whole home after remodel",
+        alt: "View from loft with cable railing over vaulted living room with skylights and stone fireplace",
       },
     ],
     datePublished: "2026-01-10",
@@ -60,16 +50,16 @@ export const wholeHomeRemodel: ServiceEntity = {
   galleryImages: [
     {
       src: "/images/services/whole-home/gallery-1.jpg",
-      alt: "Open kitchen and living",
+      alt: "Kitchen island with marble-look top and white stools beneath glass pendants, facing mosaic tile backsplash",
     },
-    { src: "/images/services/whole-home/gallery-2.jpg", alt: "Primary bath" },
-    { src: "/images/services/whole-home/gallery-3.jpg", alt: "Living room" },
-    { src: "/images/services/whole-home/gallery-4.jpg", alt: "Entry hall" },
+    { src: "/images/services/whole-home/gallery-2.jpg", alt: "Wide view of kitchen with pale wood-grain cabinets, gray plank floor, island, and built-in stainless refrigerator" },
+    { src: "/images/services/whole-home/gallery-3.jpg", alt: "Dining area with glass-top table beside a double-height living room with stacked-stone fireplace" },
+    { src: "/images/services/whole-home/gallery-4.jpg", alt: "Double-height living room with white armchairs, linear gas fireplace in stacked stone, and loft railing above" },
   ],
   featuredTestimonial: {
     image: {
       src: "/images/portfolio/whole-home/testimonial.jpg",
-      alt: "Whole home after",
+      alt: "View from loft with cable railing over vaulted living room with skylights and stone fireplace",
     },
     neighborhood: "Fremont",
     quote:
@@ -108,7 +98,7 @@ export const wholeHomeRemodel: ServiceEntity = {
     eyebrow: "What we do",
     heading: "Whole home remodeling services",
     byline: "One team. Every room.",
-    primaryCta: { label: "Get a quote", href: "/contact/" },
+    primaryCta: { label: "Get a quote", href: "/estimate/" },
     secondaryCta: { label: "See portfolio", href: "/portfolio/" },
     services: [
       {
@@ -194,7 +184,7 @@ export const fremontWholeHome: PortfolioEntity = {
       alt: "Fremont whole home after remodel",
     },
     eyebrow: "Interior • Whole Home Remodel",
-    primaryCta: { label: "Start your project", href: "/contact/" },
+    primaryCta: { label: "Start your project", href: "/estimate/" },
     secondaryCta: {
       label: "Whole home remodeling",
       href: "/services/whole-home-remodeling-seattle/",
@@ -270,21 +260,21 @@ export const fremontWholeHome: PortfolioEntity = {
     images: [
       {
         src: "/images/portfolio/whole-home/gallery-1.jpg",
-        alt: "Open kitchen and living",
+        alt: "Vaulted living room with taupe sectional, skylights, ceiling fan, and stairs rising to a loft",
       },
       {
         src: "/images/portfolio/whole-home/gallery-2.jpg",
-        alt: "Primary bath",
+        alt: "Taupe sectional facing a rustic stone fireplace beneath a vaulted ceiling with skylight and fan",
       },
-      { src: "/images/portfolio/whole-home/gallery-3.jpg", alt: "Living room" },
-      { src: "/images/portfolio/whole-home/gallery-4.jpg", alt: "Entry hall" },
+      { src: "/images/portfolio/whole-home/gallery-3.jpg", alt: "Kitchen with white shaker cabinets, stainless appliances, dark wood island with stools, and hardwood floor" },
+      { src: "/images/portfolio/whole-home/gallery-4.jpg", alt: "Mudroom built-in with white locker cabinets, wood bench top, drawers, and upper cubbies" },
     ],
   },
 
   testimonial: {
     image: {
       src: "/images/portfolio/whole-home/testimonial.jpg",
-      alt: "Open kitchen and living",
+      alt: "View from loft with cable railing over vaulted living room with skylights and stone fireplace",
     },
     neighborhood: "Fremont",
     quote:
@@ -296,7 +286,7 @@ export const fremontWholeHome: PortfolioEntity = {
   cta: {
     heading: "Ready to transform your home?",
     body: "Tell us about your goals and we'll put together a clear scope and timeline.",
-    primaryCta: { label: "Request an estimate", href: "/contact/" },
+    primaryCta: { label: "Request an estimate", href: "/estimate/" },
     secondaryCta: { label: "View services", href: "/services/" },
   },
 

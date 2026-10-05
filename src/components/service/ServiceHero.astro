@@ -1,6 +1,7 @@
 ---
 import Img from "../Img.astro";
-const { eyebrow, header, description, galleryImages } = Astro.props;
+const { eyebrow, header, subheader, description, galleryImages } =
+  Astro.props;
 
 const imageOne = galleryImages[0];
 const imageTwo = galleryImages[1];
@@ -25,6 +26,11 @@ const imageFour = galleryImages[3];
           {header}
         </span>
       </h1>
+      {
+        subheader && (
+          <p class="mt-4 text-lg/7 font-medium text-gray-900">{subheader}</p>
+        )
+      }
       <p class="mt-6 text-xl/8 text-gray-700">{description}</p>
       <div class="mt-10 flex items-center gap-x-6">
         <a

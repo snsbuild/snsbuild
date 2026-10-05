@@ -12,7 +12,7 @@ export const flooringLanding: LandingPage = {
 
   seo: {
     title: "Free Flooring Estimate in Seattle | Saddle & Spur",
-    description: `Licensed Seattle flooring installer. Hardwood, LVP, and tile, with subfloor prep by one crew. Free on-site estimate, line-item pricing. Call ${phoneDisplay}.`,
+    description: `Free flooring estimate in Seattle. On-site visit, subfloor check, and line-item pricing for hardwood, LVP, and tile from one crew. Call ${phoneDisplay}.`,
     // Deliberately estimate/quote intent — the service page owns the
     // "flooring installation seattle" head term.
     keywords: [
@@ -24,8 +24,8 @@ export const flooringLanding: LandingPage = {
       "replace carpet with hardwood seattle",
     ],
     ogImage: {
-      src: "/images/services/flooring/ogImage.jpg",
-      alt: "Flooring installation in Seattle",
+      src: "/images/services/flooring/gallery-4.jpg",
+      alt: "Empty white room with honey-toned wide-plank oak floor and garden-view windows",
     },
     images: [],
   },
@@ -38,7 +38,7 @@ export const flooringLanding: LandingPage = {
   },
 
   hero: {
-    eyebrow: "Seattle & King County flooring installer",
+    eyebrow: "Free flooring estimate in Seattle",
     headline: "New floors in days — laid on a subfloor we've actually checked",
     subhead:
       "Hardwood, LVP, and tile across Greater Seattle. We pull the old floor, fix what's underneath, install, and site-finish — one crew, one schedule, and a written line-item estimate before any material is ordered.",
@@ -51,7 +51,7 @@ export const flooringLanding: LandingPage = {
     ],
     image: {
       src: "/images/services/flooring/gallery-1.jpg",
-      alt: "White oak hardwood",
+      alt: "Worker in gloves kneeling to lay oak floor planks in a room under renovation",
     },
     formHeading: "Get your free flooring estimate",
     formByline:
@@ -120,27 +120,27 @@ export const flooringLanding: LandingPage = {
     images: [
       {
         src: "/images/portfolio/flooring/gallery-1.jpg",
-        alt: "Site-finished white oak hardwood floors in a Queen Anne craftsman",
+        alt: "Small kitchenette with white cabinets and dark countertop on oak-look floor leading to a hallway",
       },
       {
         src: "/images/services/flooring/gallery-2.jpg",
-        alt: "LVP kitchen floor",
+        alt: "Open great room with gray-brown plank flooring, white kitchen island, and stacked-stone fireplace",
       },
       {
         src: "/images/portfolio/flooring/gallery-2.jpg",
-        alt: "New hardwood floors through the main level of a Queen Anne home",
+        alt: "Long empty room with glossy oak-look floor, pale gray walls, and a single window",
       },
       {
         src: "/images/services/flooring/gallery-3.jpg",
-        alt: "Tile entryway",
+        alt: "Long living room with dark reddish wide-plank wood floor, white walls, and potted ferns",
       },
       {
         src: "/images/portfolio/flooring/gallery-3.jpg",
-        alt: "White oak hardwood installed in place of old carpet in Queen Anne",
+        alt: "Small empty room with oak-look floor and gold-framed mirrored sliding closet doors",
       },
       {
         src: "/images/services/flooring/gallery-4.jpg",
-        alt: "Staircase refinish",
+        alt: "Empty white room with honey-toned wide-plank oak floor and garden-view windows",
       },
     ],
     cta: {
@@ -163,19 +163,14 @@ export const flooringLanding: LandingPage = {
         "Most whole-home flooring projects run 3–7 days on site depending on square footage and material. Hardwood needs 3–5 days to acclimate before install, which we schedule ahead so it doesn't add to your time on site.",
     },
     {
-      question: "Do you remove the old flooring?",
+      question: "What affects the cost of new flooring?",
       answer:
-        "Yes — demo and disposal are included in our flooring scopes, including carpet, tack strip, staples, and glued-down material.",
+        "Material and square footage set the baseline; the subfloor decides the rest. Leveling, squeak repair, or replacing water-damaged sheathing adds labor, and so do stairs, transitions between rooms, and glued-down flooring that has to come up. Demo and disposal are part of our flooring scopes, so the line-item estimate covers the whole job, not just the boards.",
     },
     {
-      question: "What's the best flooring for Seattle's wet climate?",
+      question: "Hardwood, LVP, or tile: how do they compare on price?",
       answer:
-        "LVP is the most moisture-resistant option and works well in kitchens, bathrooms, and basements. For main living areas where you want real wood, site-finished hardwood holds up well with reasonable moisture control. Tile is the right call for entries and mudrooms that see wet boots all winter.",
-    },
-    {
-      question: "Can you match our existing hardwood?",
-      answer:
-        "We do our best to source a matching species and stain, and site-finishing gives us more control over the final color. We'll be upfront if an exact match isn't achievable and talk through options like running new flooring to a natural break.",
+        "LVP is usually the least expensive to buy and to install. Tile and site-finished hardwood cost more, mostly in labor: tile needs careful substrate prep and setting, and hardwood needs acclimation, sanding, and finishing on site. Ask us to price more than one material for the same rooms and the estimate will show them side by side.",
     },
     {
       question: "What areas do you serve?",

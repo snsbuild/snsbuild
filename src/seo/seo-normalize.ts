@@ -49,7 +49,16 @@ export function entityToSeoPage(
     return {
       kind: "service-show",
       meta: baseMeta,
-      service: { ...s.service, name: s.name },
+      // The offer catalog lists exactly the sub-services the page renders,
+      // so the schema can't advertise something the visitor doesn't see.
+      service: {
+        ...s.service,
+        name: s.name,
+        subServices: s.subServices.services.map((x) => ({
+          name: x.title,
+          description: x.description,
+        })),
+      },
       faqs: s.faqs,
     };
   }
@@ -137,6 +146,7 @@ export function landingToSeoPage(landing: LandingPage): LandingSeoPage {
 export function marketingToSeoPage(marketing: MarketingPage): MarketingSeoPage {
   return {
     kind: "marketing",
+    name: marketing.name,
     meta: {
       path: marketing.path,
       title: marketing.seo.title,

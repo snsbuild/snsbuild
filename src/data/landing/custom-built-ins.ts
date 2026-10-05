@@ -14,7 +14,7 @@ export const customBuiltInsLanding: LandingPage = {
 
   seo: {
     title: "Free Custom Built-In Estimate in Seattle | Saddle & Spur",
-    description: `Custom built-in cabinets, bookshelves, window seats, and mudroom benches in Seattle. Free on-site estimate, line-item pricing. Call ${phoneDisplay}.`,
+    description: `Free custom built-in estimate in Seattle. On-site visit and line-item pricing for cabinets, bookshelves, window seats, and mudroom benches. Call ${phoneDisplay}.`,
     // Deliberately estimate/quote intent — the service page owns the
     // "custom built-ins seattle" head term.
     keywords: [
@@ -40,7 +40,7 @@ export const customBuiltInsLanding: LandingPage = {
   },
 
   hero: {
-    eyebrow: "Seattle & King County built-ins",
+    eyebrow: "Free custom built-in estimate in Seattle",
     headline: "Built-ins that look like they came with the house",
     subhead:
       "Bookshelves, window seats, mudroom benches, pantries, and media walls measured to your walls and scribed to fit — so the finished piece looks original, not added on.",

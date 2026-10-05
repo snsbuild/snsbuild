@@ -19,38 +19,6 @@ export const bathroomRemodel: ServiceEntity = {
   service: {
     serviceType: "Bathroom Remodel",
     areaServed: ["Greater Seattle / King County"],
-    subServices: [
-      {
-        name: "Tile & waterproofing",
-        description:
-          "Shower, floor, and wall tile installed over a properly waterproofed substrate. We do waterproofing ourselves — not subbed out — because it's the step you can't fix after the tile is on.",
-      },
-      {
-        name: "Fixtures & vanities",
-        description:
-          "Tub, shower, toilet, vanity, and lighting selection and installation coordinated as a complete package. We help you choose a set that works together so the finished bathroom looks intentional, not assembled piecemeal.",
-      },
-      {
-        name: "Shower & tub conversion",
-        description:
-          "Tub-to-shower conversions and full curbless walk-in shower installations sized to the space. We assess the existing plumbing rough-in and show you what's possible before any demolition begins.",
-      },
-      {
-        name: "Lighting & ventilation",
-        description:
-          "Recessed lighting, vanity bar lighting, and properly sized exhaust fans specified and installed as part of the remodel scope. Good bathroom lighting changes how the whole room feels — we treat it as a design decision, not a checkbox.",
-      },
-      {
-        name: "Layout reconfiguration",
-        description:
-          "Full bathroom layout redesigns including plumbing relocation, wall moves, and niche additions. A better floor plan is often what makes a small bathroom feel spacious rather than just updated.",
-      },
-      {
-        name: "Heated floors",
-        description:
-          "Electric radiant floor mat installation timed into the tile scope so there are no seams in the finish floor. We spec the thermostat and walk you through programming before the project closes out.",
-      },
-    ],
   },
 
   seo: {
@@ -221,7 +189,7 @@ export const capitolHillBathroom: PortfolioEntity = {
       alt: "Remodeled Capitol Hill primary bathroom with large-format tile, frameless glass shower, and custom double vanity",
     },
     eyebrow: "Interior • Bathroom Remodel",
-    primaryCta: { label: "Start your project", href: "/contact/" },
+    primaryCta: { label: "Start your project", href: "/estimate/" },
     secondaryCta: {
       label: "Bathroom remodeling",
       href: "/services/bathroom-remodeling-seattle/",
@@ -339,7 +307,7 @@ export const capitolHillBathroom: PortfolioEntity = {
   cta: {
     heading: "Ready to plan your bathroom remodel?",
     body: "Tell us about your space and we'll propose a clear scope and timeline.",
-    primaryCta: { label: "Request an estimate", href: "/contact/" },
+    primaryCta: { label: "Request an estimate", href: "/estimate/" },
     secondaryCta: { label: "View services", href: "/services/" },
   },
 

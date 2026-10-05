@@ -18,38 +18,6 @@ export const kitchenRemodel: ServiceEntity = {
   service: {
     serviceType: "Kitchen Remodel",
     areaServed: ["Greater Seattle / King County"],
-    subServices: [
-      {
-        name: "Layout & space planning",
-        description:
-          "Workflow analysis, traffic flow, and cabinet placement before demo begins.",
-      },
-      {
-        name: "Cabinetry & storage",
-        description:
-          "Custom and semi-custom cabinet installation with interior organization solutions.",
-      },
-      {
-        name: "Countertops & backsplash tile",
-        description:
-          "Quartz, quartzite, butcher block, and porcelain tile templated and installed.",
-      },
-      {
-        name: "Appliance & lighting installation",
-        description:
-          "Appliance cutout prep, installation, under-cabinet lighting, and recessed layout.",
-      },
-      {
-        name: "Plumbing fixtures",
-        description:
-          "Sink, faucet, and disposal installation coordinated with countertop scope.",
-      },
-      {
-        name: "Flooring",
-        description:
-          "Hardwood, LVP, and tile flooring installed to match the full kitchen finish package.",
-      },
-    ],
   },
 
   seo: {
@@ -63,7 +31,7 @@ export const kitchenRemodel: ServiceEntity = {
     ],
     ogImage: {
       src: "/images/services/kitchen/ogImage.jpg",
-      alt: "Remodeled open-plan kitchen with large island and white cabinetry in Seattle",
+      alt: "White kitchen with long white-topped island, leather bar stools, brass cone pendants, and black range hood",
     },
     images: [],
     datePublished: "2026-01-10",
@@ -229,7 +197,7 @@ export const ballardKitchen: PortfolioEntity = {
       alt: "Remodeled open-plan Ballard kitchen with large white quartz island, gold bar stools, and vaulted ceiling",
     },
     eyebrow: "Services • Interior • Kitchen Remodel",
-    primaryCta: { label: "Start your project", href: "/contact/" },
+    primaryCta: { label: "Start your project", href: "/estimate/" },
     secondaryCta: {
       label: "Kitchen remodeling",
       href: "/services/kitchen-remodeling-seattle/",
@@ -375,7 +343,7 @@ export const ballardKitchen: PortfolioEntity = {
   cta: {
     heading: "Ready to plan your remodel?",
     body: "Tell us about your goals and we'll propose a clear scope and timeline.",
-    primaryCta: { label: "Request an estimate", href: "/contact/" },
+    primaryCta: { label: "Request an estimate", href: "/estimate/" },
     secondaryCta: { label: "View services", href: "/services/" },
   },
 

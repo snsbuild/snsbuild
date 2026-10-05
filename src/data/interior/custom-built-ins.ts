@@ -21,28 +21,6 @@ export const customBuiltIns: ServiceEntity = {
   service: {
     serviceType: "Custom Built-Ins & Finish Carpentry",
     areaServed: ["Greater Seattle / King County"],
-    subServices: [
-      {
-        name: "Built-in cabinetry & bookshelves",
-        description:
-          "Floor-to-ceiling shelving, media walls, and cabinetry built to the room.",
-      },
-      {
-        name: "Window seats & mudroom benches",
-        description:
-          "Seating with storage underneath, lockers, and drop zones by the door.",
-      },
-      {
-        name: "Pantries & closets",
-        description:
-          "Walk-in pantries, reach-in closet systems, and under-stair storage.",
-      },
-      {
-        name: "Trim & millwork",
-        description:
-          "Wainscoting, board and batten, coffered ceilings, and period-matched trim.",
-      },
-    ],
   },
 
   seo: {
@@ -215,7 +193,7 @@ export const seattleBuiltIns: PortfolioEntity = {
       alt: "Custom built-in with glass-front upper cabinets and open shelving",
     },
     eyebrow: "Services • Interior • Custom Built-Ins",
-    primaryCta: { label: "Start your project", href: "/contact/" },
+    primaryCta: { label: "Start your project", href: "/estimate/" },
     secondaryCta: {
       label: "Custom built-ins",
       href: "/services/custom-built-ins-seattle/",
@@ -331,7 +309,7 @@ export const seattleBuiltIns: PortfolioEntity = {
   cta: {
     heading: "Have a wall that needs a built-in?",
     body: "Tell us about the space and we'll come measure it.",
-    primaryCta: { label: "Request an estimate", href: "/contact/" },
+    primaryCta: { label: "Request an estimate", href: "/estimate/" },
     secondaryCta: { label: "View services", href: "/services/" },
   },
 

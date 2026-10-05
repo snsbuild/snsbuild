@@ -1,0 +1,17 @@
+# Netlify custom headers (https://docs.netlify.com/routing/headers/).
+
+# Astro fingerprints everything under /_astro/, so it can be cached forever.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Font files carry their subset/version in the name; replace the file under a
+# new name if the subset changes.
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Photos and scripts keep their names when re-encoded, so cache for a day and
+# let browsers reuse a stale copy for a week while they revalidate.
+/images/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/js/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
