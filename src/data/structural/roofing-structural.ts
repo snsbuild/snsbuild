@@ -11,7 +11,7 @@ export const roofingStructural: ServiceEntity = {
   path: "/services/roofing-structural-seattle/",
   homePageFeatured: false,
   category: ServiceCategory.Structural,
-  name: "Roofing & Structural",
+  name: "Roof Replacement & Repair",
   description:
     "Roof replacement, structural repairs, and seismic upgrades for Seattle homes — engineered, permitted, and built to last.",
   breadcrumb: "Structural • Seattle",
@@ -39,7 +39,7 @@ export const roofingStructural: ServiceEntity = {
   },
 
   seo: {
-    title: "Roofing & Structural Seattle | Saddle & Spur Construction",
+    title: "Roof Replacement & Repair in Seattle | Saddle & Spur",
     description:
       "Roofing and structural work in Seattle — roof replacement, structural repairs, and seismic upgrades. Engineered and permitted.",
     keywords: [

@@ -79,11 +79,6 @@ export function entityToSeoPage(
         name: x.name,
         description: x.description,
       })),
-      testimonial: {
-        quote: p.testimonial.quote,
-        author: p.testimonial.author,
-        rating: p.testimonial.rating,
-      },
     },
     faqs: p.faqs,
   };

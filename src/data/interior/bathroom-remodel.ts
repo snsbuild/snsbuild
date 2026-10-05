@@ -121,7 +121,7 @@ export const bathroomRemodel: ServiceEntity = {
     eyebrow: "What we do",
     heading: "Bathroom remodeling services",
     byline: "Scope it right, then build it right.",
-    primaryCta: { label: "Get a quote", href: "/contact/" },
+    primaryCta: { label: "Get a bathroom estimate", href: "/bathroom-remodel-seattle/" },
     secondaryCta: { label: "See portfolio", href: "/portfolio/" },
     services: [
       {

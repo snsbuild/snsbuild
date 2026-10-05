@@ -104,7 +104,7 @@ export const deckBuilding: ServiceEntity = {
     {
       question: "Do I need a permit to build a deck in Seattle?",
       answer:
-        "Usually, yes. Seattle generally requires a construction permit once a deck is more than 30 inches above grade, is attached to the house, or serves as a required exit. Low, freestanding ground-level platforms are often exempt. Rules change and every lot is different, so we confirm the current requirement with SDCI for your specific address and handle the permit as part of our scope.",
+        "Usually, yes. Seattle requires a construction permit once a deck is more than 18 inches above the ground, is a roof deck, or sits in an environmentally critical area such as a landslide-prone slope. Low decks at or under 18 inches generally don't need one. Rules change and every lot is different, so we confirm the current requirement with SDCI for your specific address and handle the permit as part of our scope.",
     },
     {
       question: "Composite or cedar — which is better for Seattle?",

@@ -119,7 +119,7 @@ export const customBuiltIns: ServiceEntity = {
     eyebrow: "What we do",
     heading: "Custom built-in & carpentry services",
     byline: "Storage and character that fit the house you have.",
-    primaryCta: { label: "Get a quote", href: "/contact/" },
+    primaryCta: { label: "Get a built-ins estimate", href: "/custom-built-ins-seattle/" },
     secondaryCta: { label: "See portfolio", href: "/portfolio/" },
     services: [
       {
@@ -157,8 +157,8 @@ customBuiltIns.seo.images = customBuiltIns.galleryImages;
 // STAND-IN PROJECT, not registered in src/data/index.ts so it doesn't build.
 // Illustrative copy and borrowed kitchen photos so the page layout can be
 // reviewed. Replace every field with the real built-ins job
-// before this ships — especially the testimonial, which renders as a Review
-// in the page's structured data.
+// before this ships — especially the testimonial, which is shown to visitors
+// as a client quote.
 export const seattleBuiltIns: PortfolioEntity = {
   id: "seattle-craftsman-built-ins",
   type: "portfolio",

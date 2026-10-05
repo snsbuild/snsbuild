@@ -1,5 +1,18 @@
 ---
 import Img from "../Img.astro";
+
+// Tagline endings that rotate after "Let's". The first is rendered into the
+// HTML so the hero is complete before any script runs; keep them comma-free
+// (ReplaceMe splits on commas).
+const phrases = [
+  "build something exceptional together",
+  "design the kitchen you've imagined",
+  "create a bathroom that feels like a retreat",
+  "expand your home with confidence",
+  "transform unused space into something purposeful",
+  "build an ADU that works beautifully",
+  "bring your renovation vision to life",
+];
 ---
 
 <div
@@ -37,18 +50,22 @@ import Img from "../Img.astro";
     </div>
   </div>
   <div class="mx-auto max-w-4xl text-center">
-    <h1 class="text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">
-      Let's <br />
-      <span id="replace-service-list">
-        <span style="display:none">
-          build something exceptional together, design the kitchen you've
-          imagined, create a bathroom that feels like a retreat, expand your
-          home with confidence, transform unused space into something
-          purposeful, build an ADU that works beautifully, bring your renovation
-          vision to life
-        </span>
-      </span>
+    {/* The H1 is the static head term, styled like the service-page eyebrow.
+        The rotating tagline is a <p> so crawlers and screen readers get a
+        stable heading. Its min-height reserves the tallest phrase at each
+        breakpoint (measured in lines, including "Let's"), so rotating never
+        moves the content below it. Re-measure if the phrases change. */}
+    <h1 class="text-base/7 font-semibold text-indigo-600">
+      Remodeling Services in Seattle
     </h1>
+    <p
+      class="mt-2 min-h-[5lh] text-5xl font-semibold tracking-tight text-gray-900 max-[359px]:min-h-[6lh] sm:text-7xl md:min-h-[4lh] lg:min-h-[3lh]"
+    >
+      Let's <br />
+      <span id="replace-service-list" data-phrases={JSON.stringify(phrases)}
+        >{phrases[0]}</span
+      >
+    </p>
     <p class="mt-8 text-lg font-medium text-pretty text-gray-700 sm:text-xl/8">
       Saddle & Spur Construction is a Seattle-based general contractor serving
       homeowners across King County with kitchen remodeling, bathroom
@@ -81,7 +98,18 @@ import Img from "../Img.astro";
 
   window.addEventListener("DOMContentLoaded", () => {
     const replaceEl = document.getElementById("replace-service-list");
-    new window.ReplaceMe(replaceEl, options);
+    if (!replaceEl) return;
+    const phrases: string[] = JSON.parse(replaceEl.dataset.phrases ?? "[]");
+    if (phrases.length < 2) return;
+
+    // The first phrase is already on screen. After one beat, hand ReplaceMe
+    // the rest (ending with the first) so the rotation carries on from there.
+    setTimeout(() => {
+      replaceEl.textContent = [...phrases.slice(1), phrases[0]].join(
+        options.separator,
+      );
+      new window.ReplaceMe(replaceEl, options);
+    }, options.speed);
   });
 </script>
 

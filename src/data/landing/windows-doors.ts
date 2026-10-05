@@ -31,7 +31,7 @@ export const windowsDoorsLanding: LandingPage = {
   },
 
   service: {
-    name: "Windows & Doors",
+    name: "Window & Door Replacement",
     serviceType: "Window & Door Replacement",
     areaServed: ["Greater Seattle / King County"],
     servicePath: "/services/windows-doors-seattle/",

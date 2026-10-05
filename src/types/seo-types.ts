@@ -40,8 +40,6 @@ export type PortfolioShowSeoPage = {
     problem: string;
     solution: string;
     results: string[];
-
-    testimonial?: { quote: string; author: string; rating?: number };
   };
   faqs?: FAQ[];
 };

@@ -164,13 +164,13 @@ export const shedPortfolio: PortfolioCollectionPage = {
 
   intro: [
     "A shed is a small building, and small buildings fail for the same reasons big ones do: no real foundation, a roof with no overhang, and no flashing where the roof meets the wall. Most of the sheds we're called out to replace were fine for six or seven years and then went bad quickly. The ones on this page were built to a different standard.",
-    "Sizing matters as much as construction here. Seattle generally exempts detached accessory structures under about 200 square feet from a construction permit, so we design right up against that line where it makes sense — and tell you plainly when what you actually want is a DADU instead.",
+    "Sizing matters as much as construction here. Seattle only skips the construction permit for single-story storage sheds with a roof area of 120 square feet or less, so we settle the permit path before we draw anything — and tell you plainly when what you actually want is a DADU instead.",
   ],
 
   stats: [
     { label: "Storage / garden shed build", value: "1–2 wks" },
     { label: "Insulated office build", value: "3–5 wks" },
-    { label: "Typical permit exemption", value: "<200 sq ft" },
+    { label: "Permit-exempt storage shed", value: "≤120 sq ft" },
     { label: "Setbacks verified first", value: "Every job" },
   ],
 
@@ -202,7 +202,7 @@ export const shedPortfolio: PortfolioCollectionPage = {
     {
       question: "Will my shed need a permit?",
       answer:
-        "Often not for the structure. Seattle generally exempts small detached accessory buildings under roughly 200 square feet with no plumbing from a construction permit — but zoning still applies, meaning setbacks, rear-yard coverage, and lot coverage. Running power out to it needs its own electrical permit. We confirm the current rules with SDCI for your address before we draw anything.",
+        "A small storage shed often won't. Seattle doesn't require a construction permit for a detached, single-story shed with a roof area of 120 square feet or less that's used only for storage or gardening. A bigger shed, or one you'll work in, does need one — and zoning applies either way, meaning setbacks, rear-yard coverage, and lot coverage. Running power out to it needs its own electrical permit. We confirm the current rules with SDCI for your address before we draw anything.",
     },
     {
       question: "Can a shed work as a home office year-round?",

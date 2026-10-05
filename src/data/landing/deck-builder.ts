@@ -84,7 +84,7 @@ export const deckBuilderLanding: LandingPage = {
     {
       title: "Permits are our problem, not yours",
       description:
-        "Seattle generally requires a permit once a deck clears 30 inches above grade or attaches to the house. We confirm the current requirement with SDCI for your address, pull the permit, and schedule the inspections as part of the job.",
+        "Seattle requires a permit once a deck sits more than 18 inches above the ground. We confirm the current requirement with SDCI for your address, pull the permit, and schedule the inspections as part of the job.",
       icon: "fa-solid fa-file-signature",
     },
     {
@@ -166,7 +166,7 @@ export const deckBuilderLanding: LandingPage = {
     {
       question: "Do I need a permit for my deck?",
       answer:
-        "Usually if it's more than 30 inches above grade, attached to the house, or serving a required exit. Low freestanding platforms are often exempt. We confirm the current rule with SDCI for your specific address and handle the permit if one is needed.",
+        "Usually. Seattle requires one when a deck is more than 18 inches above the ground, is a roof deck, or is in an environmentally critical area. Low decks at or under 18 inches generally don't need one. We confirm the current rule with SDCI for your specific address and handle the permit if one is needed.",
     },
     {
       question: "Composite or cedar for a Seattle deck?",

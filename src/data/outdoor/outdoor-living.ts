@@ -11,7 +11,7 @@ export const outdoorLiving: ServiceEntity = {
   path: "/services/outdoor-seattle/",
   homePageFeatured: true,
   category: ServiceCategory.Outdoor,
-  name: "Outdoor Living",
+  name: "Patios, Pergolas & Outdoor Living",
   description:
     "Decks, patios, covered outdoor rooms, and pergolas built for Seattle weather — designed to extend your home's living space outside.",
   breadcrumb: "Outdoor Living • Seattle",
@@ -39,11 +39,10 @@ export const outdoorLiving: ServiceEntity = {
   },
 
   seo: {
-    title: "Outdoor Living Seattle | Saddle & Spur Construction",
+    title: "Patios, Pergolas & Outdoor Living in Seattle | Saddle & Spur",
     description:
       "Decks, patios, covered outdoor rooms, and pergolas in Seattle. Designed for Seattle weather and built to last.",
     keywords: [
-      "deck builder seattle",
       "patio contractor seattle",
       "outdoor living seattle",
       "covered patio seattle",
@@ -82,7 +81,7 @@ export const outdoorLiving: ServiceEntity = {
     {
       question: "Do decks require permits in Seattle?",
       answer:
-        "Decks above 30 inches from grade or attached to the home typically require permits. We handle permitting as part of our scope.",
+        "In Seattle, decks more than 18 inches above the ground require a permit, as do roof decks. We handle permitting as part of our scope.",
     },
     {
       question: "What decking materials do you recommend for Seattle?",

@@ -258,28 +258,10 @@ function buildPortfolioShowGraph(
     provider: { "@id": `${SITE}#business` },
     about: { "@id": `${canonical}#service` },
     locationCreated: placeNode ? { "@id": `${canonical}#place` } : undefined,
-    ...(page.project.testimonial
-      ? {
-          review: {
-            "@type": "Review",
-            "@id": `${canonical}#review`,
-            reviewBody: page.project.testimonial.quote,
-            ...(page.project.testimonial.rating
-              ? {
-                  reviewRating: {
-                    "@type": "Rating",
-                    ratingValue: page.project.testimonial.rating,
-                    bestRating: 5,
-                  },
-                }
-              : {}),
-            author: {
-              "@type": "Person",
-              name: page.project.testimonial.author,
-            },
-          },
-        }
-      : {}),
+    // No `review` here on purpose. The project testimonial is shown on the
+    // page without a star rating, and Google's structured-data rules forbid
+    // marking up content that isn't visible; self-hosted reviews also aren't
+    // eligible for review snippets. Don't re-add it for client quotes.
   };
 
   const servicesPerformedNode = page.project.servicesPerformed?.length

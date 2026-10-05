@@ -112,7 +112,7 @@ export const flooringInstallation: ServiceEntity = {
     eyebrow: "What we do",
     heading: "Flooring installation services",
     byline: "The right material, installed right.",
-    primaryCta: { label: "Get a quote", href: "/contact/" },
+    primaryCta: { label: "Get a flooring estimate", href: "/flooring-installer-seattle/" },
     secondaryCta: { label: "See portfolio", href: "/portfolio/" },
     services: [
       {

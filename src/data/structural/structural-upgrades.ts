@@ -10,7 +10,7 @@ export const structuralUpgrades: ServiceEntity = {
   path: "/services/structural-upgrades-seattle/",
   homePageFeatured: true,
   category: ServiceCategory.Structural,
-  name: "Structural Upgrades",
+  name: "Seismic Retrofit & Foundation Repair",
   description:
     "Foundation repairs, seismic retrofits, beam replacements, and structural improvements that protect Seattle homes for decades.",
   breadcrumb: "Structural • Seattle",
@@ -38,7 +38,7 @@ export const structuralUpgrades: ServiceEntity = {
   },
 
   seo: {
-    title: "Structural Upgrades Seattle | Saddle & Spur Construction",
+    title: "Seismic Retrofit & Foundation Repair Seattle | Saddle & Spur",
     description:
       "Foundation repairs, seismic retrofits, and structural improvements for Seattle homes. Engineered, permitted, and built to protect your home.",
     keywords: [

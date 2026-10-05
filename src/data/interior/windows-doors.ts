@@ -11,7 +11,7 @@ export const windowsDoors: ServiceEntity = {
   path: "/services/windows-doors-seattle/",
   homePageFeatured: false,
   category: ServiceCategory.Interior,
-  name: "Windows & Doors",
+  name: "Window & Door Replacement",
   description:
     "Window and door replacement for Seattle homes — better efficiency, better looks, and a weather-tight installation.",
   breadcrumb: "Interior • Seattle",
@@ -37,7 +37,7 @@ export const windowsDoors: ServiceEntity = {
   },
 
   seo: {
-    title: "Windows & Doors Seattle | Saddle & Spur Construction",
+    title: "Window & Door Replacement in Seattle | Saddle & Spur",
     description:
       "Window and door replacement in Seattle. Energy-efficient installs, proper flashing, and clean trim work — done right the first time.",
     keywords: [
@@ -112,7 +112,7 @@ export const windowsDoors: ServiceEntity = {
     eyebrow: "What we do",
     heading: "Window & door services",
     byline: "Better efficiency, better curb appeal.",
-    primaryCta: { label: "Get a quote", href: "/contact/" },
+    primaryCta: { label: "Get a window quote", href: "/window-replacement-seattle/" },
     secondaryCta: { label: "See portfolio", href: "/portfolio/" },
     services: [
       {

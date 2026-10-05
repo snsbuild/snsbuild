@@ -44,7 +44,7 @@ export const shedBuilderLanding: LandingPage = {
       "Site-built storage sheds, garden buildings, workshops, and insulated backyard offices across Greater Seattle — on real foundations, with real roof details, sized and sited to your setbacks.",
     bullets: [
       "Free on-site estimate — we check your setbacks before we design",
-      "Often no construction permit needed under about 200 sq ft",
+      "Storage sheds up to 120 sq ft often need no construction permit",
       "Gravel pad, pier, or slab foundations — not pavers on dirt",
       "Insulated, wired, and heated backyard offices available",
       "Roof, siding, and trim matched to your house",
@@ -69,7 +69,7 @@ export const shedBuilderLanding: LandingPage = {
   stats: [
     { label: "Storage / garden shed", value: "1–2 wks" },
     { label: "Insulated office build", value: "3–5 wks" },
-    { label: "Typical permit exemption", value: "<200 sq ft" },
+    { label: "Permit-exempt storage shed", value: "≤120 sq ft" },
     { label: "Cost for the estimate", value: "$0" },
   ],
 
@@ -81,9 +81,9 @@ export const shedBuilderLanding: LandingPage = {
       icon: "fa-solid fa-trowel-bricks",
     },
     {
-      title: "Sized to stay permit-exempt",
+      title: "The permit question, answered first",
       description:
-        "Seattle generally exempts detached accessory buildings under roughly 200 square feet without plumbing from a construction permit. Zoning still applies, so we verify setbacks and lot coverage for your address first, then design right up against the line where that helps you.",
+        "Seattle skips the construction permit only for single-story storage sheds with a roof area of 120 square feet or less. Bigger sheds and backyard offices need one, and zoning applies either way, so we confirm the permit path, setbacks, and lot coverage for your address before we design anything.",
       icon: "fa-solid fa-ruler-combined",
     },
     {
@@ -156,7 +156,7 @@ export const shedBuilderLanding: LandingPage = {
     {
       question: "Will I need a permit?",
       answer:
-        "Often not for the structure itself. Seattle generally exempts small detached accessory buildings under roughly 200 square feet with no plumbing from a construction permit. Zoning still applies — setbacks, rear-yard coverage, and lot coverage — and power needs its own electrical permit. We confirm the current rules with SDCI for your address first.",
+        "For a small storage shed, often not. Seattle doesn't require a construction permit for a detached, single-story shed with a roof area of 120 square feet or less that's used only for storage or gardening. Larger sheds and backyard offices need one. Zoning applies either way — setbacks, rear-yard coverage, and lot coverage — and power needs its own electrical permit. We confirm the current rules with SDCI for your address first.",
     },
     {
       question: "Can the shed have power, heat, and internet?",
@@ -166,7 +166,7 @@ export const shedBuilderLanding: LandingPage = {
     {
       question: "How long does it take to build?",
       answer:
-        "A straightforward storage or garden shed is typically 1–2 weeks on site once the pad is ready. An insulated, wired, and finished backyard office generally runs 3–5 weeks. If an electrical permit is involved we schedule around the review time rather than around it surprising you.",
+        "A straightforward storage or garden shed is typically 1–2 weeks on site once the pad is ready. An insulated, wired, and finished backyard office generally runs 3–5 weeks. If a construction or electrical permit is involved we schedule around the review time rather than around it surprising you.",
     },
     {
       question: "Why not just buy a prefab kit?",
@@ -200,7 +200,7 @@ export const shedBuilderLanding: LandingPage = {
         label: "Magnolia shed studio",
         href: "/portfolio/magnolia-shed-studio/",
         description:
-          "A 190 sq ft insulated backyard office built under the permit threshold.",
+          "A 190 sq ft insulated backyard office with cedar siding and a window wall.",
       },
       {
         label: "ADU construction",

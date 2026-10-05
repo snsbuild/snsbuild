@@ -10,13 +10,13 @@ export const unusedSpaceConversions: ServiceEntity = {
   path: "/services/attic-basement-conversions-seattle/",
   homePageFeatured: false,
   category: ServiceCategory.Expansion,
-  name: "Unused Space Conversions",
+  name: "Basement & Attic Conversions",
   description:
     "Attics, basements, and underutilized rooms transformed into livable, functional space — permitted and finished properly.",
   breadcrumb: "Expansion • Seattle",
 
   service: {
-    serviceType: "Unused Space Conversion",
+    serviceType: "Basement & Attic Conversion",
     areaServed: ["Greater Seattle / King County"],
     subServices: [
       {
@@ -36,7 +36,7 @@ export const unusedSpaceConversions: ServiceEntity = {
   },
 
   seo: {
-    title: "Unused Space Conversions Seattle | Saddle & Spur Construction",
+    title: "Basement & Attic Conversions in Seattle | Saddle & Spur",
     description:
       "Attic, basement, and underutilized room conversions in Seattle. Turn unused square footage into livable space — permitted and finished right.",
     keywords: [
@@ -47,7 +47,7 @@ export const unusedSpaceConversions: ServiceEntity = {
     ],
     ogImage: {
       src: "/images/services/space-conversion/ogImage.jpg",
-      alt: "Unused space conversion in Seattle",
+      alt: "Basement and attic conversion in Seattle",
     },
     images: [],
     datePublished: "2026-01-10",
@@ -113,7 +113,7 @@ export const unusedSpaceConversions: ServiceEntity = {
   ],
   subServices: {
     eyebrow: "What we do",
-    heading: "Unused space conversion services",
+    heading: "Basement and attic conversion services",
     byline: "More home from what you already own.",
     primaryCta: { label: "Get a quote", href: "/contact/" },
     secondaryCta: { label: "See portfolio", href: "/portfolio/" },
@@ -174,7 +174,7 @@ export const greenwoodBasement: PortfolioEntity = {
   },
 
   project: {
-    serviceName: "Unused Space Conversions",
+    serviceName: "Basement & Attic Conversions",
     location: { neighborhood: "Greenwood", city: "Seattle" },
     completionDate: "2025-05-01",
     duration: "6 weeks",
@@ -204,7 +204,7 @@ export const greenwoodBasement: PortfolioEntity = {
     eyebrow: "Expansion • Space Conversion",
     primaryCta: { label: "Start your project", href: "/contact/" },
     secondaryCta: {
-      label: "Unused space conversions",
+      label: "Basement & attic conversions",
       href: "/services/attic-basement-conversions-seattle/",
     },
   },

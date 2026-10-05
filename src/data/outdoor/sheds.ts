@@ -105,7 +105,7 @@ export const shedBuilding: ServiceEntity = {
     {
       question: "Do I need a permit to build a shed in Seattle?",
       answer:
-        "Often not for the structure itself. Seattle generally exempts small detached accessory buildings from a construction permit when they're under roughly 200 square feet, low enough to meet the height limit, and have no plumbing. Exempt does not mean unregulated, though — the shed still has to satisfy zoning: setbacks from property lines, rear-yard coverage, and total lot coverage. Power to the shed needs its own electrical permit. We confirm the current rules with SDCI for your address before we design anything.",
+        "It depends on size and use. Seattle doesn't require a construction permit for a detached, single-story shed with a roof area of 120 square feet or less, as long as it sits on a slab, pier blocks, or soil, is outside environmentally critical areas, and is used only for storage, gardening, or similar unoccupied uses. A larger shed, or one you'll work in — a backyard office or studio — needs a permit, and we handle that as part of the job. Exempt does not mean unregulated, though — the shed still has to satisfy zoning: the 12-foot height limit, setbacks from property lines, rear-yard coverage, and total lot coverage. Power to the shed needs its own electrical permit. We confirm the current rules with SDCI for your address before we design anything.",
     },
     {
       question: "What's the difference between a shed and a DADU?",
@@ -199,13 +199,13 @@ export const magnoliaShedStudio: PortfolioEntity = {
   path: "/portfolio/magnolia-shed-studio/",
   name: "Magnolia Backyard Shed Studio",
   description:
-    "A 190-square-foot insulated backyard studio in Magnolia with cedar siding, a full-height window wall, and permitted power — a working office that stays under Seattle's shed exemption.",
+    "A 190-square-foot insulated backyard studio in Magnolia with cedar siding, a full-height window wall, and permitted power.",
   breadcrumb: "Portfolio • Sheds • Backyard Studio",
 
   seo: {
     title: "Magnolia Backyard Shed Studio | Saddle & Spur Construction",
     description:
-      "A 190 sq ft insulated shed studio in Magnolia, Seattle — cedar siding, pier foundation, mini-split heat, and permitted power, under the 200 sq ft exemption.",
+      "A 190 sq ft insulated shed studio in Magnolia, Seattle — cedar siding, pier foundation, mini-split heat, and permitted power.",
     keywords: [
       "magnolia backyard office",
       "seattle shed studio",
@@ -237,10 +237,9 @@ export const magnoliaShedStudio: PortfolioEntity = {
     problem:
       "Two people working from home in a three-bedroom house, sharing a dining table as a desk, with a leaning prefab shed rotting into the back fence.",
     solution:
-      "Removed the failing prefab shed and built a 190-square-foot insulated studio on concrete piers — under the 200 sq ft threshold so no construction permit was required — with permitted power, a mini-split, and a window wall facing the garden.",
+      "Removed the failing prefab shed and built a 190-square-foot insulated studio on concrete piers, with permitted power, a mini-split, and a window wall facing the garden.",
     results: [
       "A quiet, heated office fifty feet from the back door",
-      "Stayed under Seattle's 200 sq ft shed exemption",
       "Storage wall retained for yard tools and bikes",
     ],
   },
@@ -268,7 +267,7 @@ export const magnoliaShedStudio: PortfolioEntity = {
   },
 
   highlights: [
-    "190 sq ft — under Seattle's shed exemption",
+    "190 sq ft studio with a full-height window wall",
     "Concrete pier foundation on a sloped lot",
     "Insulated floor, walls, and roof",
     "Ductless mini-split for year-round use",
@@ -281,7 +280,7 @@ export const magnoliaShedStudio: PortfolioEntity = {
   story: {
     homeownerWanted:
       "A real place to work that wasn't the dining room — quiet, warm in winter, and without giving up the yard storage the old shed was supposed to provide.",
-    plan: "Demo the rotting prefab shed, set concrete piers to clear the slope, frame a 190 sq ft structure to stay under the permit threshold, insulate it properly, run permitted power, and give one wall back to storage.",
+    plan: "Demo the rotting prefab shed, set concrete piers to clear the slope, frame a 190 sq ft structure, insulate it properly, run permitted power, and give one wall back to storage.",
     buildSteps: [
       "Prefab shed demolition and haul-off",
       "Layout, setback verification, and pier excavation",
@@ -294,7 +293,6 @@ export const magnoliaShedStudio: PortfolioEntity = {
     results: [
       "Two work-from-home setups without losing a bedroom",
       "Comfortable through a full Seattle winter",
-      "No construction permit required for the structure",
     ],
   },
 
@@ -357,7 +355,7 @@ export const magnoliaShedStudio: PortfolioEntity = {
     },
     neighborhood: "Magnolia",
     quote:
-      "We'd priced out a prefab kit and a full DADU and neither one was right — one was junk and the other was a mortgage. Marco walked the yard, measured the setbacks, and showed us we could get a real insulated office at 190 square feet without a construction permit. Four weeks later I have a heated room with a window wall and my dining table back. It's the best money we've spent on this house.",
+      "We'd priced out a prefab kit and a full DADU and neither one was right — one was junk and the other was a mortgage. Marco walked the yard, measured the setbacks, and showed us we could get a real insulated office at 190 square feet. Four weeks later I have a heated room with a window wall and my dining table back. It's the best money we've spent on this house.",
     author: "Dana R.",
     rating: 5,
   },

@@ -127,7 +127,7 @@ export const kitchenRemodel: ServiceEntity = {
     eyebrow: "What we do",
     heading: "Kitchen remodeling services",
     byline: "Scope it right, then build it right.",
-    primaryCta: { label: "Get a quote", href: "/contact/" },
+    primaryCta: { label: "Get a kitchen estimate", href: "/kitchen-remodel-seattle/" },
     secondaryCta: { label: "See portfolio", href: "/portfolio/" },
     services: [
       {
